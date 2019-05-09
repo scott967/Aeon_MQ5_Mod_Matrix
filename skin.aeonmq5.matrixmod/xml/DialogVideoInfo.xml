@@ -4,6 +4,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.16/9.1.18/9.1.19/9.2.1 window IDs 2003/9.2.2 -->
 <!-- Leia 10.2.5/10.3.0/10.4.0/10.5.2/10.6.0/10.6.1/10.6.2 -->
+<!-- Matrix 11.0.1 -->
 <window>
 	<onload>Control.SetFocus(50,0,absolute)</onload>
 	<onload>Control.SetFocus(149)</onload>
@@ -89,203 +90,243 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<scroll>true</scroll>
 			</control>
-			<!-- edited for MV -->
-			<control type="label">
-				<posx>45</posx>
-				<posy>75</posy>
-				<width>1650</width>
-				<height>38</height>
-				<aligny>center</aligny>
-				<font>Font_21A</font>
-				<label>$INFO[ListItem.Tagline]</label>
-				<textcolor>FFFFFAF0</textcolor>
-				<scroll>true</scroll>
-				<visible>!Container.Content(musicvideos)</visible>
+			<!-- edited for MV and sets -->
+			<control type="group">
+				<visible>String.IsEqual(ListItem.DBType, set)</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>120</posy>
+					<width>1920</width>
+					<height>579</height>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<include>Animation_DefaultGlass</include>
+				</control>
+				<control type="label">
+					<!-- Years -->
+					<posx>330</posx>
+					<posy>120</posy>
+					<height>60</height>
+					<width>165</width>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_24</font>
+					<label>$VAR[value_ground6_value]</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
+				<control type="label">
+					<!-- Genres -->
+					<posx>330</posx>
+					<posy>164</posy>
+					<height>60</height>
+					<width>735</width>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_18A</font>
+					<label>$INFO[Window(home).Property(Set.Movies.Genre)]</label>
+					<textcolor>FFFFFAF0</textcolor>
+					<scroll>true</scroll>
+					<scrollout>false</scrollout>
+				</control>
 			</control>
-			<!--  added for mv TOP LEFT display Title/artist -->
-			<control type="label">
-				<posx>45</posx>
-				<posy>75</posy>
-				<width>1650</width>
-				<height>38</height>
-				<aligny>center</aligny>
-				<font>Font_21A</font>
-				<label>$INFO[ListItem.Artist]</label>
-				<textcolor>FFFFFAF0</textcolor>
-				<scroll>true</scroll>
-				<visible>Container.Content(musicvideos)</visible>
-			</control>
-			<control type="image">
-				<!-- Star -->
-				<posx>1650</posx>
-				<posy>8</posy>
-				<width>110</width>
-				<height>110</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<texture>star.png</texture>
-				<colordiffuse>FFFFFF40</colordiffuse>
-				<visible>!String.IsEmpty(ListItem.UserRating)</visible>
-			</control>
-			<control type="label">
-				<posx>1659</posx>
-				<posy>22</posy>
-				<width>90</width>
-				<height>90</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_18A</font>
-				<label>[B]$INFO[ListItem.UserRating][/B]</label>
-				<textcolor>FF101010</textcolor>
-				<visible>!String.IsEmpty(ListItem.UserRating)</visible>
-			</control>
-			<control type="image">
-				<!-- Star -->
-				<posx>1768</posx>
-				<posy>8</posy>
-				<width>110</width>
-				<height>110</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<texture>star.png</texture>
-				<colordiffuse>FFFFFAF0</colordiffuse>
-			</control>
-			<control type="label">
-				<posx>1778</posx>
-				<posy>22</posy>
-				<width>90</width>
-				<height>90</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_18A</font>
-				<label>[B]$INFO[ListItem.Rating][/B]</label>
-				<textcolor>FF101010</textcolor>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>120</posy>
-				<width>1920</width>
-				<height>579</height>
-				<texture>darkgrey.png</texture>
-				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
-				<include>Animation_DefaultGlass</include>
-			</control>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>1920</width>
-				<height>120</height>
-				<texture>gradient_small.png</texture>
-				<colordiffuse>80FFFAF0</colordiffuse>
-			</control>
-			<control type="image">
-				<!-- Certification -->
-				<posx>45</posx>
-				<posy>104</posy>
-				<height>120</height>
-				<width>237</width>
-				<align>center</align>
-				<aligny>center</aligny>
-				<aspectratio>keep</aspectratio>
-				<texture>$VAR[value_mpaa]</texture>
-			</control>
-			<control type="label">
-				<!-- Year -->
-				<posx>330</posx>
-				<posy>120</posy>
-				<height>60</height>
-				<width>165</width>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>Font_24</font>
-				<label>$INFO[ListItem.Year]</label>
-				<textcolor>FFFFFAF0</textcolor>
-			</control>
-			<control type="label">
-				<!-- Genre -->
-				<posx>330</posx>
-				<posy>164</posy>
-				<height>60</height>
-				<width>735</width>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>Font_18A</font>
-				<label>$INFO[ListItem.Genre]</label>
-				<textcolor>FFFFFAF0</textcolor>
-				<scroll>true</scroll>
-				<scrollout>false</scrollout>
-			</control>
-			<!--  edit for MV  -->
-			<control type="list" id="49">
-				<!-- Lista de botoes/info -->
-				<posx>30</posx>
-				<posy>218</posy>
-				<width>1110</width>
-				<height>495</height>
-				<onleft>149</onleft>
-				<onright>149</onright>
-				<onup>149</onup>
-				<ondown>149</ondown>
-				<itemgap>2</itemgap>
-				<pagecontrol></pagecontrol>
-				<scrolltime>200</scrolltime>
-				<itemlayout height="30" condition="!Skin.HasSetting(Use_lang_flags)">
-					<control type="label">
-						<left>0</left>
-						<posx>255</posx>
-						<posy>0</posy>
-						<width>300</width>
-						<height>30</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>$VAR[value_headercolor]</textcolor>
-						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<scroll>true</scroll>
-					</control>
-					<control type="label">
-						<posx>300</posx>
-						<posy>0</posy>
-						<width>735</width>
-						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>FFFFFAF0</textcolor>
-						<selectedcolor>E4101010</selectedcolor>
-						<label>$INFO[ListItem.Label2]</label>
-						<scroll>true</scroll>
-					</control>
-				</itemlayout>
-				<itemlayout height="30" condition="Skin.HasSetting(Use_lang_flags)">
-					<control type="label">
-						<left>0</left>
-						<posx>255</posx>
-						<posy>0</posy>
-						<width>300</width>
-						<height>30</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>$VAR[value_headercolor]</textcolor>
-						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<scroll>true</scroll>
-					</control>
-					<control type="label">
-						<posx>300</posx>
-						<posy>0</posy>
-						<width>735</width>
-						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>FFFFFAF0</textcolor>
-						<selectedcolor>E4101010</selectedcolor>
-						<label>$INFO[ListItem.Label2]</label>
-						<scroll>true</scroll>
-					</control>
+			<control type="group">
+				<visible>!String.IsEqual(ListItem.DBType, set)</visible>
+				<control type="label">
+					<posx>45</posx>
+					<posy>75</posy>
+					<width>1650</width>
+					<height>38</height>
+					<aligny>center</aligny>
+					<font>Font_21A</font>
+					<label>$INFO[ListItem.Tagline]</label>
+					<textcolor>FFFFFAF0</textcolor>
+					<scroll>true</scroll>
+					<visible>!Container.Content(musicvideos)</visible>
+				</control>
+				<!--  added for mv TOP LEFT display Title/artist -->
+				<control type="label">
+					<posx>45</posx>
+					<posy>75</posy>
+					<width>1650</width>
+					<height>38</height>
+					<aligny>center</aligny>
+					<font>Font_21A</font>
+					<label>$INFO[ListItem.Artist]</label>
+					<textcolor>FFFFFAF0</textcolor>
+					<scroll>true</scroll>
+					<visible>Container.Content(musicvideos)</visible>
+				</control>
+				<control type="image">
+					<!-- Star -->
+					<posx>1650</posx>
+					<posy>8</posy>
+					<width>110</width>
+					<height>110</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texture>star.png</texture>
+					<colordiffuse>FFFFFF40</colordiffuse>
+					<visible>!String.IsEmpty(ListItem.UserRating)</visible>
+				</control>
+				<control type="label">
+					<posx>1659</posx>
+					<posy>22</posy>
+					<width>90</width>
+					<height>90</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_18A</font>
+					<label>[B]$INFO[ListItem.UserRating][/B]</label>
+					<textcolor>FF101010</textcolor>
+					<visible>!String.IsEmpty(ListItem.UserRating)</visible>
+				</control>
+				<control type="image">
+					<!-- Star -->
+					<posx>1768</posx>
+					<posy>8</posy>
+					<width>110</width>
+					<height>110</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texture>star.png</texture>
+					<colordiffuse>FFFFFAF0</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>1778</posx>
+					<posy>22</posy>
+					<width>90</width>
+					<height>90</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_18A</font>
+					<label>[B]$INFO[ListItem.Rating][/B]</label>
+					<textcolor>FF101010</textcolor>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>120</posy>
+					<width>1920</width>
+					<height>579</height>
+					<texture>darkgrey.png</texture>
+					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
+					<include>Animation_DefaultGlass</include>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1920</width>
+					<height>120</height>
+					<texture>gradient_small.png</texture>
+					<colordiffuse>80FFFAF0</colordiffuse>
+				</control>
+				<control type="image">
+					<!-- Certification -->
+					<posx>45</posx>
+					<posy>104</posy>
+					<height>120</height>
+					<width>237</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<aspectratio>keep</aspectratio>
+					<texture>$VAR[value_mpaa]</texture>
+				</control>
+				<control type="label">
+					<!-- Year -->
+					<posx>330</posx>
+					<posy>120</posy>
+					<height>60</height>
+					<width>165</width>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_24</font>
+					<label>$INFO[ListItem.Year]</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
+				<control type="label">
+					<!-- Genre -->
+					<posx>330</posx>
+					<posy>164</posy>
+					<height>60</height>
+					<width>735</width>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_18A</font>
+					<label>$INFO[ListItem.Genre]</label>
+					<textcolor>FFFFFAF0</textcolor>
+					<scroll>true</scroll>
+					<scrollout>false</scrollout>
+				</control>
+				<!--  edit for MV  -->
+				<control type="list" id="49">
+					<!-- Lista de botoes/info -->
+					<posx>30</posx>
+					<posy>218</posy>
+					<width>1110</width>
+					<height>495</height>
+					<onleft>149</onleft>
+					<onright>149</onright>
+					<onup>149</onup>
+					<ondown>149</ondown>
+					<itemgap>2</itemgap>
+					<pagecontrol></pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout height="30" condition="!Skin.HasSetting(Use_lang_flags)">
+						<control type="label">
+							<left>0</left>
+							<posx>255</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<posx>300</posx>
+							<posy>0</posy>
+							<width>735</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>FFFFFAF0</textcolor>
+							<selectedcolor>E4101010</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<scroll>true</scroll>
+						</control>
+					</itemlayout>
+					<itemlayout height="30" condition="Skin.HasSetting(Use_lang_flags)">
+						<control type="label">
+							<left>0</left>
+							<posx>255</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<posx>300</posx>
+							<posy>0</posy>
+							<width>735</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>FFFFFAF0</textcolor>
+							<selectedcolor>E4101010</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<scroll>true</scroll>
+						</control>
 						<control type="image">
 							<posx>300</posx>
 							<posy>-2</posy>
@@ -356,107 +397,107 @@
 							<width>35</width>
 							<texture>$INFO[ListItem.Property(lang10)]</texture>
 						</control>
-				</itemlayout>
-				<focusedlayout height="30" condition="!Skin.HasSetting(Use_lang_flags)">
-					<control type="image">
-						<left>0</left>
-						<posx>285</posx>
-						<posy>0</posy>
-						<width>765</width>
-						<height>30</height>
-						<texture>settings_button_focus.png</texture>
-						<visible>Control.HasFocus(49)</visible>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<posx>255</posx>
-						<posy>0</posy>
-						<width>300</width>
-						<height>30</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>$VAR[value_headercolor]</textcolor>
-						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>300</posx>
-						<posy>0</posy>
-						<width>735</width>
-						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>FFFFFAF0</textcolor>
-						<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
-						<label>$INFO[ListItem.Label2]</label>
-						<visible>!Control.HasFocus(49)</visible>
-					</control>
-					<control type="label">
-						<posx>300</posx>
-						<posy>0</posy>
-						<width>735</width>
-						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>E4101010</textcolor>
-						<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
-						<label>$INFO[ListItem.Label2]</label>
-						<visible>Control.HasFocus(49)</visible>
-					</control>
-				</focusedlayout>
-				<focusedlayout height="30" condition="Skin.HasSetting(Use_lang_flags)">
-					<control type="image">
-						<left>0</left>
-						<posx>285</posx>
-						<posy>0</posy>
-						<width>765</width>
-						<height>30</height>
-						<texture>settings_button_focus.png</texture>
-						<visible>Control.HasFocus(49)</visible>
-					</control>
-					<control type="label">
-						<left>0</left>
-						<posx>255</posx>
-						<posy>0</posy>
-						<width>300</width>
-						<height>30</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>$VAR[value_headercolor]</textcolor>
-						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<posx>300</posx>
-						<posy>0</posy>
-						<width>735</width>
-						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>FFFFFAF0</textcolor>
-						<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
-						<label>$INFO[ListItem.Label2]</label>
-						<visible>!Control.HasFocus(49)</visible>
-					</control>
-					<control type="label">
-						<posx>300</posx>
-						<posy>0</posy>
-						<width>735</width>
-						<height>30</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>Font_18A</font>
-						<textcolor>E4101010</textcolor>
-						<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
-						<label>$INFO[ListItem.Label2]</label>
-						<visible>Control.HasFocus(49)</visible>
-					</control>
-					<control type="image">
+					</itemlayout>
+					<focusedlayout height="30" condition="!Skin.HasSetting(Use_lang_flags)">
+						<control type="image">
+							<left>0</left>
+							<posx>285</posx>
+							<posy>0</posy>
+							<width>765</width>
+							<height>30</height>
+							<texture>settings_button_focus.png</texture>
+							<visible>Control.HasFocus(49)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<posx>255</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>300</posx>
+							<posy>0</posy>
+							<width>735</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>FFFFFAF0</textcolor>
+							<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(49)</visible>
+						</control>
+						<control type="label">
+							<posx>300</posx>
+							<posy>0</posy>
+							<width>735</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>E4101010</textcolor>
+							<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Control.HasFocus(49)</visible>
+						</control>
+					</focusedlayout>
+					<focusedlayout height="30" condition="Skin.HasSetting(Use_lang_flags)">
+						<control type="image">
+							<left>0</left>
+							<posx>285</posx>
+							<posy>0</posy>
+							<width>765</width>
+							<height>30</height>
+							<texture>settings_button_focus.png</texture>
+							<visible>Control.HasFocus(49)</visible>
+						</control>
+						<control type="label">
+							<left>0</left>
+							<posx>255</posx>
+							<posy>0</posy>
+							<width>300</width>
+							<height>30</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>$VAR[value_headercolor]</textcolor>
+							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>300</posx>
+							<posy>0</posy>
+							<width>735</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>FFFFFAF0</textcolor>
+							<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>!Control.HasFocus(49)</visible>
+						</control>
+						<control type="label">
+							<posx>300</posx>
+							<posy>0</posy>
+							<width>735</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_18A</font>
+							<textcolor>E4101010</textcolor>
+							<selectedcolor>$VAR[value_headercolorfocus]</selectedcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<visible>Control.HasFocus(49)</visible>
+						</control>
+						<control type="image">
 							<posx>300</posx>
 							<posy>-2</posy>
 							<height>35</height>
@@ -526,101 +567,102 @@
 							<width>35</width>
 							<texture>$INFO[ListItem.Property(lang10)]</texture>
 						</control>
-				</focusedlayout>
-				<content>
-					<!--  edited in IncludeVariables for MV -->
-					<item>
-						<label>$VAR[value_videoinfo_label1]</label>
-						<!-- Original Title/Movies - Premiered/TvShows -->
-						<label2>$VAR[value_videoinfo_value1]</label2>
-						<onclick>noop</onclick>
-					</item>
-					<item>
-						<label>$LOCALIZE[574]</label>
-						<!-- Country -->
-						<label2>$INFO[ListItem.Country]</label2>
-						<onclick>noop</onclick>
-					</item>
-					<item>
-						<label>$LOCALIZE[20339]/$LOCALIZE[20417]</label>
-						<!-- Director/Writer 13 show all movies by director -->
-						<label2>$INFO[ListItem.Director,,/]$INFO[ListItem.Writer]</label2>
-						<onclick>SendClick(movieinformation,13)</onclick>
-						<visible>!Container.Content(musicvideos)</visible>
-					</item>
-					<item>
-						<label>$LOCALIZE[20339]</label>
-						<!-- Director for MV -->
-						<label2>$INFO[ListItem.Director]</label2>
-						<onclick>SendClick(movieinformation,13)</onclick>
-						<visible>Container.Content(musicvideos)</visible>
-					</item>
-					<item>
-						<label>$LOCALIZE[572]</label>
-						<!-- Studios -->
-						<label2>$INFO[ListItem.Studio]</label2>
-						<onclick>noop</onclick>
-					</item>
-					<item>
-						<label>$LOCALIZE[180]</label>
-						<!-- Duration -->
-						<label2>$VAR[value_videoinfo_value5]</label2>
-						<onclick>noop</onclick>
-					</item>
-					<item>
-						<label>$LOCALIZE[31179]</label>
-						<!-- Audio Language -->
-						<label2>$INFO[ListItem.Property(AudioLanguage.1)]$INFO[ListItem.Property(AudioLanguage.2), / ]$INFO[ListItem.Property(AudioLanguage.3), / ]$INFO[ListItem.Property(AudioLanguage.4), / ]$INFO[ListItem.Property(AudioLanguage.5), / ]$INFO[ListItem.Property(AudioLanguage.6), / ]$INFO[ListItem.Property(AudioLanguage.7), / ]$INFO[ListItem.Property(AudioLanguage.8), / ]$INFO[ListItem.Property(AudioLanguage.9), / ]$INFO[ListItem.Property(AudioLanguage.10), / ]</label2>
-						<onclick>noop</onclick>
-						<visible>!Skin.HasSetting(Use_lang_flags)</visible>
-					</item>
-					<item>
-						<label>$LOCALIZE[31179]</label>
-						<!-- Audio Language flags -->
-						<property name="lang1">$INFO[ListItem.Property(AudioLanguage.1),flags/countries/,.png]</property>
-						<property name="lang2">$INFO[ListItem.Property(AudioLanguage.2),flags/countries/,.png]</property>
-						<property name="lang3">$INFO[ListItem.Property(AudioLanguage.3),flags/countries/,.png]</property>
-						<property name="lang4">$INFO[ListItem.Property(AudioLanguage.4),flags/countries/,.png]</property>
-						<property name="lang5">$INFO[ListItem.Property(AudioLanguage.5),flags/countries/,.png]</property>
-						<property name="lang6">$INFO[ListItem.Property(AudioLanguage.6),flags/countries/,.png]</property>
-						<property name="lang7">$INFO[ListItem.Property(AudioLanguage.7),flags/countries/,.png]</property>
-						<property name="lang8">$INFO[ListItem.Property(AudioLanguage.8),flags/countries/,.png]</property>
-						<property name="lang9">$INFO[ListItem.Property(AudioLanguage.9),flags/countries/,.png]</property>
-						<property name="lang10">$INFO[ListItem.Property(AudioLanguage.10),flags/countries/,.png]</property>
-						<onclick>noop</onclick>
-						<visible>Skin.HasSetting(Use_lang_flags)</visible>
-					</item>
-					<item>
-						<label>$LOCALIZE[287]</label>
-						<!-- Subtitile Language -->
-						<label2>$INFO[ListItem.Property(SubtitleLanguage.1)]$INFO[ListItem.Property(SubtitleLanguage.2), / ]$INFO[ListItem.Property(SubtitleLanguage.3), / ]$INFO[ListItem.Property(SubtitleLanguage.4), / ]$INFO[ListItem.Property(SubtitleLanguage.5), / ]$INFO[ListItem.Property(SubtitleLanguage.6), / ]$INFO[ListItem.Property(SubtitleLanguage.7), / ]$INFO[ListItem.Property(SubtitleLanguage.8), / ]$INFO[ListItem.Property(SubtitleLanguage.9), / ]$INFO[ListItem.Property(SubtitleLanguage.10), / ]</label2>
-						<onclick>noop</onclick>
-						<visible>!String.IsEmpty(ListItem.Duration) + !Skin.HasSetting(Use_lang_flags)</visible>
-					</item>
-					<item>
-						<label>$LOCALIZE[287]</label>
-						<!-- Subtitle Language flags -->
-						<property name="lang1">$INFO[ListItem.Property(SubtitleLanguage.1),flags/countries/,.png]</property>
-						<property name="lang2">$INFO[ListItem.Property(SubtitleLanguage.2),flags/countries/,.png]</property>
-						<property name="lang3">$INFO[ListItem.Property(SubtitleLanguage.3),flags/countries/,.png]</property>
-						<property name="lang4">$INFO[ListItem.Property(SubtitleLanguage.4),flags/countries/,.png]</property>
-						<property name="lang5">$INFO[ListItem.Property(SubtitleLanguage.5),flags/countries/,.png]</property>
-						<property name="lang6">$INFO[ListItem.Property(SubtitleLanguage.6),flags/countries/,.png]</property>
-						<property name="lang7">$INFO[ListItem.Property(SubtitleLanguage.7),flags/countries/,.png]</property>
-						<property name="lang8">$INFO[ListItem.Property(SubtitleLanguage.8),flags/countries/,.png]</property>
-						<property name="lang9">$INFO[ListItem.Property(SubtitleLanguage.9),flags/countries/,.png]</property>
-						<property name="lang10">$INFO[ListItem.Property(SubtitleLanguage.10),flags/countries/,.png]</property>
-						<onclick>noop</onclick>
-						<visible>!String.IsEmpty(ListItem.Duration) + Skin.HasSetting(Use_lang_flags)</visible>
-					</item>
-					<item>
-						<label>$LOCALIZE[573]</label>
-						<!-- Path -->
-						<label2>$INFO[ListItem.FilenameAndPath]</label2>
-						<onclick>noop</onclick>
-						<visible>!String.IsEmpty(ListItem.FilenameAndPath)</visible>
-					</item>
-				</content>
+					</focusedlayout>
+					<content>
+						<!--  edited in IncludeVariables for MV -->
+						<item>
+							<label>$VAR[value_videoinfo_label1]</label>
+							<!-- Original Title/Movies - Premiered/TvShows -->
+							<label2>$VAR[value_videoinfo_value1]</label2>
+							<onclick>noop</onclick>
+						</item>
+						<item>
+							<label>$LOCALIZE[574]</label>
+							<!-- Country -->
+							<label2>$INFO[ListItem.Country]</label2>
+							<onclick>noop</onclick>
+						</item>
+						<item>
+							<label>$LOCALIZE[20339]/$LOCALIZE[20417]</label>
+							<!-- Director/Writer 13 show all movies by director -->
+							<label2>$INFO[ListItem.Director,,/]$INFO[ListItem.Writer]</label2>
+							<onclick>SendClick(movieinformation,13)</onclick>
+							<visible>!Container.Content(musicvideos)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[20339]</label>
+							<!-- Director for MV -->
+							<label2>$INFO[ListItem.Director]</label2>
+							<onclick>SendClick(movieinformation,13)</onclick>
+							<visible>Container.Content(musicvideos)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[572]</label>
+							<!-- Studios -->
+							<label2>$INFO[ListItem.Studio]</label2>
+							<onclick>noop</onclick>
+						</item>
+						<item>
+							<label>$LOCALIZE[180]</label>
+							<!-- Duration -->
+							<label2>$VAR[value_videoinfo_value5]</label2>
+							<onclick>noop</onclick>
+						</item>
+						<item>
+							<label>$LOCALIZE[31179]</label>
+							<!-- Audio Language -->
+							<label2>$INFO[ListItem.Property(AudioLanguage.1)]$INFO[ListItem.Property(AudioLanguage.2), / ]$INFO[ListItem.Property(AudioLanguage.3), / ]$INFO[ListItem.Property(AudioLanguage.4), / ]$INFO[ListItem.Property(AudioLanguage.5), / ]$INFO[ListItem.Property(AudioLanguage.6), / ]$INFO[ListItem.Property(AudioLanguage.7), / ]$INFO[ListItem.Property(AudioLanguage.8), / ]$INFO[ListItem.Property(AudioLanguage.9), / ]$INFO[ListItem.Property(AudioLanguage.10), / ]</label2>
+							<onclick>noop</onclick>
+							<visible>!Skin.HasSetting(Use_lang_flags)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[31179]</label>
+							<!-- Audio Language flags -->
+							<property name="lang1">$INFO[ListItem.Property(AudioLanguage.1),flags/countries/,.png]</property>
+							<property name="lang2">$INFO[ListItem.Property(AudioLanguage.2),flags/countries/,.png]</property>
+							<property name="lang3">$INFO[ListItem.Property(AudioLanguage.3),flags/countries/,.png]</property>
+							<property name="lang4">$INFO[ListItem.Property(AudioLanguage.4),flags/countries/,.png]</property>
+							<property name="lang5">$INFO[ListItem.Property(AudioLanguage.5),flags/countries/,.png]</property>
+							<property name="lang6">$INFO[ListItem.Property(AudioLanguage.6),flags/countries/,.png]</property>
+							<property name="lang7">$INFO[ListItem.Property(AudioLanguage.7),flags/countries/,.png]</property>
+							<property name="lang8">$INFO[ListItem.Property(AudioLanguage.8),flags/countries/,.png]</property>
+							<property name="lang9">$INFO[ListItem.Property(AudioLanguage.9),flags/countries/,.png]</property>
+							<property name="lang10">$INFO[ListItem.Property(AudioLanguage.10),flags/countries/,.png]</property>
+							<onclick>noop</onclick>
+							<visible>Skin.HasSetting(Use_lang_flags)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[287]</label>
+							<!-- Subtitile Language -->
+							<label2>$INFO[ListItem.Property(SubtitleLanguage.1)]$INFO[ListItem.Property(SubtitleLanguage.2), / ]$INFO[ListItem.Property(SubtitleLanguage.3), / ]$INFO[ListItem.Property(SubtitleLanguage.4), / ]$INFO[ListItem.Property(SubtitleLanguage.5), / ]$INFO[ListItem.Property(SubtitleLanguage.6), / ]$INFO[ListItem.Property(SubtitleLanguage.7), / ]$INFO[ListItem.Property(SubtitleLanguage.8), / ]$INFO[ListItem.Property(SubtitleLanguage.9), / ]$INFO[ListItem.Property(SubtitleLanguage.10), / ]</label2>
+							<onclick>noop</onclick>
+							<visible>!String.IsEmpty(ListItem.Duration) + !Skin.HasSetting(Use_lang_flags)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[287]</label>
+							<!-- Subtitle Language flags -->
+							<property name="lang1">$INFO[ListItem.Property(SubtitleLanguage.1),flags/countries/,.png]</property>
+							<property name="lang2">$INFO[ListItem.Property(SubtitleLanguage.2),flags/countries/,.png]</property>
+							<property name="lang3">$INFO[ListItem.Property(SubtitleLanguage.3),flags/countries/,.png]</property>
+							<property name="lang4">$INFO[ListItem.Property(SubtitleLanguage.4),flags/countries/,.png]</property>
+							<property name="lang5">$INFO[ListItem.Property(SubtitleLanguage.5),flags/countries/,.png]</property>
+							<property name="lang6">$INFO[ListItem.Property(SubtitleLanguage.6),flags/countries/,.png]</property>
+							<property name="lang7">$INFO[ListItem.Property(SubtitleLanguage.7),flags/countries/,.png]</property>
+							<property name="lang8">$INFO[ListItem.Property(SubtitleLanguage.8),flags/countries/,.png]</property>
+							<property name="lang9">$INFO[ListItem.Property(SubtitleLanguage.9),flags/countries/,.png]</property>
+							<property name="lang10">$INFO[ListItem.Property(SubtitleLanguage.10),flags/countries/,.png]</property>
+							<onclick>noop</onclick>
+							<visible>!String.IsEmpty(ListItem.Duration) + Skin.HasSetting(Use_lang_flags)</visible>
+						</item>
+						<item>
+							<label>$LOCALIZE[573]</label>
+							<!-- Path -->
+							<label2>$INFO[ListItem.FilenameAndPath]</label2>
+							<onclick>noop</onclick>
+							<visible>!String.IsEmpty(ListItem.FilenameAndPath)</visible>
+						</item>
+					</content>
+				</control>
 			</control>
 			<control type="image">
 				<posx>308</posx>
@@ -664,6 +706,19 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 				<visible>![Container.Content(episodes) | [Container.Content(musicvideos) | Container.Content(movies)] + String.IsEmpty(ListItem.Art(poster))]</visible>
+			</control>
+			<control type="textbox">
+				<!-- Plot -->
+				<posx>45</posx>
+				<posy>480</posy>
+				<width>1402</width>
+				<height>200</height>
+				<align>justify</align>
+				<font>Font_18A</font>
+				<label>$VAR[value_plotmoviesets]</label>
+				<textcolor>FFFFFAF0</textcolor>
+				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
+				<visible>Container.Content(sets) + String.IsEmpty(ListItem.Art(poster))</visible>
 			</control>
 			<control type="textbox">
 				<!-- Plot -->
@@ -869,7 +924,7 @@
 					<font>Font_15</font>
 					<label>31703</label>
 					<textcolor>$VAR[value_flagscolor]</textcolor>
-					<visible>!Container.Content(musicvideos)</visible>
+					<visible>![Container.Content(musicvideos) | Container.Content(sets)]</visible>
 				</control>
 				<control type="label">
 					<posx>45</posx>
@@ -882,6 +937,18 @@
 					<label>557</label>
 					<textcolor>$VAR[value_flagscolor]</textcolor>
 					<visible>Container.Content(musicvideos)</visible>
+				</control>
+				<control type="label">
+					<posx>45</posx>
+					<posy>0</posy>
+					<width>600</width>
+					<height>40</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_15</font>
+					<label>$LOCALIZE[20338]</label>
+					<textcolor>$VAR[value_flagscolor]</textcolor>
+					<visible>Container.Content(sets)</visible>
 				</control>
 				<control type="label">
 					<posx>472</posx>
@@ -920,7 +987,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_DefaultGlass</include>
 			</control>
-<!--  Actor / Artist (musicvideo) list supplied by core -->
+			<!--  Actor / Artist (musicvideo) movies (sets) list supplied by core -->
 			<control type="list" id="50">
 				<viewtype label="List">List Info</viewtype>
 				<posx>45</posx>
@@ -978,7 +1045,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-<!-- Menu bar -->
+			<!-- Menu bar -->
 			<control type="group">
 				<posx>0</posx>
 				<posy>698</posy>
@@ -1007,7 +1074,7 @@
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 					<include>Animation_DefaultGlass2</include>
 				</control>
-<!--  Container  buttons to provide actions for current listitem -->
+				<!--  Container  buttons to provide actions for current listitem -->
 				<control type="list" id="149">
 					<posx>0</posx>
 					<posy>4</posy>
@@ -1088,17 +1155,19 @@
 							<!-- Resume -->
 							<label>13404</label>
 							<onclick>SendClick(movieinformation,9)</onclick>
+							<visible>!Container.Content(sets)</visible>
 						</item>
 						<item id="1">
 							<!-- Refresh -->
 							<label>31695</label>
 							<onclick>SendClick(movieinformation,6)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo)</visible>
+							<visible>!Skin.HasSetting(kioskininfo) + !Container.Content(sets)</visible>
 						</item>
 						<item id="3">
 							<!-- Start -->
 							<label>31700</label>
 							<onclick>SendClick(movieinformation,8)</onclick>
+							<visible>!Container.Content(sets)</visible>
 						</item>
 						<item id="4">
 							<!-- Cinema Ex -->
@@ -1131,36 +1200,37 @@
 							<!-- Set user rating -->
 							<label>38023</label>
 							<onclick>SendClick(movieinformation,7)</onclick>
+							<visible>!Container.Content(sets)</visible>
 						</item>
 						<item id="20">
 							<!-- Editor de info -->
 							<label>31671</label>
 							<onclick>RunScript(script.libraryeditor,DBID=$INFO[ListItem.DBID])</onclick>
-							<visible>System.HasAddon(script.libraryeditor)</visible>
+							<visible>System.HasAddon(script.libraryeditor) + !Container.Content(sets)</visible>
 						</item>
 						<item id="9">
 							<!-- actor bio -->
 							<label>31798</label>
 							<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</onclick>
-							<visible>System.HasAddon(script.extendedinfo)</visible>
+							<visible>System.HasAddon(script.extendedinfo) + !Container.Content(sets)</visible>
 						</item>
 						<item id="13">
 							<!-- Director Movies -->
 							<label>31906</label>
 							<onclick>SendClick(movieinformation,13)</onclick>
-							<visible>!String.IsEmpty(ListItem.Director)</visible>
+							<visible>!String.IsEmpty(ListItem.Director) + !Container.Content(sets)</visible>
 						</item>
 						<item id="10">
 							<label>$LOCALIZE[31496]</label>
 							<onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>"
-							<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode)]</visible>
+							<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode) | String.IsEqual(ListItem.DbType,set)]</visible>
 						</item>
 						<item id="11">
 							<!-- Artist Video Clips -->
 							<label>31950</label>
 							<onclick>RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(50).ListItem.Label])</onclick>
 							<visible>System.HasAddon(script.extendedinfo) + String.IsEqual(ListItem.DBType,musicvideo)</visible>					
-					</item>
+						</item>
 					</content>
 				</control>
 				<control type="image">
@@ -1171,7 +1241,7 @@
 					<texture>gradient_small.png</texture>
 				</control>
 			</control>
-<!-- End of menu bar -->
+			<!-- End of menu bar -->
 			<control type="button" id="160">
 				<include>InvisibleButton</include>
 				<onup condition="Skin.HasSetting(artistzoom)">SetFocus(50)</onup>
