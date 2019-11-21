@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.15 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2901/9.2.2/9.2.3 -->
 <!-- Leia 10.2.8/10.3.0/10.4.0 -->
-<!-- Matrix 11.0.1 -->
+<!-- Matrix 11.0.1/11.0.2 -->
 
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
@@ -226,7 +226,7 @@
 				<posx>58</posx>
 				<posy>112</posy>
 				<width>1803</width>
-				<height>32</height>
+				<height>45</height>
 				<info>Player.Chapters</info>
 				<righttexture>progress_mid.png</righttexture>
 				<animation effect="fade" time="200">VisibleChange</animation>
@@ -242,6 +242,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<shadowcolor>grey</shadowcolor>
 				<label>[B]$VAR[value_osd_timeduration][/B]</label>
+				<visible>!Control.HasFocus(888)</visible>
 			</control>
 			<control type="label">
 				<!-- icons label -->
