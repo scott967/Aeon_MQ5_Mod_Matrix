@@ -157,7 +157,7 @@
 					<visible>Container.Content(musicvideos)</visible>
 				</control>
 				<control type="image">
-					<!-- Star -->
+					<!-- User Star -->
 					<posx>1650</posx>
 					<posy>8</posy>
 					<width>110</width>
@@ -665,7 +665,7 @@
 				</control>
 			</control>
 			<control type="image">
-				<posx>308</posx>
+				<posx>317</posx>  <!-- was 308 -->
 				<posy>120</posy>
 				<height>345</height>
 				<width>3</width>
@@ -673,7 +673,7 @@
 			</control>
 			<control type="image">
 				<posx>0</posx>
-				<posy>204</posy>
+				<posy>209</posy> <!-- was 205 -->
 				<height>3</height>
 				<width>1080</width>
 				<texture>separator.png</texture>
@@ -1168,6 +1168,12 @@
 							<label>31700</label>
 							<onclick>SendClick(movieinformation,8)</onclick>
 							<visible>!Container.Content(sets)</visible>
+						</item>
+						<item id="3">
+							<!-- Browse into collection -->
+							<label>37015</label>
+							<onclick>SendClick(movieinformation,8)</onclick>
+							<visible>Container.Content(sets)</visible>
 						</item>
 						<item id="4">
 							<!-- Cinema Ex -->
