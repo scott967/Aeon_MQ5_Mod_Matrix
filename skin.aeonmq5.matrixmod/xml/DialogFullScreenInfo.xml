@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.15 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 Window IDs 142/9.2.3 -->
 <!-- Leia 10.2.5/10.3.0/10.4.0/10.6.0/10.6.1 -->
+<!-- Matrix 11.0.2 -->
 <window>
 	<defaultcontrol></defaultcontrol>
 	<controls>
@@ -123,6 +124,15 @@
 					<width>375</width>
 					<height>15</height>
 					<info>Player.Progress</info>
+				</control>
+				<control type="ranges" id="2889">
+					<posx>30</posx>
+					<posy>988</posy>
+					<width>375</width>
+					<height>15</height>
+					<info>Player.Chapters</info>
+					<righttexture>progress_mid.png</righttexture>
+					<!-- <animation effect="fade" time="200">VisibleChange</animation> -->
 				</control>
 				<control type="label">
 					<posx>45</posx>
