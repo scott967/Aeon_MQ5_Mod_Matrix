@@ -4,6 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.3/10.2.6/10.2.7/10.3.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2 -->
+<!-- Matrix 11.0.2 -->
 <includes>
 	<include name="TopMenuTopButton">
 		<posy>32</posy>
@@ -1374,6 +1375,16 @@
 					<onclick condition="Container.Content(musicvideos)">XBMC.RunScript(script.artwork.downloader, mode=custom, dbid=$INFO[ListItem.DBID], poster, fanart, extrafanart, extrathumbs, clearlogo, clearart, discart)</onclick>
 					<onclick>SetFocus(51)</onclick>
 					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(musicvideos)]</visible>
+				</control>
+				<control type="radiobutton" id="9323">
+					<include>TopMenuRadioButton</include>
+					<label>$VAR[value_addon2]</label>
+					<onclick condition="System.HasAddon(service.tvtunes)">Skin.ToggleSetting(ontvtunes)</onclick>
+					<onclick condition="System.HasAddon(service.tvtunes) + !Skin.HasSetting(ontvtunes)">SetProperty(TvTunesBlocked,true)</onclick>
+					<onclick condition="System.HasAddon(service.tvtunes) + Skin.HasSetting(ontvtunes)">ClearProperty(TvTunesBlocked)</onclick>
+					<onclick condition="!System.HasAddon(service.tvtunes)">ActivateWindow(Programs,Addons,return)</onclick>
+					<selected>System.HasAddon(service.tvtunes) + Skin.HasSetting(ontvtunes)</selected>
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 				</control>
 				<include condition="Window.IsActive(videoplaylist)">TopMenu_Playlist</include>
 			</control>
