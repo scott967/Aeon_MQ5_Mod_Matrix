@@ -74,6 +74,15 @@
 				<itemgap>0</itemgap>
 				<onleft>Dialog.Close(1103)</onleft>
 				<onright>Dialog.Close(1103)</onright>
+				<control type="button" id="19299">
+					<!-- Enable all -->
+					<include content="content_views_music">
+						<param name="content">$INFO[Container.Content]</param>
+					</include>
+					<radioposx>1341</radioposx>
+					<label>188</label>
+					<selected>Skin.HasSetting(viewsets_video)</selected>
+				</control>
 				<control type="radiobutton" id="19254">
 					<!-- Poster -->
 					<!-- 54 -->

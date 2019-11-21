@@ -71,6 +71,15 @@
 				<itemgap>0</itemgap>
 				<onleft>Dialog.Close(1110)</onleft>
 				<onright>Dialog.Close(1110)</onright>
+				<control type="button" id="19299">
+					<!-- Enable all -->
+					<include content="content_views_video">
+						<param name="content">$INFO[Container.Content]</param>
+					</include>
+					<radioposx>1341</radioposx>
+					<label>188</label>
+					<selected>Skin.HasSetting(viewsets_video)</selected>
+				</control>
 				<control type="radiobutton" id="19265">
 					<!-- Sets -->
 					<!-- 65 -->
@@ -131,7 +140,7 @@
 					<label>31806</label>
 					<onclick>Skin.ToggleSetting(view3dwall_video)</onclick>
 					<selected>Skin.HasSetting(view3dwall_video)</selected>
-					<visible>![Container.Content(sets) | Container.Content(years)]</visible>
+					<visible>![Container.Content(episodes) | Container.Content(sets) | Container.Content(years)]</visible>
 				</control>
 				<control type="radiobutton" id="19257">
 					<!-- GlassList -->
