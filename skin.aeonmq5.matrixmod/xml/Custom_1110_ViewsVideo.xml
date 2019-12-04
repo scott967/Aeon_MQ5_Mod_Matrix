@@ -3,6 +3,7 @@
 <!-- Isengard 7.1.9 ShelfCase/7.1.11 MidList -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.3.0/10.6.2 was window 641 -->
+<!-- Matrix 11.0.2 -->
 <window id="1110" type="dialog">
 	<defaultcontrol always="true">9030</defaultcontrol>
 	<controls>

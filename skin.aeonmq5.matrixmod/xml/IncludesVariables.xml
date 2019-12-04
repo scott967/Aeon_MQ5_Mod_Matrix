@@ -2940,7 +2940,7 @@
 		<value condition="!String.IsEmpty(Player.Art(album.discart3)) + Integer.IsEqual(MusicPlayer.discnumber,3)">$INFO[Player.Art(album.discart3)]</value>
 		<value condition="!String.IsEmpty(Player.Art(album.discart4)) + Integer.IsEqual(MusicPlayer.discnumber,4)">$INFO[Player.Art(album.discart4)]</value>
 		<value condition="!String.IsEmpty(Player.Art(album.discart5)) + Integer.IsEqual(MusicPlayer.discnumber,5)">$INFO[Player.Art(album.discart5)]</value>
-		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>		
 		<value condition="!String.IsEmpty(Player.Art(album.cdart))">$INFO[Player.Art(album.cdart)]</value>
 		<value condition="String.Contains(skin.string(discaudio),0)">cdart.png</value>
 		<value condition="String.Contains(skin.string(discaudio),1)">cdart_1.png</value>
