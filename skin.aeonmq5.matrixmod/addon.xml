@@ -65,12 +65,10 @@
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 11.0.1 - RELEASE DATE 05/12/2019 for Kodi MATRIX 19.0 +[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 11.0.2 - RELEASE DATE 12/12/2019 for Kodi MATRIX 19.0 +[/COLOR][/B]
 This is a MOD of Aeon MQ5 by user Scott967
-Fixed:  Correct and update PVR views
-Fixed:  Correctly display "top date and weather" in some views
-Improved:  Add some missing defualt icons
-Improved:  Various layout issues in windows and dialogs
+Improved:  Support for Music Boxsets
+Improved:  Restore support for new TV Tunes addon
 		</news>
 	</extension>
 
