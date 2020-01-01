@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.4.0/10.5.2/10.6.0/10.6.2 -->
+<!-- Matrix 11.0.2 -->
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
 	<onload condition="System.HasAddon(script.artistslideshow) + Player.HasAudio + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(script.artistslideshow)</onload>
@@ -417,18 +418,16 @@
 					<texture background="true">$INFO[Listitem.Icon]</texture>
 					<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 				</control>
-				<control type="multiimage">
-					<!-- Artist fanarts from AS-->
+
+				<control type="image">
+					<!-- Artist fanarts from AS 3.X -->
 					<posx>1030</posx>
 					<posy>120</posy>
 					<height>579</height>
 					<width>844</width>
-					<timeperimage>5000</timeperimage>
-					<randomize>true</randomize>
-					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="left">keep</aspectratio>
-					<imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-					<visible>String.IsEmpty(ListItem.Thumb)</visible>
+					<texture fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</texture>
+					<visible>String.IsEmpty(ListItem.Thumb) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>  <!-- AS 3.00 not installed -->
 				</control>
 				<control type="image">
 					<posx>1029</posx>
@@ -703,10 +702,10 @@
 					<width>844</width>
 					<aspectratio align="left">keep</aspectratio>
 					<texture background="true">$VAR[value_songinfo_thumb]</texture>
-					<visible>String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | String.Contains(Window(Visualisation).Property(ArtistSlideshow),transparent)</visible>
+					<visible>[[String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | String.Contains(Window(Visualisation).Property(ArtistSlideshow),update-slide)] + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))] | String.Contains(Window(Visualisation).Property(ArtistSlideshow),transparent)</visible>
 				</control>
 				<control type="multiimage">
-					<!-- Artist fanart AS -->
+					<!-- Artist fanart AS2 -->
 					<posx>1030</posx>
 					<posy>120</posy>
 					<height>579</height>
@@ -716,7 +715,8 @@
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="left">keep</aspectratio>
 					<imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-					<visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) + ![String.EndsWith(Window(Visualisation).Property(ArtistSlideshow),transparent) | String.EndsWith(Window(Visualisation).Property(ArtistSlideshow),black)]</visible>
+					<visible>![String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | String.Contains(Window(Visualisation).Property(ArtistSlideshow),update-slide)] + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
+					<visible>![String.EndsWith(Window(Visualisation).Property(ArtistSlideshow),transparent) | String.EndsWith(Window(Visualisation).Property(ArtistSlideshow),black)]</visible>
 				</control>
 				<control type="image">
 					<posx>1029</posx>
@@ -1554,18 +1554,16 @@
 					<texture background="true">$INFO[Listitem.Icon]</texture>
 					<visible>!String.IsEmpty(ListItem.Thumb) + Skin.HasSetting(artistzoom)</visible>
 				</control>
-				<control type="multiimage">
-					<!-- Artist -->
+
+				<control type="image">
+					<!-- Artist AS 3.X -->
 					<posx>52</posx>
 					<posy>48</posy>
 					<width>1800</width>
 					<height>960</height>
-					<timeperimage>5000</timeperimage>
-					<randomize>true</randomize>
-					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio align="center">keep</aspectratio>
-					<imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-					<visible>String.IsEmpty(ListItem.Thumb) + Skin.HasSetting(artistzoom)</visible>
+					<texture fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</texture>
+					<visible>String.IsEmpty(ListItem.Thumb) + Skin.HasSetting(artistzoom) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
 				</control>
 			</control>
 			<control type="group"> <!-- bottom zoom text -->
