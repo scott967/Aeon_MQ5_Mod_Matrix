@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.2 Matrixmod[COLOR=80FFFFFF] | [/COLOR]12/12/2019</value>
+		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]03/31/2020</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
