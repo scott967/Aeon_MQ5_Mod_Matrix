@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.2.3/10.2.8/10.3.0/10.5.0/10.5.1/10.6.0 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.0.4 -->
 <includes>
 	<!-- ######################################################################### Presets para aplicar ######################################################################### -->
 	<include name="Preset1_Apply">
@@ -2588,7 +2588,7 @@
 					<label2>31057</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],shutdown)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.ShutDown())</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],ShutDown)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2599,7 +2599,7 @@
 					<label2>31012</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],quit)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.Quit())</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],Quit)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2610,7 +2610,7 @@
 					<label2>31058</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],powerdown)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.Powerdown())</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],Powerdown)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2621,7 +2621,7 @@
 					<label2>31059</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],reboot)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.Reboot())</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],Reboot)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2632,7 +2632,7 @@
 					<label2>31060</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],suspend)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.Suspend())</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],Suspend)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2643,7 +2643,7 @@
 					<label2>31061</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],hibernate)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.Hibernate())</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],Hibernate)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2654,7 +2654,7 @@
 					<label2>31055</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],timer)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.AlarmClock(shutdowntimer,XBMC.Powerdown()))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],AlarmClock(shutdowntimer,Powerdown))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>
@@ -2665,7 +2665,7 @@
 					<label2>31056</label2>
 					<property name="id">shutdown</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],canceltimer)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],XBMC.CancelAlarm(shutdowntimer))</onclick>
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],CancelAlarm(shutdowntimer))</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>

@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.7/10.2.8/10.3.0/10.4.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2/10.6.3 -->
-<!-- Matrix 11.0.1/11.0.2 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4 -->
 <includes>
 	<include file="Defaults.xml" />
 	<include file="IncludesVariables.xml" />
@@ -735,7 +735,7 @@
 				<onfocus>Skin.SetString(settingswidget,true)</onfocus>
 				<onfocus>Skin.SetString(menu11.action,ActivateWindow(settings))</onfocus>
 				<onfocus>Skin.SetString(menu12.master,shutdown)</onfocus>
-				<onfocus>Skin.SetString(menu12.action,XBMC.ShutDown())</onfocus>
+				<onfocus>Skin.SetString(menu12.action,ShutDown)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(902),0:02,true)</onfocus>
 			</control>
 			<control type="button" id="902">
@@ -1009,10 +1009,10 @@
 				<onfocus>Skin.SetString(menu1205.action,Hibernate)</onfocus>
 				<onfocus>Skin.SetString(menu1206.master,timer)</onfocus>
 				<!-- Temporizador -->
-				<onfocus>Skin.SetString(menu1206.action,XBMC.AlarmClock(shutdowntimer,XBMC.Powerdown()))</onfocus>
+				<onfocus>Skin.SetString(menu1206.action,AlarmClock(shutdowntimer,Powerdown))</onfocus>
 				<onfocus>Skin.SetString(menu1207.master,canceltimer)</onfocus>
 				<!-- Cancelar temporizador -->
-				<onfocus>Skin.SetString(menu1207.action,XBMC.CancelAlarm(shutdowntimer))</onfocus>
+				<onfocus>Skin.SetString(menu1207.action,CancelAlarm(shutdowntimer))</onfocus>
 				<onfocus>Skin.SetString(menu1208.master,logoff)</onfocus>
 				<!-- Deslogar -->
 				<onfocus>Skin.SetString(menu1208.action,System.Logoff)</onfocus>

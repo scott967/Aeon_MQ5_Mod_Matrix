@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 -->
 <!-- Krypton 9.1.19/9.2.1 -->
+<!-- Matrix 11.0.4 -->
 <window id="5099" type="dialog">
 	<!-- SubMenu Smart - 99 safe id -->
 	<defaultcontrol></defaultcontrol>
@@ -21,19 +22,19 @@
 							<!-- Shutdown -->
 							<label>31144</label>
 							<property name="id">shutdown</property>
-							<onclick>XBMC.ShutDown()</onclick>
+							<onclick>ShutDown</onclick>
 						</item>
 						<item>
 							<!-- Exit -->
 							<label>31012</label>
 							<property name="id">shutdown</property>
-							<onclick>XBMC.Quit()</onclick>
+							<onclick>Quit</onclick>
 						</item>
 						<item>
 							<!-- PowerDown -->
 							<label>31058</label>
 							<property name="id">shutdown</property>
-							<onclick>XBMC.PowerDown()</onclick>
+							<onclick>PowerDown</onclick>
 						</item>
 						<item>
 							<!-- Customizar Menu -->
