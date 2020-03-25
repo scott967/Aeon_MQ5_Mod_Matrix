@@ -418,7 +418,19 @@
 					<texture background="true">$INFO[Listitem.Icon]</texture>
 					<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 				</control>
-
+				<control type="multiimage">
+					<!-- Artist fanarts from AS 2.X -->
+					<posx>1030</posx>
+					<posy>120</posy>
+					<height>579</height>
+					<width>844</width>
+					<timeperimage>5000</timeperimage>
+					<randomize>true</randomize>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<aspectratio align="left">keep</aspectratio>
+					<imagepath fallback="DefaultAudioCover.png" background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+					<visible>String.IsEmpty(ListItem.Thumb) + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image)) + !String.Contains(Window(Visualisation).Property(ArtistSlideshow),update-slide)</visible>  <!-- AS 3.00 not installed -->
+				</control>
 				<control type="image">
 					<!-- Artist fanarts from AS 3.X -->
 					<posx>1030</posx>

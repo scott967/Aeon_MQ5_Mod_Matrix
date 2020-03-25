@@ -281,7 +281,19 @@
 					<texture>fanartframe.png</texture>
 					<visible>Player.HasAudio + !Control.HasFocus(603) | Player.HasVideo + !Skin.HasSetting(homevisvideo)</visible>
 				</control>
-
+				<control type="multiimage">
+				<!-- show AS 2.X fanart if avail else player artist fanart else default background -->
+					<posx>52</posx>
+					<posy>141</posy>
+					<width>666</width>
+					<height>375</height>
+					<timeperimage>5000</timeperimage>
+					<randomize>true</randomize>
+					<aspectratio>keep</aspectratio>
+					<imagepath fallback="DefaultExtraThumbs.png" background="true">$VAR[value_playerthumb]</imagepath>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>Player.HasAudio + !Control.HasFocus(603) + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
+				</control>
 				<control type="image">
 				<!-- show AS 3.X fanart if avail else player artist fanart else default background -->
 					<posx>52</posx>
