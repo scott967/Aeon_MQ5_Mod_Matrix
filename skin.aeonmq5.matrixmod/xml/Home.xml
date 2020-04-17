@@ -48,7 +48,7 @@
 			<visible>Player.HasAudio + Skin.HasSetting(customlogo) +  !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
 			<itemlayout />
 			<focusedlayout />
-			<content target="filemanager">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]/extrafanart/</content>
+			<content target="filemanager">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]\extrafanart\</content>
 		</control>
 		<control type="list" id="7045"> <!-- was 5045 check if video has extrafanartfanart -->
 			<posx>-500</posx>
@@ -58,7 +58,7 @@
 			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin)</visible>
 			<itemlayout />
 			<focusedlayout />
-			<content target="filemanager">$INFO[Player.FolderPath]extrafanart/</content>
+			<content target="filemanager">$INFO[Player.FolderPath]extrafanart\</content>
 		</control>
 		<control type="list" id="7046"> <!-- was 5046 check if video parent has extrafanart (MVs/episodes in seasons)  -->
 			<posx>-500</posx>
@@ -68,7 +68,7 @@
 			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin)</visible>
 			<itemlayout />
 			<focusedlayout />
-			<content target="filemanager">$INFO[Player.FolderPath,,../extrafanart/]</content>
+			<content target="filemanager">$INFO[Player.FolderPath,,..\extrafanart\]</content>
 		</control>
 		<control type="multiimage">
 			<include>HomeBG</include>

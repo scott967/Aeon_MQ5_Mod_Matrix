@@ -26,6 +26,7 @@
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[ListItem.Path]extrafanart/</content>
+			<visible>!String.StartsWith(ListItem.Path,plugin)</visible>
 		</control>
 		<control type="list" id="5034"> <!-- check if song lib path has extrafanart -->
 			<posx>-500</posx>
@@ -35,6 +36,7 @@
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[ListItem.Path]../extrafanart/</content>
+			<visible>!String.StartsWith(ListItem.Path,plugin)</visible>
 		</control>
 		<control type="group">  			<!-- default group -->
 			<include>Animation_Window</include>
@@ -657,7 +659,7 @@
 					<font>Font_18A</font>
 					<label>$LOCALIZE[31942]</label>
 					<textcolor>$VAR[value_headercolor]</textcolor>
-					<visible>Player.HasAudio + [String.IsEqual(Player.Filename,ListItem.FileName) | Window.IsVisible(visualisation)]</visible>
+					<!-- <visible>Player.HasAudio + [String.IsEqual(Player.Filename,ListItem.FileName) | Window.IsVisible(visualisation)]</visible> -->
 				</control>
 				<control type="label">
 					<posx>330</posx>
