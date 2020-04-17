@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.4.0/10.5.2/10.6.0/10.6.2 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.0.4 -->
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
 	<onload condition="System.HasAddon(script.artistslideshow) + Player.HasAudio + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(script.artistslideshow)</onload>
@@ -649,7 +649,7 @@
 					<scrollspeed>20</scrollspeed>
 				</control>
 				<control type="label">
-					<!-- Data (only available for playing songs) -->
+					<!-- MetaData -->
 					<posx>285</posx>
 					<posy>300</posy>
 					<height>40</height>
@@ -674,6 +674,20 @@
 					<scroll>true</scroll>
 					<scrollspeed>20</scrollspeed>
 					<visible>Player.HasAudio + [String.IsEqual(Player.Filename,ListItem.FileName) | Window.IsVisible(visualisation)]</visible>
+				</control>
+				<control type="label">
+					<posx>330</posx>
+					<posy>300</posy>
+					<height>40</height>
+					<width>660</width>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_18A</font>
+					<label>$LOCALIZE[31333] $INFO[ListItem.MusicChannels][COLOR=80ffffff] | [/COLOR]$INFO[ListItem.SampleRate,,KHZ][COLOR=80ffffff] | [/COLOR]$INFO[ListItem.BitRate,,Kbps]</label>
+					<textcolor>FFFFFAF0</textcolor>
+					<scroll>true</scroll>
+					<scrollspeed>20</scrollspeed>
+					<visible>!Window.IsVisible(visualisation)</visible>
 				</control>
 				<control type="label">
 					<!-- mixed content MV items -->
