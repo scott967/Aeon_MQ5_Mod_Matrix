@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui" version="11.0.2">
+<addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui" version="11.0.4">
 	<requires>
 		<import addon="xbmc.gui" version="5.14.0" />
 		<import addon="script.favourites" version="4.0.4" />
@@ -66,10 +66,9 @@
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 11.0.2 - RELEASE DATE 12/12/2019 for Kodi MATRIX 19.0 +[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 11.0.4 - RELEASE DATE 04/30/2020 for Kodi MATRIX 19.0 +[/COLOR][/B]
 This is a MOD of Aeon MQ5 by user Scott967
-Improved:  Support for Music Boxsets
-Improved:  Restore support for new TV Tunes addon
+
 		</news>
 	</extension>
 
