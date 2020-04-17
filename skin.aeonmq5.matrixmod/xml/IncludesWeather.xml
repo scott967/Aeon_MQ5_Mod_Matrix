@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.14 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.3.0/10.4.0/10.5.1/10.6.2 -->
+<!-- Matrix 11.0.4 -->
 <includes>
 	<!-- ######################################################################### Current #########################################################################-->
 	<!-- Widget Common Values -->
@@ -99,6 +100,7 @@
 		<textcolor>FFf5f5f5</textcolor>
 		<include>TWC.Current.ConditionLabelsCommon</include>
 	</include>
+<!-- Current weather view all providers Kodi defaults  -->
 	<include name="TWC.Current">
 		<control type="group">
 			<posx>435</posx>
@@ -123,7 +125,7 @@
 						<animation effect="slide" start="0,0" end="-26,0" time="0" condition="Integer.IsGreater(Window.Property(Current.Temperature),-100) + !Integer.IsGreater(Window.Property(Current.Temperature),9)">Conditional</animation>
 					</control>
 					<control type="label">
-						<!-- Local -->
+						<!-- sys Locality of data -->
 						<posx>75</posx>
 						<posy>68</posy>
 						<width>495</width>
@@ -149,7 +151,7 @@
 						<textcolor>$VAR[value_headercolor]</textcolor>
 					</control>
 					<control type="label">
-						<description>current feels like value</description>
+						<description>sys current feels like value</description>
 						<posx>45</posx>
 						<posy>256</posy>
 						<width>210</width>
@@ -172,7 +174,7 @@
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="label">
-					<description>current condition label</description>
+					<description>sys current condition label</description>
 					<posx>68</posx>
 					<posy>360</posy>
 					<width>510</width>
@@ -211,21 +213,27 @@
 					<description>current UV Index label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[403] :</label>
-					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | [String.Contains(Window.Property(WeatherProvider),Yahoo) + !String.Contains(Window.Property(WeatherProvider),Weatherbit)]]</visible>
 				</control>
 				<control type="label">
 					<description>current Wind label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[404] :</label>
 				</control>
-				<control type="label">
+				<!-- <control type="label">
 					<description>current Precipitation label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[33021] :</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(Current.IsFetched)) + [String.Contains(Window.Property(WeatherProvider),Weatherbit) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Gismeteo) | String.Contains(Window.Property(WeatherProvider),Ozweather)]</visible>
+				</control> -->
+				<control type="label">
+					<description>current Precipitation Prob label</description>
+					<include>TWC.Current.ConditionLabelsCommon</include>
+					<label>$LOCALIZE[31862] :</label>
+					<visible>!String.IsEmpty(Window.Property(Current.IsFetched))</visible>
 				</control>
 				<control type="label">
-					<description>barometric pressure</description>
+					<description>barometric pressure</description> <!-- extended weather -->
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[31859] :</label>
 					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
@@ -234,19 +242,19 @@
 					<description>visibility</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[31860] :</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunrise label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[33027] :</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunset label</description>
 					<include>TWC.Current.ConditionLabelsCommon</include>
 					<label>$LOCALIZE[33028] :</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) |String.Contains(Window.Property(WeatherProvider),Yahoo)  | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)  | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 			</control>
 			<control type="grouplist">
@@ -269,55 +277,61 @@
 					<description>current UV Index Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.UVIndex)]</label>
-					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)]</visible>
+					<visible>![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | [String.Contains(Window.Property(WeatherProvider),Yahoo) + !String.Contains(Window.Property(WeatherProvider),Weatherbit)]]</visible>
 				</control>
 				<control type="label">
 					<description>current Wind Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Wind)]</label>
 				</control>
-				<control type="label">
+				<!-- <control type="label">
 					<description>current Precip Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(36Hour.1.ChancePrecipitation)]</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) + ![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)]</visible>
-				</control>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) + ![String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo)]</visible>
+				</control> -->
 				<control type="label">
 					<description>current Precip Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Precipitation)]</label>
-					<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(Current.IsFetched)) + [String.Contains(Window.Property(WeatherProvider),Weatherbit) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Gismeteo) | String.Contains(Window.Property(WeatherProvider),Ozweather)]</visible>
 				</control>
+				<!-- <control type="label">
+					<description>current Precip Prob Value</description>
+					<include>TWC.Current.ConditionValuesCommon</include>
+					<label>$INFO[Window.Property(Daily.1.Probability)]</label>
+					<visible>!String.IsEmpty(Window.Property(Daily.IsFetched)) + String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+				</control> -->
 				<control type="label">
 					<description>current Pressure Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Pressure)]</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 				<control type="label">
 					<description>current Visibilty Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Current.Visibility)]</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) + !String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunrise Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Today.Sunrise)]</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 				<control type="label">
 					<description>current Sunset Value</description>
 					<include>TWC.Current.ConditionValuesCommon</include>
 					<label>$INFO[Window.Property(Today.Sunset)]</label>
-					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
+					<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)</visible>
 				</control>
 			</control>
 			<control type="label">
 				<description>Loading label</description>
 				<posy>600</posy>
 				<include>TWC.LoadingLabelCommon</include>
-				<visible>[[String.IsEmpty(Window.Property(Daily.IsFetched)) + !Skin.HasSetting(TWC.ShowCurrentHourly)] | [String.IsEmpty(Window.Property(Hourly.IsFetched)) + Skin.HasSetting(TWC.ShowCurrentHourly)]] + !String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
+				<visible>[[String.IsEmpty(Window.Property(Daily.IsFetched)) + !Skin.HasSetting(TWC.ShowCurrentHourly)] | [String.IsEmpty(Window.Property(Hourly.IsFetched)) + Skin.HasSetting(TWC.ShowCurrentHourly)]] + [!String.Contains(Window.Property(WeatherProvider),Yahoo) | String.Contains(Window.Property(WeatherProvider),Multi)]</visible>
 			</control>
 			<!-- Daily forecast -->
 			<control type="grouplist">
@@ -1244,6 +1258,7 @@
 		<aligny>center</aligny>
 		<wrapmultiline>true</wrapmultiline>
 	</include>
+<!-- Daily 10 days -->
 	<include name="TWC.Daily">
 		<control type="group">
 			<posx>435</posx>
@@ -1309,14 +1324,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.1.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.1.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.1.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1374,14 +1389,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.2.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.2.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.2.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1439,14 +1454,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.3.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.3.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.3.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1504,14 +1519,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.4.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.4.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.4.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1569,14 +1584,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.5.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.5.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.5.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1646,14 +1661,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.6.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.6.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.6.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1711,14 +1726,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.7.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.7.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.7.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1776,14 +1791,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.8.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.8.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.8.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1841,14 +1856,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.9.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.9.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.9.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -1907,14 +1922,14 @@
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
-							<label>$INFO[Window.Property(Daily.10.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<label>$INFO[Window.Property(Daily.10.Probability)]</label>
+							<visible>String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>precip label</description>
 							<include>TWC.Daily.DailyPrecipitationCommon</include>
 							<label>$INFO[Window.Property(Daily.10.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<description>High Temp label</description>
@@ -2957,6 +2972,7 @@
 		<aligny>center</aligny>
 		<wrapmultiline>true</wrapmultiline>
 	</include>
+<!-- Hourly -->
 	<include name="TWC.Hourly">
 		<control type="group">
 			<posx>435</posx>
@@ -3067,7 +3083,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.1.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3118,7 +3134,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.2.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3164,12 +3180,12 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.3.ChancePrecipitation)]</label>
-							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>!String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.3.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3220,7 +3236,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.4.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3271,7 +3287,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.5.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3322,7 +3338,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.6.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3373,7 +3389,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.7.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3424,7 +3440,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.8.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3475,7 +3491,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.9.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3526,7 +3542,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.10.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3577,7 +3593,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.11.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3628,7 +3644,7 @@
 						<control type="label">
 							<include>TWC.Hourly.ListPrecipitation</include>
 							<label>$INFO[Window.Property(Hourly.12.Precipitation)]</label>
-							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+							<visible>String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider),Weatherbit)</visible>
 						</control>
 						<include>TWC.Hourly.ListWindTexture</include>
 						<control type="label">
@@ -3746,19 +3762,20 @@
 			<texture>line_v.png</texture>
 		</control>
 	</include>
+<!-- 36 Hour -->
 	<include name="TWC.36Hour">
 		<control type="group">
 			<posx>435</posx>
 			<posy>90</posy>
-			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + !String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),36hour) + [!String.Contains(Window.Property(WeatherProvider),Yahoo) | [String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)]]</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="label">
 				<description>loading label</description>
 				<include>TWC.LoadingLabelCommon</include>
-				<visible>String.IsEmpty(Window.Property(36Hour.IsFetched)) + !String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
+				<visible>String.IsEmpty(Window.Property(36Hour.IsFetched))</visible>
 			</control>
 			<control type="grouplist">
-				<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched)) | String.Contains(Window.Property(WeatherProvider),Yahoo)</visible>
+				<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched))</visible>
 				<posx>0</posx>
 				<posy>60</posy>
 				<width>1380</width>
@@ -5365,11 +5382,11 @@
 		<aligny>center</aligny>
 	</include>
 	<include name="TWC.Maps">
-		<control type="group">  <!-- Weatherbit.IO and openweathermap maps -->
+		<control type="group">  <!-- Weatherbit.IO, Multi and openweathermap maps -->
 			<posx>435</posx>
 			<posy>90</posy>
 			<onright>5200</onright>
-			<visible>String.IsEqual(Window.Property(Weather.CurrentView),maps) + [String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider), Weatherbit)] + System.HasAddon(script.openweathermap.maps)</visible>
+			<visible>String.IsEqual(Window.Property(Weather.CurrentView),maps) + [String.IsEqual(Window.Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window.Property(WeatherProvider), Weatherbit) | String.Contains(Window.Property(WeatherProvider), Multi)] + System.HasAddon(script.openweathermap.maps)</visible>
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<!-- Category buttons and maps -->
 			<control type="group" id="5200">

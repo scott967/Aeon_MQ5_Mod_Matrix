@@ -11,8 +11,8 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include condition="!Skin.HasSetting(fix3)">Quickfix</include>
 	<onload condition="!String.IsEqual(skin.string(defaultsettings),2)">SetFocus(900)</onload>
-	<onload condition="SkinString(custom_wxicons.path)">SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onload>
-	<onload condition="!SkinString(custom_wxicons.path)">SetProperty(current_wxicon_path,resource://resource.images.weathericons.default/,0)</onload>
+	<onload condition="Skin.String(custom_wxicons.path)">SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],home)</onload>
+	<onload condition="!Skin.String(custom_wxicons.path)">SetProperty(current_wxicon_path,resource://resource.images.weathericons.default/,home)</onload>
 	<!-- copied from startup.xml -->
 	<onload condition="System.HasAddon(script.skin.info.service) + !String.IsEqual(Window.Property(skin.aeonmq5.matrixmod.status),run)">RunScript(script.skin.info.service)</onload>
 	<onload condition="Skin.HasSetting(custommode) + !String.IsEqual(Window.Property(skin.aeonmq5.matrixmod.status),run)">Skin.Reset(custommode)</onload>
@@ -22,7 +22,7 @@
 	<onload>SetProperty(skin.aeonmq5.matrixmod.status,run,home)</onload>
 
 	<!-- default weather icons -->
-	<onload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,0)</onload>
+	<onload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,home)</onload>
 	<onload condition="Player.HasAudio + System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<onload condition="System.HasAddon(script.favourites) + ![String.IsEmpty(skin.string(favouriteswidget)) | Skin.HasSetting(nofavouriteswidget)]">RunScript(script.favourites)</onload>
 	<onload condition="Skin.HasSetting(rcbgames) | [!String.IsEqual(Window.Property(skin.aeonmq5.matrixmod.status),run) + System.HasAddon(script.games.rom.collection.browser) + ![String.IsEmpty(skin.string(gameswidget)) | Skin.HasSetting(nogameswidget)]]">RunScript(script.games.rom.collection.browser,limit=12)</onload>
@@ -980,7 +980,7 @@
 					<scroll>true</scroll>
 					<visible>String.IsEqual(skin.font,Massive)</visible>
 					<animation effect="fade" start="100" end="90" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
-					<animation effect="slide" start="0,0" end="-112,0" condition="![String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io)]">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-112,0" condition="![String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io) | String.IsEqual(Weather.Plugin,weather.multi)]">Conditional</animation>
 				</control>
 				<control type="label">
 					<posx>1328</posx>
@@ -995,7 +995,7 @@
 					<scroll>true</scroll>
 					<visible>!String.IsEqual(skin.font,Massive)</visible>
 					<animation effect="fade" start="100" end="90" time="0" condition="!Control.Hasfocus(9000)">conditional</animation>
-					<animation effect="slide" start="0,0" end="-112,0" condition="![String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io)]">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-112,0" condition="![String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io) | String.IsEqual(Weather.Plugin,weather.multi)]">Conditional</animation>
 				</control>
 			</control>
 			<control type="group">

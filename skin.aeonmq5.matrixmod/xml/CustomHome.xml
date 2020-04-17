@@ -107,21 +107,21 @@
 					<width>270</width>
 					<height>135</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>
+					<texture background="true">$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.1.OutlookIcon)]</texture>
 				</control>
 				<control type="image">
 					<!-- Icone do clima 2 -->
 					<width>270</width>
 					<height>135</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>
+					<texture background="true">$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.4.OutlookIcon)]</texture>
 				</control>
 				<control type="image">
 					<!-- Icone do clima 3 -->
 					<width>270</width>
 					<height>135</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$INFO[Window(0).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
+					<texture background="true">$INFO[Window(home).Property(current_wxicon_path)]$INFO[Window(Weather).Property(Daily.7.OutlookIcon)]</texture>
 				</control>
 			</control>
 			<control type="grouplist">

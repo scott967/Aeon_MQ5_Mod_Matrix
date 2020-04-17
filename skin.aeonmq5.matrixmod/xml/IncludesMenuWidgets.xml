@@ -39085,7 +39085,7 @@
 			<animation effect="slide" start="0,-525" end="0,0" time="300" delay="700" easing="out" tween="sine">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,-525" time="200" easing="in" tween="sine">Hidden</animation>
 			<animation effect="slide" start="0,0" end="0,-570" time="300" easing="out" tween="sine" condition="[String.Contains(skin.string(widgetsmode),manual) | String.Contains(skin.string(widgetsmode),auto) + !Control.IsVisible(9931)] + !Control.HasFocus(520)">Conditional</animation>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Window.IsVisible(Home) + [String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io)]</visible>
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather) + Window.IsVisible(Home) + [String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io) | String.IsEqual(Weather.Plugin,weather.multi)]</visible>
 			<control type="button" id="520">
 				<!-- panel focus -->
 				<include>InvisibleButton</include>
@@ -39210,7 +39210,8 @@
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<label>$LOCALIZE[31874]</label>
 				<scroll>true</scroll>
-				<visible>!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+				<!-- <visible>!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible> -->
+				<visible>![String.IsEmpty(Window(Weather).Property(Daily.1.ChancePrecipitation)) + String.IsEmpty(Window(Weather).Property(Daily.1.Probability)) + String.IsEmpty(Window(Weather).Property(Daily.1.Precipitation))]</visible>
 			</control>
 			<control type="label">
 				<posx>82</posx>
@@ -39222,7 +39223,7 @@
 				<font>Font_18A</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Daily.1.ChancePrecipitation)]</label>
-				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.IsEqual(Window(Weather).Property(WeatherProvider),Weatherbit IO)]</visible>
+				<visible>![String.Contains(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)]</visible>
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
@@ -39235,7 +39236,7 @@
 				<font>Font_18A</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Daily.1.Precipitation)]</label>
-				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>String.Contains(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
@@ -39248,7 +39249,7 @@
 				<font>Font_18A</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Daily.1.Probability)]</label>
-				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),Weatherbit IO)</visible>
+				<visible>String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)</visible>
 				<scroll>true</scroll>
 			</control>
 			<control type="image">
@@ -39271,7 +39272,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.AvgHighTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.IsEqual(Window(Weather).Property(WeatherProvider),Weatherbit IO)]</visible>
+				<visible>![String.Containsl(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)]</visible>
 			</control>
 			<control type="label">
 				<posx>112</posx>
@@ -39284,7 +39285,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.HighTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>String.Contains(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			</control>
 			<control type="label">
 				<posx>112</posx>
@@ -39297,7 +39298,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</label>
 				<scroll>true</scroll>
-				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),Yahoo) | String.IsEqual(Window(Weather).Property(WeatherProvider),Weatherbit IO)</visible>
+				<visible>String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)</visible>
 			</control>
 			<control type="image">
 				<!-- Minima prevista -->
@@ -39319,7 +39320,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.AvgLowTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.IsEqual(Window(Weather).Property(WeatherProvider),Weatherbit IO)]</visible>
+				<visible>![String.Contains(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)]</visible>
 			</control>
 			<control type="label">
 				<posx>112</posx>
@@ -39332,7 +39333,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Today.LowTemperature)]</label>
 				<scroll>true</scroll>
-				<visible>String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
+				<visible>String.Contains(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended)</visible>
 			</control>
 			<control type="label">
 				<posx>112</posx>
@@ -39345,7 +39346,7 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</label>
 				<scroll>true</scroll>
-				<visible>String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.IsEqual(Window(Weather).Property(WeatherProvider),Weatherbit IO)</visible>
+				<visible>String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)</visible>
 			</control>
 			<control type="label">
 				<!-- Umidade -->
@@ -39384,7 +39385,8 @@
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<label>$LOCALIZE[403]</label>
 				<scroll>true</scroll>
-				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
+				<!-- <visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)]</visible> -->
+				<visible>!String.IsEmpty(Window(Weather).Property(Current.UVIndex))</visible>
 			</control>
 			<control type="label">
 				<posx>495</posx>
@@ -39397,7 +39399,8 @@
 				<textcolor>FFFFFAF0</textcolor>
 				<label>$INFO[Window(Weather).Property(Current.UVIndex)]</label>
 				<scroll>true</scroll>
-				<visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)]</visible>
+				<!-- <visible>![String.IsEqual(Window(Weather).Property(WeatherProvider),OpenWeatherMap Extended) | String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)]</visible> -->
+				<visible>!String.IsEmpty(Window(Weather).Property(Current.UVIndex))</visible>
 			</control>
 			<control type="label">
 				<!-- Pt Orvalho -->
@@ -39475,7 +39478,8 @@
 				<posx>540</posx>
 				<posy>150</posy>
 				<orientation>horizontal</orientation>
-				<visible>String.Contains(skin.string(weather_mode),7days) + !String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + String.IsEqual(Window(Weather).Property(Daily.IsFetched),true)</visible>
+				<!-- <visible>String.Contains(skin.string(weather_mode),7days) + !String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + String.IsEqual(Window(Weather).Property(Daily.IsFetched),true)</visible> -->
+				<visible>String.Contains(skin.string(weather_mode),7days) + String.IsEqual(Window(Weather).Property(Daily.IsFetched),true) + !String.IsEmpty(Window(Weather).Property(Daily.7.ShortDay)) + [!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)]</visible>
 				<control type="group">
 					<!-- Day 1 -->
 					<include>Widget_Weather7Day</include>
@@ -39780,7 +39784,7 @@
 				<posx>540</posx>
 				<posy>150</posy>
 				<orientation>horizontal</orientation>
-				<visible>String.Contains(skin.string(weather_mode),7days) + String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+				<visible>String.Contains(skin.string(weather_mode),7days) + String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + !String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)</visible>
 				<control type="group">
 					<!-- Day 1 -->
 					<include>Widget_Weather7Day</include>
@@ -40065,7 +40069,7 @@
 				<posy>150</posy>
 				<orientation>horizontal</orientation>
 				<itemgap>495</itemgap>
-				<visible>String.Contains(skin.string(weather_mode),weekend) + !String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + !String.IsEmpty(Window(Weather).Property(Weekend.IsFetched))</visible>
+				<visible>String.Contains(skin.string(weather_mode),weekend) + [!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) |  String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)] + !String.IsEmpty(Window(Weather).Property(Weekend.IsFetched))</visible>
 				<control type="group">
 					<!-- Day 1 -->
 					<include>Widget_WeatherWeekend</include>
@@ -40158,7 +40162,7 @@
 				<posy>150</posy>
 				<orientation>horizontal</orientation>
 				<itemgap>0</itemgap>
-				<visible>String.Contains(skin.string(weather_mode),36hour) + !String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + !String.IsEmpty(Window(Weather).Property(36Hour.IsFetched))</visible>
+				<visible>String.Contains(skin.string(weather_mode),36hour) + [!String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) | String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)] + !String.IsEmpty(Window(Weather).Property(36Hour.IsFetched))</visible>
 				<control type="group">
 					<!-- Day 1 -->
 					<include>Widget_Weather36hour</include>
@@ -40280,7 +40284,7 @@
 				<posy>150</posy>
 				<orientation>horizontal</orientation>
 				<itemgap>0</itemgap>
-				<visible>String.Contains(skin.string(weather_mode),36hour) + String.Contains(Window(Weather).Property(WeatherProvider),Yahoo)</visible>
+				<visible>String.Contains(skin.string(weather_mode),36hour) + String.Contains(Window(Weather).Property(WeatherProvider),Yahoo) + !String.Contains(Window(Weather).Property(WeatherProvider),Weatherbit)</visible>
 				<control type="group">
 					<!-- Day 1 -->
 					<include>Widget_Weather36hour</include>
