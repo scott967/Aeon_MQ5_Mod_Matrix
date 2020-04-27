@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]03/31/2020</value>
+		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]04/30/2020</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -3814,13 +3814,13 @@
 		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonCreator]</value>
 	</variable>
 	<variable name="value_ground14_label">   <!-- used in media list views 51,53,54,55,57,60,61,64,66,71 -->
+		<value condition="String.IsEqual(ListItem.DBType,song) | [String.IsEqual(ListItem.DBType,musicvideo) + Window.IsActive(music)]">$LOCALIZE[558]</value>   <!-- Album -->
 		<value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,set)">$LOCALIZE[20339]</value> <!-- Diretor -->
 		<value condition="String.IsEqual(ListItem.DBType,tvshow)">$LOCALIZE[20360]</value>  <!-- Episodes (unwatched) -->
 		<value condition="String.IsEqual(ListItem.DBType,season)">$LOCALIZE[20360]</value>   <!-- Episodes (total) -->
 		<value condition="String.IsEqual(ListItem.DBType,episode)">$LOCALIZE[180]</value>  <!-- Duration in mins -->
 		<value condition="String.IsEqual(ListItem.DBType,artist)">$LOCALIZE[21892]</value>  <!-- artist instruments -->
 		<value condition="String.IsEqual(ListItem.DBType,album)">$LOCALIZE[564]</value>  <!-- type (album) -->
-		<value condition="String.IsEqual(ListItem.DBType,song)">$LOCALIZE[558]</value>   <!-- Album -->
 		<value condition="Window.IsActive(programs) + !Container.Content(Addons)">$LOCALIZE[31788]</value>  <!-- developer -->
 		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$LOCALIZE[21863]</value>  <!-- addon creator -->
 	</variable>
