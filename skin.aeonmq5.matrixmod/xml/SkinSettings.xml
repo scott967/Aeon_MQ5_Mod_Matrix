@@ -4,14 +4,15 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.3.0/10.4.0/10.6.2 -->
+<!-- Matrix 11.0.4 -->
 <window>
 	<defaultcontrol always="true">9100</defaultcontrol>
 	<onunload condition="String.Contains(skin.string(customwindow),video)">SetFocus(50)</onunload>
 	<onunload>Skin.Reset(customwindow)</onunload>
 	<onunload>Skin.Reset(resetmode)</onunload>
 	<onunload>Skin.Reset(fonte)</onunload>
-	<onunload>SetProperty(home,current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],0)</onunload>
-	<onunload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(home,current_wxicon_multi,true,0)</onunload>
+	<onunload>SetProperty(current_wxicon_path,$INFO[Skin.String(custom_wxicons.path)],home)</onunload>
+	<onunload condition="Skin.HasSetting(custom_wxicons.multi)">SetProperty(current_wxicon_multi,true,home)</onunload>
 	<controls>
 		<control type="multiimage">
 			<include>HomeBG</include>
