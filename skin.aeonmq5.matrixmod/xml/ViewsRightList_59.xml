@@ -4,6 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.2.4/10.3.0/10.5.0/10.5.1/10.5.2/10.6.1/10.6.2 -->
+<!-- Matrix 11.0.4 -->
 <includes>
 	<!--##################################################################################   VISTA RIGHT LIST - ID 59   ##################################################################################-->
 	<include name="RightListLabel">
@@ -413,7 +414,7 @@
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</focusedlayout>
-					<focusedlayout condition="!IsEmpty(Control.GetLabel(5902)) + [[Window.IsActive(videos) | Window.IsActive(videoplaylist)] + !Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimrightlistmusic)]" height="75">
+					<focusedlayout condition="!String.IsEmpty(Control.GetLabel(5902)) + [[Window.IsActive(videos) | Window.IsActive(videoplaylist)] + !Skin.HasSetting(slimrightlistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(slimrightlistmusic)]" height="75">
 						<control type="image">
 							<animation effect="fade" start="100" end="60" time="0" condition="!Control.Hasfocus(51)">conditional</animation>
 							<posx>0</posx>
