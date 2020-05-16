@@ -743,7 +743,7 @@
 							<include>HomeFlagLabel</include>
 							<label>$INFO[Container(510).ListItem.Property(VideoRating)]</label>
 							<scroll>true</scroll>
-							<visible>!String.IsEmpty(Container(510).ListItem.Property(VideoRating)) + Integer.IsGreater(Container(510).ListItem.Property(VideoRating),0)</visible>
+							<visible>!String.IsEmpty(Container(510).ListItem.Property(VideoRating)) + ![String.IsEqual(Container(510).ListItem.Property(VideoRating),0.0) | String.IsEmpty(Container(510).ListItem.Property(VideoRating))]</visible>
 						</control>
 						<control type="label">
 							<!-- Music Rating -->

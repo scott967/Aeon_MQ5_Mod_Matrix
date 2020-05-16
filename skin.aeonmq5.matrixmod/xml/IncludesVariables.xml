@@ -2801,12 +2801,12 @@
 		<value condition="!String.IsEmpty(Container(510).ListItem.Property(EpisodeNumber))">$INFO[Container(510).ListItem.Label2]$INFO[Container(510).ListItem.Property(EpisodeNumber),[COLOR=80FFFFFF] | [/COLOR]]</value>
 	</variable>
 	<variable name="value_mfvideostarrating">
-		<value condition="!Integer.IsGreater(Container(510).ListItem.Property(VideoRating),1)">rating0.png</value>
-		<value condition="Integer.IsGreater(Container(510).ListItem.Property(VideoRating),1) + !Integer.IsGreater(Container(510).ListItem.Property(VideoRating),3)">rating1.png</value>
-		<value condition="Integer.IsGreater(Container(510).ListItem.Property(VideoRating),3) + !Integer.IsGreater(Container(510).ListItem.Property(VideoRating),5)">rating2.png</value>
-		<value condition="Integer.IsGreater(Container(510).ListItem.Property(VideoRating),5) + !Integer.IsGreater(Container(510).ListItem.Property(VideoRating),7)">rating3.png</value>
-		<value condition="Integer.IsGreater(Container(510).ListItem.Property(VideoRating),7) + !Integer.IsGreater(Container(510).ListItem.Property(VideoRating),9)">rating4.png</value>
-		<value condition="Integer.IsGreater(Container(510).ListItem.Property(VideoRating),9)">rating5.png</value>
+		<value condition="String.StartsWith(Container(510).ListItem.Property(VideoRating),0.0)">rating0.png</value>
+		<value condition="String.StartsWith(Container(510).ListItem.Property(VideoRating),9) | String.StartsWith(Container(510).ListItem.Property(VideoRating),10)">rating5.png</value>
+		<value condition="String.StartsWith(Container(510).ListItem.Property(VideoRating),7) | String.StartsWith(Container(510).ListItem.Property(VideoRating),8)">rating4.png</value>
+		<value condition="String.StartsWith(Container(510).ListItem.Property(VideoRating),5) | String.StartsWith(Container(510).ListItem.Property(VideoRating),6)">rating3.png</value>
+		<value condition="String.StartsWith(Container(510).ListItem.Property(VideoRating),3) | String.StartsWith(Container(510).ListItem.Property(VideoRating),4)">rating2.png</value>
+		<value condition="String.StartsWith(Container(510).ListItem.Property(VideoRating),1) | String.StartsWith(Container(510).ListItem.Property(VideoRating),0)">rating1.png</value>
 	</variable>
 	<variable name="value_mfmusicstarrating">
 		<value condition="String.IsEqual(Container(510).ListItem.Property(MusicRating),1)">rating1.png</value>
