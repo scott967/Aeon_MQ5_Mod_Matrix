@@ -493,12 +493,12 @@
 					<!-- 59 -->
 					<include condition="Skin.HasSetting(viewpanel_music)">ViewPanel</include>
 					<!-- 62 -->
+					<include condition="Skin.HasSetting(viewshelfcase_music)">ViewShelfCase</include>
+					<!-- 69-->
 					<include condition="Skin.HasSetting(viewmidlist_music)">ViewMidList</include>
 					<!-- 70-->
 					<include condition="Skin.HasSetting(viewmultilist_music)">ViewMultiList</include>
 					<!-- 71 -->
-					<include condition="Skin.HasSetting(viewshelfcase_music)">ViewShelfCase</include>
-					<!-- 69-->
 				</control>
 				<control type="image">
 					<!-- Logo -->
