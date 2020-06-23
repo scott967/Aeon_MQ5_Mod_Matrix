@@ -66,6 +66,24 @@
 			<label>$VAR[value_videofanart]</label>
 			<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),seasons)</visible>
 		</control>
+		<control type="list" id="5026">		<!-- invisible list to get album art for musicvideos -->
+			<posx>-500</posx>
+			<posy>0</posy>
+			<visible>Container.Content(albums)</visible>
+			<itemlayout />
+			<focusedlayout />
+			<content sortby="track" sortorder="ascending">musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Label]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
+		</control>
+		<control type="fixedlist" id="5027"> <!-- invisible list to get number movies in set -->
+			<posx>-500</posx>
+			<posy>0</posy>
+			<visible>ListItem.IsCollection</visible>
+			<itemlayout>
+			</itemlayout>
+			<focusedlayout>
+			</focusedlayout>
+			<content sortby="year" sortorder="ascending">$INFO[ListItem.FolderPath]</content>
+		</control>
 		<control type="image">
 			<!-- Single Fanart -->
 			<include>WindowBG</include>
