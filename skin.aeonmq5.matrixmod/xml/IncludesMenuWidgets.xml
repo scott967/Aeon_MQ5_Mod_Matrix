@@ -4012,7 +4012,7 @@
 					<aligny>top</aligny>
 					<font>Font_17AB</font>
 					<textcolor>FFFFFAF0</textcolor>
-					<label>[LOWERCASE]$VAR[SkinVersion][CR]$INFO[System.BuildVersion][COLOR=80FFFFFF] | [/COLOR]$INFO[System.BuildDate][CR]$VAR[value_skinstatus_theme][CR]$VAR[value_skinstatus_style][CR]$VAR[value_skinstatus_texturecolor][CR]$VAR[value_skinstatus_headercolor][CR]$VAR[value_skinstatus_homeglass][CR]$INFO[System.ProfileName][CR]$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight] pxl[CR]$INFO[System.CpuFrequency][/LOWERCASE]</label>
+					<label>[LOWERCASE]$VAR[SkinVersion][CR]$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)][COLOR=80FFFFFF] / Git [/COLOR]$INFO[System.BuildVersionGit][COLOR=80FFFFFF] |  [/COLOR]$INFO[System.BuildDate][CR]$VAR[value_skinstatus_theme][CR]$VAR[value_skinstatus_style][CR]$VAR[value_skinstatus_texturecolor][CR]$VAR[value_skinstatus_headercolor][CR]$VAR[value_skinstatus_homeglass][CR]$INFO[System.ProfileName][CR]$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight] pxl[CR]$INFO[System.CpuFrequency][/LOWERCASE]</label>
 				</control>
 				<control type="label">
 					<posx>788</posx>
