@@ -3739,7 +3739,9 @@
 		<value condition="Window.IsActive(musicplaylist) + !String.IsEmpty(VideoPlayer.Artist)">$LOCALIZE[31582]   $INFO[VideoPlayer.Artist]</value>
 		<value condition="Window.IsVisible(VideoPlaylist) + !String.IsEmpty(Container.ListItemAbsolute(0).Year) + MusicPartyMode.Enabled">$LOCALIZE[31582]   $INFO[Container.ListItemAbsolute(0).Year]</value>
 		<!-- fixed for party mode -->
-		<value condition="Window.IsVisible(VideoPlaylist) + !String.IsEmpty(VideoPlayer.Year)">$LOCALIZE[31582]   $INFO[VideoPlayer.Year]</value>
+		<!-- <value condition="Window.IsVisible(VideoPlaylist) + !String.IsEmpty(VideoPlayer.Year)">$LOCALIZE[31582]   $INFO[VideoPlayer.Year]</value> -->
+		<value condition="Window.IsVisible(VideoPlaylist) + Player.HasVideo">$LOCALIZE[31582]   $INFO[VideoPlayer.Title]</value>  <!-- Now playing title -->
+		<value condition="Window.IsVisible(VideoPlaylist) + !Player.HasVideo">$INFO[ListItem.Title]</value>  
 		<value condition="!ListItem.IsCollection + ![Window.IsActive(musicplaylist) + Player.HasAudio]">$INFO[ListItem.Year]</value>
 		<value condition="ListItem.IsCollection">$INFO[Window(home).Property(SkinInfo.Set.Movies.Years)]</value>
 	</variable>
@@ -3904,14 +3906,19 @@
 		<value condition="!Skin.HasSetting(nopreferclearart) + String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 	</variable>
 	<variable name="value_poster">
+		<!--  art for musicplaylist -->
 		<value condition="Window.IsActive(musicplaylist) + Player.HasAudio +  !String.IsEmpty(Player.Art(album.thumb))">$INFO[Player.Art(album.thumb)]</value>
 		<value condition="Window.IsActive(musicplaylist) + ![Player.HasAudio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] +  String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Art(album.thumb)]</value>
 		<value condition="Window.IsActive(musicplaylist) + ![Player.HasAudio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] +  String.IsEqual(ListItem.DBType,musicvideo)">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="Window.IsActive(musicplaylist) + Player.HasVideo +  VideoPlayer.Content(musicvideos)">$INFO[Player.Art(thumb)]</value>  <!-- MV is playing on mixed playlist -->
+		<!-- art for other than msuicplaylist (not genres)  -->
 		<value condition="![String.IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(cover)) + Container.Content(musicvideos)">$INFO[ListItem.Art(cover)]</value>
+		<value condition="Window.IsVisible(videos) + Container.Content(albums)">$INFO[Container(5026).ListItem(0).Art(thumb)]</value>  <!-- invisible list to get album art for musicvideos -->
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.DBType) + Container.Content(songs) + String.Contains(ListItem.Path,musicvideos)">DefaultMusicVideos.png</value> <!-- for mv in mixed m3u playlists in music -->
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
-		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">
+		<!--  genre art -->$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
 		<value condition="Window.IsActive(videos) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
 		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + !Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
