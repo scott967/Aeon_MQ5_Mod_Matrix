@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.6 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
 <!-- Leia 10.6.1/10.6.2 -->
+<!-- Matrix 11.0.4 -->
 <includes>
 	<!--##################################################################################   VISTA MULTIPLEX - ID 61   #############################################################################-->
 	<include name="MultiplexLabel_Fanart">
@@ -374,8 +375,7 @@
 					<fadetime>FanartCrossFadeTime</fadetime>
 				</control>
 			</control>
-			<control type="group">
-				<!-- painel de info extrathumbs layout -->
+			<control type="group">	<!-- info panel extrathumbs layout -->
 				<animation effect="slide" start="0,-900" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-900" time="500" tween="sine" easing="out">Hidden</animation>
 				<visible>[Control.HasFocus(9961) | String.IsEqual(skin.string(multiplexvideopanel),alwayson) | String.IsEqual(skin.string(multiplexvideopanel),auto) + Control.IsVisible(9921)] + String.Contains(skin.string(multiplexlayout),extrathumbs) + ![String.IsEqual(ListItem.Label,..) | Container.Content(years) | Container.Content(genres) | Container.Content(actors) | String.Contains(ListItem.DBType,set)]</visible>
