@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.16/9.1.18/9.1.19/9.2.1 window IDs 2003/9.2.2 -->
 <!-- Leia 10.2.5/10.3.0/10.4.0/10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.3 -->
+<!-- Matrix 11.0.1/11.0.3/11.0.4 -->
 <window>
 	<onload>Control.SetFocus(50,0,absolute)</onload>
 	<onload>Control.SetFocus(149)</onload>
@@ -91,7 +91,7 @@
 				<scroll>true</scroll>
 			</control>
 			<!-- edited for MV and sets -->
-			<control type="group">
+			<control type="group">  <!-- set info -->
 				<visible>String.IsEqual(ListItem.DBType, set)</visible>
 				<control type="image">
 					<posx>0</posx>
@@ -123,13 +123,13 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Font_18A</font>
-					<label>$INFO[Window(home).Property(Set.Movies.Genre)]</label>
+					<label>$INFO[Window(home).Property(SkinInfo.Set.Movies.Genre)]</label>
 					<textcolor>FFFFFAF0</textcolor>
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group"> <!-- non-set info -->
 				<visible>!String.IsEqual(ListItem.DBType, set)</visible>
 				<control type="label">
 					<posx>45</posx>
@@ -715,7 +715,7 @@
 				<height>200</height>
 				<align>justify</align>
 				<font>Font_18A</font>
-				<label>$VAR[value_plotmoviesets]</label>
+				<label>$VAR[value_plotmoviesets]</label>  <!-- sets view 65 -->
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 				<visible>Container.Content(sets) + String.IsEmpty(ListItem.Art(poster))</visible>
@@ -805,7 +805,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_DefaultGlass</include>
 			</control>
-			<control type="grouplist">
+			<control type="grouplist"> <!-- flags except for sets -->
 				<!-- Etiquetas -->
 				<posx>165</posx>
 				<posy>1016</posy>
@@ -814,9 +814,9 @@
 				<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,450" time="500" tween="sine" easing="in">Hidden</animation>
-				<visible>Control.HasFocus(149)</visible>
+				<visible>Control.HasFocus(149) + !String.Contains(ListItem.DBType,set)</visible>
 				<control type="image">
-					<!-- Codec -->
+					<!-- studio -->
 					<include>FlagImage</include>
 					<texture>$VAR[value_studiosicon]</texture>
 					<visible>!String.IsEmpty(Control.GetLabel(9925))</visible>
@@ -902,6 +902,106 @@
 						<font>Font_20B</font>
 						<textcolor>$VAR[value_flagscolor]</textcolor>
 						<label>$INFO[ListItem.PercentPlayed]%</label>
+					</control>
+				</control>
+			</control>
+			<control type="grouplist"> <!-- flags for container(50) movie in sets -->
+				<!-- Etiquetas -->
+				<posx>165</posx>
+				<posy>1016</posy>
+				<orientation>horizontal</orientation>
+				<itemgap>52</itemgap>
+				<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">WindowOpen</animation>
+				<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,450" time="500" tween="sine" easing="in">Hidden</animation>
+				<visible>Control.HasFocus(149) + String.Contains(ListItem.DBType,set)</visible>
+				<control type="image">
+					<!-- Codec -->
+					<include>FlagImage</include>
+					<texture>$VAR[value_studiosicon]</texture>
+					<visible>!String.IsEmpty(Control.GetLabel(9925))</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Control.GetLabel(9925))</visible>
+				</control>
+				<control type="image">
+					<!-- Codec -->
+					<include>FlagImage</include>
+					<texture>$VAR[value_videocodec]</texture>
+					<visible>!String.IsEmpty(Container(50).ListItem.VideoCodec)</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Container(50).ListItem.VideoCodec)</visible>
+				</control>
+				<control type="image">
+					<!-- Resolution -->
+					<include>FlagImage</include>
+					<texture>$INFO[Container(50).ListItem.VideoResolution,flags/resolution/,.png]</texture>
+					<visible>!String.IsEmpty(Container(50).ListItem.VideoResolution)</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Container(50).ListItem.VideoResolution)</visible>
+				</control>
+				<control type="image">
+					<!-- Aspect -->
+					<include>FlagImage</include>
+					<texture>$INFO[Container(50).ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+					<visible>!String.IsEmpty(Container(50).ListItem.VideoAspect)</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Container(50).ListItem.VideoAspect)</visible>
+				</control>
+				<control type="image">
+					<!-- Audio Codec -->
+					<include>FlagImage</include>
+					<texture>$INFO[Container(50).ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
+					<visible>!String.IsEmpty(Container(50).ListItem.AudioCodec)</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Container(50).ListItem.AudioCodec)</visible>
+				</control>
+				<control type="image">
+					<!-- Channels -->
+					<include>FlagImage</include>
+					<texture>$INFO[Container(50).ListItem.AudioChannels,flags/audiochannels/,ch.png]</texture>
+					<visible>!String.IsEmpty(Container(50).ListItem.AudioChannels)</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Container(50).ListItem.AudioChannels)</visible>
+				</control>
+				<control type="image">
+					<!-- Trailer -->
+					<include>FlagImage</include>
+					<texture>flags/trailer.png</texture>
+					<visible>!String.IsEmpty(Container(50).ListItem.Trailer)</visible>
+				</control>
+				<control type="image">
+					<include>FlagSeparator</include>
+					<visible>!String.IsEmpty(Container(50).ListItem.Trailer) + Container(50).ListItem.IsResumable</visible>
+				</control>
+				<control type="group">
+					<!-- % Played -->
+					<visible>Container(50).ListItem.IsResumable</visible>
+					<control type="image">
+						<include>FlagImage</include>
+						<texture>flags/percentplayed.png</texture>
+					</control>
+					<control type="label">
+						<posx>18</posx>
+						<posy>2</posy>
+						<width>134</width>
+						<height>75</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_20B</font>
+						<textcolor>$VAR[value_flagscolor]</textcolor>
+						<label>$INFO[Container(50).ListItem.PercentPlayed]%</label>
 					</control>
 				</control>
 			</control>
@@ -1025,7 +1125,7 @@
 						<align>center</align>
 						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoPoster.png" background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="-2">black.png</bordertexture>
+						<bordertexture border="-2">grey.png</bordertexture>
 						<colordiffuse>FF909090</colordiffuse>
 						<include>Animation_Fade</include>
 						<visible>!Control.HasFocus(50)</visible>
@@ -1227,7 +1327,7 @@
 							<visible>!String.IsEmpty(ListItem.Director) + !Container.Content(sets)</visible>
 						</item>
 						<item id="10">
-							<label>$LOCALIZE[31496]</label>
+							<label>$LOCALIZE[31496]</label> <!-- extra info -->
 							<onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>"
 							<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode) | String.IsEqual(ListItem.DbType,set)]</visible>
 						</item>
