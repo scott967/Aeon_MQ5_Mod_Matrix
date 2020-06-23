@@ -27,7 +27,7 @@
 		<animation effect="rotate" start="0" end="-360" center="auto" time="40000" delay="5000" loop="true" reversible="false" condition="!Player.HasVideo">Conditional</animation>
 		<include>Animation_ViewsCDart</include>
 	</include>
-	<include name="ViewRightList">
+	<include name="ViewRightList">  <!-- top of list is posy 45 -->
 		<control type="group">
 			<!-- default group -->
 			<animation effect="fade" time="400">VisibleChange</animation>
@@ -39,7 +39,7 @@
 				<onleft>59</onleft>
 				<onright>9920</onright>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- posx 0 posy 45 -->
 				<animation effect="slide" time="500" start="0,600" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" time="500" start="0,600" end="0,0" tween="cubic" easing="out">Visible</animation>
 				<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
@@ -53,7 +53,7 @@
 					<include>Animation_Fade</include>
 				</control>
 				<control type="image">
-					<!-- Logo -->
+					<!-- Clearlogo (music) -->
 					<posx>540</posx>
 					<posy>660</posy>
 					<width>450</width>
@@ -64,7 +64,7 @@
 					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + !String.IsEqual(ListItem.DBType, genre)</visible>
 				</control>
 				<control type="image">
-					<!-- clearlogo e clearart -->
+					<!-- listitem.art(clearlogo or clearart) (videos)  -->
 					<posx>540</posx>
 					<posy>660</posy>
 					<width>450</width>
@@ -130,7 +130,7 @@
 					<animation effect="fade" end="40" condition="Window.IsActive(videoplaylist)">Conditional</animation>
 				</control>
 				<control type="label">
-					<!-- Year/Publisher (video) Now Playing Artist (music) -->
+					<!-- Year/title (video) Now Playing Artist (music) -->
 					<posx>480</posx>
 					<posy>816</posy>
 					<width>570</width>
@@ -142,10 +142,9 @@
 					<scroll>true</scroll>
 					<scrollspeed>25</scrollspeed>
 				</control>
-				<control type="grouplist">
-					<!-- Info panel for focus listitem or nowplaying in playlist windows -->
+				<control type="grouplist">	<!-- Info panel for focus listitem or nowplaying in playlist windows -->
 					<posx>480</posx>
-					<posy>858</posy>
+					<posy>858</posy>  <!-- 903 -->
 					<orientation>vertical</orientation>
 					<itemgap>6</itemgap>
 					<visible>$EXP[HasDetailInfo]</visible>
@@ -514,26 +513,25 @@
 					<visible>!Control.HasFocus(9915) + ![Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>
 				</control>
 				<control type="label" id="5901">
-					<!-- Plot -->
+					<!-- button to deermine if item has Plot -->
 					<include>InvisibleButton</include>
 					<label>$VAR[value_plot]</label>
 				</control>
 				<control type="label" id="5902">
-					<!-- Tag Info -->
+					<!-- button to determine if item has Tag Info -->
 					<include>InvisibleButton</include>
 					<label>$VAR[value_listinfofocus]</label>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- posx 0 posy 45 -->
 				<!-- Default Group - Miniaturas -->
 				<posx>45</posx>
-				<posy>300</posy>
+				<posy>300</posy>  <!-- 345 -->
 				<visible>Control.IsVisible(59)</visible>
 				<animation effect="slide" time="1000" start="-600,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" time="1000" start="-600,0" end="0,0" tween="cubic" easing="out">Visible</animation>
 				<animation effect="fade" time="400" start="100" end="0">Hidden</animation>
-				<control type="group">
-					<!-- CDART VIDEO -->
+				<control type="group">	<!-- CDART VIDEO -->
 					<animation type="WindowOpen">
 						<effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
 						<effect type="fade" start="0" end="100" time="500" delay="500" />
@@ -561,8 +559,7 @@
 						<include>Animation_ViewsCDart</include>
 					</control>
 				</control>
-				<control type="grouplist">
-					<!-- CDART SETS -->
+				<control type="grouplist">	<!-- CDART SETS -->
 					<posx>390</posx>
 					<posy>315</posy>
 					<orientation>horizontal</orientation>
@@ -632,14 +629,13 @@
 						<visible>!String.IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))</visible>
 					</control>
 				</control>
-				<control type="group">
-					<!-- VIDEO SEM ESTOJO -->
+				<control type="group">	<!-- VIDEO no case -->
 					<include>Animation_Fade</include>
 					<visible>![!Skin.HasSetting(norightlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 					<control type="image">
 						<!-- Filmes/Fotos/Arquivos reflexo -->
 						<posx>-8</posx>
-						<posy>628</posy>
+						<posy>698</posy>
 						<width>368</width>
 						<height>525</height>
 						<fadetime>FanartCrossFadeTime</fadetime>
@@ -647,12 +643,11 @@
 						<texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_poster]</texture>
 						<bordertexture flipy="true" diffuse="thumb_reflect.png" border="-2">black.png</bordertexture>
 					</control>
-					<control type="image">
-						<!-- Filmes/Fotos/Arquivos -->
-						<posx>-8</posx>
-						<posy>98</posy>
-						<width>368</width>
-						<height>525</height>
+					<control type="image">   <!--  poster > thumb > icon or exception (genre/playlists) -->
+						<posx>-8</posx>  <!-- 37 -->
+						<posy>168</posy>  <!-- 443 -->
+						<width>368</width>  <!-- 405 -->
+						<height>525</height>  <!-- 968 -->
 						<fadetime>FanartCrossFadeTime</fadetime>
 						<aspectratio align="center" aligny="bottom">keep</aspectratio>
 						<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
@@ -669,7 +664,7 @@
 						<label>$INFO[Player.Title]</label>
 						<align>left</align>
 						<aligny>center</aligny>
-						<visible>Player.HasMedia + !String.Contains(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
+						<visible>!Window.IsVisible(videoplaylist) + Player.HasMedia + !String.Contains(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
 					</control>
 					<control type="label">
 						<width>368</width>
@@ -677,15 +672,14 @@
 						<textcolor>FFFFFAF0</textcolor>
 						<textoffsetx>0</textoffsetx>
 						<left>-8</left>
-						<top>691</top>
+						<top>666</top>
 						<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
 						<align>left</align>
 						<aligny>center</aligny>
 						<visible>Player.HasMedia + !String.Contains(Window(Videos).Property(PlayingBackgroundMedia),TRUE)</visible>
 					</control>
 				</control>
-				<control type="group">
-					<!-- FILMES ESTOJO -->
+				<control type="group">	<!-- Video w case -->
 					<include>Animation_Fade</include>
 					<visible>!Skin.HasSetting(norightlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 					<control type="image">
@@ -739,8 +733,7 @@
 						<texture>$VAR[value_videocodec0]</texture>
 					</control>
 				</control>
-				<control type="group">
-					<!-- MUSICA -->
+				<control type="group">	<!-- Music -->
 					<include>Animation_Fade</include>
 					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(norightlistaudiocase) | Container.Content(genres) | Container.Content(roles) | Container.Content(sources)]</visible>
 					<control type="image">
@@ -766,8 +759,7 @@
 						<bordertexture border="-2">black.png</bordertexture>
 					</control>
 				</control>
-				<control type="group">
-					<!-- MUSICA ESTOJO -->
+				<control type="group">	<!-- Music w cd case -->
 					<include>Animation_Fade</include>
 					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Skin.HasSetting(norightlistaudiocase) | Container.Content(genres) | Container.Content(roles) | Container.Content(sources)]</visible>
 					<control type="image">
