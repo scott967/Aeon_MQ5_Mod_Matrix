@@ -3599,20 +3599,22 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Label)]</value>
 	</variable>
 	<variable name="value_listinfofocus">
-		<!-- added for music video -->
-		<value condition="Container.Content(musicvideos)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[557]: [/COLOR] $INFO[ListItem.Artist]</value>
+		<!-- music -->
+		<value condition="String.Contains(ListItem.DBType,musicvideo)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[557]: [/COLOR] $INFO[ListItem.Artist]</value>
+		<value condition="String.Contains(ListItem.DBType,album)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21899]: [/COLOR]$INFO[ListItem.Property(Album_Label)]</value>
+		<value condition="String.Contains(ListItem.DBType,artist) + !String.IsEmpty(ListItem.Property(Artist_Type))">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[146]: [/COLOR]$INFO[ListItem.Property(Artist_Type)] | [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[39026]: [/COLOR]$INFO[ListItem.Property(Artist_Disambiguation)]</value>  <!-- Type/Disambiguation/Artists -->
+		<value condition="String.Contains(ListItem.DBType,artist) + String.IsEmpty(ListItem.Property(Artist_Type))">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[39026]: [/COLOR]$INFO[ListItem.Property(Artist_Disambiguation)]</value>
+		<value condition="String.Contains(ListItem.DBType,song)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration]</value>
+		<value condition="Container.Content(addons) + !String.Contains(ListItem.Label,..)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24051] [/COLOR]$INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24011]: [/COLOR]$INFO[ListItem.AddonOrigin]</value>  <!-- music addon -->
 		<!--    -->
 		<value condition="Container.Content(movies) + !ListItem.IsCollection">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration(mins),, $LOCALIZE[31961]] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20339]: [/COLOR] $INFO[ListItem.Director]</value>
 		<value condition="ListItem.IsCollection">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20457][/COLOR]</value>
 		<value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Episode)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[33054]: [/COLOR]$INFO[ListItem.Property(TotalSeasons)] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]</value>
 		<value condition="Container.Content(seasons) + !String.IsEmpty(ListItem.Episode)">[COLOR=$VAR[value_headercolorfocus]]$INFO[ListItem.TVShowTitle][/COLOR] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]  - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[16101]: [/COLOR]$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
 		<value condition="Container.Content(episodes)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20373]: [/COLOR] $INFO[ListItem.Season] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration(mins),, $LOCALIZE[31961]] - [COLOR=$VAR[value_headercolorfocus]]$INFO[ListItem.TVShowTitle][/COLOR]</value>
-		<value condition="Container.Content(albums)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21899]: [/COLOR]$INFO[ListItem.Property(Album_Label)]</value>
-		<value condition="Container.Content(artists)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21898]: [/COLOR]$INFO[ListItem.Property(Artist_YearsActive)]</value>
-		<!-- YearsActive/Artists -->
-		<value condition="[Container.Content(songs) | Container.Content(mixed)]">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration]</value>
+		<!-- addons -->
 		<value condition="Window.IsActive(programs) + !Container.Content(addons)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[31772]: [/COLOR]$INFO[ListItem.Premiered] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[31788]: [/COLOR]$INFO[ListItem.Studio]</value>
-		<value condition="Window.IsActive(programs) + Container.Content(addons)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24051] [/COLOR]$INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21863]: [/COLOR]$INFO[ListItem.PropertyAddonCreator]</value>
+		<value condition="Window.IsActive(programs) + Container.Content(addons)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24051] [/COLOR]$INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21863]: [/COLOR]$INFO[ListItem.AddonCreator]</value>
 	</variable>
 	<!--  Edit for MV show album not director -->
 	<variable name="value_glasslistinfofocus">
