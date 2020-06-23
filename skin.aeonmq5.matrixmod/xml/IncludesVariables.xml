@@ -4,11 +4,11 @@
 <!-- Aeon MQ5 Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.14/9.1.16/9.1.17/9.1.18/9.1.19 /9.2.0/9.2.1 window IDs/9.2.2 /9.2.3-->
 <!-- Leia 10.2.3 /10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.2 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4 -->
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]04/30/2020</value>
+		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]06/30/2020</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -1766,6 +1766,7 @@
 	</variable>
 	<variable name="value_studiosicon">
 		<value condition="!String.IsEmpty(ListItem.Studio) + [Window.IsVisible(Videos) | Window.IsVisible(movieinformation)]">$INFO[Skin.String(custom_studios.path)]$INFO[ListItem.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
+		<value condition="String.Contains(ListItem.DBType,set) + Window.IsVisible(movieinformation) + !String.IsEmpty(Window(home).Property(SkinInfo.Set.Movies.Single.Studio))">$INFO[Skin.String(custom_studios.path)]$INFO[Window(home).Property(SkinInfo.Set.Movies.Single.Studio)]$INFO[Skin.String(custom_studios.ext)]</value>
 		<value condition="Player.HasVideo + !String.IsEmpty(VideoPlayer.Studio) + Window.IsVisible(fullscreeninfo)">$INFO[Skin.String(custom_studios.path)]$INFO[VideoPlayer.Studio]$INFO[Skin.String(custom_studios.ext)]</value>
 	</variable>
 	<variable name="value_recordlabelsicon">
