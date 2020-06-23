@@ -29,7 +29,7 @@
 			<posy>-500</posy>
 			<height>400</height>
 			<width>50</width>
-			<visible>String.Contains(skin.string(musicfanart),extra)</visible>
+				<visible>String.Contains(skin.string(musicfanart),extra) + ![String.StartsWith(ListItem.Path,Plugin) | String.StartsWith(ListItem.Path,..)]</visible>
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[ListItem.Path]extrafanart/</content>
@@ -39,7 +39,7 @@
 			<posy>-500</posy>
 			<height>400</height>
 			<width>50</width>
-			<visible>String.Contains(skin.string(musicfanart),extra)</visible>
+				<visible>String.Contains(skin.string(musicfanart),extra) + ![String.StartsWith(ListItem.Path,Plugin) | String.StartsWith(ListItem.Path,..)]</visible>
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[ListItem.Path]../extrafanart/</content>
