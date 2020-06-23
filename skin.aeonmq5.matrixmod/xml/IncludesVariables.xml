@@ -3923,6 +3923,25 @@
 		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + !Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 		<value condition="[Window.IsActive(musicplaylist) | Window.IsActive(music)] + Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 	</variable>
+	<variable name="value_rightart_multilist">
+		<value condition="Control.IsVisible(712)">$INFO[Container(712).ListItem(0).Art(thumb)]</value>
+		<value condition="Control.HasFocus(713)">$INFO[Container(713).ListItem(0).Art(thumb)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(cover))">$INFO[ListItem.Art(cover)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + String.IsEmpty(ListItem.Art(cover))">$INFO[Container(7100).ListItem(0).Art(thumb)]</value>
+		<value condition="Control.IsVisible(713) + !Control.HasFocus(713) + !String.IsEmpty(Container(713).ListItem(0).Art(cover))">$INFO[Container(713).ListItem(0).art(cover)]</value>
+		<value condition="Control.IsVisible(713) + !Control.HasFocus(713) + String.IsEmpty(Container(713)ListItem(0).Art(cover))">$INFO[Container(713).ListItem(0).art(thumb)]</value>
+		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.DBType) + Container.Content(songs) + String.Contains(ListItem.Path,musicvideos)">DefaultMusicVideos.png</value> <!-- for mv in mixed m3u playlists in music -->
+		<value condition="String.IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
+		<value condition="Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + !Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
+		<value condition="Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
+	</variable>
+	<variable name="value_leftart_multilist">
+		<value condition="Container.Content(albums) + Control.IsVisible(711)">$INFO[Container(711).ListItem(0).Art(thumb)]</value>
+		<value condition="Container.Content(artists) + Control.IsVisible(712)">$INFO[Container(712).ListItem(0).Art(artist.thumb)]</value>
+		<value condition="Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + !Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
+		<value condition="Container.Content(genres) + String.IsEqual(ListItem.DBType, genre) + Skin.HasSetting(externalmusicgenreicon)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>
+	</variable>
 	<variable name="value_poster_midlist">
 		<value condition="![String.IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster)) + Container.Content(episodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
@@ -5083,5 +5102,14 @@
 	<variable name="MidList_Data_Posy">
 		<value condition="Skin.HasSetting(nolanguageflags) | [String.IsEmpty(ListItem.Property(AudioLanguage.1)) + ![Window.IsVisible(videoplaylist) + Player.HasVideo]] | [String.IsEmpty(VideoPlayer.AudioLanguage) + Window.IsVisible(videoplaylist) + Player.HasVideo]">600</value>
 		<value condition="!Skin.HasSetting(nolanguageflags) + [[!String.IsEmpty(ListItem.Property(AudioLanguage.1)) + ![Window.IsVisible(videoplaylist) + Player.HasVideo]] | [!String.IsEmpty(VideoPlayer.AudioLanguage) + Window.IsVisible(videoplaylist) + Player.HasVideo]]">682</value>
+	</variable>
+	<variable name="MultiList_MVlist">
+		<value condition="Container.Content(artists) +!Skin.HasSetting(multi_mv)">$INFO[Container(71).ListItem.FolderPath]</value>
+		<value condition="Container.Content(directors)">$INFO[Container(71).ListItem.FolderPath]</value>
+		<value condition="Container.Content(studios)">$INFO[Container(71).ListItem.FolderPath]</value>
+		<value condition="Container.Content(tags)">$INFO[Container(71).ListItem.FolderPath]</value>
+		<value condition="Container.Content(genres)">$INFO[Container(71).ListItem.FolderPath]</value>
+		<value condition="Container.Content(years)">$INFO[Container(71).ListItem.FolderPath]</value>
+		<value>videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22year%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Container(71).ListItem.Label]%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</value>
 	</variable>
 </includes>
