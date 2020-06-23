@@ -520,7 +520,17 @@
 					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
 					<aspectratio>stretch</aspectratio>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>!Container.Content(genres)</visible>
+					<visible>!Container.Content(genres) + !String.IsEqual(ListItem.DBType,musicvideo)</visible>
+				</control>
+				<control type="image">
+					<posx>148</posx>
+					<posy>63</posy>
+					<width>315</width>
+					<height>315</height>
+					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Art(cover)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>String.IsEqual(ListItem.DBType,musicvideo)</visible>
 				</control>
 				<control type="image">
 					<posx>15</posx>

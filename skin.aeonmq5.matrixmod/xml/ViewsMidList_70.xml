@@ -1654,7 +1654,7 @@
 				<control type="group">
 					<!-- MUSIC and musicplaylist views and artists -->
 					<include>Animation_Fade</include>
-					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(nomidlistaudiocase) | String.IsEqual(ListItem.DBType,artist) | Container.Content(genres) | Container.Content(roles) | Container.Content(sources)]</visible>
+					<visible>[[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(nomidlistaudiocase) | String.IsEqual(ListItem.DBType,artist) | Container.Content(genres) | Container.Content(roles) | Container.Content(sources)]]</visible>
 					<control type="image">
 						<!-- Musica reflexo -->
 						<posx>-8</posx>
@@ -1681,7 +1681,7 @@
 				<control type="group">
 					<!-- MUSIC and musicplaylist with cd case -->
 					<include>Animation_Fade</include>
-					<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(nomidlistaudiocase) + !String.IsEqual(ListItem.DBType,artist) + ![Container.Content(genres) | Contaiiner.Content(roles)]</visible>
+					<visible>[[Window.IsActive(musicplaylist) | Window.IsActive(music)] + !Skin.HasSetting(nomidlistaudiocase) + !String.IsEqual(ListItem.DBType,artist) + ![Container.Content(genres) | Contaiiner.Content(roles)]]</visible>
 					<control type="image">
 						<!-- Musica/Estojo reflexo-->
 						<posx>27</posx>
