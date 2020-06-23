@@ -3943,6 +3943,7 @@
 		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
 	<variable name="value_poster_midlist">
+		<value condition="Window.IsVisible(videos) + Container.Content(albums)">$INFO[Container(5026).ListItem(0).Art(thumb)]</value>
 		<value condition="![String.IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster)) + Container.Content(episodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
