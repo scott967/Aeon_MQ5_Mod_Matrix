@@ -76,7 +76,7 @@
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 					<visible>!Skin.HasSetting(nonextairedmediaflags)</visible>
 					<control type="image">
-						<!-- Barra do rodape -->
+						<!-- Footer Bar -->
 						<posx>0</posx>
 						<posy>765</posy>
 						<width>1920</width>

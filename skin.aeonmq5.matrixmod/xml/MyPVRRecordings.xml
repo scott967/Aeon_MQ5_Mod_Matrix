@@ -122,7 +122,7 @@
 				<visible>!Control.IsVisible(57) + [String.Contains(skin.string(mediaflags),on) | String.Contains(skin.string(mediaflags),auto) + Control.IsVisible(9921)]</visible>
 				<include>Animation_HiddenView</include>
 				<control type="image">
-					<!-- Barra do rodape -->
+					<!-- Footer Bar -->
 					<posx>0</posx>
 					<posy>765</posy>
 					<width>1920</width>

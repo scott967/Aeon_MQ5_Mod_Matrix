@@ -4,9 +4,21 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 windowIDs/9.2.2 -->
 <!-- Leia 10.3.0/10.5.1 /10.6.0/10.6.2-->
-<!-- Matrix 11.0.1 -->
+<!-- Matrix 11.0.1/11.0.4 -->
 <!-- Includes:  Quickfix InvisibleButton Playlists HomeBG Animation_Fade LiveBG Animation_Window HomeRSS Animation_HomeGlass Animation_CDart  Animation_HomeNowPlaying Animation_Widgets Animation_HomeGlass2 Animation_HomeFade -->
 <!-- NextTracksContent Animation_HomePanel HomeFlagSeparator HomeFlagLabel mf_contentmovies -->
+<!--
+
+
+Group 604: now playing panel and next tracks panel top left/right
+Group 605: disc art bottom left
+Group 606: PVR recording/next recording bottom left
+Group 601: Details panel for skin widgets panel (includesmenuwidgets) 510
+Group 602: Widgets
+
+
+-->
+
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<include condition="!Skin.HasSetting(fix3)">Quickfix</include>
@@ -583,8 +595,7 @@
 					</control>
 				</control>
 			</control>
-			<control type="group" id="601">
-				<!-- Details panel for skin widgets panel (includesmenuwidgets) 510 -->
+			<control type="group" id="601">  <!-- Details panel for skin widgets panel (includesmenuwidgets) 510 -->
 				<posx>0</posx>
 				<posy>-450</posy>
 				<include condition="![Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu)]">Animation_HomePanel</include>
@@ -698,7 +709,7 @@
 							<visible>!String.IsEmpty(Container(510).ListItem.Property(Mpaa))</visible>
 						</control>
 						<control type="image">
-							<!-- Codec -->
+							<!-- Video Codec -->
 							<width>90</width>
 							<height>62</height>
 							<align>center</align>
@@ -851,8 +862,7 @@
 				<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(widgets_seconds),5)">Visible</animation>
 				<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
 			</control>
-			<control type="group" id="602">
-				<!-- Widgets -->
+			<control type="group" id="602">	<!-- Widgets -->
 				<animation effect="slide" start="0,0" end="0,-480" condition="Skin.HasSetting(higherwidgets) + ![Skin.HasSetting(highermainmenu) | String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-165" condition="Skin.HasSetting(higherwidgets) + Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-315" condition="Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
@@ -909,7 +919,7 @@
 				<include condition="!Skin.HasSetting(nosystemwidget)">mf_contentsystem</include>
 				<include condition="![String.IsEmpty(skin.string(weatherwidget)) | Skin.HasSetting(noweatherwidget)]">mf_weather</include>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- Library status -->
 				<!-- Status da biblioteca -->
 				<animation effect="slide" start="-750,0" end="0,0" time="500" delay="2000" tween="sine" easing="out" condition="Window.Previous(Startup)">WindowOpen</animation>
 				<animation effect="slide" start="-750,0" end="0,0" time="500" delay="1000" tween="sine" easing="out" condition="!Window.Previous(Startup)">WindowOpen</animation>
@@ -943,7 +953,7 @@
 					<scroll>true</scroll>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- date/weather -->
 				<!-- Data e clima -->
 				<visible>![Skin.HasSetting(nohometime) | Skin.HasSetting(highertime) + [Window.IsVisible(volumebar) | Window.IsVisible(notification) | Library.IsScanningVideo | Library.IsScanningMusic | Window.IsVisible(extendedprogressdialog)]]</visible>
 				<animation effect="slide" start="1920,0" end="0,0" time="500" delay="1000" tween="sine" easing="out">WindowOpen</animation>
@@ -998,7 +1008,7 @@
 					<animation effect="slide" start="0,0" end="-112,0" condition="![String.IsEqual(Weather.Plugin,weather.openweathermap.extended) | String.IsEqual(Weather.Plugin,weather.ozweather) | String.IsEqual(Weather.Plugin,weather.worldweatheronline) | String.IsEqual(Weather.Plugin,weather.wunderground) | String.IsEqual(Weather.Plugin,weather.yahoo) | String.IsEqual(Weather.Plugin,weather.weatherbit.io) | String.IsEqual(Weather.Plugin,weather.multi)]">Conditional</animation>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- player controls -->
 				<!-- (Player) Controles -->
 				<visible>Player.HasMedia</visible>
 				<animation effect="slide" start="1920,0" end="0,0" time="500" delay="1000" tween="sine" easing="out">WindowOpen</animation>
@@ -1160,7 +1170,7 @@
 					</content>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- widgets selector -->
 				<!-- Subtitulo dos widgets -->
 				<animation effect="slide" start="-750,0" end="0,0" time="500" delay="1000" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="-750,0" time="500" tween="sine" easing="out">Hidden</animation>
@@ -1191,7 +1201,7 @@
 				</control>
 			</control>
 			<!-- Menu Principal -->
-			<control type="group">
+			<control type="group">  <!-- main menu -->
 				<animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(highermainmenu)">Conditional</animation>
 				<visible>String.IsEqual(skin.string(defaultsettings),2)</visible>
 				<control type="image">

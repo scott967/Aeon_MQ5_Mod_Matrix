@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!--  Krypton 9.1.16/9.1.19/9.2.1 window IDs 2006/9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.2.8/10.3.0/10.4.0/10.5.2/10.6.0 refactor customOSDMusic is now 1106 custom Next Tracks is now 1107/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.2 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4 -->
 <window>
 	<onload condition="System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
 	<onload condition="!Skin.HasSetting(nolyrics_on) + String.Contains(Skin.String(LyricScript_Path),script.cu.lrclyrics) + !String.IsEqual(Window(home).Property(culrc.running),true)">RunScript(script.cu.lrclyrics)</onload>
@@ -70,7 +70,7 @@
 			<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + String.Contains(skin.string(musicfanart),extra) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
 		</control>
 		<control type="multiimage" id="5045">
-			<!-- Artist SlideShow arts AS2 -->
+			<!-- Artist SlideShow background arts AS2 -->
 			<aspectratio>keep</aspectratio>
 			<include>WindowBG</include>
 			<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
@@ -82,7 +82,7 @@
 			<visible>String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image)) + !String.Contains(Window(Visualisation).Property(ArtistSlideshow),update-slide) + [String.IsEqual(skin.string(vis_bg),slideshow) | String.IsEqual(skin.string(vis_bg),slideshowmix)]</visible>
 		</control>
 		<control type="image" id="5045">
-			<!-- Artist SlideShow arts AS3 -->
+			<!-- Artist SlideShow background arts AS3 -->
 			<aspectratio>keep</aspectratio>
 			<include>WindowBG</include>
 			<texture background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</texture>

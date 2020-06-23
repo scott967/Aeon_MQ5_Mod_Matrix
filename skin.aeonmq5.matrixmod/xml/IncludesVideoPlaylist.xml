@@ -35,8 +35,7 @@
 				<onup>SetFocus(51)</onup>
 				<ondown>SetFocus(51)</ondown>
 			</control>
-			<control type="group">
-				<!-- Title / tag line -->
+			<control type="group">	<!-- Title / tag line -->
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
@@ -121,8 +120,7 @@
 					</control>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Linguagem de audio e legendas -->
+			<control type="group">	<!-- Audio/Subs languages (no info bar) -->
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
@@ -135,8 +133,7 @@
 				<posy>22</posy>
 				<include>AudioandSub</include>
 			</control>
-			<control type="group">
-				<!-- Linguagem de audio e legendas -->
+			<control type="group">	<!-- Audio/Subs languages (W info bar) -->
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
 				<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
@@ -149,8 +146,7 @@
 				<posy>52</posy>
 				<include>AudioandSub</include>
 			</control>
-			<control type="group">
-				<!-- Video Flags and views -->
+			<control type="group">	<!-- Video Flags and views -->
 				<posy>45</posy>
 				<include>Animation_HiddenView</include>
 				<control type="group">
@@ -167,8 +163,7 @@
 						<colordiffuse>$VAR[value_flagsbar]</colordiffuse>
 						<texture>shadow_mask.png</texture>
 					</control>
-					<control type="grouplist">
-						<!-- Flags for not playing media -->
+					<control type="grouplist">	<!-- Flags for not playing media -->
 						<posx>30</posx>
 						<posy>976</posy>
 						<orientation>horizontal</orientation>
@@ -261,8 +256,7 @@
 							<visible>ListItem.IsResumable</visible>
 						</control>
 					</control>
-					<control type="grouplist">
-						<!-- Flags for playing media (only .. entry when playing MusicVudeo from musicplaylist) -->
+					<control type="grouplist">	<!-- Flags for playing media (only .. entry when playing MusicVudeo from musicplaylist) -->
 						<posx>30</posx>
 						<posy>976</posy>
 						<orientation>horizontal</orientation>
@@ -388,8 +382,7 @@
 				<!-- 70 -->
 				<!-- Midlist Mod -->
 			</control>
-			<!-- Furniture -->
-			<control type="group">
+			<control type="group">	<!-- Furniture (items/pages) -->
 				<posy>45</posy>
 				<include>ContainerViewPage</include>
 			</control>

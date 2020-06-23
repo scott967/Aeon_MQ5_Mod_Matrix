@@ -23,7 +23,7 @@
 				<include>Animation_Fade</include>
 			</control>
 			<control type="image">
-				<!-- Barra do rodape -->
+				<!-- Footer Bar -->
 				<posx>0</posx>
 				<posy>660</posy>
 				<width>1920</width>
