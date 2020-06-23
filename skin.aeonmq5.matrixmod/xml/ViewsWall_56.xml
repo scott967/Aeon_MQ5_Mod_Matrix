@@ -4,6 +4,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
 <!-- Leia 10.3.0/10.5.2 -->
+<!-- Matrix 11.0.4 -->
 <includes>
 	<!--##################################################################################   VISTA WALL - ID 56   ##################################################################################-->
 	<include name="Wall_Dimmer">
@@ -936,9 +937,9 @@
 			<control type="panel" id="56">
 				<viewtype label="31805">Panel</viewtype>
 				<posx>0</posx>
-				<posy>150</posy>
+				<posy>140</posy>
 				<width>1928</width>
-				<height>801</height>
+				<height>803</height>
 				<onleft>9900</onleft>
 				<onup>9900</onup>
 				<ondown>9920</ondown>
@@ -1005,8 +1006,8 @@
 					<control type="image">
 						<posx>8</posx>
 						<posy>3</posy>
-						<width>262</width>
-						<height>262</height>
+						<width>254</width>
+						<height>254</height>
 						<texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
 						<bordertexture border="-2">black.png</bordertexture>
 						<aspectratio align="center">stretch</aspectratio>
@@ -1015,8 +1016,8 @@
 					<control type="image">
 						<posx>8</posx>
 						<posy>3</posy>
-						<width>262</width>
-						<height>262</height>
+						<width>254</width>
+						<height>254</height>
 						<texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">genres/256.png</texture>
 						<bordertexture border="-2">black.png</bordertexture>
 						<aspectratio align="center">keep</aspectratio>
@@ -1041,16 +1042,16 @@
 					<control type="image">
 						<posx>3</posx>
 						<posy>3</posy>
-						<width>262</width>
-						<height>262</height>
+						<width>258</width>
+						<height>258</height>
 						<texture>thumb_box_cd.png</texture>
 						<aspectratio align="center">stretch</aspectratio>
 					</control>
 					<control type="image">
-						<posx>40</posx>
-						<posy>9</posy>
-						<width>216</width>
-						<height>244</height>
+						<posx>39</posx>
+						<posy>8</posy>
+						<width>212</width>
+						<height>240</height>
 						<texture diffuse="thumb_box_diffuse.png" fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
 						<aspectratio align="center">stretch</aspectratio>
 					</control>
@@ -1060,8 +1061,8 @@
 					<control type="image">
 						<posx>33</posx>
 						<posy>3</posy>
-						<width>408</width>
-						<height>408</height>
+						<width>390</width>
+						<height>390</height>
 						<texture fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
 						<bordertexture border="-2">black.png</bordertexture>
 						<aspectratio align="center">stretch</aspectratio>
@@ -1070,8 +1071,8 @@
 					<control type="image">
 						<posx>33</posx>
 						<posy>3</posy>
-						<width>408</width>
-						<height>408</height>
+						<width>390</width>
+						<height>390</height>
 						<texture fallback="DefaultAudioCover.png" diffuse="thumb_poster_diffuse.png" background="true">genres/256.png</texture>
 						<bordertexture border="-2">black.png</bordertexture>
 						<aspectratio align="center">keep</aspectratio>
@@ -1096,16 +1097,16 @@
 					<control type="image">
 						<posx>3</posx>
 						<posy>3</posy>
-						<width>408</width>
-						<height>408</height>
+						<width>400</width>
+						<height>400</height>
 						<texture>thumb_box_cd.png</texture>
 						<aspectratio align="center">stretch</aspectratio>
 					</control>
 					<control type="image">
 						<posx>58</posx>
 						<posy>12</posy>
-						<width>334</width>
-						<height>380</height>
+						<width>326</width>
+						<height>372</height>
 						<texture diffuse="thumb_box_diffuse.png" fallback="DefaultAudioCover.png" background="true">$VAR[value_poster]</texture>
 						<aspectratio align="center">stretch</aspectratio>
 					</control>
@@ -1336,7 +1337,7 @@
 						</control>
 					</control>
 					<control type="image">
-						<posx>8</posx>
+						<posx>6</posx>
 						<posy>3</posy>
 						<width>262</width>
 						<height>262</height>
@@ -1483,7 +1484,7 @@
 						</control>
 					</control>
 					<control type="image">
-						<posx>33</posx>
+						<posx>26</posx>
 						<posy>3</posy>
 						<width>408</width>
 						<height>408</height>
