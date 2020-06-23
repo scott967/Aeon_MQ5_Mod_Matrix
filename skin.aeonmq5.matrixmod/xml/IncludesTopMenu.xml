@@ -610,7 +610,7 @@
 					<onclick>SetFocus(51)</onclick>
 					<onclick>Skin.SetString(customwindow,video)</onclick>
 					<onclick>ActivateWindowAndFocus(SkinSettings, 9100,3 ,403,0)</onclick>
-					<visible>!Skin.HasSetting(nowidevideocase) + Control.IsVisible(51) + [Container.Content(movies) + String.Contains(skin.string(widemovies.art),poster) | Container.Content(musicvideos) | Container.Content(sets)]</visible>
+					<visible>!Skin.HasSetting(nowidevideocase) + Control.IsVisible(51) + [Container.Content(movies) + String.Contains(skin.string(widemovies.art),poster) | Container.Content(musicvideos) | Container.Content(sets) | Container.Content(albums)]</visible>
 				</control>
 				<control type="radiobutton" id="9204">
 					<!-- disk art if avail -->
@@ -2197,6 +2197,14 @@
 					<onclick>Skin.ToggleSetting(slimmultimusic)</onclick>
 					<selected>Skin.HasSetting(slimmultimusic)</selected>
 					<visible>Control.IsVisible(71)</visible>
+				</control>
+				<control type="togglebutton" id="9263">
+					<include>TopMenuToggleButton</include>
+					<label>$LOCALIZE[31242]: $LOCALIZE[557] - $LOCALIZE[31040]</label>
+					<altlabel>$LOCALIZE[31242]: $LOCALIZE[557] - $LOCALIZE[31099]</altlabel>
+					<onclick>Skin.ToggleSetting(multi_mv)</onclick>
+					<usealttexture>Skin.HasSetting(multi_mv)</usealttexture>
+					<visible>Control.IsVisible(71) + Container.Content(artists)</visible>
 				</control>
 			</control>
 			<control type="grouplist" id="9301">
