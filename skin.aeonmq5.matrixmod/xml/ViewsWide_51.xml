@@ -583,7 +583,7 @@
 				</control>
 <!-- List 51 Widelist ends here ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 				<control type="label" id="5101">
-					<!-- Tag -->
+					<!-- Check if listitem has info avail -->
 					<include>InvisibleButton</include>
 					<label>$VAR[value_listinfofocus]</label>
 				</control>
@@ -644,11 +644,9 @@
 					<include>Animation_Fade</include>
 					<visible>Control.HasFocus(562)</visible>
 				</control>
-				<control type="group">
-					<!-- Grupo das artes -->
+				<control type="group">	<!-- Art group -->
 					<animation effect="slide" start="0,0" end="1050,0" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(562) | Control.HasFocus(9920)">Conditional</animation>
-					<control type="group">
-						<!-- CDART VIDEO -->
+					<control type="group">	<!-- CDART VIDEO -->
 						<animation type="WindowOpen">
 							<effect type="slide" start="-150,0" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
 							<effect type="fade" start="0" end="100" time="500" delay="500" />
@@ -688,8 +686,7 @@
 							<visible>String.IsEmpty(ListItem.Art(discart))</visible>
 						</control>
 					</control>
-					<control type="grouplist">
-						<!-- CDART SETS da esquerda -->
+					<control type="grouplist">	<!-- CDART SETS from left movie 6-10 -->
 						<posx>192</posx>
 						<posy>45</posy>
 						<orientation>vertical</orientation>
@@ -735,8 +732,7 @@
 							<visible>!String.IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))</visible>
 						</control>
 					</control>
-					<control type="grouplist">
-						<!-- CDART SETS da direita -->
+					<control type="grouplist">	<!-- CDART SETS from right movie 1-5 -->
 						<posx>532</posx>
 						<posy>45</posy>
 						<orientation>vertical</orientation>
@@ -782,8 +778,7 @@
 							<visible>!String.IsEmpty(Window(home).Property(Set.Movie.5.Art(discart)))</visible>
 						</control>
 					</control>
-					<control type="group">
-						<!-- BANNER -->
+					<control type="group">	<!-- BANNER -->
 						<include>Animation_Fade</include>
 						<visible>Container.Content(movies) + String.Contains(skin.string(widemovies.art),banner) | Container.Content(tvshows) + String.Contains(skin.string(widetvshows.art),banner)</visible>
 						<control type="image">
@@ -809,10 +804,9 @@
 							<bordertexture border="-2">black.png</bordertexture>
 						</control>
 					</control>
-					<control type="group">
-						<!-- EPISODIOS -->
+					<control type="group">	<!-- EPISODES -->
 						<include>Animation_Fade</include>
-						<visible>![String.IsEqual(Listitem.DBType,movie) | Container.Content(musicvideos) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(genres) | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
+						<visible>![String.IsEqual(Listitem.DBType,movie) | Container.Content(musicvideos) | Container.Content(albums) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(genres) | Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
 						<control type="image">
 							<!-- episodios reflexo -->
 							<posx>30</posx>
@@ -836,8 +830,7 @@
 							<bordertexture border="-2">black.png</bordertexture>
 						</control>
 					</control>
-					<control type="group">
-						<!-- VIDEO No case -->
+					<control type="group">	<!-- VIDEO No case -->
 						<include>Animation_Fade</include>
 						<animation effect="slide" start="0,0" end="-68,0" time="500" delay="50" tween="cubic" easing="in" condition="!Skin.HasSetting(nowidediscart) + !String.IsEmpty(ListItem.Art(discart)) + Control.IsVisible(9923)">Conditional</animation>
 						<visible>Skin.HasSetting(nowidevideocase) + [String.IsEqual(Listitem.DBType,movie) + String.Contains(skin.string(widemovies.art),poster) | Container.Content(musicvideos)  | Container.Content(sets)] | Container.Content(tvshows) + String.Contains(skin.string(widetvshows.art),poster) | Container.Content(seasons) | Container.Content(genres) | Container.Content(roles)</visible>
@@ -864,12 +857,10 @@
 							<bordertexture border="-2">black.png</bordertexture>
 						</control>
 					</control>
-					<control type="group">
-						<!-- Movies w case -->
+					<control type="group">	<!-- Video w case -->
 						<include>Animation_Fade</include>
 						<animation effect="slide" start="0,0" end="-50,0" time="500" delay="50" tween="cubic" easing="in" condition="!Skin.HasSetting(nowidediscart) + !String.IsEmpty(ListItem.Art(discart)) + Control.IsVisible(9923)">Conditional</animation>
 						<visible>!Skin.HasSetting(nowidevideocase) + String.IsEqual(Listitem.DBType,movie) + String.Contains(skin.string(widemovies.art),poster) | !Skin.HasSetting(nowidevideocase) + [Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible>
-						<!-- <visible>!Skin.HasSetting(nowidevideocase) + Container.Content(movies) + String.Contains(skin.string(widemovies.art),poster) | !Skin.HasSetting(nowidevideocase) + [Container.Content(musicvideos) | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)]</visible> -->
 						<control type="image">
 							<!-- Poster reflexo -->
 							<posx>308</posx>
@@ -921,10 +912,9 @@
 							<texture>$VAR[value_videocodec0]</texture>
 						</control>
 					</control>
-					<control type="group">
-						<!-- MUSICA -->
+					<control type="group">  <!-- Music / musicvideo album no case -->
 						<include>Animation_Fade</include>
-						<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(nowideaudiocase) | Container.Content(genres) | Container.Content(roles)]</visible>
+						<visible>[[Window.IsActive(musicplaylist) | Window.IsActive(music)] + [Skin.HasSetting(nowideaudiocase) | Container.Content(genres) | Container.Content(roles)]] | [Window.IsVisible(videos) + Container.Content(albums) + Skin.HasSetting(nowideaudiocase)]</visible>
 						<control type="image">
 							<!-- Musica reflexo -->
 							<posx>30</posx>
@@ -948,10 +938,9 @@
 							<bordertexture border="-2">black.png</bordertexture>
 						</control>
 					</control>
-					<control type="group">
-						<!-- MUSICA ESTOJO -->
+					<control type="group">  <!-- Music / muysicvideo album with case -->
 						<include>Animation_Fade</include>
-						<visible>[Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Skin.HasSetting(nowideaudiocase) | Container.Content(genres) | Container.Content(roles)]</visible>
+						<visible>[[Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Skin.HasSetting(nowideaudiocase) | Container.Content(genres) | Container.Content(roles)]] | [Window.IsVisible(videos) + Container.Content(albums) + !Skin.HasSetting(nowideaudiocase)]</visible>						
 						<control type="image">
 							<!-- Musica reflexo-->
 							<posx>255</posx>
