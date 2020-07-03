@@ -7,8 +7,7 @@
 <window>
 	<defaultcontrol></defaultcontrol>
 	<controls>
-		<control type="group">
-			<!-- top area furniture full and partial or paused-->
+		<control type="group">	<!-- top area furniture full and partial or paused-->
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
@@ -28,7 +27,7 @@
 				<colordiffuse>E4000000</colordiffuse>
 			</control>
 			<control type="label">
-				<!-- Title -->
+				<!-- Title or Original Title -->
 				<posx>45</posx>
 				<posy>12</posy>
 				<width>1650</width>
@@ -40,6 +39,7 @@
 				<scrollout>false</scrollout>
 			</control>
 			<control type="label">
+				<!-- Year/Tagline (CR chapter info) -->
 				<posx>45</posx>
 				<posy>82</posy>
 				<width>1650</width>
@@ -99,8 +99,7 @@
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 			</control>
 		</control>
-		<control type="group">
-			<!-- bottom area furniture -->
+		<control type="group">	<!-- bottom area furniture -->
 			<animation effect="slide" time="400" start="0,1200" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,1200" end="0,0" easing="out" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">WindowClose</animation>
@@ -115,8 +114,7 @@
 				<colordiffuse>E4000000</colordiffuse>
 				<visible>![String.Contains(skin.string(videofurniture),hide) + !Player.Paused]</visible>
 			</control>
-			<control type="group">
-				<!-- visible all furniture settings slide up for fwd / tempo -->
+			<control type="group">	<!-- progress visible all furniture settings slide up for fwd / tempo -->
 				<animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.IsTempo">Conditional</animation>
 				<control type="progress" id="23">
 					<posx>30</posx>
@@ -145,12 +143,11 @@
 					<label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
 				</control>
 			</control>
-			<control type="group">
-				<!-- only show for full and partial furniture unless paused -->
+			<control type="group">	<!-- time only show for full and partial furniture unless paused -->
 				<animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Rewinding">Conditional</animation>
 				<visible>!String.Contains(skin.string(videofurniture),hide) | Player.Paused</visible>
 				<control type="label">
-					<!-- Hora atual -->
+					<!-- Current Time -->
 					<posx>1492</posx>
 					<posy>996</posy>
 					<width>180</width>
@@ -179,7 +176,7 @@
 					<texture>line_v.png</texture>
 				</control>
 				<control type="label">
-					<!-- Tempo restante -->
+					<!-- Remaining Time -->
 					<posx>1702</posx>
 					<posy>996</posy>
 					<width>202</width>
@@ -208,7 +205,7 @@
 					<texture>line_v.png</texture>
 				</control>
 				<control type="label">
-					<!-- Hora do termino -->
+					<!-- Ends At -->
 					<posx>1875</posx>
 					<posy>996</posy>
 					<width>180</width>
@@ -232,8 +229,7 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
-			<!-- main info panel only furniture full and partial unless paused slide up when tempo fwd rwd -->
+		<control type="group">	<!-- main info panel only furniture full and partial unless paused slide up when tempo fwd rwd -->
 			<posy>-105</posy>
 			<animation effect="slide" time="400" start="0,1200" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,1200" end="0,0" easing="out" tween="cubic">Visible</animation>
@@ -251,8 +247,7 @@
 				<colordiffuse>$VAR[value_flagsbar]</colordiffuse>
 				<texture>whitebar_h.png</texture>
 			</control>
-			<control type="grouplist">
-				<!-- Etiquetas -->
+			<control type="grouplist">	<!-- Flags -->
 				<posx>345</posx>
 				<posy>1008</posy>
 				<orientation>horizontal</orientation>
@@ -268,7 +263,7 @@
 					<visible>!String.IsEmpty(Control.GetLabel(9924))</visible>
 				</control>
 				<control type="image">
-					<!-- Flags -->
+					<!-- MPAA -->
 					<include>FlagImage</include>
 					<texture background="true">$VAR[value_mpaa_fs]</texture>
 				</control>
@@ -379,7 +374,7 @@
 				<font>Font_18A</font>
 				<label>$INFO[VideoPlayer.Plot]</label>
 				<textcolor>FFFFFAF0</textcolor>
-				<autoscroll delay="20000" time="4000" repeat="15000">true</autoscroll>
+				<autoscroll delay="15000" time="4000" repeat="15000">true</autoscroll>
 			</control>
 			<!--  Edits for MV starring is album -->
 			<control type="group">
