@@ -16,7 +16,7 @@
 	<onunload condition="Skin.HasSetting(trailers)">Skin.Reset(trailers)</onunload>
 	<onunload condition="Skin.HasSetting(playlists)">Skin.Reset(playlists)</onunload>
 	<onunload condition="!Skin.HasSetting(ontvtunes) + System.HasAddon(service.tvtunes)">ClearProperty(TvTunesBlocked)</onunload>
-	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70</views>
+	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71</views>
 	<controls>
 		<control type="list" id="5020"> <!-- check if video movies tvshows musicvideos sets has extrafanartfanart -->
 			<posx>-500</posx>
@@ -632,6 +632,8 @@
 				<include condition="Skin.HasSetting(viewmidlist_video)">ViewMidList</include>
 				<!-- 70 -->
 				<!-- Midlist Mod -->
+				<include condition="Skin.HasSetting(viewmultilist_video)">ViewMultiListVideo</include>
+				<!-- 71 -->
 			</control>
 			<!-- additional includes for multidata and date/weather, and top pull down menu -->
 			<include>TouchScreen</include>

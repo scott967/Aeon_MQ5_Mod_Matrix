@@ -28,6 +28,7 @@
 			<onclick condition="String.IsEqual(Container.Content, tvshows) | String.IsEqual(Container.Content, episodes)">Skin.SetBool(viewlandscapex_video)</onclick>
 			<onclick condition="![String.IsEqual(Container.Content, episodes) | String.IsEqual(Container.Content, years)]">Skin.SetBool(viewshelfcase_video)</onclick>
 			<onclick>Skin.SetBool(viewmidlist_video)</onclick>
+			<onclick>Skin.SetBool(viewmultilist_video)</onclick>
 		</definition>
 	</include>
 	<include name="content_views_music">
@@ -826,6 +827,21 @@
 					<onclick>Skin.ToggleSetting(noartmidlistvideo)</onclick>
 					<selected>!Skin.HasSetting(noartmidlistvideo)</selected>
 					<visible>Control.IsVisible(70)</visible>
+				</control>
+				<!-- multilist -->
+				<control type="radiobutton" id="92130">
+					<include>TopMenuRadioButton</include>
+					<label>31490</label>
+					<onclick>Skin.ToggleSetting(slimmultivideo)</onclick>
+					<selected>Skin.HasSetting(slimmultivideo)</selected>
+					<visible>Control.IsVisible(71)</visible>
+				</control>
+				<control type="radiobutton" id="92131">
+					<include>TopMenuRadioButton</include>
+					<label>31486</label>
+					<onclick>Skin.ToggleSetting(nomultivideocase)</onclick>
+					<selected>!Skin.HasSetting(nomultivideocase)</selected>
+					<visible>Control.IsVisible(71)</visible>
 				</control>
 				<!-- Wall -->
 				<control type="radiobutton" id="9235">

@@ -3,7 +3,7 @@
 <!-- Isengard 7.1.9 ShelfCase/7.1.11 MidList -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.3.0/10.6.2 was window 641 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.0.4 -->
 <window id="1110" type="dialog">
 	<defaultcontrol always="true">9030</defaultcontrol>
 	<controls>
@@ -240,6 +240,15 @@
 					<label>31448</label>
 					<onclick>Skin.ToggleSetting(viewmidlist_video)</onclick>
 					<selected>Skin.HasSetting(viewmidlist_video)</selected>
+				</control>
+				<control type="radiobutton" id="19271">
+					<!-- Multi List -->
+					<!-- 71 -->
+					<radioposx>1341</radioposx>
+					<label>Multi-$LOCALIZE[535]</label>
+					<onclick>Skin.ToggleSetting(viewmultilist_video)</onclick>
+					<selected>Skin.HasSetting(viewmultilist_video)</selected>
+					<visible>!Window.IsActive(videoplaylist)</visible>
 				</control>
 			</control>
 		</control>
