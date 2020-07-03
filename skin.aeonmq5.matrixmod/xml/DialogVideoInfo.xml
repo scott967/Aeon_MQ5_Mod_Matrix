@@ -230,6 +230,19 @@
 					<aspectratio>keep</aspectratio>
 					<texture>$VAR[value_mpaa]</texture>
 				</control>
+				<control type="button" id="9926">
+					<posx>80</posx>
+					<posy>136</posy>
+					<height>58</height>
+					<width>167</width>
+					<onup>SetFocus(149)</onup>
+					<ondown>SetFocus(149)</ondown>
+					<onleft>SetFocus(149)</onleft>
+					<onright>SetFocus(149)</onright>
+					<onclick>ActivateWindow(1112)</onclick>
+					<onclick>SetFocus(149)</onclick>
+					<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
+				</control>
 				<control type="label">
 					<!-- Year -->
 					<posx>330</posx>
@@ -1351,7 +1364,7 @@
 			<control type="button" id="160">
 				<include>InvisibleButton</include>
 				<onup condition="Skin.HasSetting(artistzoom)">SetFocus(50)</onup>
-				<onup condition="Skin.HasSetting(coverzoom)">SetFocus(149)</onup>
+				<onup condition="Skin.HasSetting(coverzoom)">SetFocus(9926)</onup>
 				<ondown condition="Skin.HasSetting(artistzoom)">SetFocus(50)</ondown>
 				<ondown condition="Skin.HasSetting(coverzoom)">SetFocus(149)</ondown>
 				<onleft condition="Skin.HasSetting(artistzoom)">SetFocus(50)</onleft>
