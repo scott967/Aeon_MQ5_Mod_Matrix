@@ -53,7 +53,7 @@
 					<include>Animation_Fade</include>
 				</control>
 				<control type="image">
-					<!-- Clearlogo (music) -->
+					<!-- artist Clearlogo (music) -->
 					<posx>540</posx>
 					<posy>660</posy>
 					<width>450</width>

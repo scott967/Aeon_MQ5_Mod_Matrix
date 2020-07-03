@@ -653,8 +653,7 @@
 						<visible>!String.IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))</visible>
 					</control>
 				</control>
-				<control type="group">
-					<!-- VIDEO SEM ESTOJO -->
+				<control type="group">  <!-- Video poster no case  -->
 					<include>Animation_Fade</include>
 					<visible>![!Skin.HasSetting(nolowlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos)  | Container.Content(sets)] | Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Window.IsVisible(videos) + Container.Content(albums)]</visible>
 					<control type="image">
@@ -680,8 +679,7 @@
 						<bordertexture border="-2">black.png</bordertexture>
 					</control>
 				</control>
-				<control type="group">
-					<!-- FILMES ESTOJO -->
+				<control type="group">  <!-- video poster with case -->
 					<include>Animation_Fade</include>
 					<visible>!Skin.HasSetting(nolowlistvideocase) + [Container.Content(movies) | Container.Content(musicvideos)  | Container.Content(sets)] + ![Window.IsActive(musicplaylist) | Window.IsActive(music)] + ![Window.IsVisible(videos) + Container.Content(albums)]</visible>
 					<control type="image">
