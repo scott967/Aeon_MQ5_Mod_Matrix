@@ -3,12 +3,13 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.5.2 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.0.4 -->
 <window id="1103" type="dialog">
 	<!-- was 626 -->
 	<defaultcontrol always="true">9030</defaultcontrol>
-	<onunload condition="Window.IsActive(musicplaylist)">AlarmClock(refreshview,ActivateWindowAndFocus(musicplaylist, 9940,0),0:01,true)</onunload>
-	<onunload condition="Window.IsActive(music)">AlarmClock(refreshview,ActivateWindowAndFocus(music, 9940,0),0:01,true)</onunload>
+	<!-- <onunload condition="Window.IsActive(musicplaylist)">AlarmClock(refreshview,ActivateWindowAndFocus(musicplaylist, 9940,0),0:01,true)</onunload> -->
+	<onunload condition="Window.IsActive(musicplaylist)">ActivateWindowAndFocus(musicplaylist,9940,0)</onunload>
+	<onunload condition="Window.IsActive(music)">ActivateWindowAndFocus(music,9940,0)</onunload>
 	<controls>
 		<control type="group">
 			<include>Animation_DialogPopup</include>
