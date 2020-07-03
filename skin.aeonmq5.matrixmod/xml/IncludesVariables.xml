@@ -1667,7 +1667,7 @@
 	</variable>
 	<!-- ######################################################################### Variable Mpaa Flags ######################################################################### -->
 	<variable name="value_mpaa">
-		<value condition="String.Contains(ListItem.Mpaa,Rated NR) | String.Contains(ListItem.Mpaa,Rated: NR) | String.IsEqual(ListItem.Mpaa,NR)">flags/mpaa/MPAA_NR_Certificate_US.png</value>
+		<value condition="String.Contains(ListItem.Mpaa,Rated NR) | String.Contains(ListItem.Mpaa,Rated: NR) | String.IsEqual(ListItem.Mpaa,NR) | String.IsEqual(ListItem.Mpaa,U) | String.IsEmpty(ListItem.Mpaa)">flags/mpaa/MPAA_NR_Certificate_US.png</value>
 		<value condition="String.Contains(ListItem.Mpaa,Rated G) | String.Contains(ListItem.Mpaa,Rated: G) | String.IsEqual(ListItem.Mpaa,G)">flags/mpaa/MPAA_G_Certificate_US.png</value>
 		<value condition="[String.Contains(ListItem.Mpaa,Rated PG) | String.Contains(ListItem.Mpaa,Rated: PG) | String.IsEqual(ListItem.Mpaa,PG)] + ![String.Contains(ListItem.Mpaa,Rated PG-13) | String.Contains(ListItem.Mpaa,Rated: PG-13)]">flags/mpaa/MPAA_PG_Certificate_US.png</value>
 		<value condition="String.Contains(ListItem.Mpaa,Rated PG-13) | String.Contains(ListItem.Mpaa,Rated: PG-13) | String.IsEqual(ListItem.Mpaa,PG-13)">flags/mpaa/MPAA_PG-13_Certificate_US.png</value>
@@ -1705,10 +1705,11 @@
 		<value condition="String.Contains(ListItem.Mpaa,HU-12)">flags/mpaa/HU_12.png</value>
 		<value condition="String.Contains(ListItem.Mpaa,HU-16)">flags/mpaa/HU_16.png</value>
 		<value condition="String.Contains(ListItem.Mpaa,HU-18)">flags/mpaa/HU_18.png</value>
+		<value condition="String.Contains(ListItem.Mpaa,R18)">flags/mpaa/Eirin_Rated_R18+.png</value>
 	</variable>
 	<!-- ######################################################################### Variable Mpaa Flags em reproducao ######################################################################### -->
 	<variable name="value_mpaa_fs">
-		<value condition="String.Contains(Videoplayer.Mpaa,Rated NR) | String.Contains(Videoplayer.Mpaa,Rated: NR) | String.IsEqual(Videoplayer.Mpaa,NR)">flags/mpaa/MPAA_NR_Certificate_US.png</value>
+		<value condition="String.Contains(Videoplayer.Mpaa,Rated NR) | String.Contains(Videoplayer.Mpaa,Rated: NR) | String.IsEqual(Videoplayer.Mpaa,NR) | String.IsEqual(Videoplayer.Mpaa,U) | String.IsEmpty(Videoplayer.Mpaa)">flags/mpaa/MPAA_NR_Certificate_US.png</value>
 		<value condition="String.Contains(Videoplayer.Mpaa,Rated G) | String.Contains(Videoplayer.Mpaa,Rated: G) | String.IsEqual(Videoplayer.Mpaa,G)">flags/mpaa/MPAA_G_Certificate_US.png</value>
 		<value condition="[String.Contains(Videoplayer.Mpaa,Rated PG) | String.Contains(Videoplayer.Mpaa,Rated: PG) | String.IsEqual(Videoplayer.Mpaa,PG)] + ![String.Contains(Videoplayer.Mpaa,Rated PG-13) | String.Contains(Videoplayer.Mpaa,Rated: PG-13)]">flags/mpaa/MPAA_PG_Certificate_US.png</value>
 		<value condition="String.Contains(Videoplayer.Mpaa,Rated PG-13) | String.Contains(Videoplayer.Mpaa,Rated: PG-13) | String.IsEqual(Videoplayer.Mpaa,PG-13)">flags/mpaa/MPAA_PG-13_Certificate_US.png</value>
@@ -1746,6 +1747,7 @@
 		<value condition="String.Contains(Videoplayer.Mpaa,HU-12)">flags/mpaa/HU_12.png</value>
 		<value condition="String.Contains(Videoplayer.Mpaa,HU-16)">flags/mpaa/HU_16.png</value>
 		<value condition="String.Contains(Videoplayer.Mpaa,HU-18)">flags/mpaa/HU_18.png</value>
+		<value condition="String.Contains(Videoplayer.Mpaa,R18)">flags/mpaa/Eirin_Rated_R18+.png</value>
 	</variable>
 	<!-- ######################################################################### Variable Mpaa Flags Menu Principal ######################################################################### -->
 	<variable name="value_mfmpaa">
