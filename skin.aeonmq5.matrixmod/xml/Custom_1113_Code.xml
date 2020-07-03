@@ -2,8 +2,9 @@
 <!-- Aeon MQ 5 -->
 <!-- Jarvismod 8.1.14 -->
 <!-- Leiamod 10.2.3/10.3.0 -->
-<window id="629" type="dialog">
-	<!-- safe id -->
+<!-- Matrix 11.0.4 -->
+<window id="1113" type="dialog">
+	<!-- safe id was 629 -->
 	<defaultcontrol always="true">9930</defaultcontrol>
 	<onunload condition="!Window.IsActive(Home)">AlarmClock(firstfocus,SetFocus(51),0:01,true)</onunload>
 	<onunload condition="Window.IsActive(Home)">AlarmClock(firstfocus,SetFocus(9100),0:01,true)</onunload>
@@ -30,22 +31,22 @@
 			<onfocus condition="![String.Contains(skin.string(codestep),step1) | String.Contains(skin.string(codestep),step2) | String.Contains(skin.string(codestep),step3)]">Skin.SetString($INFO[skin.string(custom_code)],step1)</onfocus>
 			<onfocus condition="String.Contains(skin.string(codestep),step1)">Skin.SetString($INFO[skin.string(custom_code)],step2)</onfocus>
 			<onfocus condition="String.Contains(skin.string(codestep),step2)">Skin.SetString($INFO[skin.string(custom_code)],step3)</onfocus>
-			<onfocus condition="String.Contains(skin.string(codestep),step2)">AlarmClock(kioskcode,Dialog.Close(629),0:02,true)</onfocus>
+			<onfocus condition="String.Contains(skin.string(codestep),step2)">AlarmClock(kioskcode,Dialog.Close(1113),0:02,true)</onfocus>
 		</control>
 		<control type="button" id="9930">
 			<!-- code -->
 			<include>InvisibleButton</include>
 			<onfocus>SetFocus(9930)</onfocus>
 			<onleft condition="![String.Contains(skin.string(codestep),step1) | String.Contains(skin.string(codestep),step2) | String.Contains(skin.string(codestep),step3)]">SetFocus(9929)</onleft>
-			<onleft condition="String.Contains(skin.string(codestep),step1) | String.Contains(skin.string(codestep),step2) | String.Contains(skin.string(codestep),step3)">Dialog.Close(629)</onleft>
+			<onleft condition="String.Contains(skin.string(codestep),step1) | String.Contains(skin.string(codestep),step2) | String.Contains(skin.string(codestep),step3)">Dialog.Close(1113)</onleft>
 			<onleft condition="String.Contains(skin.string(codestep),step1) | String.Contains(skin.string(codestep),step2) | String.Contains(skin.string(codestep),step3)">Skin.Reset($INFO[skin.string(custom_code)])</onleft>
 			<onright condition="String.Contains(skin.string(codestep),step1)">SetFocus(9929)</onright>
-			<onright condition="!String.Contains(skin.string(codestep),step1)">Dialog.Close(629)</onright>
+			<onright condition="!String.Contains(skin.string(codestep),step1)">Dialog.Close(1113)</onright>
 			<onright condition="!String.Contains(skin.string(codestep),step1)">Skin.Reset($INFO[skin.string(custom_code)])</onright>
 			<onup condition="String.Contains(skin.string(codestep),step2)">SetFocus(9929)</onup>
-			<onup condition="!String.Contains(skin.string(codestep),step2)">Dialog.Close(629)</onup>
+			<onup condition="!String.Contains(skin.string(codestep),step2)">Dialog.Close(1113)</onup>
 			<onup condition="!String.Contains(skin.string(codestep),step2)">Skin.Reset($INFO[skin.string(custom_code)])</onup>
-			<ondown>Dialog.Close(629)</ondown>
+			<ondown>Dialog.Close(1113)</ondown>
 			<ondown>Skin.Reset($INFO[skin.string(custom_code)])</ondown>
 			<visible>true</visible>
 		</control>

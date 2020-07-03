@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.19/9.2.3 -->
 <!-- Leia 10.2.4/10.3.0/10.4.0 -->
+<!-- Matrix 11.0.4 -->
 <includes>
 	<!-- ######################################################################### Menu Principal ######################################################################### -->
 	<include name="MainMenuFixedList">
@@ -285,7 +286,7 @@
 			<height>48</height>
 			<onup>Close</onup>
 			<ondown>Close</ondown>
-			<ondown condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(5099)</ondown>
+			<ondown condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(1114)</ondown>
 			<align>center</align>
 			<aligny>center</aligny>
 			<font>Font_15</font>
@@ -439,7 +440,7 @@
 		<height>99</height>
 		<onup>300</onup>
 		<ondown>Close</ondown>
-		<ondown condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(5099)</ondown>
+		<ondown condition="!Skin.HasSetting(nosmartsub)">ActivateWindow(1114)</ondown>
 		<onup condition="Window.IsVisible(Home)">Close</onup>
 		<onup condition="Window.IsVisible(6000) + !String.IsEqual(Container(9100).ListItem.Property(type),add)">5100</onup>
 		<orientation>vertical</orientation>

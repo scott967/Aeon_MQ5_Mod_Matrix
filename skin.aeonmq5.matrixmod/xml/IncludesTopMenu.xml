@@ -476,7 +476,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custom dialog -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
@@ -1918,7 +1918,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custom dialog -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
@@ -2554,7 +2554,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custom dialog -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
@@ -2776,7 +2776,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custom delay -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
@@ -3012,7 +3012,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custom delay -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
@@ -3389,7 +3389,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custo dialog -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
@@ -4040,7 +4040,7 @@
 					<label>$VAR[value_kioskcode]</label>
 					<onclick>Skin.SetString(custom_code,codestep)</onclick>
 					<onclick condition="!String.Contains(skin.string(codestep),step3)">SetFocus(51)</onclick>
-					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(629)</onclick>
+					<onclick condition="!String.Contains(skin.string(codestep),step3)">ActivateWindow(1113)</onclick>
 					<!-- custom dialog -->
 					<onclick condition="String.Contains(skin.string(codestep),step3) + Control.HasFocus(9102)">Skin.Reset($INFO[skin.string(custom_code)])</onclick>
 					<visible>Skin.HasSetting(kioskcode)</visible>
