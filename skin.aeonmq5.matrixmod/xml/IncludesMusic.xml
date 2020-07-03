@@ -499,7 +499,7 @@
 					<!-- 69-->
 					<include condition="Skin.HasSetting(viewmidlist_music)">ViewMidList</include>
 					<!-- 70-->
-					<include condition="Skin.HasSetting(viewmultilist_music)">ViewMultiList</include>
+					<include condition="Skin.HasSetting(viewmultilist_music)">ViewMultiListAudio</include>
 					<!-- 71 -->
 				</control>
 				<control type="image">
