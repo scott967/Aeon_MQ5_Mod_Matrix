@@ -3085,8 +3085,7 @@
 					<visible>![Skin.HasSetting(kiosksmart) + !String.Contains(skin.string(codestep),step3)]</visible>
 				</control>
 			</control>
-			<control type="grouplist" id="9201">
-				<!-- Opcoes da Vista -->
+			<control type="grouplist" id="9201"><!-- Collection/change view -->
 				<animation effect="slide" start="0,0" end="0,675" time="600" tween="sine" easing="inout" condition="Control.HasFocus(9200) | ControlGroup(9201).HasFocus">Conditional</animation>
 				<posx>482</posx>
 				<posy>-600</posy>
@@ -3117,7 +3116,7 @@
 				<control type="button" id="4001">
 					<!-- Missing info filter -->
 					<include>TopMenuButton</include>
-					<label>$ADDON[script.games.rom.collection.browser 50009]</label>
+					<label>$ADDON[script.games.rom.collection.browser 32409]</label>
 				</control>
 				<control type="radiobutton" id="1000">
 					<!-- Favourites -->
@@ -3127,7 +3126,7 @@
 				<control type="button" id="1100">
 					<!-- Search -->
 					<include>TopMenuButton</include>
-					<label>$ADDON[script.games.rom.collection.browser 50005]:</label>
+					<label>$ADDON[script.games.rom.collection.browser 32405]:</label>
 				</control>
 				<control type="button" id="9213">
 					<!-- GameTrailers.com: Exclusive Shows -->

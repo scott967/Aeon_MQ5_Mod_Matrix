@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
 <!-- Leia 10.2.4 -->
+<!-- Matrix 11.0.4 -->
 <window id="3015">
 <!-- <window id="5400"> -->
 	<defaultcontrol>5411</defaultcontrol>
@@ -80,7 +81,7 @@
 				<aligny>center</aligny>
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<font>Font_20</font>
-				<label>$ADDON[script.games.rom.collection.browser 57000]</label>
+				<label>$ADDON[script.games.rom.collection.browser 32900]</label>
 			</control>
 			<!-- Rom Collection List -->
 			<control type="group">
@@ -331,14 +332,14 @@
 				<control type="button" id="6000">
 					<!-- Delete -->
 					<include>SettingsDialogButton</include>
-					<label>$ADDON[script.games.rom.collection.browser 57002]</label>
+					<label>$ADDON[script.games.rom.collection.browser 32902]</label>
 					<onleft>SetFocus(5411)</onleft>
 					<onright>SetFocus(5411)</onright>
 				</control>
 				<control type="button" id="6010">
 					<!-- Cancel -->
 					<include>SettingsDialogButton</include>
-					<label>$ADDON[script.games.rom.collection.browser 52035]</label>
+					<label>$ADDON[script.games.rom.collection.browser 32126]</label>
 					<onleft>SetFocus(5411)</onleft>
 					<onright>SetFocus(5411)</onright>
 				</control>

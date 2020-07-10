@@ -2,8 +2,9 @@
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
 <!-- Leia 10.4.0/10.6.1 -->
+<!-- Matrix 11.0.4 -->
 <includes>
-	<!--##################################################################################   VISTA WIDE ID 50   #############################################################################-->
+	<!--##################################################################################   VISTA WIDE ID 50 FOR RCB  #############################################################################-->
 	<include name="ViewWideGames">
 		<control type="group">
 			<visible>Control.IsVisible(50)</visible>
@@ -471,7 +472,7 @@
 					<!-- Play count -->
 					<include>WideLabel</include>
 					<posy>330</posy>
-					<label>$ADDON[script.games.rom.collection.browser 54005]:</label>
+					<label>$ADDON[script.games.rom.collection.browser 32423]:</label>
 				</control>
 				<control type="label">
 					<include>WideValue</include>
