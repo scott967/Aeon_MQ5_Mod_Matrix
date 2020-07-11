@@ -2523,27 +2523,38 @@
 				<height>30</height>
 				<orientation>horizontal</orientation>
 				<align>left</align>
-				<visible>Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | Window.IsVisible(music) | Window.IsVisible(videos)</visible>
+				<!-- <visible>Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | Window.IsVisible(music) | Window.IsVisible(videos)</visible> -->
 				<control type="image">
 					<width>30</width>
 					<height>30</height>
 					<texture>osd_menu_random_on_square.png</texture>
 					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
-					<visible>Playlist.IsRandom</visible>
+					<visible>Playlist.IsRandom + [Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]</visible>
 				</control>
 				<control type="image">
 					<width>30</width>
 					<height>30</height>
 					<texture>osd_menu_repeat_one_square.png</texture>
 					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
-					<visible>Playlist.IsRepeatOne</visible>
+					<visible>Playlist.IsRepeatOne + [Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]</visible>
 				</control>
 				<control type="image">
 					<width>30</width>
 					<height>30</height>
 					<texture>osd_menu_repeat_square.png</texture>
 					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
-					<visible>Playlist.IsRepeat</visible>
+					<visible>Playlist.IsRepeat + [Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]</visible>
+				</control>
+				<control type="label">
+					<width>300</width>
+					<height>30</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>Font_18A</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[21483] : [/COLOR]$INFO[Container.Viewmode]</label>
+					<scroll>true</scroll>
+					<visible>!String.Contains(skin.font,massive)</visible>
 				</control>
 			</control>
 			<control type="label">
