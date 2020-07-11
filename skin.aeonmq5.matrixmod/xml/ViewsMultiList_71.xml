@@ -1597,7 +1597,7 @@
 						</control>
 						<control type="label">
 							<posx>772</posx>
-							<posy>-30</posy>
+							<posy>-15</posy>
 							<width>128</width>
 							<height>60</height>
 							<font>Font_18A</font>
@@ -1610,7 +1610,7 @@
 						</control>
 						<control type="label">
 							<posx>772</posx>
-							<posy>-30</posy>
+							<posy>-15</posy>
 							<width>128</width>
 							<height>60</height>
 							<font>Font_14A</font>
@@ -1801,7 +1801,7 @@
 						<visible>!String.IsEmpty(ListItem.DBType) | [Control.IsVisible(715) + !String.Contains(ListItem.Label,New tag)]</visible>
 						<control type="image">  <!-- reflected image -->
 							<posx>60</posx>
-							<posy>989</posy>
+							<posy>981</posy>
 							<width>255</width>
 							<height>255</height>
 							<fadetime>FanartCrossFadeTime</fadetime>
