@@ -1356,10 +1356,7 @@
 <!--  ********************* List 71 ************************************** -->
 <!--                                                                       -->
 <!--  Main list  This list will support the following sublists:            -->
-<!--  715  A list of movies or musicvideos for an attribute node -->
-<!--  712  A list of albums for an artist                                  -->
-<!--  713  A list of musicvideos for an artist                             -->
-<!--  714  A list of artists for a musicdb genre or role                   -->
+<!--  715  A list of movies or musicvideos for an attribute node           -->
 <!--                                                                       -->
 <!--  ******************************************************************** -->
 				<control type="fixedlist" id="71">
@@ -1816,7 +1813,7 @@
 							<height>255</height>
 							<fadetime>FanartCrossFadeTime</fadetime>
 							<aspectratio align="center" aligny="bottom">keep</aspectratio>
-							<texture fallback="DefaultVideoCover.png" background="true">$VAR[value_leftart_multilistvideo]</texture>
+							<texture background="true">$VAR[value_leftart_multilistvideo]</texture>
 							<bordertexture border="-2">black.png</bordertexture>
 						</control>
 					</control>
@@ -1861,9 +1858,9 @@
 							<colordiffuse>DEFFFFFF</colordiffuse>
 						</control>
 					</control>
-					<control type="group">  <!-- Poster for 715, movies, musicvideos right art with case -->
+					<control type="group">  <!-- Poster for 715, movies, musicvideos w poster right art with case -->
 						<include>Animation_Fade</include>
-						<visible>!Skin.HasSetting(nomultivideocase) + [Control.IsVisible(715) | String.Contains(ListItem.DBType,movie)] + !String.Contains(ListItem.Label,New tag)</visible>
+						<visible>!Skin.HasSetting(nomultivideocase) + [[Control.IsVisible(715) + !String.IsEmpty(Container(715).ListItem(0).Art(poster))] | String.Contains(ListItem.DBType,movie) | [String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(poster)]] + !String.Contains(ListItem.Label,New tag)</visible>
 						<control type="image">  <!-- reflected poster -->
 							<posx>380</posx>
 							<posy>1019</posy>
@@ -1879,7 +1876,7 @@
 							<width>206</width>
 							<height>291</height>
 							<fadetime>FanartCrossFadeTime</fadetime>
-							<texture flipy="true" diffuse="thumb_box_reflect.png">$VAR[value_videocase115]</texture>
+							<texture flipy="true" diffuse="thumb_box_reflect.png">$VAR[value_videocase715]</texture>
 							<aspectratio>stretch</aspectratio>
 						</control>						
 						<control type="image">  <!-- 715 poster movie w case -->
@@ -1889,59 +1886,123 @@
 							<height>241</height>
 							<fadetime>FanartCrossFadeTime</fadetime>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture diffuse="thumb_box_diffuse.png" fallback="DefaultVideoCover.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
+							<texture diffuse="thumb_box_diffuse.png" fallback="DefaultVideoPoster.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
 						</control>
-						<control type="image">	<!-- video case -->
+						<control type="image">	<!-- video case 715 -->
 							<posx>365</posx>
 							<posy>704</posy>
 							<width>206</width>
 							<height>291</height>
-							<texture>$VAR[value_videocase115]</texture>
+							<texture>$VAR[value_videocase715]</texture>
 							<colordiffuse>DEFFFFFF</colordiffuse>
+							<visible>Control.IsVisible(715)</visible>
 						</control>	
-						<control type="image">	<!-- Codec -->
-						<posx>407</posx>
-						<posy>406</posy>
-						<width>50</width>
-						<height>50</height>
-						<fadetime>FanartCrossFadeTime</fadetime>
-						<align>center</align>
-						<aligny>center</aligny>
-						<aspectratio scalediffuse="true">keep</aspectratio>
-						<texture>$VAR[value_videocodec115]</texture>
+						<control type="image">	<!-- video case 71 -->
+							<posx>365</posx>
+							<posy>704</posy>
+							<width>206</width>
+							<height>291</height>
+							<texture>$VAR[value_videocase0]</texture>
+							<colordiffuse>DEFFFFFF</colordiffuse>
+							<visible>!Control.IsVisible(715)</visible>
+						</control>
+						<control type="image">	<!-- Codec 715 -->
+							<posx>443</posx>
+							<posy>704</posy>
+							<width>50</width>
+							<height>50</height>
+							<fadetime>FanartCrossFadeTime</fadetime>
+							<align>center</align>
+							<aligny>center</aligny>
+							<aspectratio scalediffuse="true">keep</aspectratio>
+							<texture>$VAR[value_videocodec715]</texture>
+							<visible>Control.IsVisible(715)</visible>
+						</control>
+						<control type="image">	<!-- Codec 71 -->
+							<posx>443</posx>
+							<posy>704</posy>
+							<width>50</width>
+							<height>50</height>
+							<fadetime>FanartCrossFadeTime</fadetime>
+							<align>center</align>
+							<aligny>center</aligny>
+							<aspectratio scalediffuse="true">keep</aspectratio>
+							<texture>$VAR[value_videocodec0]</texture>
+							<visible>!Control.IsVisible(715)</visible>
+						</control>
 					</control>
-					</control>
-					<control type="group">  <!-- Poster for 715, musicvideos right art no case -->
+					<control type="group">  <!-- Movie Poster for 715, musicvideos w poster right art no case -->
 						<include>Animation_Fade</include>
-						<visible>Skin.HasSetting(nomultivideocase) + [Control.IsVisible(715) | String.IsEqual(ListItem.DBType,musicvideo) | String.Contains(ListItem.DBType,movie)] + !String.Contains(ListItem.Label,New tag)</visible>
+						<visible>Skin.HasSetting(nomultivideocase) + [Control.IsVisible(715) | [String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(poster)] | String.Contains(ListItem.DBType,movie)] + !String.Contains(ListItem.Label,New tag)</visible>
 						<control type="image">  <!-- reflected poster -->
 							<posx>382</posx>
 							<posy>989</posy>
-							<width>255</width>
-							<height>208</height>
+							<width>170</width>
+							<height>255</height>
 							<fadetime>FanartCrossFadeTime</fadetime>
 							<texture flipy="true" diffuse="thumb_reflect.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
 							<aspectratio>stretch</aspectratio>
 						</control>
 						<control type="image">  <!-- 715  poster no case -->
 							<posx>382</posx>
-							<posy>661</posy>
-							<width>255</width>
+							<posy>716</posy>
+							<width>170</width>
 							<height>255</height>
 							<fadetime>FanartCrossFadeTime</fadetime>
 							<aspectratio scalediffuse="false">keep</aspectratio>
-							<texture fallback="DefaultVideoCover.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
+							<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
+						</control>
+					</control>
+					<control type="group">  <!-- Musicvideo no poster and MV albums with media case right art -->
+						<include>Animation_Fade</include>
+						<visible>!Skin.HasSetting(nomultividiocase) + [[Control.IsVisible(715) + !String.IsEmpty(Container(715).ListItem(0).Art(cover)) + String.IsEmpty(Container(715).ListItem(0).Art(poster))] | [String.IsEqual(ListItem.DBType,musicvideo) + String.IsEmpty(ListItem.Art(poster))]]</visible>
+						<control type="image">
+							<!-- Reflected cover-->
+							<posx>380</posx>
+							<posy>979</posy>
+							<width>255</width>
+							<height>255</height>
+							<fadetime>FanartCrossFadeTime</fadetime>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture flipy="true" diffuse="thumb_box_diffuse_reflect.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
+						</control>
+						<control type="image">
+							<!-- reflected cd case -->
+							<posx>338</posx>
+							<posy>973</posy>
+							<width>308</width>
+							<height>271</height>
+							<texture flipy="true" diffuse="thumb_box_reflect.png">thumb_box_cd.png</texture>
+						</control>
+						<control type="image">
+							<!-- cover -->
+							<posx>380</posx>
+							<posy>716</posy>
+							<width>255</width>
+							<height>255</height>
+							<fadetime>FanartCrossFadeTime</fadetime>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<texture diffuse="thumb_box_diffuse.png" fallback="DefaultAudioCover.png" background="true">$VAR[value_rightart_multilistvideo]</texture>
+						</control>
+						<control type="image">
+							<!-- CD case -->
+							<posx>338</posx>
+							<posy>710</posy>
+							<width>308</width>
+							<height>271</height>
+							<texture>thumb_box_cd.png</texture>
+							<colordiffuse>DEFFFFFF</colordiffuse>
 						</control>
 					</control>
 				</control>
-				<control type="image">
+				<!-- <control type="image">
 					<posx>15</posx>
 					<posy>860</posy>
 					<width>930</width>
 					<height>1</height>
 					<texture>line.png</texture>
 					<visible>!String.IsEmpty(Control.GetLabel(1017))</visible>
-				</control>
+				</control> -->
 				<control type="image" id="1017">  <!-- Artist's clearlogo -->
 					<posx>630</posx>
 					<posy>867</posy>

@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]06/30/2020</value>
+		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]08/10/2020</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -1641,29 +1641,29 @@
 		<value condition="String.Contains(Player.Filenameandpath,4k)">$VAR[value_color4kcase]</value>
 		<value condition="![String.Contains(Player.Filenameandpath,bluray) | String.Contains(Player.Filenameandpath,blu-ray) | String.Contains(Player.Filenameandpath,bdrip) | String.Contains(Player.Filenameandpath,hddvd) | String.Contains(Player.Filenameandpath,dvd) | String.EndsWith(Player.Filenameandpath,.ifo) | String.EndsWith(Player.Filenameandpath,.iso) | String.Contains(Player.Filenameandpath,.3dbd.) | String.Contains(Player.Filenameandpath,.3d.) | String.Contains(Player.Filenameandpath,web) | String.Contains(ListItem(0).Path,videodb://movies/sets) | String.Contains(Player.Filenameandpath,4k)]">$VAR[value_colordefaultcase]</value>
 	</variable>
-	<variable name="value_videocase115">  <!-- multilist video -->
-		<value condition="[String.Contains(Container(115).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(115).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(115).ListItem(0).Filenameandpath,bdrip)] + ![String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_colorbluraycase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,web)">$VAR[value_colorwebtvcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,hdtv)">$VAR[value_colorhdtvcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,dvd) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.ifo) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.iso) + ![String.Contains(Container(115).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_colordvdcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.)">$VAR[value_color3dbdcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Path,videodb://movies/sets)">$VAR[value_colorsetcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,uhd)">$VAR[value_coloruhdcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,hdr)">$VAR[value_colorhdrcase]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,4k)">$VAR[value_color4kcase]</value>
-		<value condition="![String.Contains(Container(115).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(115).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(115).ListItem(0).Filenameandpath,bdrip) | String.Contains(Container(115).ListItem(0).Filenameandpath,hddvd) | String.Contains(Container(115).ListItem(0).Filenameandpath,dvd) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.ifo) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.iso) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.) | String.Contains(Container(115).ListItem(0).Filenameandpath,web) | String.Contains(Container(115).ListItem(0).Path,videodb://movies/sets) | String.Contains(Container(115).ListItem(0).Filenameandpath,4k)]">$VAR[value_colordefaultcase]</value>
+	<variable name="value_videocase715">  <!-- multilist video -->
+		<value condition="[String.Contains(Container(715).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(715).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(715).ListItem(0).Filenameandpath,bdrip)] + ![String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_colorbluraycase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,web)">$VAR[value_colorwebtvcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,hdtv)">$VAR[value_colorhdtvcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,dvd) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.ifo) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.iso) + ![String.Contains(Container(715).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_colordvdcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.)">$VAR[value_color3dbdcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Path,videodb://movies/sets)">$VAR[value_colorsetcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,uhd)">$VAR[value_coloruhdcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,hdr)">$VAR[value_colorhdrcase]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,4k)">$VAR[value_color4kcase]</value>
+		<value condition="![String.Contains(Container(715).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(715).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(715).ListItem(0).Filenameandpath,bdrip) | String.Contains(Container(715).ListItem(0).Filenameandpath,hddvd) | String.Contains(Container(715).ListItem(0).Filenameandpath,dvd) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.ifo) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.iso) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.) | String.Contains(Container(715).ListItem(0).Filenameandpath,web) | String.Contains(Container(715).ListItem(0).Path,videodb://movies/sets) | String.Contains(Container(715).ListItem(0).Filenameandpath,4k)]">$VAR[value_colordefaultcase]</value>
 	</variable>
-	<variable name="value_videocodec115">  <!-- multilist video -->
-		<value condition="[String.Contains(Container(115).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(115).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(115).ListItem(0).Filenameandpath,bdrip)] + ![String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_codecbluray115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,web)">$VAR[value_codecwebtv115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,hdtv)">$VAR[value_codechdtv115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,dvd) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.ifo) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.iso) + ![String.Contains(Container(115).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_codecdvd115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.)">$VAR[value_codec3dbd115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Path,videodb://movies/sets)">$VAR[value_codecset115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,hdr)">$VAR[value_codechdr115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,uhd)">$VAR[value_codecuhd115]</value>
-		<value condition="String.Contains(Container(115).ListItem(0).Filenameandpath,4k)">$VAR[value_codec4k115]</value>
-		<value condition="![String.Contains(Container(115).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(115).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(115).ListItem(0).Filenameandpath,bdrip) | String.Contains(Container(115).ListItem(0).Filenameandpath,hdtv) | String.Contains(Container(115).ListItem(0).Filenameandpath,web) | String.Contains(Container(115).ListItem(0).Filenameandpath,dvd) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(115).ListItem(0).Filenameandpath,.3d.) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.iso) | String.EndsWith(Container(115).ListItem(0).Filenameandpath,.ifo) | String.Contains(Container(115).ListItem(0).Filenameandpath,web) | String.Contains(Container(115).ListItem(0).Path,videodb://movies/sets) | String.Contains(Container(115).ListItem(0).Filenameandpath,4k)]">$VAR[value_codecdefault115]</value>
+	<variable name="value_videocodec715">  <!-- multilist video -->
+		<value condition="[String.Contains(Container(715).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(715).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(715).ListItem(0).Filenameandpath,bdrip)] + ![String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_codecbluray715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,web)">$VAR[value_codecwebtv715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,hdtv)">$VAR[value_codechdtv715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,dvd) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.ifo) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.iso) + ![String.Contains(Container(715).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.)]">$VAR[value_codecdvd715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.)">$VAR[value_codec3dbd715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Path,videodb://movies/sets)">$VAR[value_codecset715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,hdr)">$VAR[value_codechdr715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,uhd)">$VAR[value_codecuhd715]</value>
+		<value condition="String.Contains(Container(715).ListItem(0).Filenameandpath,4k)">$VAR[value_codec4k715]</value>
+		<value condition="![String.Contains(Container(715).ListItem(0).Filenameandpath,bluray) | String.Contains(Container(715).ListItem(0).Filenameandpath,blu-ray) | String.Contains(Container(715).ListItem(0).Filenameandpath,bdrip) | String.Contains(Container(715).ListItem(0).Filenameandpath,hdtv) | String.Contains(Container(715).ListItem(0).Filenameandpath,web) | String.Contains(Container(715).ListItem(0).Filenameandpath,dvd) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3dbd.) | String.Contains(Container(715).ListItem(0).Filenameandpath,.3d.) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.iso) | String.EndsWith(Container(715).ListItem(0).Filenameandpath,.ifo) | String.Contains(Container(715).ListItem(0).Filenameandpath,web) | String.Contains(Container(715).ListItem(0).Path,videodb://movies/sets) | String.Contains(Container(715).ListItem(0).Filenameandpath,4k)]">$VAR[value_codecdefault715]</value>
 	</variable>
 	<!-- ######################################################################### Variable Mpaa Flags ######################################################################### -->
 	<variable name="value_mpaa">
@@ -1863,9 +1863,9 @@
 		<value condition="String.Contains(skin.string(codec_default),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_default),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codecdefault115">
+	<variable name="value_codecdefault715">
 		<value condition="!String.Contains(skin.string(codec_default),default)">$VAR[value_codecdefault]</value>
-		<value condition="String.Contains(skin.string(codec_default),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_default),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codecdefault0">
 		<value condition="!String.Contains(skin.string(codec_default),default)">$VAR[value_codecdefault]</value>
@@ -1939,9 +1939,9 @@
 		<value condition="String.Contains(skin.string(codec_bluray),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_bluray),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codecbluray115">
+	<variable name="value_codecbluray715">
 		<value condition="!String.Contains(skin.string(codec_bluray),default)">$VAR[value_codecbluray]</value>
-		<value condition="String.Contains(skin.string(codec_bluray),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_bluray),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codecbluray0">
 		<value condition="!String.Contains(skin.string(codec_bluray),default)">$VAR[value_codecbluray]</value>
@@ -2015,9 +2015,9 @@
 		<value condition="String.Contains(skin.string(codec_3dbd),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_3dbd),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codec3dbd115">
+	<variable name="value_codec3dbd715">
 		<value condition="!String.Contains(skin.string(codec_3dbd),default)">$VAR[value_codec3dbd]</value>
-		<value condition="String.Contains(skin.string(codec_3dbd),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_3dbd),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codec3dbd0">
 		<value condition="!String.Contains(skin.string(codec_3dbd),default)">$VAR[value_codec3dbd]</value>
@@ -2091,9 +2091,9 @@
 		<value condition="String.Contains(skin.string(codec_webtv),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_webtv),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codecwebtv115">
+	<variable name="value_codecwebtv715">
 		<value condition="!String.Contains(skin.string(codec_webtv),default)">$VAR[value_codecwebtv]</value>
-		<value condition="String.Contains(skin.string(codec_webtv),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_webtv),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codecwebtv0">
 		<value condition="!String.Contains(skin.string(codec_webtv),default)">$VAR[value_codecwebtv]</value>
@@ -2167,9 +2167,9 @@
 		<value condition="String.Contains(skin.string(codec_hdtv),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_hdtv),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codechdtv115">
+	<variable name="value_codechdtv715">
 		<value condition="!String.Contains(skin.string(codec_hdtv),default)">$VAR[value_codechdtv]</value>
-		<value condition="String.Contains(skin.string(codec_hdtv),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_hdtv),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codechdtv0">
 		<value condition="!String.Contains(skin.string(codec_hdtv),default)">$VAR[value_codechdtv]</value>
@@ -2243,9 +2243,9 @@
 		<value condition="String.Contains(skin.string(codec_dvd),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_dvd),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codecdvd115">
+	<variable name="value_codecdvd715">
 		<value condition="!String.Contains(skin.string(codec_dvd),default)">$VAR[value_codecdvd]</value>
-		<value condition="String.Contains(skin.string(codec_dvd),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_dvd),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codecdvd0">
 		<value condition="!String.Contains(skin.string(codec_dvd),default)">$VAR[value_codecdvd]</value>
@@ -2319,9 +2319,9 @@
 		<value condition="String.Contains(skin.string(codec_set),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_set),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codecset115">
+	<variable name="value_codecset715">
 		<value condition="!String.Contains(skin.string(codec_set),default)">$VAR[value_codecset]</value>
-		<value condition="String.Contains(skin.string(codec_set),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_set),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codecset0">
 		<value condition="!String.Contains(skin.string(codec_set),default)">$VAR[value_codecset]</value>
@@ -2395,9 +2395,9 @@
 		<value condition="String.Contains(skin.string(codec_4k),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_4k),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codec4k115">
+	<variable name="value_codec4k715">
 		<value condition="!String.Contains(skin.string(codec_4k),default)">$VAR[value_codec4k]</value>
-		<value condition="String.Contains(skin.string(codec_4k),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_4k),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codec4k0">
 		<value condition="!String.Contains(skin.string(codec_4k),default)">$VAR[value_codec4k]</value>
@@ -2472,9 +2472,9 @@
 		<value condition="String.Contains(skin.string(codec_hdr),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_hdr),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codechdr115">
+	<variable name="value_codechdr715">
 		<value condition="!String.Contains(skin.string(codec_hdr),default)">$VAR[value_codechdr]</value>
-		<value condition="String.Contains(skin.string(codec_hdr),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_hdr),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codechdr0">
 		<value condition="!String.Contains(skin.string(codec_hdr),default)">$VAR[value_codechdr]</value>
@@ -2548,9 +2548,9 @@
 		<value condition="String.Contains(skin.string(codec_uhd),hdr)">flags/source/hdr.png</value>
 		<value condition="String.Contains(skin.string(codec_uhd),uhd)">flags/source/uhd.png</value>
 	</variable>
-	<variable name="value_codecuhd115">
+	<variable name="value_codecuhd715">
 		<value condition="!String.Contains(skin.string(codec_uhd),default)">$VAR[value_codecuhd]</value>
-		<value condition="String.Contains(skin.string(codec_uhd),default)">$INFO[Container(115).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
+		<value condition="String.Contains(skin.string(codec_uhd),default)">$INFO[Container(715).ListItem(0).VideoCodec,flags/casecodec/,.png]</value>
 	</variable>
 	<variable name="value_codecuhd0">
 		<value condition="!String.Contains(skin.string(codec_uhd),default)">$VAR[value_codecuhd]</value>
@@ -4003,25 +4003,34 @@
 		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
 	<variable name="value_rightart_multilistvideo">
-		<value condition="Control.IsVisible(715)">$INFO[Container(715).ListItem(0).Art(poster)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(poster)">$INFO[ListItem.Art(poster)]</value>
+		<value condition="Control.IsVisible(715) + !String.IsEmpty(Container(715).ListItem(0).Art(poster))">$INFO[Container(715).ListItem(0).Art(poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="Control.HasFocus(713)">$INFO[Container(713).ListItem(0).Art(thumb)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(cover))">$INFO[ListItem.Art(cover)]</value>
+		<value condition="!String.IsEmpty(Container(715).ListItem(0).Art(cover))">$INFO[Container(715).ListItem(0).Art(cover)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + String.IsEmpty(ListItem.Art(cover))">$INFO[Container(7100).ListItem(0).Art(thumb)]</value>
 		<value condition="Control.IsVisible(713) + !Control.HasFocus(713) + !String.IsEmpty(Container(713).ListItem(0).Art(cover))">$INFO[Container(713).ListItem(0).art(cover)]</value>
 		<value condition="Control.IsVisible(713) + !Control.HasFocus(713) + String.IsEmpty(Container(713)ListItem(0).Art(cover))">$INFO[Container(713).ListItem(0).art(thumb)]</value>
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.DBType) + Container.Content(songs) + String.Contains(ListItem.Path,musicvideos)">DefaultMusicVideos.png</value> <!-- for mv in mixed m3u playlists in music -->
-		<value condition="String.IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>
+		<!-- <value condition="String.IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.ActualIcon]</value> -->
 	</variable>
 	<variable name="value_leftart_multilistvideo">
-		<!-- genre art -->
-		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
-		<value condition="Window.IsActive(videos) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<!-- genre art except musicvideos -->
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalvideogenreicon) + !String.Contains(Container.FolderPath,musicvideo)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + Skin.HasSetting(externalvideogenreicon) + !String.Contains(Container.FolderPath,musicvideo)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<value condition="Window.IsActive(videos) + [String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,genres)] + !Skin.HasSetting(externalvideogenreicon) + !String.Contains(Container.FolderPath,musicvideo)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[Container(715).ListItem(0).Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<value condition="Window.IsActive(videos) + [String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,genres)] + Skin.HasSetting(externalvideogenreicon) + !String.Contains(Container.FolderPath,musicvideo)">$INFO[Skin.String(custom_moviegenreicons.path)]$INFO[Container(715).ListItem(0).Label]$INFO[Skin.String(custom_moviegenreicons.ext)]</value>
+		<!-- genre art (music) musicvideos -->
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + !Skin.HasSetting(externalmusicgenreicon) + String.Contains(Container.FolderPath,musicvideo)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
+		<value condition="Window.IsActive(videos) + Container.Content(genres) + Skin.HasSetting(externalmusicgenreicon) + String.Contains(Container.FolderPath,musicvideo)">$INFO[Skin.String(custom_musicgenreicons.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenreicons.ext)]</value>
 		<!-- studio art -->
 		<value condition="String.Contains(ListItem.DBType,studio)">$INFO[Skin.String(custom_studios.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_studios.ext)]</value>
-		<!-- actor thumb -->
-		<value condition="String.Contains(ListItem.DBType,actor)">$INFO[ListItem.Art(thumb)]</value>
-		<value condition="String.Contains(ListItem.DBType,set)">$INFO[ListItem.Art(poster)]</value>
+		<value condition="[String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,studios)]">$INFO[Skin.String(custom_studios.path)]$INFO[Container(715).ListItem(0).Label]$INFO[Skin.String(custom_studios.ext)]</value>
+		<!-- video person thumb -->
+		<value condition="String.Contains(ListItem.DBType,actor) | String.Contains(ListItem.DBType(director)">$INFO[ListItem.Art(thumb)]</value>
+		<!-- video set / tvshow poster -->
+		<value condition="String.Contains(ListItem.DBType,set) | String.Contains(ListItem.DBType,tvshow)">$INFO[ListItem.Art(poster)]</value>
+		<!-- <value condition="[String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,sets)]">$INFO[Container(715).ListItem(0).Art(poster)]</value> -->
 		<value condition="Control.IsVisible(715)">$INFO[Container(715).ListItem(0).Art(thumb)]</value>
 		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
