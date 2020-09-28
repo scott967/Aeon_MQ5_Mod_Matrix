@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
 <!-- Leia 10.3.0 -->
+<!-- Matrix 11.0.4 -->
 <includes>
 	<!--##################################################################################   VISTA PHOTOSHOW - ID 79   ##################################################################################-->
 	<include name="ViewPhotoShow">
@@ -55,7 +56,7 @@
 					<posy>352</posy>
 					<width>1728</width>
 					<font>Font_18A</font>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$INFO[Container.CurrentItem]/$INFO[Container.NumItems] | $INFO[ListItem.Label]</label>
 					<include>Animation_Fade</include>
 					<visible>!Control.HasFocus(80) + [Container(79).Column(0) | Container(79).Column(1) | Container(79).Column(2)]</visible>
 				</control>
@@ -65,7 +66,7 @@
 					<width>1728</width>
 					<align>right</align>
 					<font>Font_18A</font>
-					<label>$INFO[ListItem.Label]</label>
+					<label>$INFO[Container.CurrentItem]/$INFO[Container.NumItems] | $INFO[ListItem.Label]</label>
 					<include>Animation_Fade</include>
 					<visible>!Control.HasFocus(80) + [Container(79).Column(3) | Container(79).Column(4) | Container(79).Column(5)]</visible>
 				</control>
@@ -136,6 +137,7 @@
 					<width>112</width>
 					<height>75</height>
 					<align>center</align>
+					<aligny>center</aligny>
 					<font>Font_18B</font>
 					<textcolor>$VAR[value_flagscolor]</textcolor>
 					<label>$INFO[Container.CurrentItem]/$INFO[Container.NumItems]</label>
@@ -145,6 +147,8 @@
 					<posx>145</posx>
 					<posy>36</posy>
 					<font>Font_18A</font>
+					<height>75</height>
+					<aligny>center</aligny>
 					<label>$INFO[ListItem.Label]</label>
 					<animation effect="fade" delay="600" start="0" end="100" time="200">Visible</animation>
 				</control>
@@ -155,6 +159,7 @@
 					<width>600</width>
 					<height>150</height>
 					<align>right</align>
+					<aligny>center</aligny>
 					<font>Font_17AB</font>
 					<label>[COLOR=$VAR[value_headercolor]]$LOCALIZE[31714]:[/COLOR] $INFO[ListItem.PictureDateTime][CR][COLOR=$VAR[value_headercolor]]$LOCALIZE[31350]:[/COLOR] $INFO[ListItem.Date][CR][COLOR=$VAR[value_headercolor]]$LOCALIZE[31715]:[/COLOR] $INFO[ListItem.PictureResolution][CR]$INFO[ListItem.Size]</label>
 					<animation effect="fade" delay="600" start="0" end="100" time="200">Visible</animation>
