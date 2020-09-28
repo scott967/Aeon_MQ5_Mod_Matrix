@@ -160,7 +160,10 @@
 			<include>ScrollLabel</include>
 			<include>TopMenu_Pics</include>
 			<include>BGBlack</include>
-			<include>ContainerViewPage</include>
+			<control type="group">
+				<visible>!Control.IsVisible(79)</visible>
+				<include>ContainerViewPage</include>
+			</control>
 		</control>
 	</controls>
 </window>
