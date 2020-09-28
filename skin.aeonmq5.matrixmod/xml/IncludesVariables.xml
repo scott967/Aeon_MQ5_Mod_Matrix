@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]08/10/2020</value>
+		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]10/10/2020</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -3741,7 +3741,7 @@
 		<!-- Genero Artistas -->
 		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Type)]</value>
 		<value condition="Window.IsActive(programs) + !Container.Content(Addons)">$INFO[ListItem.Genre]</value>
-		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonStatus]$INFO[ListItem.AddonBroken, | ]</value>
+		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonStatus]$INFO[ListItem.AddonLifecycleType, | ]</value>
 	</variable>
 	<variable name="value_ground3_label">
 		<!-- Para vistas que nao sejam lista -->
@@ -3856,7 +3856,7 @@
 		<value condition="String.IsEqual(ListItem.DBType,set)">$INFO[Window(home).Property(SkinInfo.Set.Movies.Genre)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.director]</value>
 		<value condition="Window.IsActive(programs) + !Container.Content(Addons)">$INFO[ListItem.Genre]</value>
-		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonBroken]</value>
+		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonLifecycleType]</value>
 	</variable>
 	<variable name="value_ground13_label">  <!-- used in media list views 51,53,54,55,57,59,60,64,66,71 -->
 		<value condition="[Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylist)] + Player.HasVideo + VideoPlayer.Content(musicvideos)">$LOCALIZE[558]</value> <!-- MV playing album -->
@@ -3971,9 +3971,9 @@
 		<value condition="Window.IsActive(musicplaylist) + ![Player.HasAudio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] +  String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Art(album.thumb)]</value>
 		<value condition="Window.IsActive(musicplaylist) + ![Player.HasAudio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] +  String.IsEqual(ListItem.DBType,musicvideo)">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="Window.IsActive(musicplaylist) + Player.HasVideo +  VideoPlayer.Content(musicvideos)">$INFO[Player.Art(thumb)]</value>  <!-- MV is playing on mixed playlist -->
-		<!-- art for other than msuicplaylist (not genres)  -->
+		<!-- art for other than musicplaylist (not genres)  -->
 		<value condition="![String.IsEmpty(ListItem.Art(poster)) | Container.Content(genres)]">$INFO[ListItem.Art(poster)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(cover)) + Container.Content(musicvideos)">$INFO[ListItem.Art(cover)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(cover)) + Container.Content(musicvideos) + [!Control.IsVisible(62) | [Control.IsVisible(62) + !Skin.HasSetting(noviewpanelposter)]]">$INFO[ListItem.Art(cover)]</value>
 		<value condition="Window.IsVisible(videos) + Container.Content(albums)">$INFO[Container(5026).ListItem(0).Art(thumb)]</value>  <!-- invisible list to get album art for musicvideos -->
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.DBType) + Container.Content(songs) + String.Contains(ListItem.Path,musicvideos)">DefaultMusicVideos.png</value> <!-- for mv in mixed m3u playlists in music -->
 		<value condition="String.IsEmpty(ListItem.Art(poster)) + !Container.Content(genres)">$INFO[ListItem.Icon]</value>

@@ -1360,7 +1360,7 @@
 <!--                                                                       -->
 <!--  ******************************************************************** -->
 				<control type="fixedlist" id="71">
-					<viewtype label="Multi-$LOCALIZE[535]">list</viewtype>
+					<viewtype label="MULTI-$LOCALIZE[31801]">list</viewtype>
 					<posx>0</posx>
 					<posy>98</posy>
 					<width>960</width>
@@ -1478,7 +1478,7 @@
 							<height>60</height>
 							<texture>settings_button_focus.png</texture>
 							<!-- <animation effect="fade" start="100" end="50" time="0" condition="![Control.Hasfocus(71) | Control.HasFocus(712)]">conditional</animation> -->
-							<animation effect="fade" start="100" end="70" time="0" condition="!Control.HasFocus(71)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(71)">conditional</animation>
 						</control>
 						<control type="label">
 							<posx>68</posx>
@@ -1511,7 +1511,7 @@
 							<height>94</height>
 							<texture>settings_button_focus.png</texture>
 							<!-- <animation effect="fade" start="100" end="50" time="0" condition="![Control.Hasfocus(71) | Control.HasFocus(712)]">conditional</animation> -->
-							<animation effect="fade" start="100" end="70" time="0" condition="!Control.HasFocus(71)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(71)">conditional</animation>
 						</control>
 						<control type="label">
 							<posx>68</posx>
@@ -1556,7 +1556,7 @@
 							<height>60</height>
 							<texture>settings_button_focus.png</texture>
 							<!-- <animation effect="fade" start="100" end="50" time="0" condition="![Control.Hasfocus(71) | Control.HasFocus(711)]">conditional</animation> -->
-							<animation effect="fade" start="100" end="70" time="0" condition="!Control.HasFocus(71)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(71)">conditional</animation>
 						</control>
 						<control type="label">
 							<posx>68</posx>
@@ -1660,7 +1660,7 @@
 							<height>94</height>
 							<texture>settings_button_focus.png</texture>
 							<!-- <animation effect="fade" start="100" end="50" time="0" condition="![Control.Hasfocus(71) | Control.HasFocus(711)]">conditional</animation> -->
-							<animation effect="fade" start="100" end="70" time="0" condition="!Control.HasFocus(71)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(71)">conditional</animation>
 						</control>
 						<control type="label">
 							<posx>68</posx>
@@ -2155,7 +2155,7 @@
 				</control>
 			</control>
 <!-- End slide out B562 group +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
-<!-- Song list 715 for video items for an attribute -->
+<!-- list 715 for video items for an attribute -->
 			<control type="group">  <!--  video (movie / musicvideo / season / episode / set list 715 -->
 				<control type="fixedlist" id="715">
 					<posx>970</posx>
@@ -2202,6 +2202,32 @@
 							<label>$INFO[ListItem.Duration]</label>
 							<animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(albums) | Container.Content(mixed) | String.Contains(ListItem.DBType,musicvideo)">Conditional</animation>
 						</control>
+						<control type="image">
+							<posx>897</posx>
+							<posy>2</posy>
+							<width>45</width>
+							<height>45</height>
+							<texture>$VAR[value_watchedstyle]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>897</posx>
+							<posy>-2</posy>
+							<width>45</width>
+							<height>45</height>
+							<texture>inprogress/loading-back.png</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays) + ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>897</posx>
+							<posy>-2</posy>
+							<width>45</width>
+							<height>45</height>
+							<texture>inprogress/p$INFO[ListItem.PercentPlayed].png</texture>
+							<visible>!Skin.HasSetting(nooverlays) + ListItem.IsResumable</visible>
+						</control>
 					</itemlayout>
 					<focusedlayout height="60">
 						<control type="image">
@@ -2210,7 +2236,7 @@
 							<width>960</width>
 							<height>60</height>
 							<texture>settings_button_focus.png</texture>
-							<animation effect="fade" start="100" end="70" time="0" condition="!Control.HasFocus(715)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(715)">conditional</animation>
 						</control>
 						<control type="label">
 							<posx>68</posx>
@@ -2234,6 +2260,32 @@
 							<include>listcolorfocus</include>
 							<label>$INFO[ListItem.Duration]</label>
 							<animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(albums) | Container.Content(mixed) | String.Contains(ListItem.DBType,musicvideo)">Conditional</animation>
+						</control>
+						<control type="image">
+							<posx>897</posx>
+							<posy>2</posy>
+							<width>45</width>
+							<height>45</height>
+							<texture>$VAR[value_watchedstyle]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>897</posx>
+							<posy>-2</posy>
+							<width>45</width>
+							<height>45</height>
+							<texture>inprogress/loading-back.png</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays) + ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<posx>897</posx>
+							<posy>-2</posy>
+							<width>45</width>
+							<height>45</height>
+							<texture>inprogress/p$INFO[ListItem.PercentPlayed].png</texture>
+							<visible>!Skin.HasSetting(nooverlays) + ListItem.IsResumable</visible>
 						</control>
 					</focusedlayout>
 					<content target="videos" sortby="title" sortorder="ascending">$INFO[Container(71).ListItem.FolderPath]</content>
