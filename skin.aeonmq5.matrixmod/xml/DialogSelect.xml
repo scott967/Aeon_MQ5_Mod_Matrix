@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2000/9.2.3 -->
 <!-- Leia 10.2.4/10.2.8/10.3.0/10.4.0/10.5.0/10.6.0 -->
+<!-- Matrix 11.0.4 PR18235 -->
 <window>
 	<defaultcontrol>3</defaultcontrol>
 	<coordinates>
@@ -482,7 +483,8 @@
 					<posy>945</posy>
 					<width>315</width>
 					<height>52</height>
-					<label>186</label>
+					<!-- <label>186</label> -->
+					<label></label>
 					<texturenofocus></texturenofocus>
 					<texturefocus></texturefocus>
 					<textcolor>FF505050</textcolor>
@@ -490,7 +492,8 @@
 					<font>Font_18</font>
 					<align>right</align>
 					<aligny>center</aligny>
-					<onleft>7</onleft>
+					<onleft condition="Control.IsVisible(8)">8</onleft>
+					<onleft condition="!Control.IsVisible(8)">7</onleft>
 					<onright>7</onright>
 					<onup condition="Control.IsVisible(11)">11</onup>
 					<onup condition="Control.IsVisible(3)">3</onup>
@@ -501,7 +504,7 @@
 				</control>
 				<control type="button" id="7">
 					<description>Cancel Button</description>
-					<posx>585</posx>
+					<posx>270</posx>
 					<posy>945</posy>
 					<width>315</width>
 					<height>52</height>
@@ -514,6 +517,30 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<onleft>5</onleft>
+					<onright condition="Control.IsEnabled(8)">8</onright>
+					<onright condition="!Control.IsEnabled(8)">5</onright>
+					<onup condition="Control.IsVisible(11)">11</onup>
+					<onup condition="Control.IsVisible(3)">3</onup>
+					<onup condition="Control.IsVisible(6)">6</onup>
+					<ondown condition="Control.IsVisible(11)">11</ondown>
+					<ondown condition="Control.IsVisible(3)">3</ondown>
+					<ondown condition="Control.IsVisible(6)">6</ondown>
+				</control>
+				<control type="button" id="8">
+					<description>3rd button</description>
+					<posx>585</posx>
+					<posy>945</posy>
+					<width>315</width>
+					<height>52</height>
+					<label></label>
+					<texturenofocus></texturenofocus>
+					<texturefocus></texturefocus>
+					<textcolor>FF505050</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<font>Font_18</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<onleft>7</onleft>
 					<onright>5</onright>
 					<onup condition="Control.IsVisible(11)">11</onup>
 					<onup condition="Control.IsVisible(3)">3</onup>
