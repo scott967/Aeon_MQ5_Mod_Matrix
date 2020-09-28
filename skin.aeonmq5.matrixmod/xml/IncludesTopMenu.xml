@@ -1167,8 +1167,8 @@
 					<!-- music video big icons -->
 					<include>TopMenuRadioButton</include>
 					<label>$LOCALIZE[31013] [UPPERCASE]$LOCALIZE[417][/UPPERCASE]</label>
-					<onclick>Skin.ToggleSetting(nopanelbigicon)</onclick>
-					<selected>Skin.HasSetting(nopanelbigicon)</selected>
+					<onclick>Skin.ToggleSetting(panelbigicon)</onclick>
+					<selected>Skin.HasSetting(panelbigicon)</selected>
 					<visible>Control.IsVisible(62) + Container.Content(musicvideos)</visible>
 				</control>
 				<!-- Sets -->
