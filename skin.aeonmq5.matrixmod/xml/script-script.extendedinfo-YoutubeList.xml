@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Matrix 11.0.4 -->
 <window>
 	<onload condition="String.IsEmpty(Window(home).Property(WindowColor))">SetProperty(WindowColor,FFFFFFFF,home)</onload>
 	<onunload>ClearProperty(WindowColor,home)</onunload>
@@ -417,18 +418,18 @@
 				<onback>500</onback>
 				<control type="button" id="5007">
 					<label>$LOCALIZE[467]:</label>
-					<label2>[COLOR FFFAFAFA]$INFO[Window.Property(Type)][/COLOR]</label2>
+					<label2>[COLOR FF101010]$INFO[Window.Property(Type)][/COLOR]</label2>
 					<width>438</width>
 					<height>70</height>
 					<textoffsetx>30</textoffsetx>
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5001">
 					<onup>6000</onup>
@@ -440,11 +441,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="label" id="5333">
 					<label>$ADDON[script.extendedinfo 32023]</label>
@@ -465,11 +466,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5003">
 					<label>$LOCALIZE[248]</label>
@@ -479,11 +480,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5006">
 					<label>$ADDON[script.extendedinfo 32066]</label>
@@ -493,11 +494,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5008">
 					<label>$LOCALIZE[180]</label>
@@ -507,11 +508,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5009">
 					<label>$LOCALIZE[287]</label>
@@ -521,11 +522,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5012">
 					<label>$LOCALIZE[169]</label>
@@ -535,11 +536,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5013">
 					<label>$LOCALIZE[564]</label>
@@ -549,11 +550,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 				<control type="button" id="5005">
 					<label>$ADDON[script.extendedinfo 32022]</label>
@@ -563,11 +564,11 @@
 					<textwidth>315</textwidth>
 					<align>left</align>
 					<aligny>center</aligny>
-					<texturefocus colordiffuse="FF12B2E7">topmenu_button_focus.png</texturefocus>
-					<texturenofocus border="20">topmenu_button_nofocus.png</texturenofocus>
+					<texturefocus>settings_button_focus.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[value_texturecolor]">darkgrey.png</texturenofocus>
 					<font>Font_18A</font>
-					<textcolor>FF999999</textcolor>
-					<focusedcolor>FFFAFAFA</focusedcolor>
+					<textcolor>80FFFAF0</textcolor>
+					<focusedcolor>FF101010</focusedcolor>
 				</control>
 			</control>
 		</control>

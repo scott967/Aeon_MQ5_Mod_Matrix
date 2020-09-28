@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--  Initial use with Kodi Leia10.5.2 -->
+<!-- Matrix 11.0.4 -->
 <window>
 	<defaultcontrol always="true">4000</defaultcontrol>
 	<controls>
@@ -28,7 +29,7 @@
 		<control type="button" id="20000">
 			<height>0</height>
 			<width>0</width>
-			<texturefocus>-</texturefocus>
+			<!-- <texturefocus>-</texturefocus> -->
 			<left>-5000</left>
 			<onfocus>SetFocus(132)</onfocus>
 			<onclick>noop</onclick>
@@ -37,7 +38,7 @@
 		<control type="button" id="20001">
 			<height>0</height>
 			<width>0</width>
-			<texturefocus>-</texturefocus>
+			<!-- <texturefocus>-</texturefocus> -->
 			<left>-5000</left>
 			<onclick>noop</onclick>
 			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
