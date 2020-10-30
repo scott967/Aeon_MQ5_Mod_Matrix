@@ -1,3 +1,9 @@
+[B][COLOR=FFFF8C00]BUILD 11.0.4 - RELEASE DATE 10/30/2020[/COLOR][/B]
+This release is for use in Kodi Matrix 19 Alpha 2.  Note that Matrix compatible addons
+are required.  Unique addons not in the Kodi Matrix repo are available in the Aeon MQ5 Mods
+repo.
+
+
 [B][COLOR=FFFF8C00]BUILD 11.0.1 - RELEASE DATE 05/12/2019[/COLOR][/B]
 Inital release for Kodi Martix.  Based on LeiaMod 10.6.2
 
