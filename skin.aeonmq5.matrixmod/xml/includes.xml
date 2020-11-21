@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.7/10.2.8/10.3.0/10.4.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2/10.6.3 -->
-<!-- Matrix 11.0.1/11.0.2/11.0.4 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5 -->
 <includes>
 	<include file="Defaults.xml" />
 	<include file="IncludesVariables.xml" />
@@ -2524,28 +2524,28 @@
 				<orientation>horizontal</orientation>
 				<align>left</align>
 				<!-- <visible>Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | Window.IsVisible(music) | Window.IsVisible(videos)</visible> -->
-				<control type="image">
+				<control type="image">  <!-- random playlist icon -->
 					<width>30</width>
 					<height>30</height>
 					<texture>osd_menu_random_on_square.png</texture>
 					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
 					<visible>Playlist.IsRandom + [Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]</visible>
 				</control>
-				<control type="image">
+				<control type="image">  <!-- repeat one playlist icon -->
 					<width>30</width>
 					<height>30</height>
 					<texture>osd_menu_repeat_one_square.png</texture>
 					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
 					<visible>Playlist.IsRepeatOne + [Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]</visible>
 				</control>
-				<control type="image">
+				<control type="image">  <!-- repeat list playlist icon -->
 					<width>30</width>
 					<height>30</height>
 					<texture>osd_menu_repeat_square.png</texture>
 					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
 					<visible>Playlist.IsRepeat + [Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)]</visible>
 				</control>
-				<control type="label">
+				<control type="label">  <!-- current viewmode -->
 					<width>300</width>
 					<height>30</height>
 					<align>left</align>
@@ -2557,7 +2557,7 @@
 					<visible>!String.Contains(skin.font,massive)</visible>
 				</control>
 			</control>
-			<control type="label">
+			<control type="label">  <!-- info for current view -->
 				<posx>705</posx>
 				<posy>3</posy>
 				<width>675</width>
