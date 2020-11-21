@@ -3797,7 +3797,7 @@
 	<variable name="value_ground6_value">  <!-- used in views 59,65 (rightlist/sets -->
 		<value condition="Window.IsActive(musicplaylist) + Player.HasAudio">$LOCALIZE[31582]   $INFO[MusicPlayer.Artist]</value>
 		<value condition="Window.IsActive(musicplaylist) + !String.IsEmpty(VideoPlayer.Artist)">$LOCALIZE[31582]   $INFO[VideoPlayer.Artist]</value>
-		<value condition="Window.IsVisible(VideoPlaylist) + !String.IsEmpty(Container.ListItemAbsolute(0).Year) + MusicPartyMode.Enabled">$LOCALIZE[31582]   $INFO[Container.ListItemAbsolute(0).Year]</value>
+		<value condition="Window.IsVisible(VideoPlaylist) + !String.IsEmpty(Container.ListItemAbsolute(0).Year) + MusicPartyMode.Enabled">$LOCALIZE[31582]   $INFO[Container.ListItemAbsolute(0).Year]   $INFO[VideoPlayer.Title]</value>
 		<!-- fixed for party mode -->
 		<!-- <value condition="Window.IsVisible(VideoPlaylist) + !String.IsEmpty(VideoPlayer.Year)">$LOCALIZE[31582]   $INFO[VideoPlayer.Year]</value> -->
 		<value condition="Window.IsVisible(VideoPlaylist) + Player.HasVideo">$LOCALIZE[31582]   $INFO[VideoPlayer.Title]</value>  <!-- Now playing title -->
