@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.4 Matrixmod[COLOR=80FFFFFF] | [/COLOR]10/30/2020</value>
+		<value>11.0.5 Matrixmod[COLOR=80FFFFFF] | [/COLOR]12/31/2020</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -4258,7 +4258,7 @@
 		<value condition="String.IsEqual(Container.SortOrder,ascending)">↑</value>
 		<value>↓</value>
 	</variable>
-	<variable name="value_multilabel">
+	<variable name="value_multilabel">  <!-- used in multidata bar -->
 		<value condition="Window.IsActive(loginscreen)">[COLOR=$VAR[value_headercolor]]Aeon MQ 5 - [/COLOR]$VAR[SkinVersion]</value>
 		<value condition="Container.Content(movies) + ![Container.Content(sets) | Window.IsActive(selectdialog) | Skin.HasSetting(trailers) | !String.IsEmpty(skin.string(playlists)) | Container.Content(sets)]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20342]:[/COLOR] $INFO[Window(home).Property(Movies.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(home).Property(Movies.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(home).Property(Movies.UnWatched)]</value>
 		<value condition="Container.Content(sets) + !Control.HasFocus(5801) + !String.Contains(ListItem.DBType,set)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20434]:[/COLOR] $INFO[Container.NumItems]</value>
@@ -4326,6 +4326,8 @@
 		<value condition="String.IsEqual(skin.string(playlists),apl20)">$LOCALIZE[31230] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[132]:[/COLOR] $INFO[Window(home).Property(PlaylistLastMusicapl20.Albums)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[182]:[/COLOR] $INFO[Window(home).Property(PlaylistLastMusicapl20.Songs)]</value>
 		<value condition="Skin.HasSetting(trailers)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31087]:[/COLOR] $INFO[Container.NumItems]</value>
 		<value condition="String.IsEqual(Container.FolderPath,videodb://movies/sets/) + !Window.IsActive(2000)">$LOCALIZE[31029]</value>
+		<value condition="Window.IsActive(videoplaylist) + MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[589] $LOCALIZE[31210]: [/COLOR]$INFO[MusicPartyMode.SongsPlayed] / $INFO[MusicPartyMode.MatchingSongs]</value>
+		<value condition="Window.IsActive(videoplaylist) + !MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[559] $LOCALIZE[31582]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(musicvideos) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31086]: [/COLOR]$INFO[Window(home).Property(MusicVideos.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(home).Property(MusicVideos.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(home).Property(MusicVideos.UnWatched)]</value>
 		<value condition="Container.Content(tvshows) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20343]: [/COLOR]$INFO[Window(home).Property(TVShows.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(home).Property(TVShows.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(home).Property(TVShows.UnWatched)]</value>
 		<value condition="Container.Content(seasons) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$INFO[Container.SortMethod]$VAR[multilabel_sortdir] / $LOCALIZE[33054][/COLOR]</value>
@@ -4349,8 +4351,6 @@
 		<value condition="Container.Content(years) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$INFO[Container.SortMethod]$VAR[multilabel_sortdir] / $LOCALIZE[652]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="[Container.Content(directors) | Container.Content(countries) | Container.Content(tags)] + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$INFO[Container.SortMethod]$VAR[multilabel_sortdir] / $INFO[Container.Content]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="String.IsEmpty(Container.Content) | Container.Content(files)">[COLOR=$VAR[value_headercolor]]$INFO[Container.SortMethod]$VAR[multilabel_sortdir][/COLOR]</value>
-		<value condition="Window.IsActive(videoplaylist) + MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[589] $LOCALIZE[31210]: [/COLOR]$INFO[MusicPartyMode.SongsPlayed] / $INFO[MusicPartyMode.MatchingSongs]</value>
-		<value condition="Window.IsActive(videoplaylist) + !MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[559] $LOCALIZE[31582]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Window.IsActive(settings)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31445][/COLOR]</value>
 		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(3)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(3).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages]</value>
 		<value condition="Window.IsActive(selectdialog) + Control.Hasfocus(6)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31210]: [/COLOR]$INFO[Container(6).NumItems] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[31215]: [/COLOR]$INFO[Container(6).CurrentPage]/$INFO[Container(6).NumPages]</value>
