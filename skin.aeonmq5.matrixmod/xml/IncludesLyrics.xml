@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.1/Orby -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.4.0/10.5.2/10.6.0/10.6.2 -->
+<!-- Matrix 11.0.5 -->
 <includes>
 	<!-- ######################################################################### Letras layout estilo default ######################################################################### -->
 	<include name="LyricsDefault">
@@ -165,6 +166,7 @@
 				<visible>false</visible>
 			</control>
 			<!-- ** Required ** Do not change <id> or <type> -->
+			<!--  removed in script
 			<control type="list" id="120">
 				<posx>150</posx>
 				<posy>105</posy>
@@ -213,6 +215,7 @@
 					</control>
 				</focusedlayout>
 			</control>
+			-->
 			<control type="spincontrol" id="121">
 				<visible>false</visible>
 			</control>
@@ -346,6 +349,7 @@
 				<visible>false</visible>
 			</control>
 			<!-- ** Required ** Do not change <id> or <type> -->
+			<!--  revomed in script
 			<control type="list" id="120">
 				<posx>150</posx>
 				<posy>135</posy>
@@ -393,6 +397,7 @@
 					</control>
 				</focusedlayout>
 			</control>
+			-->
 			<control type="spincontrol" id="121">
 				<visible>false</visible>
 			</control>
