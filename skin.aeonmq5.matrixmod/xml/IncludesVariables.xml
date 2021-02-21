@@ -4695,9 +4695,10 @@
 		<value condition="String.IsEqual(Container.FolderName,Music Videos) | String.IsEqual(Container.FolderName,Roles)">$INFO[Container.FolderName]</value>
 	</variable>
 	<variable name="value_music_subtitle">
+		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.AlbumArtist]$INFO[MusicPlayer.Album, | ]</value>
 		<value condition="String.Contains(ListItem.Label,all albums) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[Container.FolderName]</value>
 		<value condition="String.IsEqual(ListItem.DBType,album) + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(musicinformation)]">$INFO[ListItem.AlbumArtist]</value>
-		<value condition="[String.IsEqual(ListItem.DBType,song) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Window.IsActive(songinformation)]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>
+		<value condition="[String.IsEqual(ListItem.DBType,song) | Container.Content(mixed)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | [Window.IsActive(songinformation) + !Window.IsActive(visualisation)]]">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Album, | ]</value>
 		<value condition="[Container.Content(musicvideos) | String.Contains(Container.FolderPath,musicvideos)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62)]">$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="value_songinfo_title">
@@ -4759,8 +4760,8 @@
 	<variable name="value_songinfo_plot">
 		<value condition="Window.IsActive(visualisation) + String.Contains(MusicPlayer.Genre,classical)">$INFO[MusicPlayer.Comment]</value>
 		<value condition="Window.IsActive(songinformation) + String.IsEqual(ListItem.DBType,musicvideo)">$INFO[ListItem.Plot]</value>
-		<value condition="Player.HasAudio + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31940]: [/COLOR]$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarName)]$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName), / ][CR]$INFO[MusicPlayer.Property(Artist_Description)]$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography), - ]</value>
-		<value condition="Player.HasAudio + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
+		<value condition="Player.HasAudio + [Window.IsActive(visualisation)) | [Window.IsActive(musicplaylist + String.IsEqual(Player.Filename,ListItem.FileName)]] +  !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31940]: [/COLOR]$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarName)]$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarName), / ]$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName), / ][CR]$INFO[MusicPlayer.Property(Artist_Description)]$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography), - ]</value>
+		<value condition="Player.HasAudio + [Window.IsActive(visualisation)) | [Window.IsActive(musicplaylist + String.IsEqual(Player.Filename,ListItem.FileName)]] + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshowRunning))">$INFO[MusicPlayer.Property(Artist_Description)]</value>
 		<value condition="!Player.HasAudio | Window.IsActive(songinformation) + String.IsEmpty(VideoPlayer.Artist)">$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</value>		
 	</variable>
 	<variable name="value_songinfo_record">
@@ -4768,18 +4769,18 @@
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Property(Album.label),flags/music/recordlabel/,.png]</value>
 	</variable>
 	<variable name="value_songinfo_codec">
-		<value condition="Player.HasAudio">$INFO[MusicPlayer.Codec,flags/musiccodec/,.png]</value>
+		<value condition="Player.HasAudio + !Window.IsActive(music)">$INFO[MusicPlayer.Codec,flags/musiccodec/,.png]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]</value>
 		<value>$VAR[value_musiccodec]</value>
 	</variable>
 	<variable name="value_songinfo_channels">
-		<value condition="Player.HasAudio">$INFO[MusicPlayer.Channels,flags/audiochannels/,ch.png]</value>
+		<value condition="Player.HasAudio + !Window.IsActive(music)">$INFO[MusicPlayer.Channels,flags/audiochannels/,ch.png]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.AudioChannels,flags/audiochannels/,ch.png]</value>
 		<value>$INFO[ListItem.AudioChannels,flags/audiochannels/,ch.png]</value>
 		<!-- not defined -->
 	</variable>
 	<variable name="value_songinfo_thumb">
-		<value condition="Player.HasAudio">$INFO[MusicPlayer.Cover]</value>
+		<value condition="Player.HasAudio + Window.IsActive(visualisation)">$INFO[MusicPlayer.Cover]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[Player.Art(thumb)]</value>
 		<value>$INFO[Listitem.Icon]</value>
 	</variable>
