@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.0.5 Matrixmod[COLOR=80FFFFFF] | [/COLOR]02/28/2021</value>
+		<value>11.1.0 Matrixmod[COLOR=80FFFFFF] | [/COLOR]02/21/2021</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -4325,7 +4325,7 @@
 		<value condition="String.IsEqual(skin.string(playlists),apl19)">$LOCALIZE[31230] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[132]:[/COLOR] $INFO[Window(home).Property(PlaylistLastMusicapl19.Albums)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[182]:[/COLOR] $INFO[Window(home).Property(PlaylistLastMusicapl19.Songs)]</value>
 		<value condition="String.IsEqual(skin.string(playlists),apl20)">$LOCALIZE[31230] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[132]:[/COLOR] $INFO[Window(home).Property(PlaylistLastMusicapl20.Albums)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[182]:[/COLOR] $INFO[Window(home).Property(PlaylistLastMusicapl20.Songs)]</value>
 		<value condition="Skin.HasSetting(trailers)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31087]:[/COLOR] $INFO[Container.NumItems]</value>
-		<value condition="String.IsEqual(Container.FolderPath,videodb://movies/sets/) + !Window.IsActive(2000)">$LOCALIZE[31029]</value>
+		<value condition="String.IsEqual(Container.FolderPath,videodb://movies/sets/) + !Window.IsActive(selectdialog)">$LOCALIZE[31029]</value>
 		<value condition="Window.IsActive(videoplaylist) + MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[589] $LOCALIZE[31210]: [/COLOR]$INFO[MusicPartyMode.SongsPlayed] / $INFO[MusicPartyMode.MatchingSongs]</value>
 		<value condition="Window.IsActive(videoplaylist) + !MusicPartyMode.Enabled + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[559] $LOCALIZE[31582]: [/COLOR]$INFO[Container.NumItems]</value>
 		<value condition="Container.Content(musicvideos) + !Window.IsActive(selectdialog)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31086]: [/COLOR]$INFO[Window(home).Property(MusicVideos.Count)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16102]:[/COLOR] $INFO[Window(home).Property(MusicVideos.Watched)][COLOR=80FFFFFF] | [/COLOR][COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]:[/COLOR] $INFO[Window(home).Property(MusicVideos.UnWatched)]</value>
