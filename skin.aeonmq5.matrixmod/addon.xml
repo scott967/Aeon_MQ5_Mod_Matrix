@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui" version="11.0.5">
+<addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui / scott967" version="11.1.0">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.favourites" version="4.0.4" />
@@ -66,8 +66,8 @@
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 11.0.5 - RELEASE DATE 1q/30/2020 for Kodi MATRIX 19.0 Release[/COLOR][/B]
-This is a MOD of Aeon MQ5 by user Scott967
+		<news>[B][COLOR=FFFF8C00]BUILD 11.1.0 - RELEASE DATE 02/21/2021 for Kodi MATRIX 19.0 Release[/COLOR][/B]
+This is a MOD of Aeon MQ5 by user scott967.  Compatible with Kodi Matrix official release 19.0
 
 		</news>
 	</extension>
