@@ -4,11 +4,11 @@
 <!-- Aeon MQ5 Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.14/9.1.16/9.1.17/9.1.18/9.1.19 /9.2.0/9.2.1 window IDs/9.2.2 /9.2.3-->
 <!-- Leia 10.2.3 /10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1 -->
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.1.0 Matrixmod[COLOR=80FFFFFF] | [/COLOR]02/21/2021</value>
+		<value>11.1.1 Matrixmod[COLOR=80FFFFFF] | [/COLOR]03/31/2021</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -4693,6 +4693,7 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="[Container.Content(songs) | Container.Content(mixed) | Container.Content(musicvideos)] + [Control.IsVisible(54) | Control.IsVisible(56) | Control.IsVisible(58) | Control.IsVisible(62) | Window.IsActive(songinformation)]">$INFO[ListItem.Label]</value>
 		<value condition="String.IsEqual(Container.FolderName,Music Videos) | String.IsEqual(Container.FolderName,Roles)">$INFO[Container.FolderName]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin)">$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="value_music_subtitle">
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.AlbumArtist]$INFO[MusicPlayer.Album, | ]</value>

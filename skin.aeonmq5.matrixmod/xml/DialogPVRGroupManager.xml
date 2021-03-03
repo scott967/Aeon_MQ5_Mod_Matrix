@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.3 Isengard 7.1.8 -->
 <!-- Leia 10.3.0 -->
+<!-- Matrix 11.1.1 -->
 <window>
 	<defaultcontrol always="true">6</defaultcontrol>
 	<coordinates>
 		<system>1</system>
 	</coordinates>
 	<controls>
-		<control type="group">
+		<control type="group">  <!-- main group -->
 			<visible>!Window.IsVisible(FileBrowser)</visible>
 			<include>Animation_DialogPopup</include>
 			<control type="image">
@@ -58,21 +59,22 @@
 			</control>
 			<control type="group">
 				<description>Chan Group list</description>
-				<posx>210</posx>
+				<posx>245</posx>
 				<posy>105</posy>
 				<control type="label">
 					<description>name label Avail Groups</description>
 					<left>0</left>
 					<top>0</top>
 					<height>45</height>
+					<width>400</width>
 					<font>Font_18</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
 					<textcolor>$VAR[value_headercolor]</textcolor>
-					<label>31996</label>
+					<label>$LOCALIZE[31996]</label>
 				</control>
-				<control type="list" id="13">
+				<control type="list" id="13">  <!-- list of groups -->
 					<left>0</left>
 					<top>75</top>
 					<width>375</width>
@@ -88,7 +90,9 @@
 						<control type="label">
 							<left>15</left>
 							<top>0</top>
-							<include>PVRSearchButtonSmall</include>
+							<textoffsetx>0</textoffsetx>  <!-- override PVRSearchButton -->
+							<include>PVRSearchButton</include>
+							<align>left</align>
 							<info>ListItem.Label</info>
 						</control>
 					</itemlayout>
@@ -105,7 +109,8 @@
 						<control type="label">
 							<left>15</left>
 							<top>0</top>
-							<include>PVRSearchButtonList</include>
+							<textoffsetx>0</textoffsetx>  <!-- override PVRSearchButton -->
+							<include>PVRSearchButton</include>
 							<info>ListItem.Label</info>
 						</control>
 					</focusedlayout>
@@ -122,13 +127,13 @@
 				</control>
 			</control>
 			<control type="group">
-				<description>Ungrouped Channels list</description>
+				<description>Hidden/Ungrouped Channels list</description>
 				<left>645</left>
 				<top>105</top>
 				<control type="label" id="21">
 					<description>name label</description>
-					<left>0</left>
-					<top>0</top>
+					<posx>30</posx>
+					<posy>0</posy>
 					<height>45</height>
 					<font>Font_18</font>
 					<align>left</align>
@@ -137,9 +142,9 @@
 					<textcolor>$VAR[value_headercolor]</textcolor>
 				</control>
 				<control type="list" id="11">
-					<left>0</left>
+					<left>-20</left>
 					<top>75</top>
-					<width>375</width>
+					<width>440</width>
 					<height>525</height>
 					<onup>11</onup>
 					<ondown>11</ondown>
@@ -148,33 +153,34 @@
 					<pagecontrol>71</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemgap>0</itemgap>
-					<itemlayout height="45" width="375">
+					<itemlayout height="45" width="440">
 						<control type="image">
 							<posx>45</posx>
 							<posy>3</posy>
-							<width>39</width>
+							<width>78</width>
 							<height>39</height>
+							<aspectratio>keep</aspectratio>
 							<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<posx>98</posx>
+							<posx>137</posx>
 							<posy>0</posy>
-							<width>375</width>
+							<width>440</width>
 							<height>45</height>
 							<font>Font_18</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>FFFFFAF0</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.ChannelName]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="75" width="375">
+					<focusedlayout height="45" width="440">
 						<control type="image">
-							<posx>0</posx>
+							<posx>40</posx>
 							<posy>0</posy>
-							<width>375</width>
-							<height>75</height>
+							<width>400</width>
+							<height>45</height>
 							<texture>settings_button_focus.png</texture>
 							<visible>Control.HasFocus(11)</visible>
 							<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(20)">conditional</animation>
@@ -182,50 +188,51 @@
 						<control type="image">
 							<posx>45</posx>
 							<posy>0</posy>
-							<width>75</width>
-							<height>75</height>
+							<width>88</width>
+							<height>45</height>
 							<texture>black.png</texture>
 							<visible>Control.HasFocus(11)</visible>
 							<animation effect="fade" end="70" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-							<posx>52</posx>
-							<posy>8</posy>
-							<width>60</width>
-							<height>60</height>
+							<posx>50</posx>
+							<posy>3</posy>
+							<width>78</width>
+							<height>39</height>
+							<aspectratio>keep</aspectratio>
 							<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<posx>135</posx>
-							<posy>1</posy>
-							<width>375</width>
+							<posx>137</posx>
+							<posy>0</posy>
+							<width>400</width>
 							<height>45</height>
-							<font>Font_22</font>
+							<font>Font_18</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>FF101010</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.ChannelName]</label>
 							<visible>Control.HasFocus(11)</visible>
 						</control>
 						<control type="label">
-							<posx>135</posx>
-							<posy>1</posy>
-							<width>375</width>
+							<posx>137</posx>
+							<posy>0</posy>
+							<width>400</width>
 							<height>45</height>
-							<font>Font_22</font>
+							<font>Font_18</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>FFFFFAF0</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.ChannelName]</label>
 							<visible>!Control.HasFocus(11)</visible>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="71">
 					<include>ScrollBar_Vertical</include>
-					<posx>0</posx>
+					<posx>-20</posx>
 					<posy>75</posy>
 					<height>525</height>
 					<onleft>13</onleft>
@@ -250,9 +257,9 @@
 					<textcolor>$VAR[value_headercolor]</textcolor>
 				</control>
 				<control type="list" id="12">
-					<left>0</left>
+					<left>-20</left>
 					<top>75</top>
-					<width>375</width>
+					<width>440</width>
 					<height>525</height>
 					<onup>12</onup>
 					<ondown>12</ondown>
@@ -261,16 +268,17 @@
 					<pagecontrol>72</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemgap>0</itemgap>
-					<itemlayout height="45" width="375">
+					<itemlayout height="45" width="440">
 						<control type="image">
 							<posx>45</posx>
 							<posy>3</posy>
-							<width>39</width>
+							<width>78</width>
 							<height>39</height>
+							<aspectratio>keep</aspectratio>
 							<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<posx>98</posx>
+							<posx>137</posx>
 							<posy>0</posy>
 							<width>375</width>
 							<height>45</height>
@@ -279,15 +287,15 @@
 							<aligny>center</aligny>
 							<textcolor>FFFFFAF0</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelName]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="75" width="375">
+					<focusedlayout height="45" width="440">
 						<control type="image">
-							<posx>0</posx>
+							<posx>40</posx>
 							<posy>0</posy>
-							<width>375</width>
-							<height>75</height>
+							<width>400</width>
+							<height>45</height>
 							<texture>settings_button_focus.png</texture>
 							<visible>Control.HasFocus(12)</visible>
 							<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(20)">conditional</animation>
@@ -295,50 +303,51 @@
 						<control type="image">
 							<posx>45</posx>
 							<posy>0</posy>
-							<width>75</width>
-							<height>75</height>
+							<width>88</width>
+							<height>45</height>
 							<texture>black.png</texture>
 							<visible>Control.HasFocus(12)</visible>
 							<animation effect="fade" end="70" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-							<posx>52</posx>
-							<posy>8</posy>
-							<width>60</width>
-							<height>60</height>
+							<posx>50</posx>
+							<posy>3</posy>
+							<width>78</width>
+							<height>39</height>
+							<aspectratio>keep</aspectratio>
 							<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="label">
-							<posx>135</posx>
-							<posy>1</posy>
-							<width>375</width>
+							<posx>137</posx>
+							<posy>0</posy>
+							<width>400</width>
 							<height>45</height>
-							<font>Font_22</font>
+							<font>Font_18</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>FF101010</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelName]</label>
 							<visible>Control.HasFocus(12)</visible>
 						</control>
 						<control type="label">
-							<posx>135</posx>
-							<posy>1</posy>
-							<width>375</width>
+							<posx>137</posx>
+							<posy>0</posy>
+							<width>400</width>
 							<height>45</height>
-							<font>Font_22</font>
+							<font>Font_18</font>
 							<align>left</align>
 							<aligny>center</aligny>
 							<textcolor>FFFFFAF0</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-							<label>$INFO[ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelName]</label>
 							<visible>!Control.HasFocus(12)</visible>
 						</control>
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="72">
 					<include>ScrollBar_Vertical</include>
-					<posx>0</posx>
+					<posx>-20</posx>
 					<posy>75</posy>
 					<height>525</height>
 					<onleft>11</onleft>
@@ -347,17 +356,13 @@
 					<onup>72</onup>
 				</control>
 			</control>
-			<control type="group" id="9002">
+			<control type="group" id="9002">  <!-- group actions -->
 				<control type="group">
 					<posx>960</posx>
-					<posy>150</posy>
-				</control>
-				<control type="group">
-					<posx>960</posx>
-					<posy>750</posy>
+					<posy>730</posy>
 					<control type="label">
 						<posx>45</posx>
-						<posy>8</posy>
+						<posy>0</posy>
 						<width>570</width>
 						<height>30</height>
 						<font>Font_18</font>
@@ -366,35 +371,35 @@
 					</control>
 					<control type="button" id="26">
 						<!-- add grp -->
-						<textoffsetx>60</textoffsetx>
+						<textoffsetx>50</textoffsetx>
 						<include>PVRSearchButtonSmall</include>
 						<posx>0</posx>
-						<posy>45</posy>
-						<label>31993</label>
-						<onleft>12</onleft>
+						<posy>55</posy>
+						<label>$LOCALIZE[31993]</label>
+						<onleft>13</onleft>
 						<onright>27</onright>
-						<onup>25</onup>
+						<onup>13</onup>
 						<ondown>25</ondown>
 					</control>
 					<control type="button" id="27">
 						<!-- rename grp -->
-						<textoffsetx>60</textoffsetx>
+						<textoffsetx>50</textoffsetx>
 						<include>PVRSearchButtonSmall</include>
 						<posx>334</posx>
-						<posy>45</posy>
-						<label>31994</label>
+						<posy>55</posy>
+						<label>$LOCALIZE[31994]</label>
 						<onleft>26</onleft>
 						<onright>13</onright>
-						<onup>28</onup>
+						<onup>13</onup>
 						<ondown>28</ondown>
 					</control>
 					<control type="button" id="28">
 						<!-- delete grp -->
-						<textoffsetx>60</textoffsetx>
+						<textoffsetx>50</textoffsetx>
 						<include>PVRSearchButtonSmall</include>
 						<posx>334</posx>
-						<posy>90</posy>
-						<label>31995</label>
+						<posy>100</posy>
+						<label>$LOCALIZE[31995]</label>
 						<onleft>25</onleft>
 						<onright>13</onright>
 						<onup>27</onup>
@@ -402,14 +407,14 @@
 					</control>
 					<control type="radiobutton" id="25">
 						<!-- hide group -->
-						<textoffsetx>60</textoffsetx>
+						<textoffsetx>50</textoffsetx>
 						<radioposx>195</radioposx>
 						<include>PVRSearchButtonSmall</include>
 						<include>Animation_Fade</include>
 						<posx>0</posx>
-						<posy>90</posy>
-						<label>19289</label>
-						<onleft>12</onleft>
+						<posy>100</posy>
+						<label>$LOCALIZE[19289]</label>
+						<onleft>13</onleft>
 						<onright>28</onright>
 						<onup>26</onup>
 						<ondown>9000</ondown>

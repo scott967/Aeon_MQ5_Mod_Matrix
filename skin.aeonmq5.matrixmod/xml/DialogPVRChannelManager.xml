@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.3/6.1.5 -->
+<!-- Matrix 11.1.1 -->
 <window>
 	<defaultcontrol always="true">20</defaultcontrol>
 	<coordinates>
@@ -76,7 +77,7 @@
 				<texture>grey.png</texture>
 				<colordiffuse>20FFFFFF</colordiffuse>
 			</control>
-			<control type="list" id="20">
+			<control type="list" id="20">  <!-- channel list -->
 				<posx>210</posx>
 				<posy>150</posy>
 				<width>750</width>
@@ -89,47 +90,51 @@
 				<scrolltime>200</scrolltime>
 				<itemgap>0</itemgap>
 				<itemlayout height="45" width="750">
-					<control type="image">
+					<control type="image">  <!-- station logo -->
 						<posx>45</posx>
 						<posy>3</posy>
-						<width>39</width>
+						<width>78</width>
 						<height>39</height>
+						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="image">
 						<posx>45</posx>
 						<posy>3</posy>
-						<width>39</width>
+						<width>78</width>
 						<height>39</height>
 						<colordiffuse>50FFFAF0</colordiffuse>
+						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
-						<posx>98</posx>
+						<posx>180</posx>  <!-- 98 -->
 						<posy>0</posy>
-						<width>585</width>
+						<width>500</width>
 						<height>45</height>
 						<font>Font_18</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>FFFFFAF0</textcolor>
 						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
-						<posx>98</posx>
+						<posx>180</posx>
 						<posy>0</posy>
-						<width>585</width>
+						<width>500</width>
 						<height>45</height>
 						<font>Font_18</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<textcolor>50FFFAF0</textcolor>
 						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="image">
@@ -151,33 +156,35 @@
 						<texture>settings_button_focus.png</texture>
 						<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(20)">conditional</animation>
 					</control>
-					<control type="image">
+					<!-- <control type="image">
 						<posx>45</posx>
 						<posy>0</posy>
 						<width>75</width>
 						<height>75</height>
 						<texture>black.png</texture>
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
-					</control>
+					</control> -->
 					<control type="image">
-						<posx>52</posx>
+						<posx>42</posx>  <!-- 52 -->
 						<posy>8</posy>
-						<width>60</width>
+						<width>120</width>
 						<height>60</height>
+						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="image">
-						<posx>52</posx>
+						<posx>42</posx>
 						<posy>8</posy>
-						<width>60</width>
+						<width>120</width>
 						<height>60</height>
 						<colordiffuse>50FFFAF0</colordiffuse>
+						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
-						<posx>135</posx>
+						<posx>180</posx>  <!-- 135 -->
 						<posy>1</posy>
 						<width>548</width>
 						<height>45</height>
@@ -186,11 +193,12 @@
 						<aligny>center</aligny>
 						<textcolor>FF101010</textcolor>
 						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
 						<visible>ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
-						<posx>135</posx>
+						<posx>180</posx>
 						<posy>1</posy>
 						<width>548</width>
 						<height>45</height>
@@ -199,11 +207,12 @@
 						<aligny>center</aligny>
 						<textcolor>50101010</textcolor>
 						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
-						<label>$INFO[ListItem.Property(Number),(,) - ]$INFO[ListItem.Property(Name)]</label>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
-						<posx>135</posx>
+						<posx>180</posx>
 						<posy>33</posy>
 						<width>548</width>
 						<height>45</height>
@@ -213,6 +222,20 @@
 						<textcolor>FF101010</textcolor>
 						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
 						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+						<visible>ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>33</posy>
+						<width>548</width>
+						<height>45</height>
+						<font>Font_18A</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>50101010</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="image">
 						<posx>702</posx>
@@ -254,6 +277,7 @@
 					<control type="label">
 						<posx>45</posx>
 						<posy>15</posy>
+						<aligny>center</aligny>
 						<width>750</width>
 						<height>30</height>
 						<font>Font_18</font>
@@ -266,7 +290,8 @@
 						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>52</posy>
-						<label>19074</label>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[19074]</label>
 						<onleft>20</onleft>
 						<onright>4</onright>
 						<onup>9000</onup>
@@ -278,7 +303,8 @@
 						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>98</posy>
-						<label>19201</label>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[19201]</label>
 						<onright>4</onright>
 						<onleft>20</onleft>
 						<onup>7</onup>
@@ -290,25 +316,25 @@
 						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>142</posy>
-						<label>19202</label>
+						<label>$LOCALIZE[19202]</label>
 						<onleft>20</onleft>
 						<onright>4</onright>
 						<onup>8</onup>
 						<ondown>12</ondown>
 					</control>
-					<control type="image">
-						<posx>638</posx>
+					<control type="image"> <!-- list 20 channel icon bg -->
+						<posx>628</posx>
 						<posy>142</posy>
-						<width>52</width>
+						<width>86</width>
 						<height>45</height>
 						<texture>black.png</texture>
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 						<visible>Control.HasFocus(9)</visible>
 					</control>
-					<control type="image" id="10">
-						<posx>645</posx>
+					<control type="image" id="10">  <!-- list 20 channel icon -->
+						<posx>635</posx>
 						<posy>146</posy>
-						<width>39</width>
+						<width>78</width>
 						<height>39</height>
 						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
@@ -319,7 +345,7 @@
 						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>188</posy>
-						<label>19206</label>
+						<label>$LOCALIZE[19206]</label>
 						<onleft>20</onleft>
 						<onright>4</onright>
 						<onup>9</onup>
@@ -331,97 +357,74 @@
 						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>232</posy>
-						<label>19200</label>
+						<label>$LOCALIZE[19200]</label>
 						<onright>4</onright>
 						<onleft>20</onleft>
 						<onup>12</onup>
+						<ondown>14</ondown>
+					</control>
+					<control type="radiobutton" id="14">
+						<!-- Parental Control -->
+						<textoffsetx>60</textoffsetx>
+						<include>PVRSearchButton</include>
+						<posx>0</posx>
+						<posy>276</posy>
+						<label>$LOCALIZE[19267]</label>
+						<onleft>20</onleft>
+						<onright>4</onright>
+						<onup>13</onup>
 						<ondown>30</ondown>
 					</control>
 				</control>
 				<control type="group">
 					<posx>960</posx>
-					<posy>450</posy>
+					<posy>480</posy>
 					<control type="label">
 						<posx>45</posx>
 						<posy>8</posy>
 						<width>570</width>
 						<height>30</height>
 						<font>Font_18</font>
+						<aligny>center</aligny>
 						<textcolor>$VAR[value_headercolor]</textcolor>
 						<label>$LOCALIZE[31375]</label>
 					</control>
 					<control type="button" id="30">
 						<!-- Group Manager -->
 						<textoffsetx>60</textoffsetx>
-						<include>PVRSearchButtonSmall</include>
+						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>45</posy>
-						<label>19205</label>
+						<label>$LOCALIZE[19205]</label>
 						<onleft>20</onleft>
-						<onright>34</onright>
-						<onup>13</onup>
-						<ondown>31</ondown>
+						<onright>9000</onright>
+						<onup>14</onup>
+						<ondown>34</ondown>
 					</control>
-					<control type="button" id="34">
+					<control type="togglebutton" id="34">
 						<!-- TV/Radio -->
 						<textoffsetx>60</textoffsetx>
-						<include>PVRSearchButtonSmall</include>
-						<posx>334</posx>
-						<posy>45</posy>
-						<label>19024</label>
-						<onleft>30</onleft>
-						<onright>4</onright>
-						<onup>13</onup>
-						<ondown>31</ondown>
-						<visible>String.IsEmpty(Window.Property(IsRadio)) + Pvr.HasRadioChannels</visible>
-					</control>
-					<control type="button" id="34">
-						<!-- TV/Radio -->
-						<textoffsetx>60</textoffsetx>
-						<include>PVRSearchButtonSmall</include>
-						<posx>334</posx>
-						<posy>45</posy>
-						<label>19023</label>
-						<onleft>30</onleft>
-						<onright>4</onright>
-						<onup>13</onup>
-						<ondown>31</ondown>
-						<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
-					</control>
-					<control type="button" id="31">
-						<!-- Edit channel -->
-						<textoffsetx>60</textoffsetx>
-						<include>PVRSearchButtonSmall</include>
+						<include>PVRSearchButton</include>
 						<posx>0</posx>
 						<posy>90</posy>
-						<label>19203</label>
+						<label>$LOCALIZE[19024]</label>
+						<altlabel>$LOCALIZE[19023]</altlabel>
+						<usealttexture>!String.IsEmpty(Window.Property(IsRadio))</usealttexture>
 						<onleft>20</onleft>
-						<onright>4</onright>
+						<onright>9000</onright>
 						<onup>30</onup>
-						<ondown>32</ondown>
+						<ondown>31</ondown>
 					</control>
-					<control type="button" id="32">
-						<!-- Delete channel -->
-						<textoffsetx>60</textoffsetx>
-						<include>PVRSearchButtonSmall</include>
-						<posx>0</posx>
-						<posy>135</posy>
-						<label>19211</label>
-						<onleft>20</onleft>
-						<onright>4</onright>
-						<onup>31</onup>
-						<ondown>33</ondown>
-					</control>
-					<control type="button" id="33">
+					<control type="button" id="31">
 						<!-- New channel -->
 						<textoffsetx>60</textoffsetx>
-						<include>PVRSearchButtonSmall</include>
+						<include>PVRSearchButton</include>
 						<posx>0</posx>
-						<posy>180</posy>
-						<label>19204</label>
+						<posy>135</posy>
+						<label>$LOCALIZE[19204]</label>
 						<onleft>20</onleft>
-						<onright>4</onright>
-						<onup>32</onup>
+						<onright>9000</onright>
+						<onup>34</onup>
 						<ondown>9000</ondown>
 					</control>
 				</control>
@@ -444,8 +447,8 @@
 			<control type="grouplist" id="9000">
 				<posx>210</posx>
 				<posy>900</posy>
-				<onup>9</onup>
-				<ondown>9</ondown>
+				<onup>9002</onup>
+				<ondown>9002</ondown>
 				<orientation>horizontal</orientation>
 				<itemgap>0</itemgap>
 				<control type="button" id="4">
