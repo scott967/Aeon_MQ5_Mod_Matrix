@@ -3,9 +3,10 @@
 <!-- Jarvis 8.1.13/8.1.15  RjSachse EPGTimeLineLow view/8.2.1 -->
 <!-- Krypton 9.1.16 -->
 <!-- Leia 10.2.3/10.3.0/10.6.1 -->
+<!-- Matrix 11.1.1 -->
 <window>
 	<defaultcontrol always="false">9901</defaultcontrol>
-	<menucontrol>9000</menucontrol>
+	<menucontrol>9900</menucontrol>
 	<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
 	<views>51,52</views>
 	<controls>
