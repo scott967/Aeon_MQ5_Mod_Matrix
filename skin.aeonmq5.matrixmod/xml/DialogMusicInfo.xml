@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.4.0/10.5.2/10.6.0/10.6.2 -->
-<!-- Matrix 11.0.2/11.0.4/11.0.5 -->
+<!-- Matrix 11.0.2/11.0.4/11.0.5/11.1.1 -->
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
 	<onload condition="System.HasAddon(script.artistslideshow) + Player.HasAudio + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(script.artistslideshow)</onload>
@@ -695,7 +695,7 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<scroll>true</scroll>
 					<scrollspeed>20</scrollspeed>
-					<visible>!Player.HasAudio | Window.IsActive(music) | !String.IsEqual(Player.Filename,ListItem.FileName)</visible>
+					<visible>!Player.HasAudio | Window.IsActive(music) | !Window.IsActive(visualisation) + [Player.HasAudio + !String.IsEqual(Player.Filename,ListItem.FileName)]</visible>
 				</control>
 				<control type="label">
 					<!-- mixed content MV items might be not needed in 19 -->
@@ -738,7 +738,7 @@
 					<width>844</width>
 					<aspectratio align="left">keep</aspectratio>
 					<texture background="true">$VAR[value_songinfo_thumb]</texture>
-					<visible>!Window.IsActive(visualisation) | [[String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | String.Contains(Window(Visualisation).Property(ArtistSlideshow),update-slide)] + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))] | String.Contains(Window(Visualisation).Property(ArtistSlideshow),transparent)</visible>
+					<visible>Window.IsActive(music) | [Window.IsActive(musicplaylist) + !String.IsEqual(ListItem.Title,MusicPlayer.Title)] | [[Window.IsActive(visualisation) | Window.IsActive(musicplaylist) + String.IsEqual(ListItem.Title,MusicPlayer.Title)] + [[String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow)) | String.Contains(Window(Visualisation).Property(ArtistSlideshow),update-slide)] + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))] | String.Contains(Window(Visualisation).Property(ArtistSlideshow),transparent)]</visible>
 				</control>
 				<control type="image">
 					<!-- Thumb AS3 fanart image show on playing song info -->
