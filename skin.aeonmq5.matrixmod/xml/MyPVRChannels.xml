@@ -2,6 +2,7 @@
 <!--  Aeon MQ 5 - Helix 6.1.0/6.1.1/6.1.2/6.1.3/6.1.4 -->
 <!-- Jarvis 8.1.13 -->
 <!-- Leia 10.3.0/10.6.1 -->
+<!-- Matrix 11.1.1 -->
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
 	<menucontrol>9000</menucontrol>
@@ -62,8 +63,7 @@
 				<onup>SetFocus(51)</onup>
 				<ondown>SetFocus(51)</ondown>
 			</control>
-			<!-- Recording/Time -->
-			<control type="group">
+			<control type="group"> 			<!-- Recording/Time -->
 				<animation effect="slide" start="0,-105" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">WindowOpen</animation>
 				<animation effect="slide" start="0,-105" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-105" time="300" easing="inout" tween="cubic">WindowClose</animation>
@@ -110,8 +110,7 @@
 					<scroll>true</scroll>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Mobilia furniture -->
+			<control type="group">	 		<!-- current EPG for selected channel furniture -->
 				<visible>Control.IsVisible(51)</visible>
 				<animation effect="slide" time="400" start="0,0" end="0,600" easing="in" tween="cubic" condition="Player.HasMedia + System.IdleTime(8) | Control.HasFocus(9920)">Conditional</animation>
 				<control type="image">
@@ -144,11 +143,22 @@
 					<posy>642</posy>
 					<width>338</width>
 					<height>338</height>
-					<texture fallback="DefaultVideoCover.png" background="true">$INFO[Container(51).ListItem.Icon]</texture>
+					<texture  background="true">$INFO[Container(51).ListItem.EPGEventIcon]</texture>
 					<bordertexture border="-25">musicframe.png</bordertexture>
 					<fadetime>FanartCrossFadeTime</fadetime>
 					<aspectratio>keep</aspectratio>
 					<visible>Control.IsVisible(51)</visible>
+				</control>
+				<control type="image">
+					<posx>522</posx>
+					<posy>642</posy>
+					<width>338</width>
+					<height>338</height>
+					<texture fallback="DefaultVideoCover.png" background="true">$INFO[Container(51).ListItem.Icon]</texture>
+					<bordertexture border="-25">musicframe.png</bordertexture>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<aspectratio>keep</aspectratio>
+					<visible>Control.IsVisible(51) + String.IsEmpty(Container(51).ListItem.EPGEventIcon)</visible>
 				</control>
 				<control type="label">
 					<!-- Nome do canal -->
@@ -358,8 +368,7 @@
 					<visible>false</visible>
 				</control>
 			</control>
-			<!-- ViewTypes -->
-			<control type="group">
+			<control type="group">			<!-- ViewTypes 51 -->
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 				<animation effect="slide" start="0,0" end="-480,0" time="300" easing="out" tween="cubic" condition="Player.HasVideo + System.IdleTime(8) | Control.HasFocus(9920)">Conditional</animation>
 				<visible>Control.IsVisible(51)</visible>
@@ -384,14 +393,13 @@
 					<scroll>true</scroll>
 					<scrollout>false</scrollout>
 				</control>
-<!--  Channel view 51 (groupname is title) -->)
-				<control type="list" id="51">
+				<control type="list" id="51">			<!--  Channel view 51 (groupname is title) -->)
 					<viewtype>list</viewtype>
 					<posx>0</posx>
 					<posy>98</posy>
 					<width>450</width>
 					<height>890</height>
-					<onleft>9900</onleft>
+					<onleft>71</onleft>
 					<onright condition="[Player.HasVideo + VideoPlayer.Content(liveTV)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.ChannelName)]">600</onright>
 					<ondown>51</ondown>
 					<onup>51</onup>
@@ -411,7 +419,7 @@
 						<control type="label">
 							<posx>30</posx>
 							<posy>-2</posy>
-							<width>390</width>
+							<width>360</width>
 							<height>52</height>
 							<font>Font_22</font>
 							<label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
@@ -431,6 +439,15 @@
 							<aligny>center</aligny>
 							<textcolor>E4101010</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						</control>
+						<control type="image">
+							<posx>395</posx>
+							<posy>12</posy>
+							<width>45</width>
+							<height>30</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<visible>!String.IsEmpty(ListItem.Icon)</visible>
 						</control>
 						<control type="progress">
 							<posx>30</posx>
@@ -453,7 +470,7 @@
 						<control type="label">
 							<posx>30</posx>
 							<posy>-2</posy>
-							<width>390</width>
+							<width>360</width>
 							<height>52</height>
 							<font>Font_22</font>
 							<label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
@@ -475,6 +492,15 @@
 							<textcolor>FFFFFAF0</textcolor>
 							<selectedcolor>$VAR[value_headercolor]</selectedcolor>
 						</control>
+						<control type="image">
+							<posx>395</posx>
+							<posy>12</posy>
+							<width>45</width>
+							<height>30</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Icon]</texture>
+							<visible>!String.IsEmpty(ListItem.Icon)</visible>
+						</control>
 						<control type="progress">
 							<posx>30</posx>
 							<posy>75</posy>
@@ -486,17 +512,17 @@
 					</focusedlayout>
 				</control>
 				<include>Glass</include>
-				<control type="scrollbar" id="71">
-					<include>ScrollBar_Horizontal</include>
-					<posx>930</posx>
-					<posy>968</posy>
-					<width>885</width>
-					<onup>SetFocus(51)</onup>
-					<ondown>9920</ondown>
-					<onleft>71</onleft>
-					<onright>71</onright>
+				<control type="scrollbar" id="71">  <!-- view 51 scrollbar -->
+					<include>ScrollBar_Vertical</include>
+					<posx>-10</posx>
+					<posy>100</posy>
+					<height>900</height>
+					<onup>71</onup>
+					<ondown>71</ondown>
+					<onleft>9900</onleft>
+					<onright>51</onright>
 					<include>Animation_Fade</include>
-					<visible allowhiddenfocus="true">Control.IsVisible(51) + Control.HasFocus(71)</visible>
+					<visible>Control.IsVisible(51) + [Container(51).HasNext | Container(51).HasPrevious] </visible>
 				</control>
 			</control>
 			<!-- Furniture -->
