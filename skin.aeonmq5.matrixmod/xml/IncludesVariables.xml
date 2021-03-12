@@ -4650,6 +4650,7 @@
 		<value condition="Playlist.IsRepeat">osd_menu_repeat_all.png</value>
 	</variable>
 	<variable name="value_osd_timeduration">
+	<value condition="VideoPlayer.Content(LiveTV) + VideoPlayer.HasEPG">$INFO[PVR.EPGEventElapsedTime]$INFO[PVR.EPGEventDuration(hh:mm), / ]</value>
 		<value condition="!Player.ChapterCount">$INFO[VideoPlayer.Time]$INFO[VideoPlayer.Duration, / ]</value>
 		<value condition="Player.ChapterCount">$INFO[VideoPlayer.Time]$INFO[VideoPlayer.Duration, / ] - $INFO[Player.Chapter,$LOCALIZE[21396]: ]$INFO[Player.ChapterCount, / ]$INFO[Player.ChapterName, - (,)]</value>
 	</variable>

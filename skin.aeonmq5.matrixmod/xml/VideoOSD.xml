@@ -183,15 +183,29 @@
 			<!-- Menu Content -->
 			<include condition="!Skin.HasSetting(videoosdfixedlist)">VideoOSDWrapList</include>
 			<include condition="Skin.HasSetting(videoosdfixedlist)">VideoOSDFixedList</include>
-<!-- 			<control type="progress">
-				<posx>45</posx>
-				<posy>110</posy>
-				<width>1830</width>
-				<height>38</height>
-				<info>PVR.EpgEventProgress</info>
+			<control type="group">  <!-- progress bar for live tv with epg -->
 				<visible>VideoPlayer.HasEpg</visible>
-			</control> -->
-			<control type="progress">
+				<control type="progress">  <!-- left side bar -->
+					<posx>45</posx>
+					<posy>110</posy>
+					<width>1830</width>
+					<height>38</height>
+					<info2>PVR.TimeshiftProgressEpgStart</info2>
+					<info>PVR.TimeshiftProgressPlayPos</info>
+					<midtexture>progress_mid50.png</midtexture>
+				</control>
+				<!-- <control type="progress">
+					<posx>45</posx>
+					<posy>110</posy>
+					<width>1830</width>
+					<height>38</height>
+					<info2>PVR.TimeshiftProgressPlayPos</info2>
+					<info>PVR.TimeshiftProgressEpgEnd</info>
+					<midtexture>progress_mid50.png</midtexture>
+					<texturebg>progress_mid50.png</texturebg>
+				</control> -->
+			</control>
+			<control type="progress">  <!--  cache progress -->
 				<posx>45</posx>
 				<posy>110</posy>
 				<width>1830</width>
@@ -255,7 +269,7 @@
 				<label>$VAR[value_osdvideo_title]</label>
 				<textcolor>FFFFFAF0</textcolor>
 			</control>
-			<control type="group">
+			<control type="group">  <!-- current / finish time labels) -->
 				<include>Animation_Fade</include>
 				<visible>!Skin.HasSetting(customosd)</visible>
 				<control type="label">
@@ -277,7 +291,7 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[System.Time]</label>
 				</control>
-				<control type="label">
+				<control type="label">  <!-- program or file end time -->
 					<posx>1875</posx>
 					<posy>195</posy>
 					<width>450</width>
@@ -286,7 +300,7 @@
 					<font>Font_18A</font>
 					<textcolor>90FFFFFF</textcolor>
 					<label>31311</label>
-					<visible>!VideoPlayer.Content(LiveTV)</visible>
+					<visible>!VideoPlayer.Content(LiveTV) | [VideoPlayer.Content(LiveTV) + VideoPlayer.HasEPG]</visible>
 				</control>
 				<control type="label">
 					<posx>1875</posx>
@@ -298,6 +312,17 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[Player.FinishTime]</label>
 					<visible>!VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="label">
+					<posx>1875</posx>
+					<posy>232</posy>
+					<width>450</width>
+					<height>38</height>
+					<align>right</align>
+					<font>Font_32</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$INFO[PVR.EpgEventFinishTime]</label>
+					<visible>VideoPlayer.Content(LiveTV) + VideoPlayer.HasEPG</visible>
 				</control>
 			</control>
 			<control type="image">
