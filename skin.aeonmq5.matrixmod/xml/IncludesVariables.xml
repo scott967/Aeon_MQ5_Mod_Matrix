@@ -3426,15 +3426,6 @@
 		<value condition="Control.IsVisible(52)">$INFO[Container(52).NumItems] $LOCALIZE[19019] - $LOCALIZE[31757] $INFO[Container(52).CurrentPage]/$INFO[Container(52).NumPages]</value>
 		<value condition="Control.IsVisible(13) | Control.IsVisible(14) | Control.IsVisible(15) | Control.IsVisible(16) | Control.IsVisible(17)">$INFO[Container.NumItems] $LOCALIZE[19019] - $LOCALIZE[31757] $INFO[Container.CurrentPage]/$INFO[Container.NumPages]</value>
 	</variable>
-	<variable name="value_pvrchannelicon">
-		<value condition="Control.IsVisible(10)">$INFO[Container(10).ListItem.Icon]</value>
-		<value condition="Control.IsVisible(11)">$INFO[Container(11).ListItem.Icon]</value>
-		<value condition="Control.IsVisible(12)">$INFO[Container(12).ListItem.Icon]</value>
-		<value condition="Control.IsVisible(13)">$INFO[Container(13).ListItem.Icon]</value>
-		<value condition="Control.IsVisible(14)">$INFO[Container(14).ListItem.Icon]</value>
-		<value condition="Control.IsVisible(15)">$INFO[VideoPlayer.Cover]</value>
-		<value condition="Control.IsVisible(17)">$INFO[Container(17).ListItem.Icon]</value>
-	</variable>
 	<variable name="value_skinstatus_style">
 		<value condition="String.Contains(skin.string(style),graphite)">$LOCALIZE[31132] ($LOCALIZE[31277])</value>
 		<value condition="String.Contains(skin.string(style),extrapack)">$INFO[Skin.String(custom_styles.path)]</value>
