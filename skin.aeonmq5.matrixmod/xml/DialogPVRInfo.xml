@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.2.2 -->
 <!-- Leia 10.4.0 -->
+<!-- Matrix 11.1.1 -->
 <window>
 	<defaultcontrol always="true">7</defaultcontrol>
 	<coordinates>
@@ -203,6 +204,13 @@
 					<width>300</width>
 					<include>SettingsBottomButton</include>
 					<label>19061</label>
+					<visible>Window.IsActive(PVRGuideInfo)</visible>
+				</control>
+				<control type="button" id="11">
+					<!-- Add reminder -->
+					<width>300</width>
+					<include>SettingsBottomButton</include>
+					<label>826</label>
 					<visible>Window.IsActive(PVRGuideInfo)</visible>
 				</control>
 			</control>
