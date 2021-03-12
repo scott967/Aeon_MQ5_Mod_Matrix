@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.3.0/10.4.0/10.6.2 -->
-<!-- Matrix 11.0.4 -->
+<!-- Matrix 11.0.4/11.1.1 -->
 <window>
 	<defaultcontrol always="true">9100</defaultcontrol>
 	<onunload condition="String.Contains(skin.string(customwindow),video)">SetFocus(50)</onunload>
@@ -49,8 +49,7 @@
 				<font>Font_18</font>
 				<label>$VAR[value_virtualsublabel]</label>
 			</control>
-			<control type="grouplist" id="9001">
-				<!-- General Settings -->
+			<control type="grouplist" id="9001">				<!-- General Settings -->
 				<visible>Container(9100).HasFocus(16)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -140,8 +139,7 @@
 					<selected>Skin.HasSetting(loadviz)</selected>
 				</control>
 			</control>
-			<control type="grouplist" id="9002">
-				<!-- Menu Principal -->
+			<control type="grouplist" id="9002">				<!-- Main Menu  -->
 				<visible>Container(9100).HasFocus(17)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -270,14 +268,13 @@
 				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),8000)">Skin.SetString(cdart_seconds,4000)</onfocus>
 				<onfocus condition="String.IsEqual(skin.string(cdart_seconds),4000)">Skin.SetString(cdart_seconds,2000)</onfocus>
 			</control>
-			<control type="grouplist" id="9006">
-				<!-- Menu Principal Widgets -->
+			<control type="grouplist" id="9006">				<!--  Main Menu Widgets -->
 				<visible>Container(9100).HasFocus(18)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
 				<posy>180</posy>
 				<width>1560</width>
-				<height>741</height>
+				<height>780</height>
 				<onleft>9100</onleft>
 				<onright>80</onright>
 				<onup>9006</onup>
@@ -651,6 +648,13 @@
 					<onclick>Skin.ToggleSetting(noapl20widget)</onclick>
 					<selected>!Skin.HasSetting(noapl20widget)</selected>
 					<visible>String.Contains(skin.string(menu20.master),apl)</visible>
+				</control>
+				<control type="radiobutton" id="1155">
+					<!-- PVR -->
+					<label>$LOCALIZE[14204]</label>
+					<onclick>Skin.ToggleSetting(nopvrwidget)</onclick>
+					<selected>!Skin.HasSetting(nopvrwidget)</selected>
+					<visible>!String.IsEmpty(skin.string(pvrwidget))</visible>
 				</control>
 			</control>
 			<control type="grouplist" id="9003">
@@ -2232,8 +2236,8 @@
 			<control type="scrollbar" id="80">
 				<include>ScrollBar_Vertical</include>
 				<posx>1860</posx>
-				<posy>202</posy>
-				<height>698</height>
+				<posy>180</posy>
+				<height>780</height>
 				<onleft>9004</onleft>
 				<onright>9100</onright>
 				<animation effect="fade" time="200">Visible</animation>

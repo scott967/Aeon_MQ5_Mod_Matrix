@@ -2864,6 +2864,11 @@
 		<value condition="String.Contains(skin.string(mfapl20_list),latest)">$LOCALIZE[31583]</value>
 		<value condition="String.Contains(skin.string(mfapl20_list),random)">$LOCALIZE[31584]</value>
 	</variable>
+	<variable name="value_mflistmode_pvr">
+		<value condition="String.Contains(skin.string(mfpvr_list),tv)">$LOCALIZE[31006] - $LOCALIZE[19324]</value>
+		<value condition="String.Contains(skin.string(mfpvr_list),radio)">$LOCALIZE[19021] - $LOCALIZE[19324]</value>
+		<value>missing mfpvr_list</value>
+	</variable>
 	<variable name="value_mfsubtitle">
 		<value condition="String.IsEmpty(Container(510).ListItem.Property(EpisodeNumber))">$INFO[Container(510).ListItem.Label2]</value>
 		<value condition="!String.IsEmpty(Container(510).ListItem.Property(EpisodeNumber))">$INFO[Container(510).ListItem.Label2]$INFO[Container(510).ListItem.Property(EpisodeNumber),[COLOR=80FFFFFF] | [/COLOR]]</value>

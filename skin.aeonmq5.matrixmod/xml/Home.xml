@@ -645,7 +645,31 @@ Group 602: Widgets
 					<texture fallback="DefaultVideoPoster.png" background="true">$INFO[Container(510).ListItem.Icon]</texture>
 					<bordertexture border="-29">posterframe.png</bordertexture>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>String.IsEmpty(Container(510).ListItem.Property(Thumbnail)) + ![String.IsEqual(Container(9000).ListItem.Property(id),music) | String.Contains(Container(9000).ListItem.Property(id),apl)]</visible>
+					<visible>String.IsEmpty(Container(510).ListItem.Property(Thumbnail)) + ![String.IsEqual(Container(9000).ListItem.Property(id),music) | String.Contains(Container(9000).ListItem.Property(id),apl) |String.IsEqual(Container(9000).ListItem.Property(id),livetv) ]</visible>
+				</control>
+				<control type="image">
+					<!-- EPG Icon livetv -->
+					<posx>60</posx>
+					<posy>135</posy>
+					<width>250</width>
+					<height>375</height>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+					<texture fallback="DefaultVideoPoster.png" background="true">$INFO[Container(510).ListItem.EPGEventIcon]</texture>
+					<bordertexture border="-29">posterframe.png</bordertexture>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
+				</control>
+				<control type="image">
+					<!-- Channel Icon livetv -->
+					<posx>60</posx>
+					<posy>135</posy>
+					<width>250</width>
+					<height>375</height>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+					<texture fallback="DefaultVideoPoster.png" background="true">$INFO[Container(510).ListItem.Icon]</texture>
+					<bordertexture border="-29">posterframe.png</bordertexture>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv) + String.IsEmpty(Container(510).ListItem.EPGEventIcon)</visible>
 				</control>
 				<control type="image">
 					<!-- Thumb audio -->
@@ -778,8 +802,24 @@ Group 602: Widgets
 							<visible>!String.IsEmpty(Container(510).ListItem.Property(Year)) + Integer.IsGreater(Container(510).ListItem.Property(Year),0)</visible>
 						</control>
 						<control type="label">
+							<!-- EPG start - end -->
+							<width>250</width>
+							<include>HomeFlagLabel</include>
+							<label>$INFO[Container(510).ListItem.StartTime]$INFO[Container(510).ListItem.EndTime, - ]</label>
+							<scroll>true</scroll>
+							<visible>!String.IsEmpty(Container(510).ListItem.StartTime)</visible>
+						</control>
+						<control type="label">
 							<include>HomeFlagSeparator</include>
-							<visible>!String.IsEmpty(Container(510).ListItem.Property(Year)) + Integer.IsGreater(Container(510).ListItem.Property(Year),0)</visible>
+							<visible>[!String.IsEmpty(Container(510).ListItem.Property(Year)) + Integer.IsGreater(Container(510).ListItem.Property(Year),0)] | !String.IsEmpty(Container(510).ListItem.Date) </visible>
+						</control>
+						<control type="label">
+							<!-- EPG title -->
+							<width>450</width>
+							<include>HomeFlagLabel</include>
+							<label>$INFO[Container(510).ListItem.Title]</label>
+							<scroll>true</scroll>
+							<visible>!String.IsEmpty(Container(510).ListItem.Title)</visible>
 						</control>
 						<control type="label">
 							<!-- Studio -->
@@ -829,7 +869,7 @@ Group 602: Widgets
 						<aligny>center</aligny>
 						<textcolor>FFFFFAF0</textcolor>
 						<font>Font_18A</font>
-						<label>$INFO[Container(510).ListItem.Property(Genre)]</label>
+						<label>$INFO[Container(510).ListItem.Property(Genre)]$INFO[Container(510).ListItem.Genre]</label>
 						<scroll>true</scroll>
 					</control>
 					<control type="image">
@@ -846,11 +886,20 @@ Group 602: Widgets
 						<posy>225</posy>
 						<width>825</width>
 						<height>298</height>
-						<label>$INFO[Container(510).ListItem.Property(Plot)]</label>
+						<label>$INFO[Container(510).ListItem.Property(Plot)]$INFO[Container(510).ListItem.Plot]</label>
 						<textcolor>FFFFFAF0</textcolor>
 						<font>Font_18A</font>
 						<autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(noallowscroll)</autoscroll>
 					</control>
+					<control type="progress">
+					<posx>8</posx>
+					<posy>530</posy>
+					<width>825</width>
+					<height>30</height>
+					<info>Container(510).ListItem.Progress</info>
+					<texturebg>progress_clear.png</texturebg>
+					<visible>!String.IsEmpty(Container(510).ListItem.Progress)</visible>
+				</control>
 				</control>
 			</control>
 			<control type="image" id="9931">
@@ -919,6 +968,7 @@ Group 602: Widgets
 				<include condition="![String.IsEmpty(skin.string(livetvwidget)) | Skin.HasSetting(nonextairedwidget)]">mf_contentnextaired</include>
 				<include condition="!Skin.HasSetting(nosystemwidget)">mf_contentsystem</include>
 				<include condition="![String.IsEmpty(skin.string(weatherwidget)) | Skin.HasSetting(noweatherwidget)]">mf_weather</include>
+				<include condition="![String.IsEmpty(skin.string(pvrwidget)) | Skin.HasSetting(nopvrwidget)]">mf_contentpvr</include>
 			</control>
 			<control type="group">  <!-- Library status -->
 				<!-- Status da biblioteca -->
@@ -1010,7 +1060,6 @@ Group 602: Widgets
 				</control>
 			</control>
 			<control type="group">  <!-- player controls -->
-				<!-- (Player) Controles -->
 				<visible>Player.HasMedia</visible>
 				<animation effect="slide" start="1920,0" end="0,0" time="500" delay="1000" tween="sine" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="1920,0" end="0,0" time="500" delay="1000" tween="sine" easing="out">Visible</animation>
@@ -1027,8 +1076,7 @@ Group 602: Widgets
 					<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 					<include>Animation_HomeGlass</include>
 				</control>
-				<control type="list" id="600">
-					<!-- Controles -->
+				<control type="list" id="600">  <!--  player controls -->
 					<posx>1455</posx>
 					<posy>747</posy>
 					<height>300</height>
@@ -1171,7 +1219,7 @@ Group 602: Widgets
 					</content>
 				</control>
 			</control>
-			<control type="group">  <!-- widgets selector -->
+			<control type="group">  <!-- widgets subtitle (label2) -->
 				<!-- Subtitulo dos widgets -->
 				<animation effect="slide" start="-750,0" end="0,0" time="500" delay="1000" tween="sine" easing="out">Visible</animation>
 				<animation effect="slide" start="0,0" end="-750,0" time="500" tween="sine" easing="out">Hidden</animation>
