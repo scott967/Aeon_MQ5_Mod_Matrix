@@ -5207,4 +5207,12 @@
 		<value condition="Container.Content(years)">$INFO[Container(71).ListItem.FolderPath]</value>
 		<value>videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22year%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22artist%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Container(71).ListItem.Label]%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</value>
 	</variable>
+	<variable name="PVRGuideControlsHelpText">
+		<value condition="Container(100).HasFocus(1)">$LOCALIZE[19063]</value>
+		<value condition="Container(100).HasFocus(2)">$LOCALIZE[19317]</value>
+		<value condition="Container(100).HasFocus(4)">$LOCALIZE[19070]</value>
+		<value condition="Container(100).HasFocus(6)">$LOCALIZE[19318]</value>
+		<value condition="Container(100).HasFocus(7)">$LOCALIZE[19064]</value>
+		<value condition="Container(100).HasFocus(8)">$LOCALIZE[19288]</value>
+	</variable>
 </includes>
