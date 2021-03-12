@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Aeon MQ 5 -->
+<!-- Matrix 11.1.1  new window ID 613-->
+
+<window>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<controls>
+		<control type="button">
+				<description>background close area</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<bottom>560</bottom>
+				<texturefocus />
+				<texturenofocus />
+				<onclick>Action(close)</onclick>
+		</control>
+		<!-- <control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<texture>black.png</texture>
+			<colordiffuse>C3FFFFFF</colordiffuse>
+			<include>Animation_Fade</include>
+		</control> -->
+		<control type="group">
+			<include>Animation_DialogPopup</include>
+			<control type="textbox">
+					<left>1260</left>
+					<top>1000</top>
+					<aligny>center</aligny>
+					<width>630</width>
+					<height>76</height>
+					<font>Font_18</font>
+					<textcolor>$VAR[value_headercolor]</textcolor>
+					<label>$VAR[PVRGuideControlsHelpText]</label>
+				</control>
+			<control type="list" id="100">
+				<posx>795</posx>
+				<posy>970</posy>
+				<height>300</height>
+				<width>1485</width>
+				<ondown>Action(close)</ondown>
+				<onup>Action(close)</onup>
+				<viewtype>list</viewtype>
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				<preloaditems>2</preloaditems>
+				<focusposition>2</focusposition>
+				<itemlayout width="76" height="45">
+					<control type="image">
+						<posy>33</posy>
+						<width>69</width>
+						<height>69</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse>50FFFAF0</colordiffuse>
+					</control>
+				</itemlayout>
+				<focusedlayout width="76" height="45">
+					<control type="image">
+						<posy>33</posy>
+						<width>69</width>
+						<height>69</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<!-- EPG earliest entry for channel -->
+						<label></label>
+						<icon>osd_menu_skipbwd.png</icon>
+						<onclick>PVR.EpgGridControl(FirstProgramme)</onclick>
+					</item>
+					<item id="2">
+						<!-- go back 12 hours -->
+						<label></label>
+						<icon>osd_menu_rew.png</icon>
+						<onclick>PVR.EpgGridControl(-12)</onclick>
+					</item>
+					<!-- <item id="3">
+						<label></label>
+						<icon>osd_menu_pause.png</icon>
+						<onclick>PlayerControl(Play)</onclick>
+						<visible>!Player.Paused</visible>
+					</item> -->
+					<item id="4">
+						<!-- current time  -->
+						<label></label>
+						<icon>osd_menu_play.png</icon>
+						<onclick>PVR.EpgGridControl(CurrentProgramme)</onclick>
+					</item>
+					<!-- <item id="5">
+						<label></label>
+						<icon>osd_menu_stop.png</icon>
+						<onclick>PlayerControl(Stop)</onclick>
+					</item> -->
+					<item id="6">
+						<!-- jump ahead 12 hours -->
+						<label></label>
+						<icon>osd_menu_ff.png</icon>
+						<onclick>PVR.EpgGridControl(+12)</onclick>
+					</item>
+					<item id="7">
+						<!-- most future entry-->
+						<label></label>
+						<icon>osd_menu_skipfwd.png</icon>
+						<onclick>PVR.EpgGridControl(LastProgramme)</onclick>
+					</item>
+					<item id="8">
+						<!-- select a date -->
+						<label></label>
+						<icon>osd_menu_rec.png</icon>
+						<onclick>PVR.EpgGridControl(SelectDate)</onclick>
+					</item>
+					<!-- <item id="9">
+						<label></label>
+						<icon>$VAR[value_button_repeat]</icon>
+						<onclick>PlayerControl(Repeat)</onclick>
+					</item> -->
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>
