@@ -4024,7 +4024,7 @@
 		<value condition="String.Contains(ListItem.DBType,studio)">$INFO[Skin.String(custom_studios.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_studios.ext)]</value>
 		<value condition="[String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,studios)]">$INFO[Skin.String(custom_studios.path)]$INFO[Container(715).ListItem(0).Label]$INFO[Skin.String(custom_studios.ext)]</value>
 		<!-- video person thumb -->
-		<value condition="String.Contains(ListItem.DBType,actor) | String.Contains(ListItem.DBType(director)">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="String.Contains(ListItem.DBType,actor) | String.Contains(ListItem.DBType,director)">$INFO[ListItem.Art(thumb)]</value>
 		<!-- video set / tvshow poster -->
 		<value condition="String.Contains(ListItem.DBType,set) | String.Contains(ListItem.DBType,tvshow)">$INFO[ListItem.Art(poster)]</value>
 		<!-- <value condition="[String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,sets)]">$INFO[Container(715).ListItem(0).Art(poster)]</value> -->
