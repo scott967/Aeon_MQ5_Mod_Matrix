@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Leia 10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.4 -->
+<!-- Matrix 11.0.4/11.1.1 -->
 
 <includes>
 <!--##################################################################################   VIEW MULTILIST - 71   ##################################################################################-->
@@ -1860,7 +1860,7 @@
 					</control>
 					<control type="group">  <!-- Poster for 715, movies, musicvideos w poster right art with case -->
 						<include>Animation_Fade</include>
-						<visible>!Skin.HasSetting(nomultivideocase) + [[Control.IsVisible(715) + !String.IsEmpty(Container(715).ListItem(0).Art(poster))] | String.Contains(ListItem.DBType,movie) | [String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(poster)]] + !String.Contains(ListItem.Label,New tag)</visible>
+						<visible>!Skin.HasSetting(nomultivideocase) + [[Control.IsVisible(715) + !String.IsEmpty(Container(715).ListItem(0).Art(poster))] | String.Contains(ListItem.DBType,movie) | [String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(poster))]] + !String.Contains(ListItem.Label,New tag)</visible>
 						<control type="image">  <!-- reflected poster -->
 							<posx>380</posx>
 							<posy>1019</posy>
@@ -1933,7 +1933,7 @@
 					</control>
 					<control type="group">  <!-- Movie Poster for 715, musicvideos w poster right art no case -->
 						<include>Animation_Fade</include>
-						<visible>Skin.HasSetting(nomultivideocase) + [Control.IsVisible(715) | [String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(poster)] | String.Contains(ListItem.DBType,movie)] + !String.Contains(ListItem.Label,New tag)</visible>
+						<visible>Skin.HasSetting(nomultivideocase) + [Control.IsVisible(715) | [String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Art(poster))] | String.Contains(ListItem.DBType,movie)] + !String.Contains(ListItem.Label,New tag)</visible>
 						<control type="image">  <!-- reflected poster -->
 							<posx>382</posx>
 							<posy>989</posy>
