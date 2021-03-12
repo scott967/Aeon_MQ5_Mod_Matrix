@@ -4810,6 +4810,6 @@
 			</item>
 		</content>
 	</include>
-	<expression name="HasDetailInfo">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | Container.Content(addons) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)</expression>
+	<expression name="HasDetailInfo">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,video) | Container.Content(addons) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)</expression>
 	<expression name="HasUserRating">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | Striing.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)</expression>
 </includes>

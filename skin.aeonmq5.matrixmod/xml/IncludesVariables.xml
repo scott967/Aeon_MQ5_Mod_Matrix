@@ -3189,7 +3189,7 @@
 		<value condition="Container.Content(episodes) + [String.Contains(skin.string(episodesfanart),seasons) + String.IsEmpty(Control.GetLabel(5024))]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Container.Content(sets) + [String.Contains(skin.string(setsfanart),fanart) | String.Contains(skin.string(setsfanart),extra)]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="Window.IsVisible(videoplaylist)">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="Container.Content(files)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="Container.Content(files) | Container.Content(videos)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,genre) + String.Contains(skin.string(videogenrefanart),genre) + !Skin.HasSetting(externalvideogenrefanart)">$INFO[Skin.String(custom_moviegenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenrefanart.ext)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,genre) + String.Contains(skin.string(videogenrefanart),genre) + Skin.HasSetting(externalvideogenrefanart)">$INFO[Skin.String(custom_moviegenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_moviegenrefanart.ext)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,genre) + String.Contains(skin.string(videogenrefanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
@@ -3684,6 +3684,7 @@
 		<value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Episode)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[33054]: [/COLOR]$INFO[ListItem.Property(TotalSeasons)] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]</value>
 		<value condition="Container.Content(seasons) + !String.IsEmpty(ListItem.Episode)">[COLOR=$VAR[value_headercolorfocus]]$INFO[ListItem.TVShowTitle][/COLOR] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]  - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[16101]: [/COLOR]$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
 		<value condition="Container.Content(episodes)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[20373]: [/COLOR] $INFO[ListItem.Season] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration(mins),, $LOCALIZE[31961]] - [COLOR=$VAR[value_headercolorfocus]]$INFO[ListItem.TVShowTitle][/COLOR]</value>
+		<value condition="Container.Content(videos)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration(mins),, $LOCALIZE[31961]]</value>
 		<!-- addons -->
 		<value condition="Window.IsActive(programs) + !Container.Content(addons)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[31772]: [/COLOR]$INFO[ListItem.Premiered] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[31788]: [/COLOR]$INFO[ListItem.Studio]</value>
 		<value condition="Window.IsActive(programs) + Container.Content(addons)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[24051] [/COLOR]$INFO[ListItem.AddonVersion] - [COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21863]: [/COLOR]$INFO[ListItem.AddonCreator]</value>
