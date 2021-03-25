@@ -4,6 +4,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs/9.2.2-->
 <!-- Leia 10.3.0/10.5.0/10.6.1/10.6.2 -->
+<!-- Matrix 11.1.1 -->
 <includes>
 	<!--##################################################################################   VISTA POSTER - ID 54   #############################################################################-->
 	<include name="PosterLabel">
@@ -312,7 +313,8 @@
 				<visible>![Container.Content(addons) | Container.Content(genres) | String.IsEmpty(ListItem.DBType)]</visible>
 				<control type="label">
 					<include>PosterLabel</include>
-					<label>$VAR[value_ground11_label]: [COLOR=FFFFFAF0]$VAR[value_ground11_value][/COLOR]</label>
+					<label>$VAR[value_ground11_label]: [COLOR=FFFFFAF0]$VAR[value_ground11_value][/COLOR]</label> 
+					<visible>![[String.IsEqual(ListItem.DBType,episode) | ListItem.DBType(season) | ListItem.DBType(tvshow)] + String.IsEmpty(Window(home).Property(NextAired.Status))]</visible>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>

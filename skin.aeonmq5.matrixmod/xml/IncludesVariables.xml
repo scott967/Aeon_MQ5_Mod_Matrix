@@ -3572,8 +3572,10 @@
 	<variable name="value_videoinfo_label1">
 		<value condition="![Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(episodes)]">$LOCALIZE[20376]</value>
 		<!-- Original Title/Movies -->
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[31233]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$LOCALIZE[31233]</value>
 		<!-- Premiered/TvShows -->
+		<value condition="Container.Content(episodes)">$LOCALIZE[20416]</value>
+		<!-- First aired episodes -->
 		<value condition="Container.Content(musicvideos)">$LOCALIZE[558]</value>
 		<!-- Album for MV -->
 	</variable>
@@ -3687,7 +3689,7 @@
 		<value condition="ListItem.IsCollection">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20457][/COLOR]</value>
 		<value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Episode)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[33054]: [/COLOR]$INFO[ListItem.Property(TotalSeasons)] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]$INFO[Window(home).Property(NextAired.Status), - ]</value>
 		<value condition="Container.Content(seasons) + !String.IsEmpty(ListItem.Episode)">[COLOR=$VAR[value_headercolor]]$INFO[ListItem.TVShowTitle][/COLOR] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[20360]: [/COLOR]$INFO[ListItem.Episode]  - [COLOR=$VAR[value_headercolor]]$LOCALIZE[16101]: [/COLOR]$INFO[ListItem.Property(UnWatchedEpisodes)]$INFO[Window(home).Property(NextAired.Status), - ]</value>
-		<value condition="Container.Content(episodes)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20373]: [/COLOR] $INFO[ListItem.Season] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration(mins), $LOCALIZE[31961]] - [COLOR=$VAR[value_headercolor]]$INFO[ListItem.TVShowTitle][/COLOR]$INFO[Window(home).Property(NextAired.Status), - ]</value>
+		<value condition="Container.Content(episodes)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20373]: [/COLOR] $INFO[ListItem.Season] - [COLOR=$VAR[value_headercolor]]$LOCALIZE[180]: [/COLOR] $INFO[ListItem.Duration(mins),, $LOCALIZE[31961]] - [COLOR=$VAR[value_headercolor]]$INFO[ListItem.TVShowTitle][/COLOR]$INFO[Window(home).Property(NextAired.Status), - ]</value>
 		<value condition="Container.Content(albums)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[21899]: [/COLOR]$INFO[ListItem.Property(Album_Label)]</value>
 		<value condition="Container.Content(artists)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[21898]: [/COLOR]$INFO[ListItem.Property(Artist_YearsActive)]</value>
 		<!-- YearsActive/Artists -->
@@ -3811,7 +3813,7 @@
 		<value condition="String.IsEqual(ListItem.DBType,artist)">$LOCALIZE[176]</value>  <!-- Artist style -->
 		<value condition="String.IsEqual(ListItem.DBType,album)">$LOCALIZE[21895]</value>  <!-- Album theme -->
 		<value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set)">$LOCALIZE[21875]</value>  <!-- country -->
-		<value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">$LOCALIZE[126]</value>  <!-- status -->
+		<value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(Window(home).Property(NextAired.Status))">$LOCALIZE[126]</value>  <!-- (next aired) status -->
 		<value condition="Window.IsActive(programs) + !Container.Content(Addons)">$LOCALIZE[31772]</value>  <!-- premiered -->
 		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$LOCALIZE[19114]</value>  <!-- version -->
 		<value condition="Window.IsActive(pictures) + Container.Content(images)">$LOCALIZE[21805]</value>  <!-- picture resolution -->
@@ -3825,7 +3827,7 @@
 		<value condition="String.IsEqual(ListItem.DBType,album)">$INFO[ListItem.Property(Album_Theme)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(VideoPlaylist)">$INFO[ListItem.Country]$INFO[Window(home).Property(SkinInfo.Set.Movies.Country)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,set)">$INFO[Window(home).Property(SkinInfo.Set.Movies.Country)]</value>
-		<value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">$INFO[Window(home).Property(NextAired.Status)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(Window(home).Property(NextAired.Status))">$INFO[Window(home).Property(NextAired.Status)]</value>
 		<value condition="Window.IsActive(programs) + !Container.Content(Addons)">$INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsActive(programs) + Container.Content(Addons)">$INFO[ListItem.AddonVersion]</value>
 		<value condition="Window.IsActive(pictures) + Container.Content(images)">$INFO[ListItem.PictureResolution]</value>
@@ -3913,7 +3915,7 @@
 		<value condition="String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Property(Artist_Born)]$INFO[ListItem.Property(Artist_Died), / ]</value>
 		<value condition="String.IsEqual(ListItem.DBType,album)">$INFO[ListItem.Property(Album_Style)]</value>
 	</variable>
-	<variable name="value_ground16_label">   <!-- used in media list views 51,53,55,57,60,61,64,66,70,71 -->
+	<variable name="value_ground16_label">   <!-- used in media list views 51,53,54,55,57,60,61,64,66,70,71 -->
 		<value condition="String.IsEqual(ListItem.DBType,movie) | Window.IsVisible(VideoPlaylist) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,set)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[180][/COLOR]</value>  <!--  duration -->
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31990][/COLOR]</value>  <!--  tv show status  -->
 		<value condition="Container.Content(artists)">$LOCALIZE[21894]/$LOCALIZE[21896]</value>  <!--  formed / disbanded  -->
@@ -3922,12 +3924,13 @@
 	<variable name="value_ground16_value">
 		<value condition="Container.content(musicvideos) | String.IsEqual(ListItem.DBType,musicvideo)">$INFO[ListItem.Duration]</value>
 		<value condition="[Container.Content(movies) | Window.IsVisible(VideoPlaylist) | Container.Content(sets)]">$INFO[ListItem.Duration(mins),, $LOCALIZE[31961]] $INFO[Window(home).Property(SkinInfo.Set.Movies.Runtime),, $LOCALIZE[31961]]</value>
-		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[Window(home).Property(NextAired.Status)]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">$INFO[ListItem.Status]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Formed)]$INFO[ListItem.Property(Artist_Disbanded), / ]</value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Label)]</value>
 	</variable>
-	<variable name="value_ground17_label">   <!-- used in media list views 53,55,60,61,64,66,70 -->
+	<variable name="value_ground17_label">   <!-- used in media list views 53,54,55,60,61,64,66,70 -->
 		<value condition="String.IsEqual(ListItem.DBType,artist)">$LOCALIZE[21898]</value>  <!--  years active -->
+		<value condition="String.IsEqual(ListItem.DBType,episode)">[COLOR=$VAR[value_headercolor]]$LOCALIZE[20416][/COLOR]</value>  <!--  first aired  -->
 		<value condition="!ListItem.IsCollection">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31089][/COLOR]</value>  <!--  year  -->
 		<value condition="ListItem.IsCollection">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31036][/COLOR]</value>  <!--  years  -->
 	</variable>
