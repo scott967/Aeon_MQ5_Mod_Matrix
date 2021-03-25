@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
 <!-- Leia 10.3.0/10.4.0/10.5.2 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.1.1 -->
 <includes>
 	<!--##################################################################################   VISTA SETS - ID 65   ##################################################################################-->
 	<include name="SetsLabel">
@@ -22,8 +22,7 @@
 		<scroll>true</scroll>
 	</include>
 	<include name="ViewSets">
-		<control type="group">
-			<!-- default group -->
+		<control type="group">			<!-- default group -->
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>Control.IsVisible(65)</visible>
 			<control type="image">
@@ -69,21 +68,21 @@
 					<include>SetsLabel</include>
 					<posx>45</posx>
 					<posy>464</posy>
-					<label>$VAR[value_ground6_label]</label>
+					<label>$VAR[value_ground6_label]</label>	<!-- years -->
 					<visible>!Control.HasFocus(5801)</visible>
 				</control>
 				<control type="label">
 					<include>SetsLabel</include>
 					<posx>45</posx>
 					<posy>464</posy>
-					<label>345</label>
+					<label>$LOCALIZE[345]</label>  <!-- year -->
 					<visible>Control.HasFocus(5801)</visible>
 				</control>
 				<control type="label">
 					<include>SetsValue</include>
 					<posx>45</posx>
 					<posy>504</posy>
-					<label>$VAR[value_ground6_value]</label>
+					<label>$VAR[value_ground6_value]</label>	<!-- year / year / ... -->
 					<visible>!Control.HasFocus(5801)</visible>
 				</control>
 				<control type="label">
@@ -97,7 +96,7 @@
 					<include>SetsLabel</include>
 					<posx>45</posx>
 					<posy>538</posy>
-					<label>$LOCALIZE[21875]</label>
+					<label>$LOCALIZE[21875]</label>	<!-- country -->
 				</control>
 				<control type="label">
 					<include>SetsValue</include>
@@ -109,7 +108,7 @@
 					<include>SetsLabel</include>
 					<posx>528</posx>
 					<posy>464</posy>
-					<label>$LOCALIZE[515]</label>
+					<label>$LOCALIZE[515]</label>	<!--  genre -->
 				</control>
 				<control type="label">
 					<include>SetsValue</include>
@@ -152,7 +151,7 @@
 				<height>294</height>
 				<align>justify</align>
 				<font>Font_18A</font>
-				<label>$VAR[value_plotmoviesets]</label>
+				<label>$VAR[value_plotmoviesets]</label>  <!-- set overview or  member movie plot list 5801 -->
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 			</control>
@@ -333,7 +332,7 @@
 				<texture flipy="true">shadow_h.png</texture>
 				<colordiffuse>C3FFFFFF</colordiffuse>
 			</control>
-			<!-- Movies in Set -->
+			<!-- Movies in Set su0pplied by skin,info service -->
 			<control type="list" id="5801">
 				<viewtype>list</viewtype>
 				<posx>45</posx>

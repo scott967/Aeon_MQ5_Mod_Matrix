@@ -380,7 +380,20 @@
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Year]</label>
 							<animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(years) | Container.Content(songs) | Container.Content(mixed) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(videos)  | String.Contains(ListItem.DBType,musicvideo)">Conditional</animation>
-							<visible>!String.IsEqual(Skin.Font,Massive) + !Container.Content(images)</visible>
+							<visible>!String.IsEqual(Skin.Font,Massive) + ![Container.Content(images) | Container.Content(sets)]</visible>
+						</control>
+						<control type="label">
+							<posx>772</posx>
+							<posy>-30</posy>
+							<width>128</width>
+							<height>60</height>
+							<font>Font_18A</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>detailcolorfocus</include>
+							<label>$INFO[Window(home).Property(SkinInfo.Set.Movies.Years)]</label>
+							<animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(sets)">Conditional</animation>
+							<visible>!String.IsEqual(Skin.Font,Massive) + ListItm.DBType(set)</visible>
 						</control>
 						<control type="label">
 							<posx>772</posx>
@@ -393,7 +406,20 @@
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Year]</label>
 							<animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(years) | Container.Content(songs) | Container.Content(mixed) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | String.Contains(ListItem.DBType,musicvideo)">Conditional</animation>
-							<visible>String.IsEqual(Skin.Font,Massive) + !Container.Content(images)</visible>
+							<visible>String.IsEqual(Skin.Font,Massive) + ![Container.Content(images) | Container.Content(sets)]</visible>
+						</control>
+						<control type="label">
+							<posx>772</posx>
+							<posy>-30</posy>
+							<width>128</width>
+							<height>60</height>
+							<font>Font_14A</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>detailcolorfocus</include>
+							<label>$INFO[Window(home).Property(SkinInfo.Set.Movies.Years)]</label>
+							<animation effect="slide" start="0,0" end="0,12" time="0" condition="Container.Content(sets)">Conditional</animation>
+							<visible>String.IsEqual(Skin.Font,Massive) + ListItem.DBType(set)</visible>
 						</control>
 						<control type="label">
 							<posx>762</posx>
@@ -538,6 +564,19 @@
 							<aligny>center</aligny>
 							<include>detailcolorfocus</include>
 							<label>$INFO[ListItem.Year]</label>
+							<visible>!Container.Content(sets)</visible>
+						</control>
+						<control type="label">
+							<posx>772</posx>
+							<posy>-10</posy>
+							<width>128</width>
+							<height>62</height>
+							<font>Font_18A</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<include>detailcolorfocus</include>
+							<label>$INFO[Window(home).Property(SkinInfo.Set.Movies.Years)]</label>
+							<visible>Container.Content(sets) + ListItem.DBType(set)</visible>
 						</control>
 						<control type="label">
 							<posx>772</posx>
