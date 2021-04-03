@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Aeon MQ 5 Helix 6.1.5 -->
 <!-- Leia 10.3.0/10.4.0 -->
+<!-- Matrix 11.1.1 -->
 <window>
 	<defaultcontrol always="true">11</defaultcontrol>
 	<coordinates>
@@ -151,6 +152,18 @@
 						<label>31149</label>
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 					</control>
+					<control type="label">
+						<posx>1095</posx>
+						<posy>1</posy>
+						<width>165</width>
+						<height>57</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Font_18A</font>
+						<include>listcolor</include>
+						<label>824</label>
+						<visible>ListItem.HasReminder + !ListItem.IsRecording</visible>
+					</control>
 				</itemlayout>
 				<focusedlayout height="60" width="1238">
 					<control type="image">
@@ -223,6 +236,18 @@
 						<include>listcolorfocus</include>
 						<label>31149</label>
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+					</control>
+					<control type="label">
+						<posx>1095</posx>
+						<posy>1</posy>
+						<width>165</width>
+						<height>57</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Font_18A</font>
+						<include>listcolorfocus</include>
+						<label>824</label>
+						<visible>ListItem.HasReminder + !ListItem.IsRecording</visible>
 					</control>
 				</focusedlayout>
 			</control>

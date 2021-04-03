@@ -2,10 +2,11 @@
 <!-- Aeon MQ 5 Helix 6.1.4 -->
 <!-- Jarvis 8.1.13 -->
 <!-- Leia 10.3.0 -->
+<!-- Matrix -->
 <window>
-	<defaultcontrol always="true">17</defaultcontrol>
+	<defaultcontrol always="true">50</defaultcontrol>
 	<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
-	<views>17</views>
+	<views>50</views>
 	<controls>
 		<control type="multiimage">
 			<!-- Fanart -->
@@ -386,10 +387,9 @@
 					<visible>false</visible>
 				</control>
 			</control>
-			<!-- ViewTypes -->
-			<control type="group">
+			<control type="group">			<!-- ViewTypes -->
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<visible>Control.IsVisible(17)</visible>
+				<visible>Control.IsVisible(50)</visible>
 				<include>EPGMenu</include>
 				<control type="image">
 					<posx>360</posx>
@@ -407,13 +407,13 @@
 					<texture>grey.png</texture>
 					<colordiffuse>20FFFFFF</colordiffuse>
 				</control>
-				<control type="panel" id="17">
+				<control type="panel" id="50">
 					<posx>0</posx>
 					<posy>195</posy>
 					<width>1920</width>
 					<height>660</height>
-					<onup>17</onup>
-					<ondown>17</ondown>
+					<onup>50</onup>
+					<ondown>50</ondown>
 					<onleft>9900</onleft>
 					<onright>77</onright>
 					<orientation>horizontal</orientation>
@@ -487,7 +487,7 @@
 							<width>357</width>
 							<height>60</height>
 							<texture>settings_button.png</texture>
-							<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(17)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(50)">conditional</animation>
 						</control>
 						<control type="image">
 							<posx>360</posx>
@@ -547,7 +547,7 @@
 					<posx>1868</posx>
 					<posy>202</posy>
 					<height>645</height>
-					<onleft>17</onleft>
+					<onleft>50</onleft>
 					<onright>36</onright>
 					<ondown>77</ondown>
 					<onup>77</onup>

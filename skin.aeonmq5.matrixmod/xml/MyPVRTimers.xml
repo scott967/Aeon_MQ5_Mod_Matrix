@@ -2,19 +2,19 @@
 <!-- Aeon MQ 5 Helix 6.1.4 -->
 <!-- Jarvis 8.1.13 -->
 <!-- Leia 10.3.0 -->
+<!-- Matrix 11.1.1 -->
 <window>
-	<defaultcontrol always="true">14</defaultcontrol>
-	<menucontrol>9000</menucontrol>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<menucontrol>9900</menucontrol>
 	<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
-	<views>14</views>
+	<views>50</views>
 	<controls>
 		<control type="multiimage">
 			<!-- Fanart -->
 			<include>WindowBG</include>
 			<imagepath background="true">$VAR[value_menutheme_livetv]</imagepath>
 		</control>
-		<control type="group">
-			<!-- Visualizacao de fundo -->
+		<control type="group">	<!-- Background display -->
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="image">
 				<posx>0</posx>
@@ -43,8 +43,7 @@
 				<animation effect="slide" start="0,0" end="-3000,0" time="0">WindowClose</animation>
 			</control>
 		</control>
-		<control type="group">
-			<!-- default group -->
+		<control type="group">			<!-- default group -->
 			<include>Animation_Window</include>
 			<visible>![Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo) | Window.IsActive(PVRGuideSearch) | Window.IsActive(PVRTimerSetting)]</visible>
 			<control type="button" id="9900">
@@ -62,14 +61,13 @@
 				<onup>SetFocus(11)</onup>
 				<ondown>SetFocus(11)</ondown>
 			</control>
-			<!-- Recording/Time -->
-			<control type="group">
+			<control type="group">			<!-- Next Recording (timer) /Time -->
 				<animation effect="slide" start="0,-105" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">WindowOpen</animation>
 				<animation effect="slide" start="0,-105" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">Visible</animation>
 				<animation effect="slide" start="0,0" end="0,-105" time="300" easing="inout" tween="cubic">WindowClose</animation>
 				<animation effect="slide" start="0,0" end="0,-105" time="300" easing="inout" tween="cubic">Hidden</animation>
 				<animation effect="slide" start="0,0" end="450,0" time="0" easing="in" tween="cubic" condition="Control.IsVisible(11) | Control.IsVisible(12)">Conditional</animation>
-				<visible>[PVR.IsRecording | PVR.HasNonRecordingTimer] + ![Player.HasMedia | Control.HasFocus(9920) | ControlGroup(9000).HasFocus]</visible>
+				<visible>[PVR.IsRecording | PVR.HasNonRecordingTimer | PVR.HasReminder] + ![Player.HasMedia | Control.HasFocus(9920) | ControlGroup(9000).HasFocus]</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -120,10 +118,9 @@
 				<include>InvisibleButton</include>
 				<visible>false</visible>
 			</control>
-			<!-- ViewTypes -->
-			<control type="group">
+			<control type="group">			<!-- ViewTypes -->
 				<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
-				<include>EPGMenu</include>
+				<include>EPGMenu</include>	<!-- image backgrounds and headings -->
 				<control type="image">
 					<posx>360</posx>
 					<posy>196</posy>
@@ -140,13 +137,13 @@
 					<texture>grey.png</texture>
 					<colordiffuse>20FFFFFF</colordiffuse>
 				</control>
-				<control type="panel" id="14">
+				<control type="panel" id="50">
 					<posx>0</posx>
 					<posy>195</posy>
 					<width>1920</width>
 					<height>660</height>
-					<onup>14</onup>
-					<ondown>14</ondown>
+					<onup>50</onup>
+					<ondown>50</ondown>
 					<onleft>9900</onleft>
 					<onright>73</onright>
 					<pagecontrol>73</pagecontrol>
@@ -203,6 +200,22 @@
 							<texture>pvr_isrecording.png</texture>
 							<visible>ListItem.IsRecording</visible>
 						</control>
+						<control type="image">
+							<posx>1620</posx>
+							<posy>15</posy>
+							<width>30</width>
+							<height>30</height>
+							<texture>pvr_hastimer.png</texture>
+							<visible>!ListItem.IsRecording  + !ListItem.HasReminder + !String.IsEmpty(ListItem.Date)</visible>
+						</control>
+						<control type="image">
+							<posx>1620</posx>
+							<posy>15</posy>
+							<width>30</width>
+							<height>30</height>
+							<texture>pvr_hasreminder.png</texture>
+							<visible>!ListItem.IsRecording  + ListItem.HasReminder</visible>
+						</control>
 						<control type="label">
 							<posx>1680</posx>
 							<posy>1</posy>
@@ -222,7 +235,8 @@
 							<width>357</width>
 							<height>60</height>
 							<texture>settings_button.png</texture>
-							<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(14)">conditional</animation>
+							<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(50)">conditional</animation>
+							<visible>!String.IsEmpty(ListItem.ChannelName)</visible>
 						</control>
 						<control type="image">
 							<posx>360</posx>
@@ -266,6 +280,22 @@
 							<height>30</height>
 							<texture>pvr_isrecording.png</texture>
 							<visible>ListItem.IsRecording</visible>
+						</control>
+						<control type="image">
+							<posx>1620</posx>
+							<posy>15</posy>
+							<width>30</width>
+							<height>30</height>
+							<texture>pvr_hastimer.png</texture>
+							<visible>!ListItem.IsRecording  + !ListItem.HasReminder + !String.IsEmpty(ListItem.Date)</visible>
+						</control>
+						<control type="image">
+							<posx>1620</posx>
+							<posy>15</posy>
+							<width>30</width>
+							<height>30</height>
+							<texture>pvr_hasreminder.png</texture>
+							<visible>!ListItem.IsRecording  + ListItem.HasReminder</visible>
 						</control>
 						<control type="label">
 							<posx>1680</posx>
