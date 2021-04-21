@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Helix 6.1.4 -->
 <!-- Krypton 9.2.1 window IDs -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.1.1 -->
 <window id="1102" type="dialog">
 	<defaultcontrol always="true">9030</defaultcontrol>
 	<onunload>AlarmClock(refreshview,ActivateWindowAndFocus(tvrecordings, 9940,0),0:01,true)</onunload>
@@ -76,9 +76,8 @@
 					<include content="content_views_recordings">
 						<param name="content">$INFO[Container.Content]</param>
 					</include>
-					<radioposx>1341</radioposx>
 					<label>188</label>
-					<selected>Skin.HasSetting(viewsets_video)</selected>
+<!-- 					<selected>Skin.HasSetting(viewsets_video)</selected> -->
 				</control>
 				<control type="radiobutton" id="19254">
 					<!-- Poster -->

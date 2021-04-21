@@ -3,7 +3,7 @@
 <!-- Isengard 7.1.9 ShelfCase/7.1.11 MidList -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.3.0/10.6.2 was window 641 -->
-<!-- Matrix 11.0.2/11.0.4 -->
+<!-- Matrix 11.0.2/11.0.4/11.1.1 -->
 <window id="1110" type="dialog">
 	<defaultcontrol always="true">9030</defaultcontrol>
 	<controls>
@@ -77,9 +77,9 @@
 					<include content="content_views_video">
 						<param name="content">$INFO[Container.Content]</param>
 					</include>
-					<radioposx>1341</radioposx>
+					<!-- <radioposx>1341</radioposx> -->
 					<label>188</label>
-					<selected>Skin.HasSetting(viewsets_video)</selected>
+					<!-- <selected>Skin.HasSetting(viewsets_video)</selected> -->
 				</control>
 				<control type="radiobutton" id="19265">
 					<!-- Sets -->

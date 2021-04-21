@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.7 -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.2.3/10.6.2 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.1.1 -->
 <window id="1111" type="dialog">
 	<!-- safe id -->
 	<!-- Leia 10.6.2 was window id 631 -->
@@ -80,9 +80,9 @@
 					<include content="content_views_programs">
 						<param name="content">$INFO[Container.Content]</param>
 					</include>
-					<radioposx>1341</radioposx>
+					<!-- <radioposx>1341</radioposx> -->
 					<label>188</label>
-					<selected>Skin.HasSetting(viewsets_video)</selected>
+					<!-- <selected>Skin.HasSetting(viewsets_video)</selected> -->
 				</control>
 				<control type="radiobutton" id="19254">
 					<!-- Poster -->

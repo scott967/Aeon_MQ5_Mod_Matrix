@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.2.1 window IDs -->
 <!-- Leia 10.5.2 -->
-<!-- Matrix 11.0.2/11.0.4 -->
+<!-- Matrix 11.0.2/11.0.4/11.1.1 -->
 <window id="1103" type="dialog">
 	<!-- was 626 -->
 	<defaultcontrol always="true">9030</defaultcontrol>
@@ -81,9 +81,9 @@
 					<include content="content_views_music">
 						<param name="content">$INFO[Container.Content]</param>
 					</include>
-					<radioposx>1341</radioposx>
+					<!-- <radioposx>1341</radioposx> -->
 					<label>188</label>
-					<selected>Skin.HasSetting(viewsets_video)</selected>
+					<!-- <selected>Skin.HasSetting(viewsets_video)</selected> -->
 				</control>
 				<control type="radiobutton" id="19254">
 					<!-- Poster -->

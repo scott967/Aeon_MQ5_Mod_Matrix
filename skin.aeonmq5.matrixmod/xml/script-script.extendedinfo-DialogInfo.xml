@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--  Initial use with Kodi Leia10.5.2 -->
-<!-- Matrix 11.0.4 -->
+<!-- Matrix 11.0.4/11.1.1 -->
 <window>
 	<defaultcontrol always="true">4000</defaultcontrol>
 	<controls>
@@ -362,7 +362,7 @@
 											<left>0</left>
 											<top>355</top>
 											<align>center</align>
-											<textcolor>FFFFFAF0</textcolor>
+											<!-- <textcolor>FFFFFAF0</textcolor> -->
 											<font>Font_14A</font>
 											<textcolor>FFF0F0F0</textcolor>
 											<label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Character)][/COLOR]</label>
@@ -703,7 +703,7 @@
 											<left>0</left>
 											<top>355</top>
 											<align>center</align>
-											<textcolor>FFFFFAF0</textcolor>
+											<!-- <textcolor>FFFFFAF0</textcolor> -->
 											<font>Font_14A</font>
 											<textcolor>FFF0F0F0</textcolor>
 											<label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Job)][/COLOR]</label>
@@ -874,7 +874,7 @@
 											<left>0</left>
 											<top>340</top>
 											<align>center</align>
-											<textcolor>FFFFFAF0</textcolor>
+											<!-- <textcolor>FFFFFAF0</textcolor> -->
 											<font>Font_14A</font>
 											<textcolor>FFF0F0F0</textcolor>
 											<label>$INFO[ListItem.Label][CR][COLOR FF999999]$INFO[ListItem.Property(Job)][/COLOR]</label>
@@ -995,7 +995,7 @@
 										<left>0</left>
 										<top>227</top>
 										<align>center</align>
-										<textcolor>FFFFFAF0</textcolor>
+										<!-- <textcolor>FFFFFAF0</textcolor> -->
 										<font>Font_14A</font>
 										<textcolor>FFF0F0F0</textcolor>
 										<info>ListItem.Label</info>
