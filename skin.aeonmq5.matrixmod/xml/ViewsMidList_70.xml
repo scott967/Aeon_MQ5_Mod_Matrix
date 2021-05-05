@@ -709,7 +709,7 @@
 						<description>DURATION</description>
 						<include>MidListInfoTitle</include>
 						<label>$VAR[value_ground16_label]</label>
-						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListITem.DBType(videos)</visible>
+						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,video)</visible>
 					</control>
 					<control type="label">
 						<description>YEAR (artist active years) (not tvshow)</description>
@@ -780,7 +780,7 @@
 						<description>DURATION</description>
 						<include>MidListInfoTitle</include>
 						<label>$VAR[value_ground16_label]</label>
-						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListITem.DBType(videos)</visible>
+						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,video)</visible>
 					</control>
 					<control type="label">
 						<description>YEAR (artist active years)</description>
@@ -851,7 +851,7 @@
 						<description>DURATION</description>
 						<include>MidListInfo</include>
 						<label>$VAR[value_ground16_value]</label>
-						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListITem.DBType(videos)</visible>
+						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,video)</visible>
 					</control>
 					<control type="label">
 						<description>YEAR (artist active years)</description>
@@ -915,7 +915,7 @@
 						<description>DURATION</description>
 						<include>MidListInfo</include>
 						<label>$VAR[value_ground16_value]</label>
-						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListITem.DBType(videos)</visible>
+						<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,video)</visible>
 					</control>
 					<control type="label">
 						<description>YEAR (artist active years)</description>
