@@ -2,7 +2,8 @@
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
 <!-- Leia 10.3.0 -->
-<window id="636" type="dialog">
+<!-- Matrix 11.1.1 change id was 636 -->
+<window id="1115" type="dialog">
 	<!-- safe id -->
 	<defaultcontrol always="true">260</defaultcontrol>
 	<onunload>SetFocus(51)</onunload>
@@ -63,8 +64,8 @@
 						<label></label>
 						<colordiffuse>FFFFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],50)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="262">
@@ -72,8 +73,8 @@
 						<label></label>
 						<colordiffuse>95FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],45)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="263">
@@ -81,8 +82,8 @@
 						<label></label>
 						<colordiffuse>85FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],40)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="264">
@@ -90,8 +91,8 @@
 						<label></label>
 						<colordiffuse>75FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],35)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="265">
@@ -99,8 +100,8 @@
 						<label></label>
 						<colordiffuse>65FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],30)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="266">
@@ -108,8 +109,8 @@
 						<label></label>
 						<colordiffuse>55FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],25)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="267">
@@ -117,8 +118,8 @@
 						<label></label>
 						<colordiffuse>45FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],20)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="268">
@@ -126,8 +127,8 @@
 						<label></label>
 						<colordiffuse>35FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],15)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="269">
@@ -135,8 +136,8 @@
 						<label></label>
 						<colordiffuse>25FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],10)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="270">
@@ -144,8 +145,8 @@
 						<label></label>
 						<colordiffuse>15FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],05)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 					<control type="button" id="271">
@@ -153,8 +154,8 @@
 						<label></label>
 						<colordiffuse>05FFFFFF</colordiffuse>
 						<onfocus>Skin.SetString($INFO[skin.string(view_glass)],00)</onfocus>
-						<onup>Dialog.Close(636)</onup>
-						<ondown>Dialog.Close(636)</ondown>
+						<onup>Dialog.Close(1115)</onup>
+						<ondown>Dialog.Close(1115)</ondown>
 						<onclick>SetFocus(9100)</onclick>
 					</control>
 				</control>
