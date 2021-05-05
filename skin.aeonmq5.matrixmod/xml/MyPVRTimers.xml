@@ -10,11 +10,11 @@
 	<views>50</views>
 	<controls>
 		<control type="multiimage">
-			<!-- Fanart -->
+			<!-- Home window livetv background -->
 			<include>WindowBG</include>
 			<imagepath background="true">$VAR[value_menutheme_livetv]</imagepath>
 		</control>
-		<control type="group">	<!-- Background display -->
+		<control type="group">	<!-- Background video/music viz display -->
 			<animation effect="fade" reversible="true" time="300">VisibleChange</animation>
 			<control type="image">
 				<posx>0</posx>
@@ -39,13 +39,13 @@
 				<posy>0</posy>
 				<width>1920</width>
 				<height>1080</height>
-				<visible>Player.HasAudio</visible>
+				<visible>PVR.IsPlayingRadio + [String.Contains(Skin.String(vis_bgradio),vis) | String.Contains(Skin.String(vis_bgradio),fanartmix)]</visible>
 				<animation effect="slide" start="0,0" end="-3000,0" time="0">WindowClose</animation>
 			</control>
 		</control>
 		<control type="group">			<!-- default group -->
 			<include>Animation_Window</include>
-			<visible>![Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo) | Window.IsActive(PVRGuideSearch) | Window.IsActive(PVRTimerSetting)]</visible>
+			<visible>![Window.IsVisible(PVRGuideInfo) | Window.IsVisible(PVRRecordingInfo) | Window.IsVisible(PVRGuideSearch) | Window.IsVisible(PVRTimerSetting)]</visible>
 			<control type="button" id="9900">
 				<!-- to menu/kiosk condition -->
 				<include>InvisibleButton</include>
@@ -56,10 +56,10 @@
 			<control type="button" id="9920">
 				<!-- hidden colection/view fanart -->
 				<include>InvisibleButton</include>
-				<onleft>SetFocus(11)</onleft>
-				<onright>SetFocus(11)</onright>
-				<onup>SetFocus(11)</onup>
-				<ondown>SetFocus(11)</ondown>
+				<onleft>SetFocus(50)</onleft>
+				<onright>SetFocus(50)</onright>
+				<onup>SetFocus(50)</onup>
+				<ondown>SetFocus(50)</ondown>
 			</control>
 			<control type="group">			<!-- Next Recording (timer) /Time -->
 				<animation effect="slide" start="0,-105" end="0,0" time="500" delay="1000" easing="inout" tween="cubic">WindowOpen</animation>
@@ -137,7 +137,7 @@
 					<texture>grey.png</texture>
 					<colordiffuse>20FFFFFF</colordiffuse>
 				</control>
-				<control type="panel" id="50">
+				<control type="panel" id="50">	<!-- default view -->
 					<posx>0</posx>
 					<posy>195</posy>
 					<width>1920</width>

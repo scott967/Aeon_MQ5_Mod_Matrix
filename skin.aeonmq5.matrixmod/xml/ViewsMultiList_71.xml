@@ -1278,8 +1278,7 @@
 
 <!--##################################################################################   VIEW MULTILIST VIDEO- 71   ##################################################################################-->
 	<include name="ViewMultiListVideo">
-		<control type="group">
-			<!-- default group -->
+		<control type="group">	<!-- default group -->
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>Control.IsVisible(71)</visible>
 			<control type="list" id="7150">  <!-- invisible list to get album art for musicvideos -->
@@ -1291,8 +1290,10 @@
 				<content target="music"	sortby="track" sortorder="ascending">musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Album]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
 			</control>
 			<control type="group">  <!--  left side 71 group -->
-				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
-				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">Visible</animation>
+				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out" condition="!$EXP[IsPVRRecordings]">WindowOpen</animation>
+				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out" condition="!$EXP[IsPVRRecordings]">Visible</animation>
+				<animation effect="slide" time="500" start="-1200,0" end="0,40" tween="cubic" easing="out" condition="$EXP[IsPVRRecordings]">WindowOpen</animation>
+				<animation effect="slide" time="500" start="-1200,0" end="0,40" tween="cubic" easing="out" condition="$EXP[IsPVRRecordings]">Visible</animation>
 				<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
 				<control type="image">
 					<posx>0</posx>

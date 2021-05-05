@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 windowIDs/9.2.2 -->
 <!-- Leia 10.3.0/10.5.1 /10.6.0/10.6.2-->
-<!-- Matrix 11.0.1/11.0.4/11.0.5 -->
+<!-- Matrix 11.0.1/11.0.4/11.0.5/11.1.1 -->
 <!-- Includes:  Quickfix InvisibleButton Playlists HomeBG Animation_Fade LiveBG Animation_Window HomeRSS Animation_HomeGlass Animation_CDart  Animation_HomeNowPlaying Animation_Widgets Animation_HomeGlass2 Animation_HomeFade -->
 <!-- NextTracksContent Animation_HomePanel HomeFlagSeparator HomeFlagLabel mf_contentmovies -->
 <!--
@@ -1318,16 +1318,25 @@ Group 602: Widgets
 					<texturebg>progress_clear.png</texturebg>
 					<animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="750" condition="Player.HasMedia + System.IdleTime(8)">Conditional</animation>
-					<visible>Player.HasMedia + System.IdleTime(8)</visible>
+					<visible>Player.HasMedia + System.IdleTime(8) + !VideoPlayer.Content(liveTV)</visible>
 				</control>
-				<control type="grouplist">
-					<!-- Contador da reproducao -->
+				<control type="progress">
+					<posx>0</posx>
+					<posy>800</posy>
+					<width>1920</width>
+					<height>128</height>
+					<info2>PVR.TimeshiftProgressEpgStart</info2>
+					<info>PVR.TimeshiftProgressPlayPos</info>
+					<texturebg>progress_clear.png</texturebg>
+					<animation effect="fade" start="100" end="40" time="0" condition="true">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="750" condition="Player.HasMedia + System.IdleTime(8)">Conditional</animation>
+					<visible>System.IdleTime(8) + VideoPlayer.Content(liveTV)</visible>
+				</control>
+				<control type="grouplist">	<!-- play  progress -->
 					<posx>0</posx>
 					<posy>807</posy>
-					<!-- was 535 -->
 					<width>1920</width>
 					<height>105</height>
-					<!-- was 65 -->
 					<itemgap>0</itemgap>
 					<control type="label">
 						<include condition="String.IsEqual(skin.string(font),font1)">Font1</include>
@@ -1339,7 +1348,7 @@ Group 602: Widgets
 						<include condition="String.IsEqual(skin.string(font),font7)">Font7</include>
 						<include condition="String.IsEqual(skin.string(font),font8)">Font8</include>
 						<aligny>center</aligny>
-						<label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
+						<label>$VAR[PlayProgress]</label>
 						<animation effect="fade" start="0" end="100" time="750" condition="Player.HasMedia + System.IdleTime(8)">Conditional</animation>
 						<visible>Player.HasMedia + System.IdleTime(8)</visible>
 					</control>

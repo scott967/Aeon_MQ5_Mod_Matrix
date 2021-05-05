@@ -65,7 +65,7 @@
 			<!-- Channel -->
 			<include>SettingsSectionTitle</include>
 			<label>31763</label>
-			<visible>Control.IsVisible(50)</visible>
+			<visible>Control.IsVisible(50)</visible>	<!-- timers/search -->
 		</control>
 		<control type="label">
 			<!-- panel title while playing  TV -->
@@ -74,13 +74,18 @@
 			<label>$INFO[Control.GetLabel(29)] $INFO[Control.GetLabel(30)]</label>
 			<visible>[Pvr.IsPlayingTv + Control.IsVisible(50)] | !Control.IsVisible(50)</visible>
 		</control>
-		<!-- channel not available(don't see need for this) -->
-		<!-- <control type="label">
+		<control type="label">
 			<posx>412</posx>
 			<include>SettingsContentTitle</include>
-			<label>[UPPERCASE]$LOCALIZE[19136][/UPPERCASE]</label>
-			<visible>!Pvr.IsPlayingTv + Control.IsVisible(50)</visible>
-		</control> -->
+			<label>[UPPERCASE]$LOCALIZE[10703][/UPPERCASE]</label>
+			<visible>Window.IsVisible(tvtimers) + Control.IsVisible(50)</visible>
+		</control>
+		<control type="label">
+			<posx>412</posx>
+			<include>SettingsContentTitle</include>
+			<label>[UPPERCASE]$LOCALIZE[10708][/UPPERCASE]</label>
+			<visible>Window.IsVisible(radiotimers) + Control.IsVisible(50)</visible>
+		</control>
 	</include>
 	<include name="PVRCommonInfo">
 		<control type="image">
@@ -415,7 +420,7 @@
 				</control>
 			</control>
 			<control type="epggrid" id="52">
-				<viewtype label="19032">list</viewtype>
+				<viewtype label="$LOCALIZE[19032] $LOCALIZE[391]">list</viewtype>
 				<left>0</left>
 				<top>855</top>
 				<width>1898</width>

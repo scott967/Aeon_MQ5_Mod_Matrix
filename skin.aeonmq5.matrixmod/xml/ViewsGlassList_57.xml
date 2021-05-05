@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.15/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.2.5/10.3.0/10.4.0/10.5.2/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.2 -->
+<!-- Matrix 11.0.2/11.1.1 -->
 <includes>
 	<!--##################################################################################   VISTA GLASS LIST - ID 57   ##################################################################################-->
 	<include name="GlassListLabel">
@@ -37,13 +37,13 @@
 		<include>Animation_ViewsCDart</include>
 	</include>
 	<include name="ViewGlassList">
-		<control type="group">
+		<control type="group">	<!-- flags / info panel -->
 			<animation effect="slide" start="1500,0" end="0,0" time="600" easing="out" tween="sine">WindowOpen</animation>
 			<animation effect="slide" start="1500,0" end="0,0" time="600" easing="out" tween="sine">Visible</animation>
 			<animation effect="slide" start="0,0" end="1500,0" time="600" easing="out" tween="sine">Hidden</animation>
 			<visible>Control.IsVisible(57) + [Control.HasFocus(9957) | String.IsEqual(skin.string(glasslistvideopanel),alwayson) | String.IsEqual(skin.string(glasslistvideopanel),auto) + Control.IsVisible(9921)]</visible>
 			<!-- custom delay RCB -->
-			<control type="group">
+			<control type="group">	<!-- flags -->
 				<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
@@ -58,7 +58,6 @@
 					<texture>shadow_mask.png</texture>
 				</control>
 				<control type="grouplist">
-					<!-- Etiquetas -->
 					<posx>480</posx>
 					<posy>970</posy>
 					<orientation>horizontal</orientation>
@@ -177,8 +176,7 @@
 					<texture>gradient_small.png</texture>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Painel de Info -->
+			<control type="group">	<!-- info panel -->
 				<animation effect="slide" end="0,60" time="500" tween="sine" easing="out" condition="String.Contains(skin.string(mediaflags),off)">Conditional</animation>
 				<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				<control type="image">
@@ -641,7 +639,7 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
+		<control type="group">	<!-- container 57 -->
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>Control.IsVisible(57)</visible>
 			<control type="button" id="9957">
@@ -737,7 +735,16 @@
 						<height>45</height>
 						<texture>$VAR[value_watchedstyle]</texture>
 						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-						<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!$EXP[IsPVRRecordings] + !Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
+					<control type="image">
+						<posx>382</posx>
+						<posy>3</posy>
+						<width>45</width>
+						<height>45</height>
+						<texture>$VAR[pvr_overlay]</texture>
+						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+						<visible>$EXP[IsPVRRecordings] + !Skin.HasSetting(nooverlays)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout condition="String.IsEmpty(Control.GetLabel(198)) | Window.IsActive(videos) + Skin.HasSetting(slimglasslistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimglasslistmusic)" width="450" height="60">
@@ -770,7 +777,16 @@
 						<height>45</height>
 						<texture>$VAR[value_watchedstyle]</texture>
 						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-						<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!$EXP[IsPVRRecordings] + !Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
+					<control type="image">
+						<posx>382</posx>
+						<posy>3</posy>
+						<width>45</width>
+						<height>45</height>
+						<texture>$VAR[pvr_overlay]</texture>
+						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+						<visible>$EXP[IsPVRRecordings] + !Skin.HasSetting(nooverlays)</visible>
 					</control>
 				</focusedlayout>
 				<focusedlayout condition="![String.IsEmpty(Control.GetLabel(198)) | Window.IsActive(videos) + Skin.HasSetting(slimglasslistvideo) | [Window.IsActive(musicplaylist) | Window.IsActive(music)] + Skin.HasSetting(slimglasslistmusic)]" width="450" height="90">
@@ -816,7 +832,16 @@
 						<height>45</height>
 						<texture>$VAR[value_watchedstyle]</texture>
 						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
-						<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+						<visible>!$EXP[IsPVRRecordings] +!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
+					</control>
+					<control type="image">
+						<posx>382</posx>
+						<posy>3</posy>
+						<width>45</width>
+						<height>45</height>
+						<texture>$VAR[pvr_overlay]</texture>
+						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+						<visible>$EXP[IsPVRRecordings] +!Skin.HasSetting(nooverlays)</visible>
 					</control>
 				</focusedlayout>
 			</control>

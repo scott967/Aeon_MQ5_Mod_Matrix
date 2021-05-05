@@ -3,14 +3,13 @@
 <!-- Jarvis 8.1.15 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2901/9.2.2/9.2.3 -->
 <!-- Leia 10.2.8/10.3.0/10.4.0 -->
-<!-- Matrix 11.0.1/11.0.2 -->
+<!-- Matrix 11.0.1/11.0.2/11.1.1 -->
 
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
 	<onunload>Skin.Reset(customosd)</onunload>
 	<controls>
-		<control type="group">
-			<!-- Barra de info do modo custom -->
+		<control type="group">	<!-- Enable/disable OSD menu list content items -->
 			<posy>0</posy>
 			<include>Animation_TopPopup</include>
 			<visible>Skin.HasSetting(customosd)</visible>
@@ -56,8 +55,7 @@
 				<scrollout>false</scrollout>
 			</control>
 		</control>
-		<control type="group">
-			<!-- Top title/tag display -->
+		<control type="group">	<!-- Top title/tag display -->
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="out" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-375" easing="in" tween="cubic">WindowClose</animation>
@@ -95,22 +93,22 @@
 				<shadowcolor>grey</shadowcolor>
 			</control>
 		</control>
-		<control type="group">
+		<control type="group">	<!-- bottom group -->
 			<posy>780</posy>
 			<animation type="WindowOpen" reversible="false">
-				<effect type="slide" time="400" start="0,300" end="0,0" easing="out" tween="cubic" />
+				<effect type="slide" time="400" start="0,300" end="0,0" easing="out" tween="cubic"/>
 			</animation>
 			<animation type="Visible" reversible="false">
-				<effect type="slide" time="400" start="0,300" end="0,0" easing="out" tween="cubic" />
+				<effect type="slide" time="400" start="0,300" end="0,0" easing="out" tween="cubic"/>
 			</animation>
 			<animation type="Conditional" condition="Player.Forwarding | Player.Rewinding | Player.Seeking" reversible="false">
-				<effect type="fade" start="99" end="100" time="200" />
+				<effect type="fade" start="99" end="100" time="200"/>
 			</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,300" easing="in" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,300" easing="in" tween="cubic">Hidden</animation>
 			<visible>![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdsubtitlesettings) | Window.IsVisible(osdcmssettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(sliderdialog) | Skin.HasSetting(novideofurnituretemp)]</visible>
 			<!-- Seek Widget + add support for player tempo-->
-			<control type="group">
+			<control type="group">	<!-- forwarding/tempo left group -->
 				<posx>-750</posx>
 				<posy>57</posy>
 				<width>748</width>
@@ -133,7 +131,7 @@
 					<label>$VAR[value_seekforward]</label>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">	<!-- rewind right group -->
 				<posx>1920</posx>
 				<posy>57</posy>
 				<width>748</width>
@@ -173,7 +171,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_HomeGlass2</include>
 			</control>
-			<control type="button" id="4205">
+			<control type="button" id="4205">	<!-- furniture options -->
 				<include>InvisibleButton</include>
 				<onfocus>SetFocus(100)</onfocus>
 				<onfocus condition="String.Contains(skin.string(videofurniture),full)">Skin.SetString(videofurniture,partial)</onfocus>
@@ -183,93 +181,157 @@
 			<!-- Menu Content -->
 			<include condition="!Skin.HasSetting(videoosdfixedlist)">VideoOSDWrapList</include>
 			<include condition="Skin.HasSetting(videoosdfixedlist)">VideoOSDFixedList</include>
-			<control type="group">  <!-- progress bar for live tv with epg -->
-				<visible>VideoPlayer.HasEpg</visible>
-				<control type="progress">  <!-- left side bar -->
-					<posx>45</posx>
-					<posy>110</posy>
-					<width>1830</width>
-					<height>38</height>
-					<info2>PVR.TimeshiftProgressEpgStart</info2>
-					<info>PVR.TimeshiftProgressPlayPos</info>
-					<midtexture>progress_mid50.png</midtexture>
+			<control type="group">	<!-- progress bars seek slider and labels for live tv -->
+				<visible>VideoPlayer.Content(liveTV)</visible>
+				<control type="group"><!-- dual bar TS + EPG -->
+					<visible>Player.SeekEnabled + VideoPlayer.HasEPG</visible>
+					<control type="progress"><!-- TS progress top bar -->
+						<posx>45</posx>
+						<posy>110</posy>
+						<width>1830</width>
+						<height>19</height>
+						<info2>PVR.TimeshiftProgressBufferStart</info2>
+						<info>PVR.TimeshiftProgressBufferEnd</info>
+						<midtexture>progress_mid50.png</midtexture>
+					</control>
+					<!-- <control type="progress">
+						<posx>45</posx>
+						<posy>129</posy>
+						<width>1830</width>
+						<height>19</height>
+						<info2>PVR.TimeshiftProgressPlayPos</info2>
+						<info>PVR.TimeshiftProgressEpgEnd</info>
+						<texturebg>progress_mid50.png</texturebg>
+					`</control> -->
+					<control type="progress"><!-- EPG left side bar -->
+						<posx>45</posx>
+						<posy>129</posy><!-- bottom bar -->
+						<width>1830</width>
+						<height>19</height>
+						<info2>PVR.TimeshiftProgressEpgStart</info2>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<!-- <midtexture>progress_mid50.png</midtexture> -->
+						<!-- <texturebg colordiffuse="60FFFFFF">>progress_mid50.png</texturebg> -->
+					</control>
+					<control type="label">
+						<posx>135</posx>
+						<posy>116</posy>
+						<width>1650</width>
+						<height>45</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>Font_17A</font>
+						<textcolor>FFFFFAF0</textcolor>
+						<shadowcolor>grey</shadowcolor>
+						<label>[B]$VAR[value_osd_timeduration][/B]</label>
+						<visible>!Control.HasFocus(888)</visible>
+					</control>
 				</control>
-				<!-- <control type="progress">
+				<control type="group"><!--  TS only -->
+					<visible>Player.SeekEnabled + !VideoPlayer.HasEPG</visible>
+					<control type="progress"><!-- TS progress -->
+						<posx>45</posx>
+						<posy>110</posy><!-- full bar -->
+						<width>1830</width>
+						<height>38</height>
+						<info2>PVR.TimeshiftProgressBufferStart</info2>
+						<info>PVR.TimeshiftProgressBufferEnd</info>
+						<midtexture>progress_mid50.png</midtexture>
+					</control>
+				</control>
+				<control type="group"><!--  EPG only -->
+					<visible>!Player.SeekEnabled + VideoPlayer.HasEPG</visible>
+					<control type="progress"><!-- EPG progress -->
+						<posx>45</posx>
+						<posy>110</posy><!-- full bar -->
+						<width>1830</width>
+						<height>38</height>
+						<info>PVR.EPGEventProgress</info>
+						<midtexture>progress_mid50.png</midtexture>
+					</control>
+				</control>
+				<control type="slider" id="888">
+					<posx>58</posx>
+					<posy>112</posy>
+					<width>1803</width>
+					<height>32</height>
+					<onup>Dialog.Close(VideoOSD)</onup>
+					<ondown>100</ondown>
+					<action>PVR.seek</action>
+					<texturesliderbar>sliderback_large.png</texturesliderbar>
+					<textureslidernib/>
+					<textureslidernibfocus>progress_mid.png</textureslidernibfocus>
+					<animation effect="fade" time="200">VisibleChange</animation>
+				</control>
+			</control>
+			<control type="group">	<!--  cache and progress (!LiveTV) -->
+				<visible>!VideoPlayer.Content(liveTV)</visible>
+				<control type="progress">
 					<posx>45</posx>
 					<posy>110</posy>
 					<width>1830</width>
 					<height>38</height>
-					<info2>PVR.TimeshiftProgressPlayPos</info2>
-					<info>PVR.TimeshiftProgressEpgEnd</info>
+					<info>Player.ProgressCache</info>
 					<midtexture>progress_mid50.png</midtexture>
-					<texturebg>progress_mid50.png</texturebg>
-				</control> -->
+					<visible>!VideoPlayer.Content(livetv)</visible>
+				</control>
+				<control type="progress">
+					<posx>45</posx>
+					<posy>110</posy>
+					<width>1830</width>
+					<height>38</height>
+					<info>Player.Progress</info>
+					<texturebg>progress_back50.png</texturebg>
+					<visible>!VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
+				</control>
+				<control type="slider" id="888">
+					<posx>58</posx>
+					<posy>112</posy>
+					<width>1803</width>
+					<height>32</height>
+					<onup>Dialog.Close(VideoOSD)</onup>
+					<ondown>100</ondown>
+					<action>seek</action>
+					<texturesliderbar>sliderback_large.png</texturesliderbar>
+					<textureslidernib/>
+					<textureslidernibfocus>progress_mid.png</textureslidernibfocus>
+					<animation effect="fade" time="200">VisibleChange</animation>
+				</control>
+				<control type="ranges" id="889">
+					<posx>58</posx>
+					<posy>112</posy>
+					<width>1803</width>
+					<height>45</height>
+					<info>Player.Chapters</info>
+					<righttexture>progress_mid.png</righttexture>
+					<animation effect="fade" time="200">VisibleChange</animation>
+				</control>
+				<control type="label">
+					<posx>135</posx>
+					<posy>106</posy>
+					<width>1650</width>
+					<height>45</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font_17A</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<shadowcolor>grey</shadowcolor>
+					<label>[B]$VAR[value_osd_timeduration][/B]</label>
+					<visible>!Control.HasFocus(888) + !VideoPlayer.Content(liveTV)</visible>
+				</control>
+				<control type="label">
+					<!-- icons label -->
+					<posx>480</posx>
+					<posy>249</posy>
+					<width>960</width>
+					<height>38</height>
+					<align>center</align>
+					<font>Font_18</font>
+					<label>$VAR[value_osdvideo_title]</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
 			</control>
-			<control type="progress">  <!--  cache progress -->
-				<posx>45</posx>
-				<posy>110</posy>
-				<width>1830</width>
-				<height>38</height>
-				<info>Player.ProgressCache</info>
-				<midtexture>progress_mid50.png</midtexture>
-				<visible>!VideoPlayer.Content(livetv)</visible>
-			</control>
-			<control type="progress">
-				<posx>45</posx>
-				<posy>110</posy>
-				<width>1830</width>
-				<height>38</height>
-				<info>Player.Progress</info>
-				<texturebg>progress_back50.png</texturebg>
-				<visible>!VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
-			</control>
-			<control type="slider" id="888">
-				<posx>58</posx>
-				<posy>112</posy>
-				<width>1803</width>
-				<height>32</height>
-				<onup>Dialog.Close(2901)</onup>
-				<ondown>100</ondown>
-				<action>seek</action>
-				<texturesliderbar>sliderback_large.png</texturesliderbar>
-				<textureslidernib></textureslidernib>
-				<textureslidernibfocus>progress_mid.png</textureslidernibfocus>
-				<animation effect="fade" time="200">VisibleChange</animation>
-			</control>
-			<control type="ranges" id="889">
-				<posx>58</posx>
-				<posy>112</posy>
-				<width>1803</width>
-				<height>45</height>
-				<info>Player.Chapters</info>
-				<righttexture>progress_mid.png</righttexture>
-				<animation effect="fade" time="200">VisibleChange</animation>
-			</control>
-			<control type="label">
-				<posx>135</posx>
-				<posy>106</posy>
-				<width>1650</width>
-				<height>45</height>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>Font_17A</font>
-				<textcolor>FFFFFAF0</textcolor>
-				<shadowcolor>grey</shadowcolor>
-				<label>[B]$VAR[value_osd_timeduration][/B]</label>
-				<visible>!Control.HasFocus(888)</visible>
-			</control>
-			<control type="label">
-				<!-- icons label -->
-				<posx>480</posx>
-				<posy>249</posy>
-				<width>960</width>
-				<height>38</height>
-				<align>center</align>
-				<font>Font_18</font>
-				<label>$VAR[value_osdvideo_title]</label>
-				<textcolor>FFFFFAF0</textcolor>
-			</control>
-			<control type="group">  <!-- current / finish time labels) -->
+			<control type="group"><!-- current / finish time labels) -->
 				<include>Animation_Fade</include>
 				<visible>!Skin.HasSetting(customosd)</visible>
 				<control type="label">
@@ -291,7 +353,7 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[System.Time]</label>
 				</control>
-				<control type="label">  <!-- program or file end time -->
+				<control type="label"><!-- program or file end time -->
 					<posx>1875</posx>
 					<posy>195</posy>
 					<width>450</width>

@@ -81,7 +81,7 @@
 					<height>525</height>
 					<onleft>73</onleft>
 					<onup>13</onup>
-					<ondown>13</ondown>
+					<ondown>9002</ondown>
 					<onright>71</onright>
 					<pagecontrol>73</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -358,7 +358,7 @@
 			</control>
 			<control type="group" id="9002">  <!-- group actions -->
 				<control type="group">
-					<posx>960</posx>
+					<posx>460</posx>
 					<posy>730</posy>
 					<control type="label">
 						<posx>45</posx>
@@ -389,9 +389,24 @@
 						<posy>55</posy>
 						<label>$LOCALIZE[31994]</label>
 						<onleft>26</onleft>
-						<onright>13</onright>
+						<onright>34</onright>
 						<onup>13</onup>
 						<ondown>28</ondown>
+					</control>
+					<control type="togglebutton" id="34">
+						<!-- toggle tv/radio  -->
+						<textoffsetx>17</textoffsetx>
+						<width>360</width>
+						<include>PVRSearchButtonSmall</include>
+						<posx>668</posx>
+						<posy>55</posy>
+						<label>$LOCALIZE[19174]</label>
+						<altlabel>$LOCALIZE[19173]</altlabel>
+						<usealttexture>!String.IsEmpty(Window.Property(IsRadio))</usealttexture>
+						<onleft>27</onleft>
+						<onright>13</onright>
+						<onup>13</onup>
+						<ondown>9000</ondown>
 					</control>
 					<control type="button" id="28">
 						<!-- delete grp -->

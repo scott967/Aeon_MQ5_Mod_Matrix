@@ -5,7 +5,6 @@
 <!-- Leia 10.2.5/10.3.0/10.4.0/10.6.0/10.6.1 -->
 <!-- Matrix 11.0.2 -->
 <window>
-	<defaultcontrol></defaultcontrol>
 	<controls>
 		<control type="group">	<!-- top area furniture full and partial or paused-->
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
@@ -114,8 +113,9 @@
 				<colordiffuse>E4000000</colordiffuse>
 				<visible>![String.Contains(skin.string(videofurniture),hide) + !Player.Paused]</visible>
 			</control>
-			<control type="group">	<!-- progress visible all furniture settings slide up for fwd / tempo -->
+			<control type="group">	<!-- progress visible all furniture settings slide up for fwd / tempo  (!LiveTV) -->
 				<animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.IsTempo">Conditional</animation>
+				<visible>!VideoPlayer.Content(liveTV)</visible>
 				<control type="progress" id="23">
 					<posx>30</posx>
 					<posy>996</posy>
@@ -141,6 +141,27 @@
 					<align>center</align>
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
+				</control>
+			</control>
+			<control type="group">	<!-- progress visible all furniture settings slide up for fwd / tempo  (LiveTV) -->
+				<animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding | Player.IsTempo">Conditional</animation>
+				<visible>VideoPlayer.Content(liveTV)</visible>
+				<control type="progress" id="23">
+					<posx>30</posx>
+					<posy>996</posy>
+					<width>375</width>
+					<height>15</height>
+					<info>PVR.EpgEventProgress</info>
+				</control>
+				<control type="label">
+					<posx>45</posx>
+					<posy>1020</posy>
+					<width>345</width>
+					<height>38</height>
+					<font>Font_23</font>
+					<align>center</align>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$INFO[PVR.EpgEventElapsedTime] / $INFO[PVR.EPGEventDuration]</label>
 				</control>
 			</control>
 			<control type="group">	<!-- time only show for full and partial furniture unless paused -->
@@ -196,6 +217,18 @@
 					<font>Font_23</font>
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[Player.TimeRemaining]</label>
+					<visible>!VideoPlayer.Content(liveTV)</visible>
+				</control>
+				<control type="label">
+					<posx>1702</posx>
+					<posy>1020</posy>
+					<width>202</width>
+					<height>38</height>
+					<align>right</align>
+					<font>Font_23</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$INFO[PVR.EpgEventRemainingTime]</label>
+					<visible>VideoPlayer.Content(liveTV)</visible>
 				</control>
 				<control type="image">
 					<posx>1707</posx>
@@ -226,6 +259,18 @@
 					<font>Font_23</font>
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[Player.FinishTime]</label>
+					<visible>!VideoPlayer.Content(liveTV)</visible>
+				</control>
+				<control type="label">
+					<posx>1875</posx>
+					<posy>1020</posy>
+					<width>180</width>
+					<height>38</height>
+					<align>right</align>
+					<font>Font_23</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$INFO[PVR.EpgEventFinishTime]</label>
+					<visible>VideoPlayer.Content(liveTV)</visible>
 				</control>
 			</control>
 		</control>
@@ -243,7 +288,7 @@
 				<posx>330</posx>
 				<posy>1023</posy>
 				<height>46</height>
-				<width>1080</width>
+				<width>1090</width>
 				<colordiffuse>$VAR[value_flagsbar]</colordiffuse>
 				<texture>whitebar_h.png</texture>
 			</control>
@@ -344,7 +389,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 			</control>
 			<control type="image">
-				<!-- Cover -->
+				<!-- Poster/cover -->
 				<posx>15</posx>
 				<posy>676</posy>
 				<width>285</width>

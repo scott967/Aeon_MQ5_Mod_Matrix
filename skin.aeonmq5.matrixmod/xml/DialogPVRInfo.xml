@@ -194,7 +194,7 @@
 				</control>
 				<control type="button" id="8">
 					<!-- Play recording -->
-					<width>300</width>
+					<width>330</width>
 					<include>SettingsBottomButton</include>
 					<label>19687</label>
 					<visible>Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)</visible>

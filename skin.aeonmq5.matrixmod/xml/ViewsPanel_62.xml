@@ -3,7 +3,7 @@
 <!-- Isengard 7.1.9/7.1.10/7.1.11 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
 <!-- Leia 10.3.0 -->
-<!-- Matrix 11.0.4 -->
+<!-- Matrix 11.0.4/11.1.1 -->
 <includes>
 	<!--##################################################################################   VISTA PANEL - ID 62   ##################################################################################-->
 	<include name="Panel_Dimmer">
@@ -16,13 +16,12 @@
 		<visible>[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + Control.HasFocus(62)</visible>
 	</include>
 	<include name="ViewPanel">
-		<control type="group">
-			<!-- default group -->
+		<control type="group">		<!-- default group -->
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<include>ViewBack</include>
 			<!-- Fundo -->
 			<visible>Control.IsVisible(62)</visible>
-			<control type="group">
+			<control type="group">	<!-- panel group -->
 				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out">Visible</animation>
 				<animation effect="fade" time="200" start="100" end="0">Hidden</animation>
@@ -42,8 +41,32 @@
 					<pagecontrol>80</pagecontrol>
 					<preloaditems>2</preloaditems>
 					<visible>!Container.Content(years)</visible>
+					<itemlayout condition="Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)" width="180" height="255">
+						<control type="image">
+							<posx>12</posx>
+							<posy>9</posy>
+							<width>150</width>
+							<height>212</height>
+							<texture fallback="DefaultVideoPoster.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_poster]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="image">
+							<posx>122</posx>
+							<posy>8</posy>
+							<width>38</width>
+							<height>38</height>
+							<texture>$VAR[pvr_overlay]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays)</visible>
+						</control>
+						<control type="image">
+							<include>Panel_Dimmer</include>
+							<width>180</width>
+							<height>255</height>
+						</control>
+					</itemlayout>
 					<itemlayout condition="Window.IsActive(videos) + Skin.HasSetting(nopanelvideocase) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) | Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(panelbigicon) | Container.Content(sets)] | Container.Content(tvshows) + !Skin.HasSetting(noviewpanelposter)  | Container.Content(seasons) | Window.IsActive(videos) + Container.Content(genres)" width="180" height="255">
-						<!-- POSTER SEM ESTOJO -->
+						<!-- Poster no case -->
 						<control type="image">
 							<posx>12</posx>
 							<posy>9</posy>
@@ -254,8 +277,35 @@
 							<height>180</height>
 						</control>
 					</itemlayout>
+					<focusedlayout condition="$EXP[IsPVRRecordings]" width="180" height="255">
+						<control type="image">
+							<posx>12</posx>
+							<posy>9</posy>
+							<width>150</width>
+							<height>212</height>
+							<texture fallback="DefaultVideoPoster.png" diffuse="thumb_poster_diffuse.png" background="true">$VAR[value_poster]</texture>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+								<effect type="fade" start="80" end="100" time="400" />
+							</animation>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="image">
+							<posx>122</posx>
+							<posy>8</posy>
+							<width>38</width>
+							<height>38</height>
+							<texture>$VAR[pvr_overlay]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<animation type="Focus" reversible="false">
+								<effect type="zoom" center="90,90" start="80" end="100" time="400" tween="back" easing="out" />
+								<effect type="fade" start="80" end="100" time="400" />
+							</animation>
+							<visible>!Skin.HasSetting(nooverlays)</visible>
+						</control>
+					</focusedlayout>
 					<focusedlayout condition="Window.IsActive(videos) + Skin.HasSetting(nopanelvideocase) + Container.Content(movies) + !Skin.HasSetting(noviewpanelposter) | Skin.HasSetting(nopanelvideocase) + [Container.Content(musicvideos) + !Skin.HasSetting(panelbigicon) | Container.Content(sets)] | Container.Content(tvshows) + !Skin.HasSetting(noviewpanelposter)  | Container.Content(seasons) | Window.IsActive(videos) + Container.Content(genres)" width="180" height="255">
-						<!-- POSTER SEM ESTOJO -->
+						<!-- Poster no case -->
 						<control type="image">
 							<posx>12</posx>
 							<posy>9</posy>
@@ -497,8 +547,7 @@
 					</focusedlayout>
 				</control>
 			</control>
-			<!-- Info Panel -->
-			<control type="group">
+			<control type="group">	<!-- Info Panel -->
 				<animation effect="slide" time="700" start="-1200,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" time="700" start="0,0" end="-1200,0" tween="cubic" easing="out">WindowClose</animation>
 				<animation effect="slide" time="700" start="-1200,0" end="0,0" tween="cubic" easing="out">Visible</animation>
@@ -521,7 +570,17 @@
 					<texture fallback="DefaultExtraThumbs.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
 					<aspectratio>stretch</aspectratio>
 					<fadetime>FanartCrossFadeTime</fadetime>
-					<visible>!Container.Content(genres) + !String.IsEqual(ListItem.DBType,musicvideo)</visible>
+					<visible>!Container.Content(genres) + !String.IsEqual(ListItem.DBType,musicvideo) + ![Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</visible>
+				</control>
+				<control type="image">
+					<posx>15</posx>
+					<posy>63</posy>
+					<width>580</width>
+					<height>315</height>
+					<texture fallback="DefaultLiveTV.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+					<aspectratio>stretch</aspectratio>
+					<fadetime>FanartCrossFadeTime</fadetime>
+					<visible>Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)</visible>
 				</control>
 				<control type="image">
 					<posx>148</posx>

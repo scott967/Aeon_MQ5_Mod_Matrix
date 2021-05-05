@@ -5,11 +5,60 @@
 <!-- Leia 10.3.0 -->
 <window>
 	<coordinates>
-		<system>1</system>
 		<posx>0</posx>
 		<posy>0</posy>
 	</coordinates>
+	<onopen condition="Skin.HasSetting(nolyrics_on)">SetFocus(110,1)</onopen>
 	<controls>
+			<control type="label" >
+				<description>tester</description>
+				<left>40</left>
+				<top>40</top>
+				<width>300</width>
+				<height>60</height>
+				<label>Skin Nolyrics</label>
+				<visible>Skin.HasSetting(nolyrics_on)</visible>
+			</control>
+			<control type="label" >
+				<description>tester</description>
+				<left>40</left>
+				<top>40</top>
+				<width>300</width>
+				<height>60</height>
+				<label>Skin lyrics</label>
+				<visible>!Skin.HasSetting(nolyrics_on)</visible>
+			</control>
+		<control type="group">  <!-- invisible lyrics to close window -->
+			<visible>Skin.HasSetting(nolyrics_on) + !String.IsEqual(skin.string(vis_layout),karaoke)</visible>
+			<control type="button" id="5001">
+				<description>background close area</description>
+				<left>-1920</left>
+				<top>-1080</top>
+				<width>5760</width>
+				<height>3240</height>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
+				<onclick>Action(close)</onclick>
+				<onfocus>Action(close)</onfocus>
+			</control>
+			<control type="list" id="110">
+				<left>-1920</left>
+				<top>-1080</top>
+				<width>5760</width>
+				<height>3240</height>
+				<onup>Action(close)</onup>
+				<ondown>Action(close)</ondown>
+				<onleft>Action(close)</onleft>
+				<onright>Action(close)</onright>
+				<onfocus>Action(close)</onfocus>
+				<itemlayout height="1620"></itemlayout>
+				<focusedlayout height="1620"></focusedlayout>
+			</control>
+			<control type="label" id="200">
+				<description>Scraper label</description>
+				<visible>false</visible>
+			</control>
+		</control>
 		<include condition="String.IsEqual(skin.string(vis_layout),default)">LyricsDefault</include>
 		<include condition="String.IsEqual(skin.string(vis_layout),karaoke)">LyricsKaraoke</include>
 	</controls>

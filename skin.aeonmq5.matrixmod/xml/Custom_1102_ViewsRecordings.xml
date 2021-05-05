@@ -95,6 +95,14 @@
 					<onclick>Skin.ToggleSetting(viewlowlist_recordings)</onclick>
 					<selected>Skin.HasSetting(viewlowlist_recordings)</selected>
 				</control>
+				<control type="radiobutton" id="19271">
+					<!-- Multi List -->
+					<!-- 71 -->
+					<radioposx>1341</radioposx>
+					<label>Multi-$LOCALIZE[535]</label>
+					<onclick>Skin.ToggleSetting(viewmultilist_recordings)</onclick>
+					<selected>Skin.HasSetting(viewmultilist_recordings)</selected>
+				</control>
 				<control type="radiobutton" id="19256">
 					<!-- Wall -->
 					<!-- 56 -->

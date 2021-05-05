@@ -473,8 +473,8 @@
 		<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)">Conditional</animation>
 		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
 		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
-		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
-		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation) + !PVR.IsPlayingRadio">Conditional</animation>
+		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation) + !PVR.IsPlayingRadio">Conditional</animation>
 	</include>
 	<include name="MosaicBGNew">
 		<width>640</width>
@@ -489,8 +489,8 @@
 		<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)">Conditional</animation>
 		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
 		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animation_panscan) + !Window.IsActive(visualisation)">Conditional</animation>
-		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
-		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation)">Conditional</animation>
+		<animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation) + !PVR.IsPlayingRadio">Conditional</animation>
+		<animation effect="slide" start="-15,-15" end="15,15" time="5000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(visanimation_panscan) + Window.IsActive(visualisation) + !PVR.IsPlayingRadio">Conditional</animation>
 	</include>
 	<include name="WindowBG">
 		<posx>0</posx>
@@ -539,7 +539,7 @@
 			<colordiffuse>C3FFFFFF</colordiffuse>
 			<include>Animation_Fade</include>
 			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(SliderDialog)">conditional</animation>
-			<visible>Window.IsVisible(progressdialog) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(contextmenu) | Window.IsVisible(numericinput) | Window.IsVisible(shutdownmenu) | Window.IsVisible(playercontrols) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(mediasource) | Window.IsVisible(profilesettings) | Window.IsVisible(contentsettings) | Window.IsVisible(favourites) | Window.IsVisible(smartplaylisteditor) | Window.IsVisible(smartplaylistrule) | Window.IsVisible(radiotimers) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(selectdialog)</visible>
+			<visible>Window.IsVisible(progressdialog) | Window.IsVisible(virtualkeyboard) | Window.IsVisible(contextmenu) | Window.IsVisible(numericinput) | Window.IsVisible(shutdownmenu) | Window.IsVisible(playercontrols) | Window.IsVisible(filebrowser) | Window.IsVisible(networksetup) | Window.IsVisible(mediasource) | Window.IsVisible(profilesettings) | Window.IsVisible(contentsettings) | Window.IsVisible(favourites) | Window.IsVisible(smartplaylisteditor) | Window.IsVisible(smartplaylistrule) | Window.IsVisible(630) | Window.IsVisible(633) | Window.IsVisible(selectdialog)</visible>	<!-- 630 custom presets 633 custom season -->
 		</control>
 <!-- default skin settings used for initial install or if user requests reset to default ******************************************************************  -->
 		<include condition="!String.IsEqual(skin.string(defaultsettings),2)">DefaultSettings</include>
@@ -671,6 +671,8 @@
 				<onfocus>Skin.SetString(showartvideopanel,auto)</onfocus>
 				<onfocus>Skin.SetString(wallvideogrid,default)</onfocus>
 				<onfocus>Skin.SetString(wallvideopanel,auto)</onfocus>
+				<onfocus>Skin.SetString(wallpvrgrid,default)</onfocus>
+				<onfocus>Skin.SetString(wallpvrpanel,auto)</onfocus>
 				<onfocus>Skin.SetString(wallmusicgrid,default)</onfocus>
 				<onfocus>Skin.SetString(wallmusicpanel,auto)</onfocus>
 				<onfocus>Skin.SetString(wallprogramsgrid,default)</onfocus>
@@ -683,7 +685,8 @@
 				<onfocus>Skin.SetString(weather_mode,7days)</onfocus>
 				<onfocus>Skin.SetString(weatherconditionbg,northamerica)</onfocus>
 				<onfocus>Skin.SetString(LyricScript_Path,script.cu.lrclyrics)</onfocus>
-				<onfocus>Skin.SetString(vis_bg,slideshowmosaicmix)</onfocus>
+				<onfocus>Skin.SetString(vis_bg,slideshowmix)</onfocus>
+				<onfocus>Skin.SetString(vis_bgradio,vis)</onfocus>
 				<onfocus>Skin.SetString(vis_layout,default)</onfocus>
 				<onfocus>Skin.SetString(games_link,rcb)</onfocus>
 				<onfocus>Skin.SetString(stylewatched,0)</onfocus>
@@ -697,6 +700,7 @@
 				<onfocus>Skin.SetString(cdart_seconds,4000)</onfocus>
 				<onfocus>Skin.SetString(mediaflags,on)</onfocus>
 				<onfocus>Skin.SetBool(visanimation_panscan)</onfocus>
+				<onfocus>Skin.SetBool(visanimationradio_panscan)</onfocus>
 				<onfocus>Skin.SetBool(darkbar)</onfocus>
 				<onfocus>Skin.SetBool(ontvtunes)</onfocus>
 				<onfocus>AlarmClock(nextstep,SetFocus(901),0:03,true)</onfocus>
@@ -3587,7 +3591,7 @@
 				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(musicplaylist)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_playlist),disable)">Skin.SetString(osd_audio_playlist,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_playlist),disable)">Skin.Reset(osd_audio_playlist,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_audio_playlist),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[![String.Contains(skin.string(osd_audio_playlist),disable)  | PVR.IsPlayingRadio]| Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="11">
 				<!-- repeat -->
@@ -3597,7 +3601,7 @@
 				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Repeat)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_repeat),disable)">Skin.SetString(osd_audio_repeat,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_repeat),disable)">Skin.Reset(osd_audio_repeat,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_audio_repeat),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[![String.Contains(skin.string(osd_audio_repeat),disable)  | PVR.IsPlayingRadio] | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="12">
 				<!-- random -->
@@ -3607,7 +3611,7 @@
 				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Random)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_random),disable)">Skin.SetString(osd_audio_random,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_random),disable)">Skin.Reset(osd_audio_random,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_audio_random),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[![String.Contains(skin.string(osd_audio_random),disable)  | PVR.IsPlayingRadio] | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="23">
 				<!-- skipbwd -->
@@ -3617,7 +3621,7 @@
 				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Previous)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_skipbwd),disable)">Skin.SetString(osd_audio_skipbwd,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_skipbwd),disable)">Skin.Reset(osd_audio_skipbwd,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_audio_skipbwd),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[![String.Contains(skin.string(osd_audio_skipbwd),disable)  | PVR.IsPlayingRadio] | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="19">
 				<!-- rew -->
@@ -3657,7 +3661,7 @@
 				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Next)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_skipfwd),disable)">Skin.SetString(osd_audio_skipfwd,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_skipfwd),disable)">Skin.Reset(osd_audio_skipfwd,disable)</onclick>
-				<visible>[!String.Contains(skin.string(osd_audio_skipfwd),disable) | Skin.HasSetting(customosd)]</visible>
+				<visible>[![String.Contains(skin.string(osd_audio_skipfwd),disable)  | PVR.IsPlayingRadio] | Skin.HasSetting(customosd)]</visible>
 			</item>
 			<item id="22">
 				<!-- stop -->
@@ -4810,6 +4814,13 @@
 			</item>
 		</content>
 	</include>
-	<expression name="HasDetailInfo">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,video) | Container.Content(addons) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)</expression>
+	<expression name="Can_record">Player.CanRecordPlayingChannel | Player.IsRecordingPlayingChannel | Pvr.IsRecording</expression>
+	<expression name="HasDetailInfo">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,video) | Container.Content(addons) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | !ListItem.IsFolder + [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</expression>
 	<expression name="HasUserRating">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | Striing.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)</expression>
+	<expression name="IsPVRChannels">Window.IsVisible(tvchannels) | Window.IsVisible(radiochannels)</expression>
+	<expression name="IsPVRGuide">Window.IsVisible(tvguide) | Window.IsVisible(radioguide)</expression>
+	<expression name="IsPVRRecordings">Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)</expression>
+	<expression name="IsPVRTimers">Window.IsVisible(tvtimers) | Window.IsVisible(radiotimers)</expression>
+	<expression name="IsPVRSearch">Window.IsVisible(tvsearch) | Window.IsVisible(radiosearchj)</expression>
+	<expression name="IsRadioWindow">Window.IsVisible(radiochannels) | Window.IsVisible(radiotimers) | Window.IsVisible(radiorecordings) | Window.IsVisible(radioguide) | Window.IsVisible(radiosearch)</expression>
 </includes>

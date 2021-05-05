@@ -45,6 +45,27 @@
 		<preloaditems>2</preloaditems>
 		<pagecontrol>80</pagecontrol>
 		<visible>!Container.Content(years)</visible>
+		<itemlayout condition="!$EXP[IsPVRRecordings]" width="447" height="540">
+			<control type="image">
+				<posx>0</posx>
+				<posy>9</posy>
+				<width>390</width>
+				<height>525</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<bordertexture border="-2">black.png</bordertexture>
+				<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+			</control>
+			<control type="image">
+				<posx>315</posx>
+				<posy>472</posy>
+				<width>60</width>
+				<height>60</height>
+				<texture>$VAR[pvr_overlay]</texture>
+				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<visible>!Skin.HasSetting(nooverlays)</visible>
+			</control>
+		</itemlayout>
 		<itemlayout condition="![Window.IsActive(musicplaylist) | Window.IsActive(music)]" width="447" height="540">
 			<control type="image">
 				<posx>0</posx>
@@ -131,6 +152,30 @@
 				<label>$INFO[ListItem.Label]</label>
 			</control>
 		</itemlayout>
+		<focusedlayout condition="$EXP[IsPVRRecordings]" width="447" height="540">
+			<control type="image">
+				<posx>0</posx>
+				<posy>9</posy>
+				<width>390</width>
+				<height>525</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+				<bordertexture border="-2">black.png</bordertexture>
+				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+			</control>
+			<control type="image">
+				<posx>315</posx>
+				<posy>472</posy>
+				<width>60</width>
+				<height>60</height>
+				<texture>$VAR[pvr_overlay]</texture>
+				<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<animation reversible="false" effect="slide" start="0,0" end="36,54" center="auto" time="200">Focus</animation>
+				<animation reversible="false" effect="zoom" end="120" center="auto" time="200">Focus</animation>
+				<visible>!Skin.HasSetting(nooverlays) </visible>
+			</control>
+		</focusedlayout>
 		<focusedlayout condition="![Window.IsActive(musicplaylist) | Window.IsActive(music)]" width="447" height="540">
 			<control type="image">
 				<posx>0</posx>
@@ -230,12 +275,10 @@
 		</focusedlayout>
 	</include>
 	<include name="ViewPoster">
-		<control type="group">
-			<!-- default group -->
+		<control type="group">	<!-- default group -->
 			<animation effect="fade" time="400">VisibleChange</animation>
 			<visible>Control.IsVisible(54)</visible>
-			<control type="group">
-				<!-- CDART VIDEO -->
+			<control type="group">	<!-- CDART VIDEO -->
 				<animation type="WindowOpen">
 					<effect type="slide" start="0,-150" end="0,0" time="500" delay="500" tween="cubic" easing="out" />
 					<effect type="fade" start="0" end="100" time="500" delay="500" />
@@ -304,41 +347,40 @@
 				<texture>separator_v.png</texture>
 				<visible>![String.IsEmpty(Control.GetLabel(1008)) | Skin.HasSetting(noartpostervideo)]</visible>
 			</control>
-			<control type="grouplist">
-				<!-- Painel de info -->
+			<control type="grouplist">	<!-- Info panel -->
 				<posx>45</posx>
 				<posy>788</posy>
 				<orientation>vertical</orientation>
-				<itemgap>0</itemgap>
-				<visible>![Container.Content(addons) | Container.Content(genres) | String.IsEmpty(ListItem.DBType)]</visible>
+				<itemgap>2</itemgap>
+				<visible>![Container.Content(addons) | Container.Content(genres) | String.IsEmpty(ListItem.DBType)]  | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</visible>
 				<control type="label">
 					<include>PosterLabel</include>
 					<label>$VAR[value_ground11_label]: [COLOR=FFFFFAF0]$VAR[value_ground11_value][/COLOR]</label> 
-					<visible>![[String.IsEqual(ListItem.DBType,episode) | ListItem.DBType(season) | ListItem.DBType(tvshow)] + String.IsEmpty(Window(home).Property(NextAired.Status))]</visible>
+					<visible>![[String.IsEqual(ListItem.DBType,episode) | ListItem.DBType(season) | ListItem.DBType(tvshow)] + String.IsEmpty(Window(home).Property(NextAired.Status))] | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</visible>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
-					<label>$VAR[value_ground12_label]: [COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
+					<label>[UPPERCASE]$VAR[value_ground12_label]: [/UPPERCASE][COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
 					<label>$VAR[value_ground13_label]: [COLOR=FFFFFAF0]$VAR[value_ground13_value][/COLOR]</label>
-					<visible>!Container.Content(songs)</visible>
+					<visible>!Container.Content(songs) | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</visible>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
 					<label>$VAR[value_ground14_label]: [COLOR=FFFFFAF0]$VAR[value_ground14_value][/COLOR]</label>
-					<visible>![Container.Content(artists) | Container.Content(albums) | Container.Content(songs)]</visible>
+					<visible>![Container.Content(artists) | Container.Content(albums) | Container.Content(songs)  | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]]</visible>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
 					<label>$VAR[value_ground16_label]: [COLOR=FFFFFAF0]$VAR[value_ground16_value][/COLOR]</label>
-					<visible>!Container.Content(songs)</visible>
+					<visible>![Container.Content(songs) | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]]</visible>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
 					<label>$VAR[value_ground17_label]: [COLOR=FFFFFAF0]$VAR[value_ground17_value][/COLOR]</label>
-					<visible>![Container.Content(artists) | Container.Content(songs)]</visible>
+					<visible>![Container.Content(artists) | Container.Content(songs) | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]]</visible>
 				</control>
 			</control>
 			<control type="textbox">

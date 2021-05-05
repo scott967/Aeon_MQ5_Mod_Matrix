@@ -8,17 +8,17 @@
 <includes>
 	<!--##################################################################################   VISTA WALL - ID 56   ##################################################################################-->
 	<include name="Wall_Dimmer">
-		<animation effect="fade" start="100" end="50" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),50)">conditional</animation>
-		<animation effect="fade" start="100" end="45" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),45)">conditional</animation>
-		<animation effect="fade" start="100" end="40" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),40)">conditional</animation>
-		<animation effect="fade" start="100" end="35" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),35)">conditional</animation>
-		<animation effect="fade" start="100" end="30" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),30)">conditional</animation>
-		<animation effect="fade" start="100" end="25" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),25)">conditional</animation>
-		<animation effect="fade" start="100" end="20" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),20)">conditional</animation>
-		<animation effect="fade" start="100" end="15" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),15)">conditional</animation>
-		<animation effect="fade" start="100" end="10" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),10)">conditional</animation>
-		<animation effect="fade" start="100" end="5" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),05)">conditional</animation>
-		<animation effect="fade" start="100" end="0" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56) + String.Contains(skin.string(wallglass),00)">conditional</animation>
+		<animation effect="fade" start="100" end="50" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),50)">conditional</animation>
+		<animation effect="fade" start="100" end="45" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),45)">conditional</animation>
+		<animation effect="fade" start="100" end="40" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),40)">conditional</animation>
+		<animation effect="fade" start="100" end="35" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),35)">conditional</animation>
+		<animation effect="fade" start="100" end="30" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),30)">conditional</animation>
+		<animation effect="fade" start="100" end="25" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),25)">conditional</animation>
+		<animation effect="fade" start="100" end="20" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),20)">conditional</animation>
+		<animation effect="fade" start="100" end="15" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),15)">conditional</animation>
+		<animation effect="fade" start="100" end="10" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),10)">conditional</animation>
+		<animation effect="fade" start="100" end="5" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),05)">conditional</animation>
+		<animation effect="fade" start="100" end="0" time="300" condition="[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56) + String.Contains(skin.string(wallglass),00)">conditional</animation>
 		<animation effect="fade" start="100" end="50" time="0" condition="String.Contains(skin.string(wallglass),50) + Window.IsVisible(636)">conditional</animation>
 		<animation effect="fade" start="100" end="45" time="0" condition="String.Contains(skin.string(wallglass),45) + Window.IsVisible(636)">conditional</animation>
 		<animation effect="fade" start="100" end="40" time="0" condition="String.Contains(skin.string(wallglass),40) + Window.IsVisible(636)">conditional</animation>
@@ -32,7 +32,7 @@
 		<animation effect="fade" start="100" end="0" time="0" condition="String.Contains(skin.string(wallglass),00) + Window.IsVisible(636)">conditional</animation>
 	</include>
 	<include name="Wall_Plot">
-		<visible>[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] + String.Contains(skin.string(wallvideopanel),auto) + Control.HasFocus(56)</visible>
+		<visible>[String.Contains(skin.string(panel_seconds),1) + System.IdleTime(1) | String.Contains(skin.string(panel_seconds),2) + System.IdleTime(2) | String.Contains(skin.string(panel_seconds),3) + System.IdleTime(3) | String.Contains(skin.string(panel_seconds),4) + System.IdleTime(4) | String.Contains(skin.string(panel_seconds),5) + System.IdleTime(5)] +  [[String.Contains(skin.string(wallvideopanel),auto) + !$EXP[IsPVRRecordings]] | [String.Contains(skin.string(wallpvrpanel),auto) +$EXP[IsPVRRecordings]]] + Control.HasFocus(56)</visible>
 	</include>
 	<include name="Wall_ThumbDimmer">
 		<posx>0</posx>
@@ -703,8 +703,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<control type="group">
-				<!-- plot tamanho normal sem estojo -->
+			<control type="group">	<!-- normal size plot without case-->
 				<animation effect="slide" start="0,0" end="-98,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(12) + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="80,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2) | Container(56).Column(3) | Container(56).Column(4) | Container(56).Column(5) | Container(56).Column(6)] + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="165,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
@@ -763,8 +762,7 @@
 					<autoscroll delay="10000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
-			<control type="group">
-				<!-- plot tamanho normal com estojo -->
+			<control type="group">	<!--  normal size plot with case -->
 				<animation effect="slide" start="0,0" end="-120,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(10) + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="98,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2) | Container(56).Column(3) | Container(56).Column(4) | Container(56).Column(5)] + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="195,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
@@ -820,8 +818,7 @@
 					<autoscroll delay="10000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
-			<control type="group">
-				<!-- plot tamanho medio -->
+			<control type="group">	<!-- plot size medium -->
 				<animation effect="slide" start="0,0" end="-128,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(9) + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="112,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2) | Container(56).Column(3) | Container(56).Column(4)] + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="210,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
@@ -876,8 +873,7 @@
 					<autoscroll delay="8000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
-			<control type="group">
-				<!-- plot tamanho grande -->
+			<control type="group">	<!-- plot size large -->
 				<animation effect="slide" start="0,0" end="-165,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(5) + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="165,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2)] + Window.IsActive(videos) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="338,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
@@ -890,6 +886,403 @@
 				<animation effect="slide" start="0,0" end="0,542" time="0" condition="Container(56).Row(1)">Conditional</animation>
 				<include>Wall_Plot</include>
 				<visible>String.Contains(skin.string(wallvideogrid),big) + !String.IsEqual(ListItem.Label,..)</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>690</width>
+					<height>38</height>
+					<texture>gradient_focus.png</texture>
+					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>690</width>
+					<height>22</height>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$VAR[value_glasslistinfofocus]</label>
+					<font>Font_18A</font>
+					<scroll>true</scroll>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>38</posy>
+					<width>690</width>
+					<height>3</height>
+					<align>left</align>
+					<texture flipx="true">divider.png</texture>
+				</control>
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>690</width>
+					<height>363</height>
+					<label>$VAR[value_plot]</label>
+					<font>Font_18A</font>
+					<autoscroll delay="8000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="ViewWallPVR">
+		<control type="group">
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<include>ViewBack</include>
+			<!-- Fundo -->
+			<visible>Control.IsVisible(56)</visible>
+			<control type="panel" id="56">
+				<viewtype label="31805">Panel</viewtype>
+				<posx>0</posx>
+				<posy>136</posy>
+				<width>2062</width>
+				<height>830</height>
+				<onleft>9900</onleft>
+				<onup>9900</onup>
+				<ondown>9920</ondown>
+				<orientation>vertical</orientation>
+				<pagecontrol></pagecontrol>
+				<!-- <animation effect="slide" start="0,0" end="-93,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(12) + Skin.HasSetting(nowallpvrcase) + String.Contains(skin.string(wallpvrgrid),default)+ ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-120,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(10) + !Skin.HasSetting(nowallpvrcase) + String.Contains(skin.string(wallpvrgrid),default) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-128,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(9) + String.Contains(skin.string(wallpvrgrid),mid) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-165,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(5) + String.Contains(skin.string(wallpvrgrid),big) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation> -->
+				<itemlayout condition="String.Contains(skin.string(wallpvrgrid),default)" width="148" height="207">	<!-- normal -->
+					<control type="group">
+						<include>Wall_Dimmer</include>
+						<control type="image">
+							<posx>3</posx>
+							<posy>3</posy>
+							<width>141</width>
+							<height>201</height>
+							<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+							<bordertexture border="-2">black.png</bordertexture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<posx>110</posx>
+							<posy>1</posy>
+							<width>38</width>
+							<height>38</height>
+							<texture>$VAR[pvr_overlay]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<itemlayout condition="String.Contains(skin.string(wallpvrgrid),mid)" width="192" height="276">	<!-- medium -->
+					<control type="group">
+						<include>Wall_Dimmer</include>
+						<control type="image">
+							<posx>3</posx>
+							<posy>3</posy>
+							<width>186</width>
+							<height>262</height>
+							<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+							<bordertexture border="-2">black.png</bordertexture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<posx>156</posx>
+							<posy>-2</posy>
+							<width>38</width>
+							<height>38</height>
+							<texture>$VAR[pvr_overlay]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<itemlayout condition="String.Contains(skin.string(wallpvrgrid),big)" width="315" height="414">	<!-- large -->
+					<control type="group">
+						<include>Wall_Dimmer</include>
+						<control type="image">
+							<posx>27</posx>
+							<posy>3</posy>
+							<width>290</width>
+							<height>408</height>
+							<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+							<bordertexture border="-2">black.png</bordertexture>
+							<aspectratio align="center">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<posx>270</posx>
+							<posy>-2</posy>
+							<width>52</width>
+							<height>52</height>
+							<texture>$VAR[pvr_overlay]</texture>
+							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+							<visible>!Skin.HasSetting(nooverlays)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout condition=" String.Contains(skin.string(wallpvrgrid),default)" width="148" height="207">	<!-- normal -->
+					<control type="image">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>141</width>
+						<height>201</height>
+						<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+						<bordertexture border="-2">grey.png</bordertexture>
+						<aspectratio align="center">stretch</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+							<effect type="fade" start="80" end="100" time="400" />
+						</animation>
+					</control>
+					<control type="image">
+						<posx>110</posx>
+						<posy>1</posy>
+						<width>38</width>
+						<height>38</height>
+						<texture>$VAR[pvr_overlay]</texture>
+						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="90,90" start="80" end="100" time="400" tween="back" easing="out" />
+							<effect type="fade" start="80" end="100" time="400" />
+						</animation>
+						<visible>!Skin.HasSetting(nooverlays)</visible>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="String.Contains(skin.string(wallpvrgrid),mid)" width="192" height="276">	<!-- medium -->
+					<control type="image">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>186</width>
+						<height>262</height>
+						<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+						<bordertexture border="-2">grey.png</bordertexture>
+						<aspectratio align="center">stretch</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+							<effect type="fade" start="80" end="100" time="400" />
+						</animation>
+					</control>
+					<control type="image">
+						<posx>158</posx>
+						<posy>-3</posy>
+						<width>38</width>
+						<height>38</height>
+						<texture>$VAR[pvr_overlay]</texture>
+						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="90,90" start="80" end="100" time="400" tween="back" easing="out" />
+							<effect type="fade" start="80" end="100" time="400" />
+						</animation>
+						<visible>!Skin.HasSetting(nooverlays)</visible>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="String.Contains(skin.string(wallpvrgrid),big)" width="315" height="414">	<!-- large -->
+					<control type="image">
+						<posx>27</posx>
+						<posy>3</posy>
+						<width>290</width>
+						<height>408</height>
+						<texture fallback="DefaultVideoPoster.png" background="true">$VAR[value_poster]</texture>
+						<bordertexture border="-2">grey.png</bordertexture>
+						<aspectratio align="center">stretch</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="auto" start="80" end="100" time="400" tween="back" easing="out" />
+							<effect type="fade" start="80" end="100" time="400" />
+						</animation>
+					</control>
+					<control type="image">
+						<posx>270</posx>
+						<posy>-2</posy>
+						<width>52</width>
+						<height>52</height>
+						<texture>$VAR[pvr_overlay]</texture>
+						<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" center="90,90" start="80" end="100" time="400" tween="back" easing="out" />
+							<effect type="fade" start="80" end="100" time="400" />
+						</animation>
+						<visible>!Skin.HasSetting(nooverlays)</visible>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">	<!-- normal size plot without case-->
+				<!-- <animation effect="slide" start="0,0" end="-98,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(12) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="80,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2) | Container(56).Column(3) | Container(56).Column(4) | Container(56).Column(5) | Container(56).Column(6)] + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation> -->
+				<animation effect="slide" start="0,0" end="165,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="312,0" time="0" condition="Container(56).Column(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="460,0" time="0" condition="Container(56).Column(2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="608,0" time="0" condition="Container(56).Column(3)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="756,0" time="0" condition="Container(56).Column(4)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="903,0" time="0" condition="Container(56).Column(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="1052,0" time="0" condition="Container(56).Column(6)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="270,0" time="0" condition="Container(56).Column(7)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="417,0" time="0" condition="Container(56).Column(8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="564,0" time="0" condition="Container(56).Column(9)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="712,0" time="0" condition="Container(56).Column(10)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="861,0" time="0" condition="Container(56).Column(11)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="1008,0" time="0" condition="Container(56).Column(12)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,128" time="0" condition="Container(56).Row(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,334" time="0" condition="Container(56).Row(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,542" time="0" condition="Container(56).Row(2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,748" time="0" condition="Container(56).Row(3)">Conditional</animation>
+				<include>Wall_Plot</include>
+				<visible>[String.Contains(skin.string(wallpvrgrid),default) + Skin.HasSetting(nowallpvrcase) + !String.IsEqual(ListItem.Label,..)]</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>750</width>
+					<height>38</height>
+					<texture>gradient_focus.png</texture>
+					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>22</height>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$VAR[value_glasslistinfofocus]</label>
+					<font>Font_18A</font>
+					<scroll>true</scroll>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>38</posy>
+					<width>750</width>
+					<height>3</height>
+					<align>left</align>
+					<texture flipx="true">divider.png</texture>
+				</control>
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>750</width>
+					<height>170</height>
+					<label>$VAR[value_plot]</label>
+					<font>Font_18A</font>
+					<autoscroll delay="10000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				</control>
+			</control>
+			<control type="group">	<!--  normal size plot with case -->
+				<!-- <animation effect="slide" start="0,0" end="-120,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(10) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="98,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2) | Container(56).Column(3) | Container(56).Column(4) | Container(56).Column(5)] + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video)]">Conditional</animation> -->
+				<animation effect="slide" start="0,0" end="195,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="369,0" time="0" condition="Container(56).Column(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="543,0" time="0" condition="Container(56).Column(2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="717,0" time="0" condition="Container(56).Column(3)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="891,0" time="0" condition="Container(56).Column(4)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="1065,0" time="0" condition="Container(56).Column(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="352,0" time="0" condition="Container(56).Column(6)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="526,0" time="0" condition="Container(56).Column(7)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="700,0" time="0" condition="Container(56).Column(8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="874,0" time="0" condition="Container(56).Column(9)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="1048,0" time="0" condition="Container(56).Column(10)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,135" time="0" condition="Container(56).Row(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,411" time="0" condition="Container(56).Row(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,687" time="0" condition="Container(56).Row(2)">Conditional</animation>
+				<include>Wall_Plot</include>
+				<visible>String.Contains(skin.string(wallpvrgrid),default) + ![Skin.HasSetting(nowallpvrcase) | String.IsEqual(ListItem.Label,..)]</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>675</width>
+					<height>38</height>
+					<texture>gradient_focus.png</texture>
+					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>675</width>
+					<height>22</height>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$VAR[value_glasslistinfofocus]</label>
+					<font>Font_18A</font>
+					<scroll>true</scroll>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>38</posy>
+					<width>675</width>
+					<height>3</height>
+					<align>left</align>
+					<texture flipx="true">divider.png</texture>
+				</control>
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>675</width>
+					<height>234</height>
+					<label>$VAR[value_plot]</label>
+					<font>Font_18A</font>
+					<autoscroll delay="10000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				</control>
+			</control>
+			<control type="group">	<!-- plot size medium -->
+				<animation effect="slide" start="0,0" end="-128,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(9) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="112,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2) | Container(56).Column(3) | Container(56).Column(4)] + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="210,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="402,0" time="0" condition="Container(56).Column(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="594,0" time="0" condition="Container(56).Column(2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="786,0" time="0" condition="Container(56).Column(3)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="978,0" time="0" condition="Container(56).Column(4)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="188,0" time="0" condition="Container(56).Column(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="380,0" time="0" condition="Container(56).Column(6)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="572,0" time="0" condition="Container(56).Column(7)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="764,0" time="0" condition="Container(56).Column(8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="956,0" time="0" condition="Container(56).Column(9)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,130" time="0" condition="Container(56).Row(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,406" time="0" condition="Container(56).Row(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,682" time="0" condition="Container(56).Row(2)">Conditional</animation>
+				<include>Wall_Plot</include>
+				<visible>String.Contains(skin.string(wallpvrgrid),mid) + !String.IsEqual(ListItem.Label,..)</visible>
+				<control type="image">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>750</width>
+					<height>38</height>
+					<texture>gradient_focus.png</texture>
+					<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>22</height>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$VAR[value_glasslistinfofocus]</label>
+					<font>Font_18A</font>
+					<scroll>true</scroll>
+					<visible>!String.IsEqual(ListItem.Label,..)</visible>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>38</posy>
+					<width>750</width>
+					<height>3</height>
+					<align>left</align>
+					<texture flipx="true">divider.png</texture>
+				</control>
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>45</posy>
+					<width>750</width>
+					<height>234</height>
+					<label>$VAR[value_plot]</label>
+					<font>Font_18A</font>
+					<autoscroll delay="8000" time="4000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
+				</control>
+			</control>
+			<control type="group">	<!-- plot size large -->
+				<animation effect="slide" start="0,0" end="-165,0" time="500" delay="500" tween="cubic" easing="out" condition="Container(56).Column(5) + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="165,0" time="500" delay="500" tween="cubic" easing="out" condition="[Container(56).Column(0) | Container(56).Column(1) | Container(56).Column(2)] + ![String.IsEmpty(ListItem.Art(discart)) | Skin.HasSetting(nowalldiscart_video) | ListItem.IsCollection]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="338,0" time="0" condition="Container(56).Column(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="652,0" time="0" condition="Container(56).Column(1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="968,0" time="0" condition="Container(56).Column(2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="255,0" time="0" condition="Container(56).Column(3)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="570,0" time="0" condition="Container(56).Column(4)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="885,0" time="0" condition="Container(56).Column(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,128" time="0" condition="Container(56).Row(0)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,542" time="0" condition="Container(56).Row(1)">Conditional</animation>
+				<include>Wall_Plot</include>
+				<visible>String.Contains(skin.string(wallpvrgrid),big) + !String.IsEqual(ListItem.Label,..)</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>8</posy>

@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.17/9.1.19/9.2.1 window IDs/9.2.4 -->
 <!-- Leia 10.2.6/10.6.0/10.6.2 -->
+<!-- Matrix 11.1.1 -->
 <window id="1106" type="dialog">
 	<!-- was safe id 627  -->
 	<defaultcontrol always="true">9030</defaultcontrol>
@@ -49,12 +50,26 @@
 				<posy>34</posy>
 				<width>1278</width>
 				<height>45</height>
-				<label>31011</label>
+				<label>$LOCALIZE[31011] -  $LOCALIZE[31002]</label>
 				<font>Font_32</font>
 				<textcolor>FFFFFAF0</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<include>Animation_Fade</include>
+				<visible>!PVR.IsPlayingRadio</visible>
+			</control>
+			<control type="label">
+				<posx>322</posx>
+				<posy>34</posy>
+				<width>1278</width>
+				<height>45</height>
+				<label>$LOCALIZE[31011] -  [UPPERCASE]$LOCALIZE[19021][/UPPERCASE]</label>
+				<font>Font_32</font>
+				<textcolor>FFFFFAF0</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<include>Animation_Fade</include>
+				<visible>PVR.IsPlayingRadio</visible>
 			</control>
 			<control type="scrollbar" id="80">
 				<include>ScrollBar_Vertical</include>
@@ -66,7 +81,7 @@
 				<ondown>80</ondown>
 				<onup>80</onup>
 			</control>
-			<control type="grouplist" id="9030">
+			<control type="grouplist" id="9030">	<!-- music -->
 				<posx>210</posx>
 				<posy>150</posy>
 				<width>1500</width>
@@ -75,6 +90,7 @@
 				<onleft>80</onleft>
 				<onright>Dialog.Close(1106)</onright>
 				<pagecontrol>80</pagecontrol>
+				<visible>!PVR.IsPlayingRadio</visible>
 				<control type="radiobutton" id="1">
 					<!-- furniture -->
 					<radioposx>1341</radioposx>
@@ -225,7 +241,7 @@
 				<control type="button" id="19">
 					<!-- select vis -->>
 					<label>$LOCALIZE[12006] ($LOCALIZE[31843] - $INFO[Visualisation.Name])</label>
-					<onclick>Control.Message(500,click,120)</onclick>
+					<onclick>Control.Message(500,click,120)</onclick>	<!-- vis select dialog from music OSD -->
 					<enable>String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),vis)</enable>
 				</control>
 				<control type="button" id="20">
@@ -239,6 +255,114 @@
 					<label>31261</label>
 					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
 					<enable>String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),vis)</enable>
+				</control>
+			</control>
+			<control type="grouplist" id="9030">	<!-- radio -->
+				<posx>210</posx>
+				<posy>150</posy>
+				<width>1500</width>
+				<height>900</height>
+				<itemgap>0</itemgap>
+				<onleft>80</onleft>
+				<onright>Dialog.Close(1106)</onright>
+				<pagecontrol>80</pagecontrol>
+				<visible>PVR.IsPlayingRadio</visible>
+				<control type="radiobutton" id="1">
+					<!-- furniture -->
+					<radioposx>1341</radioposx>
+					<label>31678</label>
+					<onclick>Skin.ToggleSetting(novisfurnitureradio)</onclick>
+					<selected>!Skin.HasSetting(novisfurnitureradio)</selected>
+				</control>
+				<!-- <control type="radiobutton" id="3">
+					<radioposx>1341</radioposx>
+					<label>31119</label>
+					<onclick>Skin.SetString(vis_layout,default)</onclick>
+					<selected>String.IsEqual(skin.string(vis_layout),default)</selected>
+					<enable>!Skin.HasSetting(novisfurniture)</enable>
+				</control> -->
+				<control type="label" id="8">
+					<!-- Backgrounds (options) -->
+					<width>1560</width>
+					<height>60</height>
+					<aligny>center</aligny>
+					<textoffsetx>75</textoffsetx>
+					<label>[B]$LOCALIZE[31327][/B]</label>
+					<textcolor>$VAR[value_headercolor]</textcolor>
+				</control>
+				<control type="radiobutton" id="9">
+					<!-- background fanart -->
+					<radioposx>1341</radioposx>
+					<label>- $LOCALIZE[31561]</label>
+					<onclick>Skin.SetString(vis_bgradio,fanart)</onclick>
+					<selected>String.IsEqual(skin.string(vis_bgradio),fanart)</selected>
+				</control>
+				<control type="radiobutton" id="10">
+					<!-- background fanartmix (fanart + viz)  -->
+					<radioposx>1341</radioposx>
+					<label>- $LOCALIZE[31561] + $LOCALIZE[31727]</label>
+					<onclick>Skin.SetString(vis_bgradio,fanartmix)</onclick>
+					<selected>String.IsEqual(skin.string(vis_bgradio),fanartmix)</selected>
+				</control>
+				<control type="radiobutton" id="13">
+					<!-- background vis -->
+					<radioposx>1341</radioposx>
+					<label>- $LOCALIZE[31727]</label>
+					<onclick>Skin.SetString(vis_bgradio,vis)</onclick>
+					<selected>String.IsEqual(skin.string(vis_bgradio),vis)</selected>
+				</control>
+				<control type="radiobutton" id="14">
+					<!-- background custom -->
+					<radioposx>1341</radioposx>
+					<label>- $LOCALIZE[31122]</label>
+					<onclick>Skin.SetString(vis_bgradio,custom)</onclick>
+					<selected>String.IsEqual(skin.string(vis_bgradio),custom)</selected>
+				</control>
+				<control type="button" id="15">
+					<!-- Fundo unico -->
+					<label>31217</label>
+					<onclick>Skin.SetImage(musicviz.bg)radio</onclick>
+					<enable>String.IsEqual(skin.string(vis_bgradio),custom)</enable>
+				</control>
+				<control type="button" id="16">
+					<!-- Fundos Multiplos -->
+					<label>31218</label>
+					<onclick>Skin.SetPath(musicviz.bgradio)</onclick>
+					<enable>String.IsEqual(skin.string(vis_bgradio),custom)</enable>
+				</control>
+				<control type="radiobutton" id="17">
+					<!-- background animation -->
+					<radioposx>1341</radioposx>
+					<label>31463</label>
+					<onclick>Skin.ToggleSetting(visanimationradio_panscan)</onclick>
+					<selected>Skin.HasSetting(visanimationradio_panscan)</selected>
+				</control>
+				<control type="label" id="18">
+					<!-- palavra Trocar Visualizacao -->
+					<width>1560</width>
+					<height>60</height>
+					<aligny>center</aligny>
+					<textoffsetx>75</textoffsetx>
+					<label>[B]$LOCALIZE[250][/B]</label>
+					<textcolor>$VAR[value_headercolor]</textcolor>
+				</control>
+				<control type="button" id="19">
+					<!-- select vis -->>
+					<label>$LOCALIZE[12006] ($LOCALIZE[31843] - $INFO[Visualisation.Name])</label>
+					<onclick>Control.Message(500,click,120)</onclick>	<!-- vis select dialog music osd -->
+					<enable>String.IsEqual(skin.string(vis_bgradio),fanartmix) | String.IsEqual(skin.string(vis_bgradio),vis)</enable>
+				</control>
+				<control type="button" id="20">
+					<!-- preset -->
+					<label>$LOCALIZE[10122]</label>
+					<onclick>ActivateWindow(visualisationpresetlist)</onclick>
+					<enable>String.IsEqual(skin.string(vis_bgradio),fanartmix)  | String.IsEqual(skin.string(vis_bgradio),vis)</enable>
+				</control>
+				<control type="button" id="21">
+					<!-- presetsettings -->
+					<label>31261</label>
+					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+					<enable>String.IsEqual(skin.string(vis_bgradio),fanartmix) | String.IsEqual(skin.string(vis_bgradio),vis)</enable>
 				</control>
 			</control>
 		</control>
