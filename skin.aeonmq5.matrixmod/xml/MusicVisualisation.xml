@@ -24,7 +24,16 @@
 			<height>1080</height>
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-			<visible>String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bgradio),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis) | String.IsEqual(skin.string(vis_bgradio),vis)</visible>
+			<visible>!PVR.IsPlayingRadio + [String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix) | String.IsEqual(skin.string(vis_bg),vis)]</visible>
+		</control>
+		<control type="visualisation" id="2">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			<visible>PVR.IsPlayingRadio + [String.IsEqual(skin.string(vis_bgradio),fanartmix) | String.IsEqual(skin.string(vis_bgradio),vis)]</visible>
 		</control>
 		<control type="image">
 			<!-- 1.  Fanart or Fanartmix and no extrafanart in library path or custom artist info path-->
