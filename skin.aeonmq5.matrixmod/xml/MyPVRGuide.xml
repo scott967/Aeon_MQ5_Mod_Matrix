@@ -7,7 +7,9 @@
 <window>
 	<defaultcontrol always="false">51</defaultcontrol>
 	<menucontrol>9900</menucontrol>
+	<onload condition="PVR.IsPlayingTV + !Skin.HasSetting(noepggridlow)">Container.SetViewMode(52)</onload>
 	<onunload condition="Skin.HasSetting(kioskcode)">Skin.Reset($INFO[skin.string(custom_code)])</onunload>
+	<onunload>Container.SetViewMode(51)</onunload>
 	<views>51,52</views>
 	<controls>
 		<control type="multiimage">
