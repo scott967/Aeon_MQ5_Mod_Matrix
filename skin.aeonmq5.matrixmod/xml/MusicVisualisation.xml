@@ -465,16 +465,6 @@
 		<control type="group">	<!-- overlays on art background group furniture for radio -->
 			<include>Animation_Fade</include>
 			<visible>PVR.IsPlayingRadio</visible>
-	<control type="label">	<!-- test only -->
-				<width>1170</width>
-				<height>24</height>
-				<textcolor>FF00FF00</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>PVR.IsPlayingRadio</label>
-				<visible>PVR.IsPlayingRadio</visible>
-			</control>
 			<control type="group">	<!-- default (only) layout -->
 				<posx>0</posx>
 				<posy>1160</posy>
