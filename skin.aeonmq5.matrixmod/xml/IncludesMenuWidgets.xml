@@ -97,7 +97,8 @@
 				<texture>osd_menu_play.png</texture>
 				<aspectratio>keep</aspectratio>
 				<animation effect="fade" start="20" end="100" time="700" condition="true" pulse="true">Conditional</animation>
-				<visible>![String.Contains(Container(9000).ListItem.Property(id),livetv) | String.Contains(Container(9000).ListItem.Property(id),tvguide)]</visible>
+				<!-- <visible>![String.Contains(Container(9000).ListItem.Property(id),livetv) | String.Contains(Container(9000).ListItem.Property(id),tvguide)]</visible> -->
+				<visible>!String.Contains(Container(9000).ListItem.Property(id),tvguide)</visible>
 			</control>
 			<control type="image">
 				<posx>32</posx>
@@ -107,7 +108,8 @@
 				<texture>osd_menu_info.png</texture>
 				<aspectratio>keep</aspectratio>
 				<animation effect="fade" start="20" end="100" time="700" condition="true" pulse="true">Conditional</animation>
-				<visible>[String.Contains(Container(9000).ListItem.Property(id),livetv) | String.Contains(Container(9000).ListItem.Property(id),tvguide)]</visible>
+				<!-- <visible>[String.Contains(Container(9000).ListItem.Property(id),livetv) | String.Contains(Container(9000).ListItem.Property(id),tvguide)]</visible> -->
+				<visible>String.Contains(Container(9000).ListItem.Property(id),tvguide)</visible>
 			</control>
 			<control type="label">
 				<posx>10</posx>
@@ -40432,8 +40434,8 @@
 			</control>
 		</control>
 	</include>
-		<!-- ################################################################################ PVR ################################################################################ -->
-	<include name="mf_contentpvr">
+		<!-- ################################################################################ PVR-TV ################################################################################ -->
+	<include name="mf_contentpvr_tv">
 		<control type="image">
 			<!-- Fundo -->
 			<include>widgets_back</include>
@@ -40443,18 +40445,18 @@
 			<include>Animation_Widgets</include>
 			<visible>String.Contains(Container(9000).ListItem.Property(id),livetv)</visible>
 			<control type="button" id="5100">
-				<onclick>SetFocus(5110)</onclick>
+				<onclick>SetFocus(5114)</onclick>
 				<include condition="!Skin.HasSetting(higherwidgets)">widgets_selector</include>
 				<include condition="Skin.HasSetting(higherwidgets)">widgets_selectorhigher</include>
 				<label>$VAR[value_mflistmode_pvr]</label>
 			</control>
 			<include>widgets_led</include>
 		</control>
-		<control type="button" id="5110">
+		<control type="button" id="5114">
 			<include>InvisibleButton</include>
 			<onfocus condition="String.Contains(skin.string(mfpvr_list),tv) + Pvr.HasRadioChannels">Skin.SetString(mfpvr_list,radio)</onfocus>
 			<onfocus condition="String.Contains(skin.string(mfpvr_list),radio)">Skin.SetString(mfpvr_list,tv)</onfocus>
-			<onfocus condition="String.IsEmpty(skin.string(mfpvr_list)">Skin.SetString(mfpvr_list,tv)</onfocus>
+			<onfocus condition="String.IsEmpty(skin.string(mfpvr_list))">Skin.SetString(mfpvr_list,tv)</onfocus>
 			<onfocus>SetFocus(5100)</onfocus>
 		</control>
 		<control type="group">
@@ -40463,16 +40465,17 @@
 			<control type="panel" id="510">  <!-- recent viewed tv -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),livetv) + [String.Contains(skin.string(mfpvr_list),tv) | String.IsEmpty(Skin.String(mfpvr_list))]</visible>
-				<content sortby="lastplayed" sortorder="decending" target="pvr" limit="12">pvr://channels/tv/*?view=lastplayed</content>
+				<content sortby="lastplayed" sortorder="descending"  limit="12">pvr://channels/tv/*?view=lastplayed</content>
 			</control>
 			<control type="panel" id="510">  <!-- recent viewed radio -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),livetv) + String.Contains(skin.string(mfpvr_list),radio)</visible>
-				<content sortby="lastplayed" sortorder="decending" target="pvr" limit="12">pvr://channels/radio/*?view=lastplayed</content>
+				<content sortby="lastplayed" sortorder="descending" limit="12">pvr://channels/radio/*?view=lastplayed</content>
 			</control>
 			<control type="panel" id="510">  <!-- inop -->
 				<include>panel_layout</include>
-				<visible>String.Contains(Container(9000).ListItem.Property(id),movie) + String.Contains(skin.string(mfpvr_list),inprogress)</visible>
+				<!-- <visible>String.Contains(Container(9000).ListItem.Property(id),movie) + String.Contains(skin.string(mfpvr_list),inprogress)</visible> -->
+				<visible>false</visible>
 				<content>
 					<item>
 						<label>$INFO[Window(home).Property(RecommendedMovie.1.Title)]</label>
