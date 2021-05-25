@@ -4,7 +4,8 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.2.4 -->
 <!-- Leia 10.3.0/10.5.2 -->
-<window id="639" type="dialog">
+<!-- Matrix 11.1.1 was window 639 -->
+<window id="1117" type="dialog">
 	<!-- safe id -->
 	<defaultcontrol>9006</defaultcontrol>
 	<onunload>Skin.Reset(custom_trailer)</onunload>
@@ -54,17 +55,17 @@
 				<itemgap>0</itemgap>
 				<control type="button" id="9006">
 					<include>DialogContext_Button</include>
-					<onleft>Dialog.Close(639)</onleft>
-					<onright>Dialog.Close(639)</onright>
-					<onclick>Dialog.Close(639)</onclick>
+					<onleft>Dialog.Close(1117)</onleft>
+					<onright>Dialog.Close(1117)</onright>
+					<onclick>Dialog.Close(1117)</onclick>
 					<onclick>RunScript(service.skin.widgets,movieid=$INFO[skin.string(custom_id)])</onclick>
 					<label>31946</label>
 				</control>
 				<control type="button" id="9007">
 					<include>DialogContext_Button</include>
-					<onleft>Dialog.Close(639)</onleft>
-					<onright>Dialog.Close(639)</onright>
-					<onclick>Dialog.Close(639)</onclick>
+					<onleft>Dialog.Close(1117)</onleft>
+					<onright>Dialog.Close(1117)</onright>
+					<onclick>Dialog.Close(1117)</onclick>
 					<onclick condition="!Skin.HasSetting(homefullscreentrailer)">SetFocus(9000)</onclick>
 					<onclick condition="!Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[skin.string(custom_trailer)],1)</onclick>
 					<onclick condition="Skin.HasSetting(homefullscreentrailer)">PlayMedia($INFO[skin.string(custom_trailer)])</onclick>
@@ -73,18 +74,18 @@
 				</control>
 				<control type="button" id="9008">
 					<include>DialogContext_Button</include>
-					<onleft>Dialog.Close(639)</onleft>
-					<onright>Dialog.Close(639)</onright>
-					<onclick>Dialog.Close(639)</onclick>
+					<onleft>Dialog.Close(1117)</onleft>
+					<onright>Dialog.Close(1117)</onright>
+					<onclick>Dialog.Close(1117)</onclick>
 					<onclick>RunScript(script.cinema.experience,movieid=$INFO[skin.string(custom_id)])</onclick>
 					<label>31066</label>
 					<visible>System.HasAddon(script.cinema.experience)</visible>
 				</control>
 				<control type="button" id="9009">
 					<include>DialogContext_Button</include>
-					<onleft>Dialog.Close(639)</onleft>
-					<onright>Dialog.Close(639)</onright>
-					<onclick>Dialog.Close(639)</onclick>
+					<onleft>Dialog.Close(1117)</onleft>
+					<onright>Dialog.Close(1117)</onright>
+					<onclick>Dialog.Close(1117)</onclick>
 					<onclick>RunScript(script.cinemavision,movieid=$INFO[skin.string(custom_id)])</onclick>
 					<label>Watch with CinemaVision</label>
 					<visible>System.HasAddon(script.cinemavision)</visible>
