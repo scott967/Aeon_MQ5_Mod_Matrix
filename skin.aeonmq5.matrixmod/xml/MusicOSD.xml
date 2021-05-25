@@ -11,8 +11,7 @@
 			<!-- activate visualization select dialog -->
 			<include>InvisibleButton</include>
 		</control>
-		<control type="group">
-			<!-- Barra de info do modo custom -->
+		<control type="group">		<!-- Menu bar in customize mode  -->
 			<posy>0</posy>
 			<include>Animation_TopPopup</include>
 			<visible>Skin.HasSetting(customosd)</visible>
@@ -64,8 +63,7 @@
 			<animation effect="slide" time="400" start="0,300" end="0,0" easing="out" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,300" easing="in" tween="cubic">WindowClose</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,300" easing="in" tween="cubic">Hidden</animation>
-			<!-- Seek Widget -->
-			<control type="group">
+			<control type="group">	<!-- Seek Widget Forward -->
 				<posx>-750</posx>
 				<posy>57</posy>
 				<width>748</width>
@@ -87,7 +85,7 @@
 					<label>$VAR[value_seekforward]</label>
 				</control>
 			</control>
-			<control type="group">
+			<control type="group">	<!-- Seek Widget Rewind -->
 				<posx>1920</posx>
 				<posy>57</posy>
 				<width>748</width>

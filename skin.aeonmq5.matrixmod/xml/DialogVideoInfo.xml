@@ -239,7 +239,7 @@
 					<ondown>SetFocus(149)</ondown>
 					<onleft>SetFocus(149)</onleft>
 					<onright>SetFocus(149)</onright>
-					<onclick>ActivateWindow(1112)</onclick>
+					<onclick>ActivateWindow(1112)</onclick>  <!-- custom certification -->
 					<onclick>SetFocus(149)</onclick>
 					<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
 				</control>
