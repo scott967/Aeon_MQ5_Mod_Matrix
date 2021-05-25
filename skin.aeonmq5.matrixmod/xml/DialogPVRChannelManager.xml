@@ -89,7 +89,7 @@
 				<pagecontrol>60</pagecontrol>
 				<scrolltime>200</scrolltime>
 				<itemgap>0</itemgap>
-				<itemlayout height="45" width="750">
+				<itemlayout condition="String.IsEmpty(Window.Property(IsRadio))"  height="45" width="750">
 					<control type="image">  <!-- station logo -->
 						<posx>45</posx>
 						<posy>3</posy>
@@ -147,7 +147,65 @@
 						<visible>ListItem.Property(Changed)</visible>
 					</control>
 				</itemlayout>
-				<focusedlayout height="75" width="750">
+				<itemlayout condition="!String.IsEmpty(Window.Property(IsRadio))"  height="45" width="750">	<!-- radio channels -->
+					<control type="image">  <!-- station logo -->
+						<posx>45</posx>
+						<posy>3</posy>
+						<width>78</width>
+						<height>39</height>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<visible>ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="image">
+						<posx>45</posx>
+						<posy>3</posy>
+						<width>78</width>
+						<height>39</height>
+						<colordiffuse>50FFFAF0</colordiffuse>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<visible>!ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>  <!-- 98 -->
+						<posy>0</posy>
+						<width>500</width>
+						<height>45</height>
+						<font>Font_18</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFAF0</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
+						<visible>ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>0</posy>
+						<width>500</width>
+						<height>45</height>
+						<font>Font_18</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>50FFFAF0</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
+						<visible>!ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="image">
+						<posx>702</posx>
+						<posy>8</posy>
+						<width>33</width>
+						<height>33</height>
+						<texture>OverlayWatched.png</texture>
+						<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+						<visible>ListItem.Property(Changed)</visible>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="String.IsEmpty(Window.Property(IsRadio))" height="75" width="750">
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -181,6 +239,106 @@
 						<colordiffuse>50FFFAF0</colordiffuse>
 						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<visible>!ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>  <!-- 135 -->
+						<posy>1</posy>
+						<width>548</width>
+						<height>45</height>
+						<font>Font_22</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FF101010</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
+						<visible>ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>1</posy>
+						<width>548</width>
+						<height>45</height>
+						<font>Font_22</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>50101010</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$INFO[ListItem.Property(Number),, - ]$INFO[ListItem.Property(Name)]</label>
+						<!-- <label>$INFO[ListItem.Property(Name)]</label> -->
+						<visible>!ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>33</posy>
+						<width>548</width>
+						<height>45</height>
+						<font>Font_18A</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FF101010</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+						<visible>ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="label">
+						<posx>180</posx>
+						<posy>33</posy>
+						<width>548</width>
+						<height>45</height>
+						<font>Font_18A</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>50101010</textcolor>
+						<selectedcolor>$VAR[value_headercolor]</selectedcolor>
+						<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+						<visible>!ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="image">
+						<posx>702</posx>
+						<posy>8</posy>
+						<width>33</width>
+						<height>33</height>
+						<texture>OverlayWatched.png</texture>
+						<colordiffuse>$VAR[value_headercolor]</colordiffuse>
+						<visible>ListItem.Property(Changed)</visible>
+					</control>
+				</focusedlayout>
+				<focusedlayout condition="!String.IsEmpty(Window.Property(IsRadio))" height="75" width="750">	<!-- radio channels -->
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>750</width>
+						<height>75</height>
+						<texture>settings_button_focus.png</texture>
+						<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(20)">conditional</animation>
+					</control>
+					<!-- <control type="image">
+						<posx>45</posx>
+						<posy>0</posy>
+						<width>75</width>
+						<height>75</height>
+						<texture>black.png</texture>
+						<animation effect="fade" end="70" condition="true">Conditional</animation>
+					</control> -->
+					<control type="image">
+						<posx>42</posx>  <!-- 52 -->
+						<posy>8</posy>
+						<width>120</width>
+						<height>60</height>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<visible>ListItem.Property(ActiveChannel)</visible>
+					</control>
+					<control type="image">
+						<posx>42</posx>
+						<posy>8</posy>
+						<width>120</width>
+						<height>60</height>
+						<colordiffuse>50FFFAF0</colordiffuse>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultVRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">
@@ -331,13 +489,23 @@
 						<animation effect="fade" end="70" condition="true">Conditional</animation>
 						<visible>Control.HasFocus(9)</visible>
 					</control>
-					<control type="image" id="10">  <!-- list 20 channel icon -->
+					<control type="image" id="10">  <!-- list 20 channel icon tv -->
 						<posx>635</posx>
 						<posy>146</posy>
 						<width>78</width>
 						<height>39</height>
 						<aspectratio>keep</aspectratio>
 						<texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<visible>String.IsEmpty(Window.Property(IsRadio))</visible>
+					</control>
+					<control type="image" id="10">  <!-- list 20 channel icon radio -->
+						<posx>635</posx>
+						<posy>146</posy>
+						<width>78</width>
+						<height>39</height>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
 					</control>
 					<control type="radiobutton" id="12">
 						<!-- EPG activated -->
