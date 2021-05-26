@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.1.1 Matrixmod[COLOR=80FFFFFF] | [/COLOR]03/31/2021</value>
+		<value>11.1.1 Matrixmod[COLOR=80FFFFFF] | [/COLOR]05/15/2021</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -4517,7 +4517,8 @@
 	<variable name="value_thumbfullscreen">
 		<value condition="![VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv)]">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.poster)]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[Player.Art(thumb)]</value>
+		<value condition="[VideoPlayer.Content(livetv) | PVR.IsPlayingRecording] + !String.IsEmpty(PVR.EPGEventIcon)">$INFO[PVR.EPGEventIcon]</value>
+		<value condition="[VideoPlayer.Content(livetv) | PVR.IsPlayingRecording] + String.IsEmpty(PVR.EPGEventIcon)">$INFO[Player.Art(thumb)]</value>
 	</variable>
 	<variable name="value_ratingsong_1">
 		<value condition="!Control.Hasfocus(10)">$LOCALIZE[31936]</value>
@@ -4875,6 +4876,7 @@
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),concert)">$VAR[value_menutheme_concerts]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),music)">$VAR[value_menutheme_music]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),live)">$VAR[value_menutheme_livetv]</value>
+		<value condition="String.Contains(Container(9000).ListItem.Property(id),livetv)">$VAR[value_menutheme_livetv]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),favourite)">$VAR[value_menutheme_favourites]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),game)">$VAR[value_menutheme_games]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(id),program)">$VAR[value_menutheme_programs]</value>
