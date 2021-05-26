@@ -2689,7 +2689,7 @@
 	<variable name="value_mflistmode_concert">
 		<value condition="String.Contains(skin.string(mfconcerts_list),latest)">$LOCALIZE[31583]</value>
 		<value condition="String.Contains(skin.string(mfconcerts_list),random)">$LOCALIZE[31584]</value>
-		<value condition="String.Contains(skin.string(mfconcerts_list),inprogress)">$LOCALIZE[31585]</value>
+		<value condition="String.Contains(skin.string(mfconcerts_list),inprogress)">$LOCALIZE[31694]</value>
 	</variable>
 	<variable name="value_mflistmode_music">
 		<value condition="String.Contains(skin.string(mfmusic_list),latestsong)">$LOCALIZE[31583] | $LOCALIZE[182]</value>
