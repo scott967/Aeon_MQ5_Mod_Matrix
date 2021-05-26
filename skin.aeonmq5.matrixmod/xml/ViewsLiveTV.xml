@@ -284,9 +284,10 @@
 						<colordiffuse>50FFFAF0</colordiffuse>
 					</control>
 					<control type="label" id="1">
-						<posx>9</posx>
+						<posx>24</posx>
 						<posy>1</posy>
-						<width>63</width>
+						<width>48</width>
+						<!-- <width>63</width> -->
 						<height>57</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -297,16 +298,17 @@
 					<control type="image">
 						<posx>0</posx>
 						<posy>1</posy>
-						<width>14</width>
-						<height>14</height>
+						<width>30</width>
+						<height>20</height>
 						<texture>pvr_isrecording.png</texture>
 						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
-						<posx>0</posx>
+						<posx>2</posx>
 						<posy>1</posy>
-						<width>14</width>
-						<height>14</height>
+						<width>30</width>
+						<height>20</height>
+						<aspectratio align="left">keep</aspectratio>
 						<texture>pvr_hastimer.png</texture>
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 					</control>
@@ -329,9 +331,9 @@
 						<colordiffuse>90FFFAF0</colordiffuse>
 					</control>
 					<control type="label" id="1">
-						<posx>9</posx>
+						<posx>24</posx>
 						<posy>1</posy>
-						<width>63</width>
+						<width>48</width>
 						<height>57</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -342,16 +344,17 @@
 					<control type="image">
 						<posx>0</posx>
 						<posy>1</posy>
-						<width>14</width>
-						<height>14</height>
+						<width>30</width>
+						<height>20</height>
 						<texture>pvr_isrecording.png</texture>
 						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
-						<posx>0</posx>
+						<posx>2</posx>
 						<posy>1</posy>
-						<width>14</width>
-						<height>14</height>
+						<width>30</width>
+						<height>20</height>
+						<aspectratio align="left">keep</aspectratio>
 						<texture>pvr_hastimer.png</texture>
 						<colordiffuse>E4101010</colordiffuse>
 						<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
