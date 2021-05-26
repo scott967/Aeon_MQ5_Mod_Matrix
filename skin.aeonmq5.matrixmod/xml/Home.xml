@@ -67,7 +67,7 @@ Group 602: Widgets
 			<posy>-500</posy>
 			<height>400</height>
 			<width>50</width>
-			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin)</visible>
+			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin) + !PVR.IsPlayingTV</visible>
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[Player.FolderPath]extrafanart\</content>
@@ -77,7 +77,7 @@ Group 602: Widgets
 			<posy>-500</posy>
 			<height>400</height>
 			<width>50</width>
-			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin)</visible>
+			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin) + !PVR.IsPlayingTV</visible>
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[Player.FolderPath,,..\extrafanart\]</content>
@@ -912,7 +912,7 @@ Group 602: Widgets
 				<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(widgets_seconds),5)">Visible</animation>
 				<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
 			</control>
-			<control type="group" id="602">	<!-- Widgets -->
+			<control type="group" id="602">	<!-- Wi6dgets -->
 				<animation effect="slide" start="0,0" end="0,-480" condition="Skin.HasSetting(higherwidgets) + ![Skin.HasSetting(highermainmenu) | String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-165" condition="Skin.HasSetting(higherwidgets) + Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-315" condition="Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
@@ -968,7 +968,7 @@ Group 602: Widgets
 				<include condition="![String.IsEmpty(skin.string(livetvwidget)) | Skin.HasSetting(nonextairedwidget)]">mf_contentnextaired</include>
 				<include condition="!Skin.HasSetting(nosystemwidget)">mf_contentsystem</include>
 				<include condition="![String.IsEmpty(skin.string(weatherwidget)) | Skin.HasSetting(noweatherwidget)]">mf_weather</include>
-				<include condition="![String.IsEmpty(skin.string(pvrwidget)) | Skin.HasSetting(nopvrwidget)]">mf_contentpvr</include>
+				<include condition="![String.IsEmpty(skin.string(pvrwidget)) | Skin.HasSetting(nopvrwidget)]">mf_contentpvr_tv</include>
 			</control>
 			<control type="group">  <!-- Library status -->
 				<!-- Status da biblioteca -->
