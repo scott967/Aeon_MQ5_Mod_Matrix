@@ -9,8 +9,7 @@
 	<!-- <visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | [Skin.HasSetting(nopausedlabel) + [Player.FrameAdvance | Player.Paused]] | Window.IsActive(fullscreeninfo) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(SubtitleSearch)]</visible> -->
 	<visible>Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo</visible>
 	<controls>
-		<control type="group">
-			<!-- Upper bar furniture full and partial -->
+		<control type="group">				<!-- Upper bar furniture full and partial -->
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">Visible</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,-375" easing="inout" tween="cubic">WindowClose</animation>
@@ -81,7 +80,7 @@
 				<aligny>center</aligny>
 				<texture>star.png</texture>
 				<colordiffuse>FFFFFAF0</colordiffuse>
-				<visible>!VideoPlayer.Content(LiveTV)</visible>
+				<visible>![VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording]</visible>
 			</control>
 			<control type="label">
 				<posx>1778</posx>
@@ -93,11 +92,10 @@
 				<font>Font_18A</font>
 				<label>[B]$INFO[VideoPlayer.Rating][/B]</label>
 				<textcolor>FF101010</textcolor>
-				<visible>!VideoPlayer.Content(LiveTV)</visible>
+				<visible>![VideoPlayer.Content(LiveTV) | PVR.IsPlayingRecording]</visible>
 			</control>
 		</control>
-		<control type="group">
-			<!-- Lower bar all furniture except hidden if tempo changes -->
+		<control type="group">				<!-- Lower bar all furniture except hidden if tempo changes -->
 			<animation effect="slide" time="400" start="0,1200" end="0,0" easing="out" tween="cubic">WindowOpen</animation>
 			<animation effect="slide" time="400" start="0,0" end="0,1200" easing="in" tween="cubic">WindowClose</animation>
 			<visible>!Player.IsTempo + [Player.Seeking | Player.DisplayAfterSeek]</visible>
@@ -109,8 +107,7 @@
 				<texture>shadow_mask.png</texture>
 				<colordiffuse>E4000000</colordiffuse>
 			</control>
-			<control type="group">
-				<!-- bottom left bar group slide up for ffwd -->
+			<control type="group">	<!-- bottom left bar group slide up for ffwd -->
 				<animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Forwarding">Conditional</animation>
 				<control type="progress" id="23">
 					<posx>30</posx>
@@ -162,8 +159,7 @@
 					<visible>Player.Seeking | Player.DisplayAfterSeek</visible>
 				</control>
 			</control>
-			<control type="group">
-				<!-- bottom right bar group Furniture full partial slide up for rwd -->
+			<control type="group">	<!-- bottom right bar group Furniture full partial slide up for rwd -->
 				<animation effect="slide" start="0,0" end="0,-38" time="300" tween="cubic" easing="out" condition="Player.Rewinding">Conditional</animation>
 				<visible>!String.Contains(skin.string(videofurniture),hide)</visible>
 				<control type="label">
@@ -249,8 +245,7 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
-			<!-- paused flags -->
+		<control type="group">	<!-- paused flags -->
 			<visible>Player.Paused</visible>
 			<posy>-52</posy>
 			<animation effect="slide" time="800" start="0,1200" end="0,0" easing="inout" tween="cubic" condition="System.IdleTime(3)">Conditional</animation>
@@ -261,18 +256,16 @@
 				<posx>330</posx>
 				<posy>970</posy>
 				<height>46</height>
-				<width>930</width>
+				<width>1097</width>
 				<colordiffuse>$VAR[value_flagsbar]</colordiffuse>
 				<texture>whitebar_h.png</texture>
 			</control>
-			<control type="grouplist">
-				<!-- Etiquetas -->
-				<posx>345</posx>
+			<control type="grouplist">		<!-- Flags -->
+				<posx>428</posx>
 				<posy>956</posy>
 				<orientation>horizontal</orientation>
 				<itemgap>20</itemgap>
 				<control type="image">
-					<!-- Flags -->
 					<include>FlagImage</include>
 					<texture background="true">$VAR[value_mpaa_fs]</texture>
 				</control>
@@ -302,7 +295,7 @@
 				</control>
 			</control>
 			<control type="image">
-				<!-- Logo e Clearart -->
+				<!-- Clearlogo e Clearart -->
 				<posx>1620</posx>
 				<posy>110</posy>
 				<width>270</width>
@@ -311,7 +304,6 @@
 				<texture background="true">$VAR[value_art]</texture>
 			</control>
 			<control type="image">
-				<!-- Fundo -->
 				<posx>0</posx>
 				<posy>602</posy>
 				<width>1920</width>
@@ -330,8 +322,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_DefaultGlass</include>
 			</control>
-			<control type="group">
-				<!-- CDart -->
+			<control type="group">	<!-- CDart -->
 				<animation effect="slide" time="800" start="0,128" end="0,0" easing="inout" tween="cubic" condition="System.IdleTime(4)">Conditional</animation>
 				<animation effect="slide" time="800" start="0,0" end="0,128" easing="inout" tween="cubic" condition="!System.IdleTime(4)">Conditional</animation>
 				<visible>!String.IsEmpty(Player.Art(discart))</visible>
@@ -369,12 +360,13 @@
 				<bordertexture border="-2">darkgrey.png</bordertexture>
 			</control>
 			<control type="label">
-				<!-- Titulo enredo -->
+				<!-- Plot -->
 				<posx>330</posx>
 				<posy>618</posy>
 				<width>450</width>
 				<height>38</height>
 				<align>left</align>
+				<aligny>center</aligny>
 				<font>Font_17A</font>
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<label>31530</label>
@@ -393,12 +385,13 @@
 			<control type="group">
 				<visible>!VideoPlayer.Content(LiveTV)</visible>
 				<control type="label">
-					<!-- Titulo elenco -->
+					<!-- Titulo starring -->
 					<posx>1320</posx>
 					<posy>618</posy>
 					<width>450</width>
 					<height>38</height>
 					<align>left</align>
+					<aligny>center</aligny>
 					<font>Font_17A</font>
 					<textcolor>$VAR[value_headercolor]</textcolor>
 					<label>31703</label>
