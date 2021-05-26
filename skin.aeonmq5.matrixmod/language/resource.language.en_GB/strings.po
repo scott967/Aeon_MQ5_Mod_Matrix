@@ -4243,12 +4243,15 @@ msgstr "Local subtitle available"
 msgctxt "#31993"
 msgid "ADD GROUP"
 msgstr "ADD GROUP"
+
 msgctxt "#31994"
 msgid "RENAME GROUP"
 msgstr "RENAME GROUP"
+
 msgctxt "#31995"
 msgid "DELETE GROUP"
 msgstr "DELETE GROUP"
+
 msgctxt "#31996"
 msgid "AVAILABLE[CR]GROUPS"
 msgstr "AVAILABLE[CR]GROUPS"
