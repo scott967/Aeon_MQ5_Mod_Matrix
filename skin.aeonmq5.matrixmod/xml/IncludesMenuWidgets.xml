@@ -120,8 +120,9 @@
 				<aligny>center</aligny>
 				<font>Font_20</font>
 				<textcolor>FFFFFAF0</textcolor>
-				<label>$INFO[ListItem.Property(Percent)]</label>
+				<label>$INFO[ListItem.Property(Percent),,%]</label>
 				<scroll>true</scroll>
+				<visible>Integer.IsGreater(ListItem.Property(Percent),0)</visible>
 			</control>
 		</focusedlayout>
 	</include>
@@ -211,8 +212,7 @@
 		<control type="group">
 			<posx>45</posx>
 			<posy>540</posy>
-			<control type="panel" id="510">
-				<!-- Filmes Recentes -->
+			<control type="panel" id="510">	<!-- Recent Movies -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),movie) + String.Contains(skin.string(mfmovies_list),latest)</visible>
 				<content>
@@ -229,7 +229,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.1.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.1.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">inprogress</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.1.Play)]</onclick>
 						<visible>![String.IsEmpty(Window(home).Property(RecommendedMovie.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
@@ -469,8 +469,7 @@
 					</item>
 				</content>
 			</control>
-			<control type="panel" id="510">
-				<!-- Filmes Random -->
+			<control type="panel" id="510">	<!-- Random Movies -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),movie) + String.Contains(skin.string(mfmovies_list),random)</visible>
 				<content>
@@ -487,7 +486,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.1.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.1.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">inprogress</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.1.Play)]</onclick>
 						<visible>![String.IsEmpty(Window(home).Property(RecommendedMovie.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
@@ -727,8 +726,7 @@
 					</item>
 				</content>
 			</control>
-			<control type="panel" id="510">
-				<!-- Filmes Em Progresso -->
+			<control type="panel" id="510">	<!-- In Progress Movies -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),movie) + String.Contains(skin.string(mfmovies_list),inprogress)</visible>
 				<content>
@@ -745,7 +743,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.1.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.1.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.1.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.1.Title))</visible>
@@ -763,7 +761,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.2.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.2.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.2.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.2.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.2.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.2.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.2.Title))</visible>
@@ -781,7 +779,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.3.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.3.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.3.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.3.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.3.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.3.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.3.Title))</visible>
@@ -799,7 +797,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.4.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.4.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.4.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.4.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.4.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.4.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.4.Title))</visible>
@@ -817,7 +815,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.5.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.5.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.5.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.5.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.5.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.5.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.5.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -835,7 +833,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.6.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.6.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.6.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.6.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.6.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.6.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.6.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -853,7 +851,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.7.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.7.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.7.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.7.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.7.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.7.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.7.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -871,7 +869,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.8.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.8.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.8.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.8.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.8.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.8.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.8.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -889,7 +887,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.9.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.9.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.9.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.9.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.9.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.9.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.9.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -907,7 +905,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.10.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.10.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.10.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.10.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.10.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.10.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.10.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -925,7 +923,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.11.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.11.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.11.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.11.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.11.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.11.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.11.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -943,7 +941,7 @@
 						<property name="Mpaa">$INFO[Window(home).Property(RecommendedMovie.12.MPAA)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMovie.12.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMovie.12.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.12.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.12.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfmovies_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMovie.12.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMovie.12.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -1006,7 +1004,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.1.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">inprogress</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.1.Play)]</onclick>
 						<visible>![String.IsEmpty(Window(home).Property(RecommendedEpisode.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
@@ -1254,7 +1252,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.1.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">inprogress</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.1.Play)]</onclick>
 						<visible>![String.IsEmpty(Window(home).Property(RecommendedEpisode.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
@@ -1502,7 +1500,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.1.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.1.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.1.Title))</visible>
@@ -1522,7 +1520,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.2.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.2.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.2.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.2.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.2.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.2.Title))</visible>
@@ -1542,7 +1540,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.3.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.3.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.3.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.3.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.3.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.3.Title))</visible>
@@ -1562,7 +1560,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.4.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.4.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.4.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.4.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.4.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.4.Title))</visible>
@@ -1582,7 +1580,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.5.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.5.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.5.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.5.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.5.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.5.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -1602,7 +1600,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.6.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.6.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.6.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.6.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.6.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.6.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.6.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -1622,7 +1620,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.7.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.7.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.7.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.7.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.7.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.7.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.7.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -1642,7 +1640,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.8.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.8.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.8.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.8.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.8.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.8.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.8.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -1662,7 +1660,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.9.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.9.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.9.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.9.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.9.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.9.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.9.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -1682,7 +1680,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.10.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.10.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.10.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.10.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.10.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.10.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.10.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -1702,7 +1700,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.11.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.11.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.11.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.11.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.11.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.11.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.11.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -1722,7 +1720,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedEpisode.12.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedEpisode.12.VideoCodec)]</property>
 						<property name="EpisodeNumber">$INFO[Window(home).Property(RecommendedEpisode.12.EpisodeNo)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.12.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedEpisode.12.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mftvshows_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedEpisode.12.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedEpisode.12.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -1781,7 +1779,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.1.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">inprogress</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.1.Play)]</onclick>
 						<visible>![String.IsEmpty(Window(home).Property(RecommendedMusicVideo.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
@@ -1977,7 +1975,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.1.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">inprogress</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.1.Play)]</onclick>
 						<visible>![String.IsEmpty(Window(home).Property(RecommendedMusicVideo.1.Title)) | Skin.HasSetting(noprogresswidget)]</visible>
@@ -2173,7 +2171,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.1.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.1.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.1.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.1.Title))</visible>
@@ -2189,7 +2187,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.2.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.2.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.2.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.2.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.2.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.2.Title))</visible>
@@ -2205,7 +2203,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.3.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.3.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.3.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.3.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.3.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.3.Title))</visible>
@@ -2221,7 +2219,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.4.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.4.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.4.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.4.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.4.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.4.Title))</visible>
@@ -2237,7 +2235,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.5.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.5.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.5.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.5.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.5.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.5.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -2253,7 +2251,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.6.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.6.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.6.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.6.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.6.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.6.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -2269,7 +2267,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.7.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.7.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.7.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.7.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.7.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.7.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -2285,7 +2283,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.8.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.8.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.8.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.8.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.8.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.8.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
@@ -2301,7 +2299,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.9.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.9.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.9.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.9.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.9.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.9.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -2317,7 +2315,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.10.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.10.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.10.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.10.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.10.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.10.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -2333,7 +2331,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.11.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.11.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.11.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.11.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.11.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.11.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
@@ -2349,7 +2347,7 @@
 						<property name="Year">$INFO[Window(home).Property(RecommendedMusicVideo.12.Year)]</property>
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.12.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.12.VideoCodec)]</property>
-						<property name="Percent">$INFO[Window(home).Property(RecommendedMovie.1.PercentPlayed)]</property>
+						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.12.PercentPlayedAsInt)]</property>
 						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.12.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.12.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
