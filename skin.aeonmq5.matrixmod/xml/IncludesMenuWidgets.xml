@@ -1763,8 +1763,7 @@
 		<control type="group">
 			<posx>45</posx>
 			<posy>540</posy>
-			<control type="panel" id="510">
-				<!-- Concertos Recentes -->
+			<control type="panel" id="510">	<!-- Concertos Recent -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),concert) + String.Contains(skin.string(mfconcerts_list),latest)</visible>
 				<content>
@@ -1959,8 +1958,7 @@
 					</item>
 				</content>
 			</control>
-			<control type="panel" id="510">
-				<!-- Concertos Random -->
+			<control type="panel" id="510">	<!-- Concertos Random -->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),concert) + String.Contains(skin.string(mfconcerts_list),random)</visible>
 				<content>
@@ -2155,8 +2153,7 @@
 					</item>
 				</content>
 			</control>
-			<control type="panel" id="510">
-				<!-- Concertos Em Progresso -->
+			<control type="panel" id="510">	<!-- Concertos most played-->
 				<include>panel_layout</include>
 				<visible>String.Contains(Container(9000).ListItem.Property(id),concert) + String.Contains(skin.string(mfconcerts_list),inprogress)</visible>
 				<content>
