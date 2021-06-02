@@ -114,8 +114,7 @@ Group 602: Widgets
 			<visible>Control.HasFocus(510) + !String.IsEmpty(Container(510).ListItem.Property(Fanart))</visible>
 		</control>
 		<include>LiveBG</include>
-		<control type="group">
-			<!-- default group -->
+		<control type="group">	<!-- default group -->
 			<include>Animation_Window</include>
 			<include condition="system.getbool(lookandfeel.enablerssfeeds)">HomeRSS</include>
 			<control type="group" id="605">  <!-- disc art bottom left -->
@@ -479,8 +478,7 @@ Group 602: Widgets
 						<visible>[String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)] + Player.HasAudio | Player.HasVideo</visible>
 					</control>
 				</control>
-				<control type="group">
-					<!-- Next tracks heading top right -->
+				<control type="group">	<!-- Next tracks heading top right -->
 					<visible>![String.IsEmpty(MusicPlayer.offset(1).Artist) | Skin.HasSetting(nonexttracks)] + Player.HasAudio</visible>
 					<control type="label">
 						<posx>1305</posx>
@@ -636,7 +634,7 @@ Group 602: Widgets
 					<visible>Skin.HasSetting(higherwidgets) | Skin.HasSetting(highermainmenu)</visible>
 				</control>
 				<control type="image">
-					<!-- Thumb video -->
+					<!-- Thumb video (not episode thumb) -->
 					<posx>60</posx>
 					<posy>135</posy>
 					<width>250</width>
@@ -684,7 +682,7 @@ Group 602: Widgets
 					<visible>String.IsEmpty(Container(510).ListItem.Property(Thumbnail)) + [String.IsEqual(Container(9000).ListItem.Property(id),music) | String.Contains(Container(9000).ListItem.Property(id),apl)]</visible>
 				</control>
 				<control type="group">
-					<!-- Miniatura do episodio -->
+					<!-- Episode and MV thumb -->
 					<control type="image">
 						<posx>30</posx>
 						<posy>120</posy>
@@ -913,7 +911,7 @@ Group 602: Widgets
 				<animation effect="fade" start="0" end="100" time="150" delay="5000" condition="String.Contains(skin.string(widgets_seconds),5)">Visible</animation>
 				<visible>![Container(9000).OnNext | Container(9000).OnPrevious]</visible>
 			</control>
-			<control type="group" id="602">	<!-- Widgets -->
+			<control type="group" id="602">	<!-- Widgets (panel is 510) -->
 				<animation effect="slide" start="0,0" end="0,-480" condition="Skin.HasSetting(higherwidgets) + ![Skin.HasSetting(highermainmenu) | String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-165" condition="Skin.HasSetting(higherwidgets) + Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,-315" condition="Skin.HasSetting(highermainmenu) + ![String.IsEqual(Container(9000).ListItem.Property(id),settings) | String.IsEqual(Container(9000).ListItem.Property(id),weather)]">Conditional</animation>
