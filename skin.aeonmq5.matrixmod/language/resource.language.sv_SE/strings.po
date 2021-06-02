@@ -2975,6 +2975,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "GÖM PANELER"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Tidsskifte"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "FLYTTA UPP/NER FÖR ATT AVSLUTA"

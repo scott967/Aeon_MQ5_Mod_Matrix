@@ -2973,6 +2973,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "FELA HEIMAGLUGGA"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Tímaflakk"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "FÆRA UPP/NIÐUR TIL AÐ HÆTTA"

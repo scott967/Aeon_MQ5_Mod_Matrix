@@ -2975,6 +2975,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "SKJUL INVENTAR"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Tidsforskydning"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "FLYT OP/NED FOR AT AFSLUTTE"

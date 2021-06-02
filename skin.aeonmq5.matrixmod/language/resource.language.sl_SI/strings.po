@@ -2972,6 +2972,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "SKRIJ OGRODJE"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Časovni zamik"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "PREMAKNITE GOR/DOL ZA ZAKLJUČEK"

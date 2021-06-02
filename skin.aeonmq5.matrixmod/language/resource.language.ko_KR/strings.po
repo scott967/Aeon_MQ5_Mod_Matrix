@@ -2973,6 +2973,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "구성요소 숨김"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "타임시프트"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "끝내려면 위/아래 방향키를 누르세요"

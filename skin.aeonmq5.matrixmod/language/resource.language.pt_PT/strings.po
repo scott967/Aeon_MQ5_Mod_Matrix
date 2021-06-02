@@ -2976,6 +2976,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "OCULTAR MOBÍLIA"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Ver Mais Tarde"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "MOVA PARA ACIMA/ABAIXO PARA TERMINAR"

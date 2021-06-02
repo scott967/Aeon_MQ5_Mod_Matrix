@@ -2758,6 +2758,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "הסתר ריהוט"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "הסט זמן"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "הזז למעלה או למטה כדי לסיים"

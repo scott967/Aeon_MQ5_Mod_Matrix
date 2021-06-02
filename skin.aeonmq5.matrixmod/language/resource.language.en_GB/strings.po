@@ -2970,6 +2970,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "HIDE FURNITURE"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Timeshift"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "MOVE UP/DOWN TO END"

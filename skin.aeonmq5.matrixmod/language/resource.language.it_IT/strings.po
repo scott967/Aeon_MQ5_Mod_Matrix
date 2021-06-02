@@ -2975,6 +2975,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "NASCONDI FORNITURE"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Timeshift"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "MUOVI SU/GIU PER FINIRE"

@@ -2978,6 +2978,10 @@ msgctxt "#31679"
 msgid "HIDE FURNITURE"
 msgstr "Nerodyti padėties"
 
+msgctxt "#31680"
+msgid "Timeshift"
+msgstr "Laiko poslinkis"
+
 msgctxt "#31681"
 msgid "MOVE UP/DOWN TO END"
 msgstr "Spauskite [COLOR=red]aukštyn/žemyn užbaigimui[/COLOR]"
