@@ -1261,7 +1261,7 @@
 							<onclick>Skin.SetBool(musictrailers)</onclick>
 							<onclick condition="!Window.IsActive(visualisation)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Title])</onclick>
 							<onclick condition="Window.IsActive(visualisation)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[MusicPlayer.Artist] $INFO[MusicPlayer.Title])</onclick>
-							<visible>System.HasAddon(script.extendedinfo)</visible>
+							<visible>System.HasAddon(script.extendedinfo) + !PVR.IsPlayingRadio</visible>
 						</item>
 					</content>
 				</control>
