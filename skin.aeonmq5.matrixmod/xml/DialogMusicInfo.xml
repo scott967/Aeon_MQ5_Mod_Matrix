@@ -9,6 +9,7 @@
 	<onload condition="System.HasAddon(script.artistslideshow) + Player.HasAudio + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(script.artistslideshow)</onload>
 	<controls>
 		<control type="group"> 	<!-- invisible control group to determine if extrafanart folders exist for item -->
+			<visible>![PVR.IsPlayingRadio + Window.IsVisible(visualisation)]</visible>
 			<control type="list" id="5032">
 				<!-- check if artist info has extrafanart note: if artist info entry is normalized it isn't found -->
 				<posx>-500</posx>
@@ -52,6 +53,7 @@
 				<!-- Multi Fanart -->
 				<include>WindowBG</include>
 				<imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
+				<visible>!PVR.IsPlayingRadio</visible>
 			</control>
 			<control type="image">
 				<!-- Single Fanart -->
@@ -74,7 +76,7 @@
 				<!-- Lib Extra Fanart Song for song info in visualisation -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Player.FolderPath],,../extrafanart/</imagepath>
-				<visible>Window.IsVisible(visualisation) + Window.IsVisible(songinformation)</visible>
+				<visible>Window.IsVisible(visualisation) + Window.IsVisible(songinformation) + !PVR.IsPlayingRadio</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
@@ -1227,7 +1229,7 @@
 							<label>31936</label>
 							<onclick condition="!Window.IsActive(visualisation)">SendClick(songinformation,7)</onclick>
 							<onclick condition="Window.IsActive(visualisation)">Action(setrating)</onclick>
-							<visible>!Skin.HasSetting(kioskininfo)</visible>
+							<visible>!Skin.HasSetting(kioskininfo) + !PVR.IsPlayingRadio</visible>
 						</item>
 						<!-- Artist Info -->
 						<item id="5">
@@ -1250,7 +1252,7 @@
 							<onclick>Skin.SetBool(musictrailers)</onclick>
 							<onclick condition="!Window.IsActive(visualisation)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[ListItem.Artist] $INFO[ListItem.Album])</onclick>
 							<onclick condition="Window.IsActive(visualisation)">RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[MusicPlayer.Artist] $INFO[MusicPlayer.Album])</onclick>
-							<visible>System.HasAddon(script.extendedinfo)</visible>
+							<visible>System.HasAddon(script.extendedinfo) + !PVR.IsPlayingRadio</visible>
 						</item>
 						<item id="17">
 							<!-- Song Video Clip -->

@@ -57,7 +57,7 @@ Group 602: Widgets
 			<posy>-500</posy>
 			<height>400</height>
 			<width>50</width>
-			<visible>Player.HasAudio + Skin.HasSetting(customlogo) +  !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
+			<visible>Player.HasAudio + !PVR.IsPlayingRadio + Skin.HasSetting(customlogo) +  !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
 			<itemlayout />
 			<focusedlayout />
 			<content target="filemanager">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]\extrafanart\</content>
@@ -104,7 +104,7 @@ Group 602: Widgets
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]/extrafanart/</imagepath>
-			<visible>Player.HasAudio + System.IdleTime(8) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
+			<visible>Player.HasAudio + !PVR.IsPlayingRadio + System.IdleTime(8) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
 		</control>
 		<control type="multiimage">
 		<!-- Widget fanart -->
@@ -690,6 +690,7 @@ Group 602: Widgets
 						<posy>120</posy>
 						<width>712</width>
 						<height>417</height>
+						<aspectratio align="left" aligny="center">scale</aspectratio>
 						<texture>fanartframe.png</texture>
 						<visible>!String.IsEmpty(Container(510).ListItem.Property(Thumbnail))</visible>
 					</control>
@@ -700,7 +701,7 @@ Group 602: Widgets
 						<height>375</height>
 						<timeperimage>5000</timeperimage>
 						<randomize>true</randomize>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio align="left" aligny="center">scale</aspectratio>
 						<imagepath background="true">$INFO[Container(510).ListItem.Property(Thumbnail)]</imagepath>
 						<fadetime>FanartCrossFadeTime</fadetime>
 						<visible>!String.IsEmpty(Container(510).ListItem.Property(Thumbnail))</visible>

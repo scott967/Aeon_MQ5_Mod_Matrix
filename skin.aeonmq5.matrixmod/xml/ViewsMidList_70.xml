@@ -444,7 +444,7 @@
 					<randomize>true</randomize>
 					<loop>yes</loop>
 					<visible>String.Contains(skin.string(musicfanart),extra)</visible>
-					<visible>Window.IsVisible(musicplaylist) + [Player.HasAudio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] | 
+					<visible>Window.IsVisible(musicplaylist) + [Player.HasAudio + !PVR.IsPlayingRadio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] | 
 					[Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>
 				</control>
 				<control type="multiimage">
@@ -475,7 +475,7 @@
 					<fadetime>2000</fadetime>
 					<randomize>true</randomize>
 					<loop>yes</loop>
-					<visible>Window.IsVisible(musicplaylist) + Player.HasAudio</visible>
+					<visible>Window.IsVisible(musicplaylist) + Player.HasAudio + !PVR.IsPlayingRadio</visible>
 					<visible>String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
 				</control>
 				<control type="multiimage">
