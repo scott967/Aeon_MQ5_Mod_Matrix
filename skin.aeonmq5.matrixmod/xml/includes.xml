@@ -3438,7 +3438,7 @@
 			</item>
 			<item id="29">
 				<!-- chanOSD -->
-				<label>19019</label>
+				<label></label>
 				<property name="condition">$INFO[skin.string(osd_video_chan),disable)]</property>
 				<icon>osd_menu_channels.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(PVROSDChannels)</onclick>
@@ -3449,7 +3449,7 @@
 			</item>
 			<item id="30">
 				<!-- EPGOSD -->
-				<label>$LOCALIZE[19222]$INFO[VideoPlayer.ChannelName, - ]</label>
+				<label></label>
 				<property name="condition">$INFO[skin.string(osd_video_epg),disable)]</property>
 				<icon>osd_menu_epg.png</icon>
 				<onclick condition="!Skin.HasSetting(customosd)">ActivateWindow(pvrchannelguide)</onclick>

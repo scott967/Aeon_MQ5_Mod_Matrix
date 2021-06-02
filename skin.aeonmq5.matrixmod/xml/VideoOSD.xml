@@ -178,9 +178,20 @@
 				<onfocus condition="String.Contains(skin.string(videofurniture),partial)">Skin.SetString(videofurniture,hide)</onfocus>
 				<onfocus condition="String.Contains(skin.string(videofurniture),hide)">Skin.SetString(videofurniture,full)</onfocus>
 			</control>
-			<!-- Menu Content -->
+			<!-- Menu Content VideoOSD_Content -->
 			<include condition="!Skin.HasSetting(videoosdfixedlist)">VideoOSDWrapList</include>
 			<include condition="Skin.HasSetting(videoosdfixedlist)">VideoOSDFixedList</include>
+			<control type="label">
+					<!-- menu icons label -->
+					<posx>480</posx>
+					<posy>249</posy>
+					<width>960</width>
+					<height>38</height>
+					<align>center</align>
+					<font>Font_18</font>
+					<label>$VAR[value_osdvideo_title]</label>
+					<textcolor>FFFFFAF0</textcolor>
+				</control>
 			<control type="group">	<!-- progress bars seek slider and labels for live tv -->
 				<visible>VideoPlayer.Content(liveTV)</visible>
 				<control type="group"><!-- dual bar TS + EPG -->
@@ -318,17 +329,6 @@
 					<shadowcolor>grey</shadowcolor>
 					<label>[B]$VAR[value_osd_timeduration][/B]</label>
 					<visible>!Control.HasFocus(888) + !VideoPlayer.Content(liveTV)</visible>
-				</control>
-				<control type="label">
-					<!-- icons label -->
-					<posx>480</posx>
-					<posy>249</posy>
-					<width>960</width>
-					<height>38</height>
-					<align>center</align>
-					<font>Font_18</font>
-					<label>$VAR[value_osdvideo_title]</label>
-					<textcolor>FFFFFAF0</textcolor>
 				</control>
 			</control>
 			<control type="group"><!-- current / finish time labels) -->

@@ -4608,6 +4608,8 @@
 		<value condition="Container(100).HasFocus(26) + Skin.HasSetting(videoosdfixedlist)">$LOCALIZE[31235]</value>
 		<value condition="Container(100).HasFocus(27)">$LOCALIZE[22006]</value>
 		<value condition="Container(100).HasFocus(28)">$LOCALIZE[31251]</value>
+		<value condition="Container(100).HasFocus(29)">$LOCALIZE[19019]</value>
+		<value condition="Container(100).HasFocus(30)">$LOCALIZE[19222]$INFO[VideoPlayer.ChannelName, - ]</value>
 		<value condition="Container(100).HasFocus(31) + Player.TempoEnabled + !Player.IsTempo">$LOCALIZE[14086] $LOCALIZE[224] +</value>
 		<!-- player tempoup -->
 		<value condition="Container(100).HasFocus(31) + Player.TempoEnabled + Player.IsTempo">$LOCALIZE[14086] $LOCALIZE[224] +$INFO[Player.Playspeed, (,)]</value>
@@ -4778,6 +4780,7 @@
 		<value condition="Window.IsActive(musicplaylist)">$INFO[ListItem.TrackNumber]</value>
 	</variable>
 	<variable name="value_songinfo_duration">
+		<value condition="Window.IsActive(visualisation) + PVR.IsTimeshift">$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration] | $LOCALIZE[31680]</value>
 		<value condition="Window.IsActive(visualisation) + Player.HasAudio">$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</value>
 		<value condition="[!Window.IsActive(musicplaylist) | Window.IsVisible(songinformation)]">$INFO[ListItem.Duration]</value>
 		<value condition="Window.IsActive(musicplaylist) + Player.HasAudio">$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</value>
