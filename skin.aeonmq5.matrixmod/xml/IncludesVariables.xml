@@ -5249,6 +5249,7 @@
 	</variable>
 	<variable name="PlayProgress">
 		<value condition="Player.HasMedia + !VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</value>
-		<value condition="VideoPlayer.Content(LiveTV)">$INFO[PVR.EpgEventElapsedTime] / $INFO[PVR.EpgEventDuration]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !PVR.IsTimeShift">$INFO[PVR.EpgEventElapsedTime] / $INFO[PVR.EpgEventDuration]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + PVR.IsTimeShift">$INFO[PVR.EpgEventElapsedTime] / $INFO[PVR.EpgEventDuration] | $LOCALIZE[31680]</value>
 	</variable>
 </includes>

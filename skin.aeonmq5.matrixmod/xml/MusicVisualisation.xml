@@ -699,7 +699,7 @@
 					<aligny>center</aligny>
 					<textcolor>FFFFFAF0</textcolor>
 					<font>Font_17A</font>
-					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+					<label>$INFO[Player.Time] / $INFO[Player.Duration] | [UPPERCASE]$LOCALIZE[31680][/UPPERCASE]</label>
 					<shadowcolor>grey</shadowcolor>
 					<visible>PVR.IsTimeshift</visible>
 				</control>

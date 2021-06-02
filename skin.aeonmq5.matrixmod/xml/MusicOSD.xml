@@ -193,6 +193,17 @@
 					<textcolor>FFFFFAF0</textcolor>
 					<label>$INFO[System.Time]</label>
 				</control>
+				<control type="label">	<!-- timeshift -->
+					<posx>1420</posx>
+					<posy>232</posy>
+					<width>450</width>
+					<height>38</height>
+					<align>right</align>
+					<font>Font_32</font>
+					<textcolor>FFFFFAF0</textcolor>
+					<label>$LOCALIZE[31680]</label>
+					<visible>PVR.IsTimeshift</visible>
+				</control>
 				<control type="label">
 					<!-- termino -->
 					<posx>1875</posx>
