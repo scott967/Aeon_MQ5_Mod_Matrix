@@ -1771,6 +1771,7 @@
 						<label>[COLOR=$VAR[value_menucolorlabel]]$LOCALIZE[31665] - [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.1.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.1.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</property>
@@ -1787,6 +1788,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.1.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.1.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.1.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.1.Runtime)]</property>
@@ -1801,6 +1803,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.2.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.2.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.2.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.2.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.2.Runtime)]</property>
@@ -1815,6 +1818,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.3.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.3.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.3.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.3.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.3.Runtime)]</property>
@@ -1829,6 +1833,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.4.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.4.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.4.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.4.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.4.Runtime)]</property>
@@ -1843,6 +1848,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.5.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.5.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.5.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.5.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.5.Runtime)]</property>
@@ -1857,6 +1863,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.6.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.6.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.6.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.6.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.6.Runtime)]</property>
@@ -1871,6 +1878,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.7.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.7.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.7.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.7.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.7.Runtime)]</property>
@@ -1885,6 +1893,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.8.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.8.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.8.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.8.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.8.Runtime)]</property>
@@ -1899,6 +1908,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.9.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.9.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.9.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.9.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.9.Runtime)]</property>
@@ -1913,6 +1923,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.10.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.10.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.10.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.10.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.10.Runtime)]</property>
@@ -1927,6 +1938,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.11.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.11.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.11.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.11.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.11.Runtime)]</property>
@@ -1941,6 +1953,7 @@
 						<label>$INFO[Window(home).Property(RecentMusicVideo.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecentMusicVideo.12.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecentMusicVideo.12.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecentMusicVideo.12.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecentMusicVideo.12.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecentMusicVideo.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecentMusicVideo.12.Runtime)]</property>
@@ -1966,6 +1979,7 @@
 						<label>[COLOR=$VAR[value_menucolorlabel]]$LOCALIZE[31665] - [/COLOR]$INFO[Window(home).Property(RecommendedMusicVideo.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.1.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.1.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</property>
@@ -1982,6 +1996,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.1.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.1.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.1.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.1.Runtime)]</property>
@@ -1996,6 +2011,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.2.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.2.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.2.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.2.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.2.Runtime)]</property>
@@ -2010,6 +2026,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.3.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.3.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.3.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.3.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.3.Runtime)]</property>
@@ -2024,6 +2041,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.4.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.4.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.4.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.4.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.4.Runtime)]</property>
@@ -2038,6 +2056,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.5.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.5.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.5.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.5.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.5.Runtime)]</property>
@@ -2052,6 +2071,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.6.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.6.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.6.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.6.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.6.Runtime)]</property>
@@ -2066,6 +2086,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.7.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.7.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.7.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.7.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.7.Runtime)]</property>
@@ -2080,6 +2101,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.8.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.8.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.8.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.8.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.8.Runtime)]</property>
@@ -2094,6 +2116,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.9.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.9.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.9.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.9.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.9.Runtime)]</property>
@@ -2108,6 +2131,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.10.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.10.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.10.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.10.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.10.Runtime)]</property>
@@ -2122,6 +2146,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.11.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.11.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.11.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.11.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.11.Runtime)]</property>
@@ -2136,6 +2161,7 @@
 						<label>$INFO[Window(home).Property(RandomMusicVideo.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RandomMusicVideo.12.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RandomMusicVideo.12.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RandomMusicVideo.12.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RandomMusicVideo.12.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RandomMusicVideo.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RandomMusicVideo.12.Runtime)]</property>
@@ -2161,6 +2187,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.1.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.1.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.1.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.1.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.1.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.1.Runtime)]</property>
@@ -2169,7 +2196,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.1.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.1.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.1.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.1.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.1.Title))</visible>
 					</item>
@@ -2177,6 +2204,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.2.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.2.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.2.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.2.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.2.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.2.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.2.Runtime)]</property>
@@ -2185,7 +2213,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.2.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.2.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.2.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.2.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.2.Title))</visible>
 					</item>
@@ -2193,6 +2221,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.3.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.3.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.3.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.3.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.3.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.3.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.3.Runtime)]</property>
@@ -2201,7 +2230,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.3.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.3.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.3.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.3.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.3.Title))</visible>
 					</item>
@@ -2209,6 +2238,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.4.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.4.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.4.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.4.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.4.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.4.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.4.Runtime)]</property>
@@ -2217,7 +2247,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.4.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.4.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.4.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.4.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.4.Title))</visible>
 					</item>
@@ -2225,6 +2255,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.5.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.5.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.5.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.5.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.5.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.5.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.5.Runtime)]</property>
@@ -2233,7 +2264,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.5.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.5.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.5.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.5.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.5.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -2241,6 +2272,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.6.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.6.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.6.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.6.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.6.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.6.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.6.Runtime)]</property>
@@ -2249,7 +2281,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.6.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.6.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.6.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.6.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.6.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -2257,6 +2289,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.7.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.7.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.7.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.7.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.7.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.7.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.7.Runtime)]</property>
@@ -2265,7 +2298,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.7.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.7.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.7.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.7.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.7.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -2273,6 +2306,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.8.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.8.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.8.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.8.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.8.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.8.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.8.Runtime)]</property>
@@ -2281,7 +2315,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.8.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.8.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.8.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.8.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.8.Title)) + [String.Contains(skin.string(widgetsnumber),8) | String.Contains(skin.string(widgetsnumber),12)]</visible>
 					</item>
@@ -2289,6 +2323,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.9.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.9.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.9.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.9.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.9.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.9.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.9.Runtime)]</property>
@@ -2297,7 +2332,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.9.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.9.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.9.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.9.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.9.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
 					</item>
@@ -2305,6 +2340,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.10.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.10.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.10.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.10.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.10.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.10.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.10.Runtime)]</property>
@@ -2313,7 +2349,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.10.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.10.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.10.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.10.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.10.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
 					</item>
@@ -2321,6 +2357,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.11.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.11.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.11.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.11.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.11.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.11.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.11.Runtime)]</property>
@@ -2329,7 +2366,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.11.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.11.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.11.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.11.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.11.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
 					</item>
@@ -2337,6 +2374,7 @@
 						<label>$INFO[Window(home).Property(RecommendedMusicVideo.12.Title)]</label>
 						<label2>$INFO[Window(home).Property(RecommendedMusicVideo.12.Artist)]</label2>
 						<icon>$INFO[Window(home).Property(RecommendedMusicVideo.12.Thumb)]</icon>
+						<property name="Thumbnail">$INFO[Window(home).Property(RecommendedMusicVideo.12.Art(Thumb))]</property>
 						<property name="Fanart">$INFO[Window(home).Property(RecommendedMusicVideo.12.Art(fanart))]</property>
 						<property name="Genre">$INFO[Window(home).Property(RecommendedMusicVideo.12.Genre)]</property>
 						<property name="Runtime">$INFO[Window(home).Property(RecommendedMusicVideo.12.Runtime)]</property>
@@ -2345,7 +2383,7 @@
 						<property name="File">$INFO[Window(home).Property(RecommendedMusicVideo.12.File)]</property>
 						<property name="Codec">$INFO[Window(home).Property(RecommendedMusicVideo.12.VideoCodec)]</property>
 						<property name="Percent">$INFO[Window(home).Property(RecommendedMusicVideo.12.PercentPlayedAsInt)]</property>
-						<property name="Progress">$INFO[skin.string(mfconcerts_list)]</property>
+						<property name="Progress">mostplayed</property>
 						<onclick>$INFO[Window(home).Property(RecommendedMusicVideo.12.Play)]</onclick>
 						<visible>!String.IsEmpty(Window(home).Property(RecommendedMusicVideo.12.Title)) + String.Contains(skin.string(widgetsnumber),12)</visible>
 					</item>
