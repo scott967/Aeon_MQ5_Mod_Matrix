@@ -9,26 +9,8 @@
 		<posx>0</posx>
 		<posy>0</posy>
 	</coordinates>
-	<onopen condition="Skin.HasSetting(nolyrics_on)">SetFocus(110,1)</onopen>
+	<onopen condition="Skin.HasSetting(nolyrics_on)">SetFocus(5001)</onopen>
 	<controls>
-			<control type="label" >
-				<description>tester</description>
-				<left>40</left>
-				<top>40</top>
-				<width>300</width>
-				<height>60</height>
-				<label>Skin Nolyrics</label>
-				<visible>Skin.HasSetting(nolyrics_on)</visible>
-			</control>
-			<control type="label" >
-				<description>tester</description>
-				<left>40</left>
-				<top>40</top>
-				<width>300</width>
-				<height>60</height>
-				<label>Skin lyrics</label>
-				<visible>!Skin.HasSetting(nolyrics_on)</visible>
-			</control>
 		<control type="group">  <!-- invisible lyrics to close window -->
 			<visible>Skin.HasSetting(nolyrics_on) + !String.IsEqual(skin.string(vis_layout),karaoke)</visible>
 			<control type="button" id="5001">
