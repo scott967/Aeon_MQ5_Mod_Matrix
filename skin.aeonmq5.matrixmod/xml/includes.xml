@@ -3618,7 +3618,7 @@
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_audio_skipbwd),disable)]</property>
 				<icon>osd_menu_skipbwd.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Previous)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">Playlist.PlayOffset(-1)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_skipbwd),disable)">Skin.SetString(osd_audio_skipbwd,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_skipbwd),disable)">Skin.Reset(osd_audio_skipbwd,disable)</onclick>
 				<visible>[![String.Contains(skin.string(osd_audio_skipbwd),disable)  | PVR.IsPlayingRadio] | Skin.HasSetting(customosd)]</visible>
@@ -3658,7 +3658,7 @@
 				<label></label>
 				<property name="condition">$INFO[skin.string(osd_audio_skipfwd),disable)]</property>
 				<icon>osd_menu_skipfwd.png</icon>
-				<onclick condition="!Skin.HasSetting(customosd)">PlayerControl(Next)</onclick>
+				<onclick condition="!Skin.HasSetting(customosd)">Playlist.PlayOffset(1)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + !String.Contains(skin.string(osd_audio_skipfwd),disable)">Skin.SetString(osd_audio_skipfwd,disable)</onclick>
 				<onclick condition="Skin.HasSetting(customosd) + String.Contains(skin.string(osd_audio_skipfwd),disable)">Skin.Reset(osd_audio_skipfwd,disable)</onclick>
 				<visible>[![String.Contains(skin.string(osd_audio_skipfwd),disable)  | PVR.IsPlayingRadio] | Skin.HasSetting(customosd)]</visible>

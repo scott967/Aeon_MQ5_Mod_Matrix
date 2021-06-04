@@ -126,7 +126,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_HomeGlass2</include>
 			</control>
-			<!-- Menu Audio OSD Content -->
+			<!-- Menu AudioOSD_Content -->
 			<include condition="!Skin.HasSetting(audioosdfixedlist)">AudioOSDWrapList</include>
 			<include condition="Skin.HasSetting(audioosdfixedlist)">AudioOSDFixedList</include>
 			<control type="progress">
