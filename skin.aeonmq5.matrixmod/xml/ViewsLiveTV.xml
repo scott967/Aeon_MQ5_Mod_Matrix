@@ -242,6 +242,14 @@
 						<label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
 					</control>
 					<control type="image">
+						<posx>272</posx>
+						<posy>3</posy>
+						<height>52</height>
+						<width>80</width>
+						<aspectratio align="left">keep</aspectratio>
+						<texture border="3">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>360</width>
@@ -262,6 +270,14 @@
 					<control type="label" id="1">
 						<include>SettingsLabelFocus</include>
 						<label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
+					</control>
+					<control type="image">
+						<posx>272</posx>
+						<posy>3</posy>
+						<height>52</height>
+						<width>80</width>
+						<aspectratio align="left">keep</aspectratio>
+						<texture border="3">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedchannellayout>
 				<itemlayout height="60" width="75">
