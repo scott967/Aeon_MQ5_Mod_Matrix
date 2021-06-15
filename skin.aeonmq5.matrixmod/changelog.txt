@@ -1,4 +1,4 @@
-[B][COLOR=FFFF8C00]BUILD 11.1.1 - RELEASE DATE 05/31/2020[/COLOR][/B]
+[B][COLOR=FFFF8C00]BUILD 11.1.1 - RELEASE DATE 06/15/2021[/COLOR][/B]
 Improved:  Extensive rework of PVR and LiveTV to incorporate features from
 Leia and Matrix including timeshift and reminders.
 Improved:  Support for LiveTV - Radio including new Radio settings availalable in 
