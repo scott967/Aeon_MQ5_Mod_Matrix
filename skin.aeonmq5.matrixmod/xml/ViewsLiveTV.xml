@@ -238,15 +238,18 @@
 				</rulerlayout>
 				<channellayout height="60" width="360">
 					<control type="label" id="1">
+						<width>280</width>
+						<textoffsetx>25</textoffsetx>
 						<include>SettingsLabel</include>
-						<label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
+						<!-- <label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label> -->
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
-						<posx>272</posx>
+						<posx>283</posx>
 						<posy>3</posy>
 						<height>52</height>
-						<width>80</width>
-						<aspectratio align="left">keep</aspectratio>
+						<width>75</width>
+						<aspectratio align="right">keep</aspectratio>
 						<texture border="3">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="image">
@@ -268,15 +271,18 @@
 						<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(10)">conditional</animation>
 					</control>
 					<control type="label" id="1">
+						<width>280</width>
+						<textoffsetx>25</textoffsetx>
 						<include>SettingsLabelFocus</include>
-						<label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label>
+						<!-- <label>$INFO[ListItem.ChannelNumberLabel]$INFO[ListItem.Label, - ]</label> -->
+						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="image">
-						<posx>272</posx>
+						<posx>283</posx>
 						<posy>3</posy>
 						<height>52</height>
-						<width>80</width>
-						<aspectratio align="left">keep</aspectratio>
+						<width>75</width>
+						<aspectratio align="right">keep</aspectratio>
 						<texture border="3">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedchannellayout>
@@ -476,16 +482,17 @@
 				</rulerlayout>
 				<channellayout height="60" width="360">
 					<control type="label" id="1">
+						<width>283</width>
+						<textoffsetx>25</textoffsetx>
 						<include>SettingsLabel</include>
-						<width>225</width>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 					<control type="image">
-						<posx>232</posx>
+						<posx>283</posx>
 						<posy>3</posy>
 						<height>52</height>
-						<width>126</width>
-						<aspectratio align="left">keep</aspectratio>
+						<width>75</width>
+						<aspectratio align="right">keep</aspectratio>
 						<texture border="3">$INFO[ListItem.Icon]</texture>
 					</control>
 					<control type="image">
@@ -507,16 +514,17 @@
 						<animation effect="fade" start="100" end="50" time="50" condition="!Control.Hasfocus(10)">conditional</animation>
 					</control>
 					<control type="label" id="1">
+						<width>283</width>
+						<textoffsetx>25</textoffsetx>
 						<include>SettingsLabelFocus</include>
-						<width>225</width>
 						<label>$INFO[ListItem.ChannelName]</label>
 					</control>
 					<control type="image">
-						<posx>232</posx>
+						<posx>283</posx>
 						<posy>3</posy>
 						<height>52</height>
-						<width>126</width>
-						<aspectratio align="left">keep</aspectratio>
+						<width>75</width>
+						<aspectratio align="right">keep</aspectratio>
 						<texture border="3">$INFO[ListItem.Icon]</texture>
 					</control>
 				</focusedchannellayout>
