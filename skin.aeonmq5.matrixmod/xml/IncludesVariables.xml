@@ -190,7 +190,8 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),livetvradiostations)">6524</value>
 	</variable>
 	<variable name="Top_GoTo">
-		<value condition="![String.IsEqual(Container(9000).ListItem.Property(id),weather) | String.IsEqual(Container(9000).ListItem.Property(id),settings)]">510</value>
+		<value condition="![String.IsEqual(Container(9000).ListItem.Property(id),weather) | String.IsEqual(Container(9000).ListItem.Property(id),settings)] + !String.IsEqual(Container(510).NumItems,0)">510</value>
+		<value condition="![String.IsEqual(Container(9000).ListItem.Property(id),weather) | String.IsEqual(Container(9000).ListItem.Property(id),settings)] + String.IsEqual(Container(510).NumItems,0)">5100</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(id),weather) | String.IsEqual(Container(9000).ListItem.Property(id),settings)">520</value>
 	</variable>
 	<variable name="value_watchedcolor">
