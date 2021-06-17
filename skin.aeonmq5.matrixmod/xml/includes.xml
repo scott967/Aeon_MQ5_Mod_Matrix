@@ -1035,6 +1035,7 @@
 				<onclick>noop</onclick>
 				<onfocus>AlarmClock(replace,ReplaceWindow(home),0:01,true)</onfocus>
 				<onfocus>Skin.SetString(defaultsettings,2)</onfocus>
+				<onfocus>SetFocus(9000)</onfocus>
 			</control>
 			<control type="image">
 				<posx>0</posx>
