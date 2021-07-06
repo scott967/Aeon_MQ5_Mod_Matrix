@@ -347,9 +347,9 @@
 				<texture>separator_v.png</texture>
 				<visible>![String.IsEmpty(Control.GetLabel(1008)) | Skin.HasSetting(noartpostervideo)]</visible>
 			</control>
-			<control type="grouplist">	<!-- Info panel -->
+			<control type="grouplist">	<!-- Info panel 11/12/13/14/16/17 -->
 				<posx>45</posx>
-				<posy>788</posy>
+				<posy>778</posy>
 				<orientation>vertical</orientation>
 				<itemgap>2</itemgap>
 				<visible>![Container.Content(addons) | Container.Content(genres) | String.IsEmpty(ListItem.DBType)]  | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</visible>
@@ -360,7 +360,7 @@
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
-					<label>[UPPERCASE]$VAR[value_ground12_label]: [/UPPERCASE][COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
+					<label>$VAR[value_ground12_label]: [COLOR=FFFFFAF0]$VAR[value_ground12_value][/COLOR]</label>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
@@ -375,7 +375,7 @@
 				<control type="label">
 					<include>PosterLabel</include>
 					<label>$VAR[value_ground16_label]: [COLOR=FFFFFAF0]$VAR[value_ground16_value][/COLOR]</label>
-					<visible>![Container.Content(songs) | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]]</visible>
+					<visible>![Container.Content(songs) | [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]]  + ![Container.Content(episodes) + !String.IsEmpty(Window(home).Property(NextAired.Status))]</visible>
 				</control>
 				<control type="label">
 					<include>PosterLabel</include>
