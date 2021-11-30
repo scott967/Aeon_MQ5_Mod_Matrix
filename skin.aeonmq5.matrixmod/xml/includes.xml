@@ -2261,7 +2261,7 @@
 	</include>
 	<include name="DialogTextBox">
 		<posx>1155</posx>
-		<posy>3</posy>
+		<posy>-10</posy>
 		<width>750</width>
 		<height>90</height>
 		<align>right</align>
