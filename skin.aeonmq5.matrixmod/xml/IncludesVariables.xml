@@ -4419,22 +4419,6 @@
 		<value condition="!String.Contains(skin.string(codestep),step3)">$LOCALIZE[31611]</value>
 		<value condition="String.Contains(skin.string(codestep),step3)">$LOCALIZE[31612]</value>
 	</variable>
-	<variable name="value_addon1_solo">
-		<value condition="System.HasAddon(script.artwork.downloader)">$LOCALIZE[31438] - $LOCALIZE[31449]</value>
-		<value condition="!System.HasAddon(script.artwork.downloader)">[COLOR=FFB20000]$LOCALIZE[31435]: Artwork Downloader[/COLOR]</value>
-	</variable>
-	<variable name="value_addon1_gui">
-		<value condition="System.HasAddon(script.artwork.downloader)">$LOCALIZE[31438] - $LOCALIZE[31341]</value>
-		<value condition="!System.HasAddon(script.artwork.downloader)">[COLOR=FFB20000]$LOCALIZE[31435]: Artwork Downloader[/COLOR]</value>
-	</variable>
-	<variable name="value_addon1_auto">
-		<value condition="System.HasAddon(script.artwork.downloader)">$LOCALIZE[31438] - $LOCALIZE[31342]</value>
-		<value condition="!System.HasAddon(script.artwork.downloader)">[COLOR=FFB20000]$LOCALIZE[31435]: Artwork Downloader[/COLOR]</value>
-	</variable>
-	<variable name="value_addon1_custom">
-		<value condition="System.HasAddon(script.artwork.downloader)">$LOCALIZE[31438] - $LOCALIZE[31343]</value>
-		<value condition="!System.HasAddon(script.artwork.downloader)">[COLOR=FFB20000]$LOCALIZE[31435]: Artwork Downloader[/COLOR]</value>
-	</variable>
 	<variable name="value_addon2">
 		<value condition="System.HasAddon(service.tvtunes) + System.AddonIsEnabled(service.tvtunes)">$LOCALIZE[31440]</value>
 		<value condition="!System.HasAddon(service.tvtunes) | !System.AddonIsEnabled(service.tvtunes)">[COLOR=FFB20000]$LOCALIZE[31440] | $LOCALIZE[31435]: TvTunes[/COLOR]</value>
