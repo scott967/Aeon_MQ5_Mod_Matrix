@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2000/9.2.3 -->
 <!-- Leia 10.2.4/10.2.8/10.3.0/10.4.0/10.5.0/10.6.0 -->
-<!-- Matrix 11.0.4 PR18235 -->
+<!-- Matrix 11.0.4 PR18235/11.2.0 -->
 <window>
 	<defaultcontrol>3</defaultcontrol>
 	<coordinates>
@@ -81,8 +81,7 @@
 					<autoscroll delay="8000" time="2000" repeat="8000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
-			<control type="group">
-				<!-- right group game video select -->
+			<control type="group">				<!-- right group game video select -->
 				<posx>75</posx>
 				<animation effect="slide" start="900,0" end="0,0" time="1000" tween="cubic" easing="out">WindowOpen</animation>
 				<animation effect="slide" start="0,0" end="900,0" time="1000" tween="cubic" easing="out">WindowClose</animation>
@@ -369,8 +368,7 @@
 						<visible allowhiddenfocus="true">Control.HasFocus(61) | Control.HasFocus(3) | Control.HasFocus(6)</visible>
 					</control>
 				</control>
-				<control type="group">
-					<!-- Used for games video settings -->
+				<control type="group">					<!-- Used for games video settings -->
 					<visible>Window.IsActive(gamestretchmode) | Window.IsActive(gamevideofilter) | Window.IsActive(gamevideorotation)</visible>
 					<control type="image">
 						<posx>0</posx>
