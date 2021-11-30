@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.14 -->
 <!-- Krypton 9.2.1 window IDs 138 -->
 <!-- Leia 10.3.0 -->
+<!-- Matrix 11.2.0 -->
 <window>
 	<controls>
 		<control type="group">
@@ -15,6 +16,9 @@
 			<control type="label">
 				<include>Dialogs_Label2</include>
 				<label>31461</label>
+			</control>
+			<control type="progress" id="10">
+				<include>Dialogs_Progress</include>
 			</control>
 		</control>
 	</controls>
