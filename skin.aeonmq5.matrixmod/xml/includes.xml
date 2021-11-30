@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.7/10.2.8/10.3.0/10.4.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2/10.6.3 -->
-<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1/11.2.0 -->
 <includes>
 	<include file="Defaults.xml" />
 	<include file="IncludesVariables.xml" />
@@ -337,6 +337,24 @@
 	</include>
 	<include name="Animation_Timer6">
 		<timeperimage>3600000</timeperimage>
+	</include>
+	<include name="FanartAnimation_Timer1">
+		<pauseatend>5000</pauseatend>
+	</include>
+	<include name="FanartAnimation_Timer2">
+		<pauseatend>10000</pauseatend>
+	</include>
+	<include name="FanartAnimation_Timer3">
+		<pauseatend>30000</pauseatend>
+	</include>
+	<include name="FanartAnimation_Timer4">
+		<pauseatend>60000</pauseatend>
+	</include>
+	<include name="FanartAnimation_Timer5">
+		<pauseatend>600000</pauseatend>
+	</include>
+	<include name="FanartAnimation_Timer6">
+		<pauseatend>3600000</pauseatend>
 	</include>
 	<include name="Animation_CDart">
 		<animation effect="rotate" end="-360" center="auto" time="2000" loop="true" reversible="false" condition="!Player.Paused + String.IsEqual(skin.string(cdart_seconds),2000)">Conditional</animation>
