@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 windowIDs/9.2.2 -->
 <!-- Leia 10.3.0/10.5.1 /10.6.0/10.6.2-->
-<!-- Matrix 11.0.1/11.0.4/11.0.5/11.1.1 -->
+<!-- Matrix 11.0.1/11.0.4/11.0.5/11.1.1/11.2.0 -->
 <!-- Includes:  Quickfix InvisibleButton Playlists HomeBG Animation_Fade LiveBG Animation_Window HomeRSS Animation_HomeGlass Animation_CDart  Animation_HomeNowPlaying Animation_Widgets Animation_HomeGlass2 Animation_HomeFade -->
 <!-- NextTracksContent Animation_HomePanel HomeFlagSeparator HomeFlagLabel mf_contentmovies -->
 <!--
@@ -52,37 +52,75 @@ Group 602: Widgets
 			<onclick>SetFocus(9000)</onclick>
 			<onfocus>$INFO[Skin.String(submenu_action)]</onfocus>
 		</control>
-		<control type="list" id="7044"> <!-- was invisible button 5044 check if artist info has extrafanart note: if artist info entry is normalized it isn't found -->
-			<posx>-500</posx>
-			<posy>-500</posy>
-			<height>400</height>
-			<width>50</width>
-			<visible>Player.HasAudio + !PVR.IsPlayingRadio + Skin.HasSetting(customlogo) +  !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
-			<itemlayout />
-			<focusedlayout />
-			<content target="filemanager">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]\extrafanart\</content>
+		<control type="group"><!-- folderarts check -->
+			<visible>Skin.HasSetting(use_folderarts)</visible>
+			<control type="list" id="7044"><!-- was invisible button 5044 check if artist info has extrafanart note: if artist info entry is normalized it isn't found -->
+				<posx>-500</posx>
+				<posy>-500</posy>
+				<height>400</height>
+				<width>50</width>
+				<visible>Player.HasAudio + !PVR.IsPlayingRadio + Skin.HasSetting(customlogo) +  !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
+				<itemlayout/>
+				<focusedlayout/>
+				<content target="filemanager">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]\extrafanart\</content>
+			</control>
+			<control type="list" id="7045"><!-- was 5045 check if video has extrafanartfanart -->
+				<posx>-500</posx>
+				<posy>-500</posy>
+				<height>400</height>
+				<width>50</width>
+				<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin) + !PVR.IsPlayingTV</visible>
+				<itemlayout/>
+				<focusedlayout/>
+				<content target="filemanager">$INFO[Player.FolderPath]extrafanart\</content>
+			</control>
+			<control type="list" id="7046"><!-- was 5046 check if video parent has extrafanart (MVs/episodes in seasons)  -->
+				<posx>-500</posx>
+				<posy>-500</posy>
+				<height>400</height>
+				<width>50</width>
+				<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin) + !PVR.IsPlayingTV</visible>
+				<itemlayout/>
+				<focusedlayout/>
+				<content target="filemanager">$INFO[Player.FolderPath,,..\extrafanart\]</content>
+			</control>
 		</control>
-		<control type="list" id="7045"> <!-- was 5045 check if video has extrafanartfanart -->
-			<posx>-500</posx>
-			<posy>-500</posy>
-			<height>400</height>
-			<width>50</width>
-			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin) + !PVR.IsPlayingTV</visible>
-			<itemlayout />
-			<focusedlayout />
-			<content target="filemanager">$INFO[Player.FolderPath]extrafanart\</content>
+		<control type="fadelabel" id="7047">  <!-- video fanartx check -->
+			<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)] + Player.HasVideo + System.ItemTime(8) + !Skin.HasSetting(use_folderarts)</visible>
+			<include condition="String.IsEqual(skin.string(homebg_seconds),5000)">FanartAnimation_Timer1</include>
+			<include condition="String.IsEqual(skin.string(homebg_seconds),10000)">FanartAnimation_Timer2</include>
+			<include condition="String.IsEqual(skin.string(homebg_seconds),30000)">FanartAnimation_Timer3</include>
+			<include condition="String.IsEqual(skin.string(homebg_seconds),60000)">FanartAnimation_Timer4</include>
+			<include condition="String.IsEqual(skin.string(homebg_seconds),600000)">FanartAnimation_Timer5</include>
+			<include condition="String.IsEqual(skin.string(homebg_seconds),3600000)">FanartAnimation_Timer6</include>
+			<description>Randomizer for plugin-free multiple fanart</description>
+			<top>-1000</top>
+			<width>1</width>
+			<height>1</height>
+			<info>Player.Art(fanart)</info>
+			<info>Player.Art(fanart1)</info>
+			<info>Player.Art(fanart2)</info>
+			<info>Player.Art(fanart3)</info>
+			<info>Player.Art(fanart4)</info>
+			<info>Player.Art(fanart5)</info>
+			<info>Player.Art(fanart6)</info>
+			<info>Player.Art(fanart7)</info>
+			<info>Player.Art(fanart8)</info>
+			<info>Player.Art(fanart9)</info>
+			<info>Player.Art(fanart10)</info>
+			<info>Player.Art(fanart11)</info>
+			<info>Player.Art(fanart12)</info>
+			<info>Player.Art(fanart13)</info>
+			<info>Player.Art(fanart14)</info>
+			<info>Player.Art(fanart15)</info>
+			<randomize>true</randomize>
+			<scroll>false</scroll>
+			<scrollout>false</scrollout>
+			<!-- Resets the timer when navigating to a new item, so each item's first visible fanart will
+		show for the full amount of time -->
+			<resetonlabelchange>true</resetonlabelchange>
 		</control>
-		<control type="list" id="7046"> <!-- was 5046 check if video parent has extrafanart (MVs/episodes in seasons)  -->
-			<posx>-500</posx>
-			<posy>-500</posy>
-			<height>400</height>
-			<width>50</width>
-			<visible>Player.HasVideo + !String.StartsWith(Player.FolderPath,Plugin) + !PVR.IsPlayingTV</visible>
-			<itemlayout />
-			<focusedlayout />
-			<content target="filemanager">$INFO[Player.FolderPath,,..\extrafanart\]</content>
-		</control>
-		<control type="multiimage">
+		<control type="multiimage"><!-- skin backgrounds -->
 			<include>HomeBG</include>
 			<imagepath background="true">$VAR[value_menubg]</imagepath>
 		</control>
@@ -100,14 +138,14 @@ Group 602: Widgets
 			<visible>Player.HasAudio + System.IdleTime(8) + !Integer.IsGreater(Container(7044).NumItems,0)</visible>
 		</control>
 		<control type="multiimage">
-		<!-- Audio fanart -->
+			<!-- Audio fanart -->
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]/extrafanart/</imagepath>
 			<visible>Player.HasAudio + !PVR.IsPlayingRadio + System.IdleTime(8) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
 		</control>
 		<control type="multiimage">
-		<!-- Widget fanart -->
+			<!-- Widget fanart -->
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<imagepath background="true">$INFO[Container(510).ListItem.Property(Fanart)]</imagepath>
@@ -293,7 +331,7 @@ Group 602: Widgets
 					<visible>Player.HasAudio + !Control.HasFocus(603) | Player.HasVideo + !Skin.HasSetting(homevisvideo)</visible>
 				</control>
 				<control type="multiimage">
-				<!-- show AS 2.X fanart if avail else player artist fanart else default background -->
+					<!-- show AS 2.X fanart if avail else player artist fanart else default background -->
 					<posx>52</posx>
 					<posy>141</posy>
 					<width>666</width>
@@ -306,7 +344,7 @@ Group 602: Widgets
 					<visible>Player.HasAudio + !Control.HasFocus(603) + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
 				</control>
 				<control type="image">
-				<!-- show AS 3.X fanart if avail else player artist fanart else default background -->
+					<!-- show AS 3.X fanart if avail else player artist fanart else default background -->
 					<posx>52</posx>
 					<posy>141</posy>
 					<width>666</width>
@@ -810,7 +848,7 @@ Group 602: Widgets
 						</control>
 						<control type="label">
 							<include>HomeFlagSeparator</include>
-							<visible>[!String.IsEmpty(Container(510).ListItem.Property(Year)) + Integer.IsGreater(Container(510).ListItem.Property(Year),0)] | !String.IsEmpty(Container(510).ListItem.Date) </visible>
+							<visible>[!String.IsEmpty(Container(510).ListItem.Property(Year)) + Integer.IsGreater(Container(510).ListItem.Property(Year),0)] | !String.IsEmpty(Container(510).ListItem.Date)</visible>
 						</control>
 						<control type="label">
 							<!-- EPG title -->
@@ -891,14 +929,14 @@ Group 602: Widgets
 						<autoscroll delay="20000" time="3000" repeat="20000">!Skin.HasSetting(noallowscroll)</autoscroll>
 					</control>
 					<control type="progress">
-					<posx>8</posx>
-					<posy>530</posy>
-					<width>825</width>
-					<height>30</height>
-					<info>Container(510).ListItem.Progress</info>
-					<texturebg>progress_clear.png</texturebg>
-					<visible>!String.IsEmpty(Container(510).ListItem.Progress)</visible>
-				</control>
+						<posx>8</posx>
+						<posy>530</posy>
+						<width>825</width>
+						<height>30</height>
+						<info>Container(510).ListItem.Progress</info>
+						<texturebg>progress_clear.png</texturebg>
+						<visible>!String.IsEmpty(Container(510).ListItem.Progress)</visible>
+					</control>
 				</control>
 			</control>
 			<control type="image" id="9931">

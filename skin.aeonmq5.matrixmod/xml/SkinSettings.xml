@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.3.0/10.4.0/10.6.2 -->
-<!-- Matrix 11.0.4/11.1.1 -->
+<!-- Matrix 11.0.4/11.1.1/11.2.0 -->
 <window>
 	<defaultcontrol always="true">9100</defaultcontrol>
 	<onunload condition="String.Contains(skin.string(customwindow),video)">SetFocus(50)</onunload>
@@ -138,8 +138,13 @@
 					<onclick>Skin.ToggleSetting(loadviz)</onclick>
 					<selected>Skin.HasSetting(loadviz)</selected>
 				</control>
+				<control type="radiobutton" id="1028">
+					<label>$LOCALIZE[31498]</label>
+					<onclick>Skin.ToggleSetting(use_fanarts)</onclick>
+					<selected>Skin.HasSetting(use_fanarts)</selected>
+				</control>
 			</control>
-			<control type="grouplist" id="9002">				<!-- Main Menu  -->
+			<control type="grouplist" id="9002">				<!-- Home Main Menu  -->
 				<visible>Container(9100).HasFocus(17)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -657,8 +662,7 @@
 					<visible>!String.IsEmpty(skin.string(pvrwidget))</visible>
 				</control>
 			</control>
-			<control type="grouplist" id="9003">
-				<!-- Restore -->
+			<control type="grouplist" id="9003">				<!-- Restore -->
 				<!-- nao trocar ids -->
 				<visible>Container(9100).HasFocus(32)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
@@ -716,8 +720,7 @@
 					<visible>Skin.HasSetting(resetmode)</visible>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Alert reset  -->
+			<control type="group">				<!-- Alert reset  -->
 				<visible>Container(9100).HasFocus(32)</visible>
 				<include>Animation_Fade</include>
 				<control type="image">
@@ -1931,8 +1934,7 @@
 					<scroll>true</scroll>
 				</control>
 			</control>
-			<control type="grouplist" id="9009">
-				<!-- Disco -->
+			<control type="grouplist" id="9009">				<!-- Disc -->
 				<visible>Container(9100).HasFocus(34)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -2291,16 +2293,15 @@
 			<control type="scrollbar" id="85">
 				<include>ScrollBar_Vertical</include>
 				<posx>1860</posx>
-				<posy>202</posy>
-				<height>698</height>
+				<posy>178</posy>
+				<height>898</height>
 				<onleft>9001</onleft>
 				<onright>9100</onright>
 				<animation effect="fade" time="200">Visible</animation>
 				<animation effect="fade" time="50">Hidden</animation>
 				<visible allowhiddenfocus="true">Control.IsVisible(9001)</visible>
 			</control>
-			<control type="grouplist" id="9004">
-				<!-- Themes -->
+			<control type="grouplist" id="9004">				<!-- Themes -->
 				<visible>Container(9100).HasFocus(22)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -2394,8 +2395,7 @@
 					<visible>String.Contains(skin.string(theme),mytheme)</visible>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Theme preview window -->
+			<control type="group">				<!-- Theme preview window -->
 				<visible>Container(9100).HasFocus(22)</visible>
 				<include>Animation_Fade</include>
 				<control type="image">
@@ -2437,8 +2437,7 @@
 					<autoscroll delay="15000" time="2000" repeat="15000">!Skin.HasSetting(noallowscroll)</autoscroll>
 				</control>
 			</control>
-			<control type="grouplist" id="9005">
-				<!-- Styles -->
+			<control type="grouplist" id="9005">				<!-- Styles -->
 				<visible>Container(9100).HasFocus(23)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -2502,8 +2501,7 @@
 					<visible>String.IsEqual(skin.string(style),mystyle)</visible>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Estilos -->
+			<control type="group">				<!-- Estilos -->
 				<visible>Container(9100).HasFocus(23) | ControlGroup(9005).HasFocus</visible>
 				<include>Animation_Fade</include>
 				<control type="image">
@@ -2739,8 +2737,7 @@
 					</control>
 				</control>
 			</control>
-			<control type="grouplist" id="9008">
-				<!-- Fonts -->
+			<control type="grouplist" id="9008">				<!-- Fonts -->
 				<visible>Container(9100).HasFocus(24)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -2811,8 +2808,7 @@
 					<selected>String.IsEqual(skin.string(font),font8)</selected>
 				</control>
 			</control>
-			<control type="grouplist" id="9011">
-				<!-- Icons/Backgrounds -->
+			<control type="grouplist" id="9011">				<!-- Icons/Backgrounds -->
 				<visible>Container(9100).HasFocus(35)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<posx>360</posx>
@@ -2883,8 +2879,7 @@
 					<onclick>Skin.ToggleSetting(Use_lang_flags)</onclick>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Estilos -->
+			<control type="group">				<!-- Estilos -->
 				<visible>Container(9100).HasFocus(24) | ControlGroup(9008).HasFocus</visible>
 				<include>Animation_Fade</include>
 				<include>VirtualMenuBar</include>
@@ -2942,8 +2937,7 @@
 					<visible>Skin.HasSetting(mainmenuglass)</visible>
 				</control>
 			</control>
-			<control type="group" id="9007">
-				<!-- Mobilia -->
+			<control type="group" id="9007">				<!-- Mobilia -->
 				<visible>Container(9100).HasFocus(19)</visible>
 				<animation effect="fade" reversible="true" time="150">VisibleChange</animation>
 				<control type="group">
@@ -3223,8 +3217,7 @@
 					<colordiffuse>FF8F2400</colordiffuse>
 				</control>
 			</control>
-			<control type="group">
-				<!-- Seletor de cores -->
+			<control type="group">				<!-- Seletor de cores -->
 				<posx>360</posx>
 				<visible>Container(9100).HasFocus(20)</visible>
 				<control type="image">

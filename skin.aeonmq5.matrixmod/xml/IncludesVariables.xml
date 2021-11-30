@@ -2951,9 +2951,10 @@
 		<value condition="Player.HasVideo">$INFO[VideoPlayer.Cover]</value>
 		<value condition="Player.HasAudio">$INFO[MusicPlayer.Cover]</value>
 	</variable>
-	<variable name="value_videoplayerfanart">  <!-- show extrafanart if avail else fanart else default background-->
-		<value condition="[VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)] + Integer.IsGreater(Container(7046).NumItems,0)">$INFO[Player.FolderPath,,../extrafanart/]</value>
-		<value condition="Integer.IsGreater(Container(7045).NumItems,0)">$INFO[Player.FolderPath]extrafanart/</value>
+	<variable name="value_videoplayerfanart">  <!--  home window show extrafanart if avail and use_folderarts or fanartx else fanart else default background-->
+		<value condition="Skin.HasSetting(use_folderarts) + [VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)] + Integer.IsGreater(Container(7046).NumItems,0)">$INFO[Player.FolderPath,,../extrafanart/]</value>
+		<value condition="Skin.HasSetting(use_folderarts) + Integer.IsGreater(Container(7045).NumItems,0)">$INFO[Player.FolderPath]extrafanart/</value>
+		<value condition="!Skin.HasSetting(use_folderarts) + !String.IsEmpty(Player.Art(fanart))">$INFO[Control.GetLabel(7047)]</value>		<!-- fanartx fadelabel -->
 		<value condition="!String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
 		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(tvshow.fanart)]</value>
 		<value>$VAR[value_menubg]</value>
@@ -3173,7 +3174,8 @@
 	<variable name="value_videofanart">
 		<value condition="Container.Content(movies) + String.Contains(skin.string(moviesfanart),fallback)">$INFO[Skin.String(CustomFallbackMoviesBG)]</value>
 		<value condition="Container.Content(movies) + String.Contains(skin.string(moviesfanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
-		<value condition="Container.Content(movies) + String.Contains(skin.string(moviesfanart),extra) + Integer.IsGreater(Container(5020).NumItems,0) + !String.StartsWith(ListItem.Path,Plugin)">$INFO[ListItem.Path]extrafanart/</value>
+		<value condition="Container.Content(movies) + String.Contains(skin.string(moviesfanart),extra) + Skin.HasSetting(use_folderarts) + Integer.IsGreater(Container(5020).NumItems,0) + !String.StartsWith(ListItem.Path,Plugin)">$INFO[ListItem.Path]extrafanart/</value>
+		<value condition="Container.Content(movies) + String.Contains(skin.string(moviesfanart),extra)">$INFO[Control.GetLabel(5053)]</value>	<!-- do not use extrafanart folder -->
 		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),fallback)">$INFO[Skin.String(CustomFallbackMusicVideosBG)]</value>
 		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 		<value condition="Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra) + Integer.IsGreater(Container(5020).NumItems,0)  + !String.StartsWith(ListItem.Path,Plugin)">$INFO[ListItem.Path]extrafanart/</value>
