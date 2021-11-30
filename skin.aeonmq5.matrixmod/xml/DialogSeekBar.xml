@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 Isengard 7.1.8/7.1.9 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs/9.2.3-->
 <!-- Leia 10.3.0/10.4.010.5.0/10.6.1 -->
-<!-- Matrix 11.0.2/11.0.3/11.0.4/11.1.1 -->
+<!-- Matrix 11.0.2/11.0.3/11.0.4/11.1.1/11.2.0 -->
 <window>
 	<defaultcontrol>23</defaultcontrol>
 	<visible>Window.IsActive(fullscreenvideo) + ![Window.IsActive(videoosd) | Window.IsActive(fullscreeninfo) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(SubtitleSearch)]</visible>
@@ -465,6 +465,30 @@
 					<effect type="fade" start="100" end="0" time="3000" />
 				</animation>
 				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.50)" reversible="false">
+					<effect type="slide" end="300,0" time="200" />
+					<effect type="fade" start="100" end="0" time="3000" />
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.60)" reversible="false">
+					<effect type="slide" end="300,0" time="200" />
+					<effect type="fade" start="100" end="0" time="3000" />
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.70)" reversible="false">
+					<effect type="slide" end="300,0" time="200" />
+					<effect type="fade" start="100" end="0" time="3000" />
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.80)" reversible="false">
+					<effect type="slide" end="300,0" time="200" />
+					<effect type="fade" start="100" end="0" time="3000" />
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,1.90)" reversible="false">
+					<effect type="slide" end="300,0" time="200" />
+					<effect type="fade" start="100" end="0" time="3000" />
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,2.00)" reversible="false">
+					<effect type="slide" end="300,0" time="200" />
+					<effect type="fade" start="100" end="0" time="3000" />
+				</animation>
+				<animation type="Conditional" condition="String.IsEqual(Player.Playspeed,2.10)" reversible="false">
 					<effect type="slide" end="300,0" time="200" />
 					<effect type="fade" start="100" end="0" time="3000" />
 				</animation>
