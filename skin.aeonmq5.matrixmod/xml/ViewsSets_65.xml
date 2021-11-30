@@ -2,7 +2,7 @@
 <!-- Aeon MQ 5 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
 <!-- Leia 10.3.0/10.4.0/10.5.2 -->
-<!-- Matrix 11.0.2/11.1.1 -->
+<!-- Matrix 11.0.2/11.1.1/11.2.0 -->
 <includes>
 	<!--##################################################################################   VISTA SETS - ID 65   ##################################################################################-->
 	<include name="SetsLabel">
@@ -168,10 +168,9 @@
 				<animation effect="fade" start="0" end="100" time="350" tween="sine" easing="out" condition="true">Visible</animation>
 				<visible>Control.HasFocus(5801)</visible>
 			</control>
-			<control type="group">
+			<control type="group">	<!-- MAIN 65 LIST GROUP -->
 				<animation effect="slide" start="0,0" end="1050,0" time="250" tween="sine" easing="out" condition="Control.HasFocus(5801)">Conditional</animation>
-				<control type="group">
-					<!-- VIDEO SEM ESTOJO -->
+				<control type="group">	<!-- video without case -->
 					<posx>1005</posx>
 					<posy>440</posy>
 					<include>Animation_Fade</include>
@@ -188,8 +187,7 @@
 						<bordertexture border="-2">black.png</bordertexture>
 					</control>
 				</control>
-				<control type="group">
-					<!-- FILMES ESTOJO -->
+				<control type="group">	<!-- Videos with case -->
 					<posx>1028</posx>
 					<posy>428</posy>
 					<include>Animation_Fade</include>
@@ -332,8 +330,32 @@
 				<texture flipy="true">shadow_h.png</texture>
 				<colordiffuse>C3FFFFFF</colordiffuse>
 			</control>
-			<!-- Movies in Set su0pplied by skin,info service -->
-			<control type="list" id="5801">
+			<!-- Movies in Set supplied by skin info service -->
+			<control type="label">
+				<posx>1808</posx>
+				<posy>225</posy>
+				<width>142</width>
+				<height>60</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>Font_18A</font>
+				<label>$INFO[Container(5801).CurrentItem]/$INFO[Container(5801).NumItems]</label>
+				<textcolor>FFFFFAF0</textcolor>
+				<animation effect="fade" time="1000">VisibleChange</animation>
+				<visible>!Integer.IsEqual(Container.CurrentItem,0) + ![Container(5801).OnNext | Container(5801).OnPrevious]</visible>
+			</control>
+			<control type="image">
+				<posx>1878</posx>
+				<posy>225</posy>
+				<width>30</width>
+				<height>60</height>
+				<texture>arrow_settings.png</texture>
+				<colordiffuse>E4FFFAF0</colordiffuse>
+				<include>Animation_Fade</include>
+				<animation effect="fade" start="20" end="80" time="700" condition="true" pulse="true">Conditional</animation>
+				<visible>Control.IsVisible(5801) + Container(5801).HasNext</visible>
+			</control>
+			<control type="list" id="5801">	<!--  movies in current set -->
 				<viewtype>list</viewtype>
 				<posx>45</posx>
 				<posy>112</posy>
