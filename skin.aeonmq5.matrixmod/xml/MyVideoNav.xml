@@ -18,7 +18,7 @@
 	<onunload condition="!Skin.HasSetting(ontvtunes) + System.HasAddon(service.tvtunes)">ClearProperty(TvTunesBlocked)</onunload>
 	<views>51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71</views>
 	<controls>
-		<control type="group"><!--  group for folder extrafanart checks -->
+		<control type="group">	<!--  group for folder extrafanart checks -->
 			<visible>Skin.HasSetting(use_folderarts)</visible>
 			<control type="list" id="5020"><!-- check if video movies tvshows musicvideos sets has extrafanartfanart -->
 				<posx>-500</posx>
@@ -28,9 +28,9 @@
 				<visible>![String.StartsWith(ListItem.Path,Plugin) | ListItem.IsParentFolder] + [[Container.Content(movies) + !Skin.HasSetting(trailers) + String.Contains(skin.string(moviesfanart),extra)] | [Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra)] | [Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)]]</visible>
 				<itemlayout/>
 				<focusedlayout/>
-				<content target="filemanager">$INFO[ListItem.Path]extrafanart/</content>
+				<content target="filemanager">$INFO[ListItem.Path]extrafanart\</content>
 			</control>
-			<control type="list" id="5021"><!-- check if video seasons has extrafanartfanart -->
+			<control type="list" id="5021"><!-- check if video seasons has extrafanart -->
 				<posx>-500</posx>
 				<posy>-500</posy>
 				<height>400</height>
@@ -54,49 +54,7 @@
 		<control type="fadelabel" id="5053">
 			<visible>!Skin.HasSetting(use_folderarts)</visible>
 			<description>Randomizer for plugin-free multiple fanart</description>
-			<posx>-500</posx>
-			<posy>-500</posy>
-			<width>1</width>
-			<height>1</height>
-			<info>ListItem.Art(fanart)</info>
-			<info>ListItem.Art(fanart1)</info>
-			<info>ListItem.Art(fanart2)</info>
-			<info>ListItem.Art(fanart3)</info>
-			<info>ListItem.Art(fanart4)</info>
-			<info>ListItem.Art(fanart5)</info>
-			<info>ListItem.Art(fanart6)</info>
-			<info>ListItem.Art(fanart7)</info>
-			<info>ListItem.Art(fanart8)</info>
-			<info>ListItem.Art(fanart9)</info>
-			<info>ListItem.Art(fanart10)</info>
-			<info>ListItem.Art(tvshow.fanart)</info>
-			<info>ListItem.Art(tvshow.fanart1)</info>
-			<info>ListItem.Art(tvshow.fanart2)</info>
-			<!-- ... repeat for each numbered fanart -->
-			<info>ListItem.Art(tvshow.fanart9)</info>
-			<!-- Container.ListItem.Art() are filled based on the focused ListItem in the **focused container** in Leia -->
-			<info>Container.ListItem.Art(fanart)</info>
-			<info>Container.ListItem.Art(fanart1)</info>
-			<info>Container.ListItem.Art(fanart2)</info>
-			<info>Container.ListItem.Art(fanart4)</info>
-			<info>Container.ListItem.Art(fanart5)</info>
-			<info>Container.ListItem.Art(fanart6)</info>
-			<info>Container.ListItem.Art(fanart7)</info>
-			<info>Container.ListItem.Art(fanart8)</info>
-			<info>Container.ListItem.Art(fanart9)</info>
-			<info>Container.ListItem.Art(fanart10)</info>
-			<info>Container.ListItem.Art(tvshow.fanart)</info>
-			<info>Container.ListItem.Art(tvshow.fanart1)</info>
-			<info>Container.ListItem.Art(tvshow.fanart2)</info>
-			<randomize>true</randomize>
-			<pauseatend>10000</pauseatend><!-- Time to show each image, in milliseconds -->
-			<!-- No scrolling so only the pauseatend above (plus a short fade-in) affects length of time each
-		image is shown -->
-			<scroll>false</scroll>
-			<scrollout>false</scrollout>
-			<!-- Resets the timer when navigating to a new item, so each item's first visible fanart will
-		show for the full amount of time -->
-			<resetonlabelchange>true</resetonlabelchange>
+			<include>video_fanartfadelabel</include>
 		</control>
 		<control type="image" id="5023">
 			<!-- Season single Fanart -->
@@ -133,7 +91,7 @@
 			<content sortby="year" sortorder="ascending">$INFO[ListItem.FolderPath]</content>
 		</control>
 		<control type="image">	<!-- background images -->
-			<!-- Single Fanart -->
+			<!-- Single Fanart defaults -->
 			<include>WindowBG</include>
 			<texture background="true">$VAR[value_defaultvideofanart]</texture>
 			<visible>!Container.Content(genres)</visible>
@@ -142,7 +100,7 @@
 			<!-- Multi Fanart extrafanart folder if use_folderarts else fadelabel  -->
 			<include>WindowBG</include>
 			<imagepath background="true">$VAR[value_videofanart]</imagepath>
-			<visible>!Container.Content(genres) + ![String.IsEmpty(Control.GetLabel(5025)) + Skin.HasSetting(use_folderarts)]</visible>
+			<visible>!Container.Content(genres)</visible>
 		</control>
 		<control type="image">
 			<!-- Single Fanart Genre -->

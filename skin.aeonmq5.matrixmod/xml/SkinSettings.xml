@@ -138,10 +138,12 @@
 					<onclick>Skin.ToggleSetting(loadviz)</onclick>
 					<selected>Skin.HasSetting(loadviz)</selected>
 				</control>
-				<control type="radiobutton" id="1028">
-					<label>$LOCALIZE[31498]</label>
-					<onclick>Skin.ToggleSetting(use_fanarts)</onclick>
-					<selected>Skin.HasSetting(use_fanarts)</selected>
+				<control type="togglebutton" id="1028">
+					<label>$LOCALIZE[31474]: $LOCALIZE[31498] $LOCALIZE[20334]</label>
+					<altlabel>$LOCALIZE[31474]: $LOCALIZE[20445][nn]</altlabel>
+					<onclick>Skin.ToggleSetting(use_folderarts)</onclick>
+					<altclick>Skin.ToggleSetting(use_folderarts)</altclick>
+					<usealttexture>!Skin.HasSetting(use_folderarts)</usealttexture>
 				</control>
 			</control>
 			<control type="grouplist" id="9002">				<!-- Home Main Menu  -->

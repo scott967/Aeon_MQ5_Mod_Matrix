@@ -4833,6 +4833,66 @@
 			</item>
 		</content>
 	</include>
+	<include name="video_fanartfadelabel">
+			<posx>-500</posx>
+			<posy>-500</posy>
+			<width>1</width>
+			<height>1</height>
+			<info>ListItem.Art(fanart)</info>
+			<info>ListItem.Art(fanart1)</info>
+			<info>ListItem.Art(fanart2)</info>
+			<info>ListItem.Art(fanart3)</info>
+			<info>ListItem.Art(fanart4)</info>
+			<info>ListItem.Art(fanart5)</info>
+			<info>ListItem.Art(fanart6)</info>
+			<info>ListItem.Art(fanart7)</info>
+			<info>ListItem.Art(fanart8)</info>
+			<info>ListItem.Art(fanart9)</info>
+			<info>ListItem.Art(fanart10)</info>
+			<info>ListItem.Art(tvshow.fanart)</info>
+			<info>ListItem.Art(tvshow.fanart1)</info>
+			<info>ListItem.Art(tvshow.fanart2)</info>
+			<info>ListItem.Art(tvshow.fanart3)</info>
+			<info>ListItem.Art(tvshow.fanart2)</info>
+			<info>ListItem.Art(tvshow.fanart4)</info>
+			<info>ListItem.Art(tvshow.fanart5)</info>
+			<info>ListItem.Art(tvshow.fanart6)</info>
+			<info>ListItem.Art(tvshow.fanart7)</info>
+			<info>ListItem.Art(tvshow.fanart8)</info>
+			<info>ListItem.Art(tvshow.fanart9)</info>
+			<info>ListItem.Art(tvshow.fanart10)</info>
+			<!-- Container.ListItem.Art() are filled based on the focused ListItem in the **focused container** in Leia -->
+			<info>Container.ListItem.Art(fanart)</info>
+			<info>Container.ListItem.Art(fanart1)</info>
+			<info>Container.ListItem.Art(fanart2)</info>
+			<info>Container.ListItem.Art(fanart4)</info>
+			<info>Container.ListItem.Art(fanart5)</info>
+			<info>Container.ListItem.Art(fanart6)</info>
+			<info>Container.ListItem.Art(fanart7)</info>
+			<info>Container.ListItem.Art(fanart8)</info>
+			<info>Container.ListItem.Art(fanart9)</info>
+			<info>Container.ListItem.Art(fanart10)</info>
+			<info>Container.ListItem.Art(tvshow.fanart)</info>
+			<info>Container.ListItem.Art(tvshow.fanart1)</info>
+			<info>Container.ListItem.Art(tvshow.fanart2)</info>
+			<info>Container.ListItem.Art(tvshow.fanart3)</info>
+			<info>Container.ListItem.Art(tvshow.fanart4)</info>
+			<info>Container.ListItem.Art(tvshow.fanart5)</info>
+			<info>Container.ListItem.Art(tvshow.fanart6)</info>
+			<info>Container.ListItem.Art(tvshow.fanart7)</info>
+			<info>Container.ListItem.Art(tvshow.fanart8)</info>
+			<info>Container.ListItem.Art(tvshow.fanart9)</info>
+			<info>Container.ListItem.Art(tvshow.fanart10)</info>
+			<randomize>true</randomize>
+			<pauseatend>6000</pauseatend><!-- Time to show each image, in milliseconds -->
+			<!-- No scrolling so only the pauseatend above (plus a short fade-in) affects length of time each
+		image is shown -->
+			<scroll>false</scroll>
+			<scrollout>false</scrollout>
+			<!-- Resets the timer when navigating to a new item, so each item's first visible fanart will
+		show for the full amount of time -->
+			<resetonlabelchange>true</resetonlabelchange>
+	</include>
 	<expression name="Can_record">Player.CanRecordPlayingChannel | Player.IsRecordingPlayingChannel | Pvr.IsRecording</expression>
 	<expression name="HasDetailInfo">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,video) | Container.Content(addons) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | !ListItem.IsFolder + [Window.IsVisible(tvrecordings) | Window.IsVisible(radiorecordings)]</expression>
 	<expression name="HasUserRating">String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,tvshow) | Striing.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode) | Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist)</expression>
