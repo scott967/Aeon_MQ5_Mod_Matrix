@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.16/9.1.18/9.1.19/9.2.1 window IDs 2003/9.2.2 -->
 <!-- Leia 10.2.5/10.3.0/10.4.0/10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.3/11.0.4/11.1.1 -->
+<!-- Matrix 11.0.1/11.0.3/11.0.4/11.1.1/11.2.0 -->
 <window>
 	<onload>Control.SetFocus(50,0,absolute)</onload>
 	<onload>Control.SetFocus(149)</onload>
@@ -13,35 +13,37 @@
 			<!-- default group -->
 			<include>Animation_Window</include>
 			<!-- <animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window(home).Property(extendedinfo_running),true)">Conditional</animation> -->
-			<control type="multiimage">
-				<!-- Multi Fanart -->
-				<include>WindowBG</include>
-				<imagepath background="true">$VAR[value_videofanart]</imagepath>
-				<visible>!Player.HasVideo | Player.HasVideo + [!Skin.HasSetting(livebg) + Window.IsVisible(videos) | Skin.HasSetting(noliveplaylistbg) + Window.IsVisible(videoplaylist)]</visible>
+			<control type="group"><!-- folderarts check use extrafanart -->
+				<visible>Skin.HasSetting(use_folderarts)</visible>
+				<control type="multiimage" id="5020">
+					<!-- Extra Fanart Movies/TvShows/MusicVideos -->
+					<include>InvisibleButton</include>
+					<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
+					<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + String.Contains(skin.string(moviesfanart),extra) | Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)] + !ListItem.IsParentFolder</visible>
+				</control>
+				<control type="multiimage" id="5021">
+					<!-- Extra Fanart Seasons -->
+					<include>InvisibleButton</include>
+					<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
+					<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
+				</control>
+				<control type="multiimage" id="5022">
+					<!-- Extra Fanart Episodes -->
+					<include>InvisibleButton</include>
+					<imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
+					<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
+				</control>
 			</control>
-			<control type="image">
-				<!-- Single Fanart -->
-				<include>WindowBG</include>
-				<texture background="true">$VAR[value_defaultvideofanart]</texture>
-				<visible>!Player.HasVideo | Player.HasVideo + [!Skin.HasSetting(livebg) + Window.IsVisible(videos) | Skin.HasSetting(noliveplaylistbg) + Window.IsVisible(videoplaylist)]</visible>
-			</control>
-			<control type="multiimage" id="5020">
-				<!-- Extra Fanart Movies/TvShows/MusicVideos -->
-				<include>InvisibleButton</include>
-				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>[Container.Content(movies) + !Skin.HasSetting(trailers) + String.Contains(skin.string(moviesfanart),extra) | Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra) | Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)] + !ListItem.IsParentFolder</visible>
-			</control>
-			<control type="multiimage" id="5021">
-				<!-- Extra Fanart Seasons -->
-				<include>InvisibleButton</include>
-				<imagepath background="true">$INFO[ListItem.Path,,extrafanart/]</imagepath>
-				<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),extra) + !ListItem.IsParentFolder</visible>
-			</control>
-			<control type="multiimage" id="5022">
-				<!-- Extra Fanart Episodes -->
-				<include>InvisibleButton</include>
-				<imagepath background="true">$INFO[ListItem.Path,,../extrafanart/]</imagepath>
-				<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra) + !ListItem.IsParentFolder</visible>
+			<control type="fadelabel" id="5053">
+				<visible>!Skin.HasSetting(use_folderarts)</visible>
+				<description>Randomizer for plugin-free multiple fanart</description>
+				<include>video_fanartfadelabel</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),5000)">FanartAnimation_Timer1</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),10000)">FanartAnimation_Timer2</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),30000)">FanartAnimation_Timer3</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),60000)">FanartAnimation_Timer4</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),600000)">FanartAnimation_Timer5</include>
+				<include condition="String.IsEqual(skin.string(homebg_seconds),3600000)">FanartAnimation_Timer6</include>
 			</control>
 			<control type="image" id="5023">
 				<!-- Season Fanart -->
@@ -59,6 +61,18 @@
 				<!-- Studio icons -->
 				<include>InvisibleButton</include>
 				<texture>$VAR[value_studiosicon]</texture>
+			</control>
+			<control type="image">	<!-- background fanart here -->
+				<!-- Single Fanart -->
+				<include>WindowBG</include>
+				<texture background="true">$VAR[value_defaultvideofanart]</texture>
+				<visible>!Player.HasVideo | Player.HasVideo + [!Skin.HasSetting(livebg) + Window.IsVisible(videos) | Skin.HasSetting(noliveplaylistbg) + Window.IsVisible(videoplaylist)]</visible>
+			</control>
+			<control type="multiimage">
+				<!-- Multi Fanart use extrafanart if skin settins use_folderarts else fanartxx fadelabel -->
+				<include>WindowBG</include>
+				<imagepath background="true">$VAR[value_videofanart]</imagepath>
+				<visible>!Player.HasVideo | Player.HasVideo + [!Skin.HasSetting(livebg) + Window.IsVisible(videos) | Skin.HasSetting(noliveplaylistbg) + Window.IsVisible(videoplaylist)]</visible>
 			</control>
 			<!-- <include>LiveBG</include> -->
 			<control type="image">
@@ -91,7 +105,7 @@
 				<scroll>true</scroll>
 			</control>
 			<!-- edited for MV and sets -->
-			<control type="group">  <!-- set info -->
+			<control type="group">	<!-- set info -->
 				<visible>String.IsEqual(ListItem.DBType, set)</visible>
 				<control type="image">
 					<posx>0</posx>
@@ -129,7 +143,7 @@
 					<scrollout>false</scrollout>
 				</control>
 			</control>
-			<control type="group"> <!-- non-set info -->
+			<control type="group">	<!-- non-set info -->
 				<visible>!String.IsEqual(ListItem.DBType, set)</visible>
 				<control type="label">
 					<posx>45</posx>
@@ -239,7 +253,7 @@
 					<ondown>SetFocus(149)</ondown>
 					<onleft>SetFocus(149)</onleft>
 					<onright>SetFocus(149)</onright>
-					<onclick>ActivateWindow(1112)</onclick>  <!-- custom certification -->
+					<onclick>ActivateWindow(1112)</onclick><!-- custom certification -->
 					<onclick>SetFocus(149)</onclick>
 					<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
 				</control>
@@ -270,8 +284,7 @@
 					<scrollout>false</scrollout>
 				</control>
 				<!--  edit for MV  -->
-				<control type="list" id="49">
-					<!-- Lista de botoes/info -->
+				<control type="list" id="49">	<!--  Info panel left -->
 					<posx>30</posx>
 					<posy>218</posy>
 					<width>1110</width>
@@ -281,7 +294,7 @@
 					<onup>149</onup>
 					<ondown>149</ondown>
 					<itemgap>2</itemgap>
-					<pagecontrol></pagecontrol>
+					<pagecontrol/>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="30" condition="!Skin.HasSetting(Use_lang_flags)">
 						<control type="label">
@@ -678,7 +691,7 @@
 				</control>
 			</control>
 			<control type="image">
-				<posx>317</posx>  <!-- was 308 -->
+				<posx>317</posx><!-- was 308 -->
 				<posy>120</posy>
 				<height>345</height>
 				<width>3</width>
@@ -686,7 +699,7 @@
 			</control>
 			<control type="image">
 				<posx>0</posx>
-				<posy>209</posy> <!-- was 205 -->
+				<posy>209</posy><!-- was 205 -->
 				<height>3</height>
 				<width>1080</width>
 				<texture>separator.png</texture>
@@ -728,7 +741,7 @@
 				<height>200</height>
 				<align>justify</align>
 				<font>Font_18A</font>
-				<label>$VAR[value_plotmoviesets]</label>  <!-- sets view 65 -->
+				<label>$VAR[value_plotmoviesets]</label><!-- sets view 65 -->
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 				<visible>Container.Content(sets) + String.IsEmpty(ListItem.Art(poster))</visible>
@@ -818,7 +831,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_DefaultGlass</include>
 			</control>
-			<control type="grouplist"> <!-- flags except for sets -->
+			<control type="grouplist"><!-- flags except for sets -->
 				<!-- Etiquetas -->
 				<posx>165</posx>
 				<posy>1016</posy>
@@ -918,7 +931,7 @@
 					</control>
 				</control>
 			</control>
-			<control type="grouplist"> <!-- flags for container(50) movie in sets -->
+			<control type="grouplist"><!-- flags for container(50) movie in sets -->
 				<!-- Etiquetas -->
 				<posx>165</posx>
 				<posy>1016</posy>
@@ -1198,7 +1211,7 @@
 					<onup>SetFocus(160)</onup>
 					<ondown>50</ondown>
 					<orientation>horizontal</orientation>
-					<pagecontrol></pagecontrol>
+					<pagecontrol/>
 					<scrolltime>300</scrolltime>
 					<focusposition>3</focusposition>
 					<itemlayout height="38" width="274">
@@ -1340,15 +1353,15 @@
 							<visible>!String.IsEmpty(ListItem.Director) + !Container.Content(sets)</visible>
 						</item>
 						<item id="10">
-							<label>$LOCALIZE[31496]</label> <!-- extra info -->
+							<label>$LOCALIZE[31496]</label><!-- extra info -->
 							<onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>"
-							<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode) | String.IsEqual(ListItem.DbType,set)]</visible>
+<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode) | String.IsEqual(ListItem.DbType,set)]</visible>
 						</item>
 						<item id="11">
 							<!-- Artist Video Clips -->
 							<label>31950</label>
 							<onclick>RunScript(script.extendedinfo,info=youtubebrowser,id=$INFO[Container(50).ListItem.Label])</onclick>
-							<visible>System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,movie)]</visible>					
+							<visible>System.HasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DBType,musicvideo) | String.IsEqual(ListItem.DBType,movie)]</visible>
 						</item>
 					</content>
 				</control>
