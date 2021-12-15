@@ -3226,23 +3226,30 @@
 		<value condition="[Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(files) | Container.Content(musicvideos)] + String.Contains(skin.string(musicfanart),fallback)">$INFO[Skin.String(CustomFallbackMusicBG)]</value>
 		<value condition="[Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(files) | Container.Content(musicvideos)] + String.Contains(skin.string(musicfanart),musiccurtains)">special://skin/backgrounds/extras/curtains.jpg</value>
 		<!-- extrafanart for songinfo in music viz playing song -->
-		<value condition="Window.IsVisible(visualisation) + !PVR.IsPlayingRadio + Window.IsVisible(songinformation) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</value>
-		<value condition="Window.IsVisible(visualisation) + !PVR.IsPlayingRadio + Window.IsVisible(songinformation) + String.Contains(skin.string(musicfanart),extra) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + String.IsEmpty(Skin.String(CustomMusicLogoPath))]]">$INFO[Player.FolderPath]../extrafanart/</value>
+		<value condition="Window.IsVisible(visualisation) + !PVR.IsPlayingRadio + Window.IsVisible(songinformation) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,\extrafanart\]</value>
+		<value condition="Window.IsVisible(visualisation) + !PVR.IsPlayingRadio + Window.IsVisible(songinformation) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + String.IsEmpty(Skin.String(CustomMusicLogoPath))]]">$INFO[Player.FolderPath]..\extrafanart\</value>
+		<value condition="Window.IsVisible(visualisation) + !PVR.IsPlayingRadio + Window.IsVisible(songinformation) + String.Contains(skin.string(musicfanart),extra) + !Skin.HasSetting(use_folderarts) ">$INFO[Control.GetLabel(5056)]</value>
 		<!-- use artist info extrafanarts -->
-		<value condition="[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)] + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) +  Integer.IsGreater(Container(5032).NumItems,0)">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</value>
-		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(skin.string(musicfanart),extra) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + !Integer.IsGreater(Container(5032).NumItems,0)]]">$INFO[ListItem.Path]extrafanart/</value>
-		<value condition="String.IsEqual(ListItem.DBType,song) + String.Contains(skin.string(musicfanart),extra) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + !Integer.IsGreater(Container(5032).NumItems,0)]]">$INFO[ListItem.Path]../extrafanart/</value>
+		<value condition="[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)] + Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) +  Integer.IsGreater(Container(5032).NumItems,0)">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,\extrafanart\]</value>
+		<value condition="[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)] + !Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra)">$INFO[Control.GetLabel(5056)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + !Integer.IsGreater(Container(5032).NumItems,0)]]">$INFO[ListItem.Path]extrafanart/</value>
+		<value condition="String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(skin.string(musicfanart),extra) + !Skin.HasSetting(use_folderarts)">$INFO[Control.GetLabel(5056)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,song) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + !Integer.IsGreater(Container(5032).NumItems,0)]]">$INFO[ListItem.Path]../extrafanart/</value>
+		<value condition="String.IsEqual(ListItem.DBType,song) + String.Contains(skin.string(musicfanart),extra) + !Skin.HasSetting(use_folderarts)">$INFO[Control.GetLabel(5056)]</value>
 		<value condition="Container.Content(files) + Skin.HasSetting(fallbackaudioimage)">$INFO[Skin.String(CustomFallbackMoviesBG)]</value>
 		<value condition="Container.Content(files) + Skin.HasSetting(musiccurtains)">special://skin/backgrounds/extras/curtains.jpg</value>
-		<value condition="Container.Content(files) + Skin.HasSetting(extrafanartaudio) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</value> <!-- extrafanartaudio never set -->
+		<value condition="Container.Content(files) + Skin.HasSetting(extrafanartaudio) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart\]</value> <!-- extrafanartaudio never set -->
 	</variable>
 	<variable name="value_defaultmusicfanart">
 		<!-- fanart for songinfo in music viz playing song and no fanart -->
-		<value condition="Window.IsVisible(visualisation) + Window.IsVisible(songinformation) + [String.Contains(skin.string(musicfanart),fanart) | String.Contains(skin.string(musicfanart),extra) + String.IsEmpty(Control.GetLabel(5033))]">$INFO[Player.Art(fanart)]</value>
+		<value condition="Window.IsVisible(visualisation) + Window.IsVisible(songinformation) + [String.Contains(skin.string(musicfanart),fanart) |  Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra) + String.IsEmpty(Control.GetLabel(5033))]">$INFO[Player.Art(fanart)]</value>
+		<value condition="Window.IsVisible(visualisation) + Window.IsVisible(songinformation) + [String.Contains(skin.string(musicfanart),fanart) |  !Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra) ]">$INFO[Player.Art(fanart)]</value>
 		<!-- show the reserve fanart image for all -->
 		<value condition="[Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(files) | Container.Content(musicvideos)] + String.Contains(skin.string(musicfanart),fallback)"></value>
 		<!-- show the curtains image for all -->
 		<value condition="[Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | Container.Content(files) | Container.Content(musicvideos)] + String.Contains(skin.string(musicfanart),musiccurtains)"></value>
+		<!--  listitem has no dbtype -->
+		<value condition="String.IsEmpty(ListItem.DBType) + String.IsEmpty(ListItem.Art(fanart))">special://skin/backgrounds/music.jpg</value>
 		<!-- case for music files view when DBtype is not set  but is a song or mv -->  
 		<value condition="Container.Content(files) + String.IsEmpty(ListItem.DBType) + ![String.IsEqual(ListItem.label,..) | String.IsEqual(ListItem.label,extrafanart)]">$INFO[ListItem.Path]$INFO[ListItem.Label]\fanart.jpg</value>
 		<!-- for artists or albums with fanart show it -->
@@ -3250,12 +3257,13 @@
 		<!-- for albums and songs fallback to the artist fanart -->
 		<value condition="String.IsEmpty(ListItem.Art(fanart)) + !String.IsEmpty(ListItem.Art(artist.fanart)) + [String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,song)]">$INFO[ListItem.Art(artist.fanart)]</value>
 		<value condition="![Container.Content(songs) | Container.Content(playlists) | Container.Content(genres) | Container.Content(roles) | Container.Content(files)] + [String.Contains(skin.string(musicfanart),fanart) | String.Contains(skin.string(musicfanart),extra) + !Integer.IsGreater(Container(5032).NumItems,0)]">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="[Container.Content(songs) | Container.Content(playlists)] + [String.Contains(skin.string(musicfanart),fanart) | String.Contains(skin.string(musicfanart),extra) + !Integer.IsGreater(Container(5033).NumItems,0)]">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + [Container.Content(songs) | Container.Content(playlists)] + [String.Contains(skin.string(musicfanart),fanart) | String.Contains(skin.string(musicfanart),extra) + !Integer.IsGreater(Container(5033).NumItems,0)]">$INFO[ListItem.Art(fanart)]</value>
 		<!-- ultimate fallback  for non-genre fanart -->
 		<value condition="String.IsEmpty(ListItem.Art(fanart)) + String.IsEmpty(ListItem.Art(artist.fanart)) + !String.IsEqual(ListItem.DBType,genre)">special://skin/backgrounds/music.jpg</value>	
 		<value condition="String.IsEqual(ListItem.DBType,genre) + String.Contains(skin.string(musicgenrefanart),genre) + !Skin.HasSetting(externalmusicgenrefanart)">$INFO[Skin.String(custom_musicgenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenrefanart.ext)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,genre) + String.Contains(skin.string(musicgenrefanart),genre) + Skin.HasSetting(externalmusicgenrefanart)">$INFO[Skin.String(custom_musicgenrefanart.path)]$INFO[ListItem.Label]$INFO[Skin.String(custom_musicgenrefanart.ext)]</value>
 		<value condition="String.IsEqual(ListItem.DBType,genre) + String.Contains(skin.string(musicgenrefanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
+		<value>special://skin/backgrounds/music.jpg</value>
 	</variable>
 	<variable name="value_musicartist">
 		<value condition="!String.IsEmpty(ListItem.Actor)">$INFO[ListItem.Actor]</value>

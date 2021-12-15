@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.16/9.1.17/9.1.19/9.2.1 window IDs-->
 <!-- Leia 1`0.2.5/10.3.0/10.4.0/10.5.0/10.5.1/10.5.2/10.6.1/10.6.2 -->
-<!-- Matrix 11.1.1 -->
+<!-- Matrix 11.1.1/11.2.0 -->
 <includes>
 	<!--##################################################################################   VISTA LOW LIST - ID 70   ##################################################################################-->
 	<!-- Flags bar inherited from MyMusicNav -->
@@ -400,7 +400,7 @@
 					<visible>String.IsEqual(ListItem.DBType,episode) | [String.IsEqual(ListItem.DBType,musicvideo) + [Window.IsVisible(music) | Window.IsVisible(musicplaylist)]]</visible>
 				</control>
 				<control type="multiimage">
-					<description>FANART WINDOW EXTRA CROSSFADE - video listitem</description>
+					<description>FANART WINDOW EXTRA CROSSFADE - video listitem extrafanart</description>
 					<posx>1407</posx>
 					<posy>291</posy>
 					<width>471</width>
@@ -416,9 +416,29 @@
 					String.IsEqual(ListItem.DBType,season) + String.Contains(skin.string(seasonsfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo] |
 					String.IsEqual(ListItem.DBType,episode) + String.Contains(skin.string(episodesfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo] |
 					String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(skin.string(musicvideosfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>
+					<visible>Skin.HasSetting(use_folderarts)</visible>
 				</control>
 				<control type="multiimage">
-					<description>FANART WINDOW EXTRA CROSSFADE - listitem song</description>
+					<description>FANART WINDOW EXTRA CROSSFADE - video listitem fanart[nn]</description>
+					<posx>1407</posx>
+					<posy>291</posy>
+					<width>471</width>
+					<height>264</height>
+					<aspectratio>stretch</aspectratio>
+					<imagepath background="true">$INFO[Control.GetLabel(5053)]</imagepath>
+					<timeperimage>5000</timeperimage>
+					<fadetime>2000</fadetime>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<visible>String.IsEqual(ListItem.DBType,movie) + String.Contains(skin.string(moviesfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo] |
+					String.IsEqual(ListItem.DBType,tvshow) + String.Contains(skin.string(tvshowsfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo] |
+					String.IsEqual(ListItem.DBType,season) + String.Contains(skin.string(seasonsfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo] |
+					String.IsEqual(ListItem.DBType,episode) + String.Contains(skin.string(episodesfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo] |
+					String.IsEqual(ListItem.DBType,musicvideo) + String.Contains(skin.string(musicvideosfanart),extra) + ![Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>
+					<visible>!Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="multiimage">
+					<description>FANART WINDOW EXTRA CROSSFADE - listitem song extrafanart</description>
 					<posx>1407</posx>
 					<posy>291</posy>
 					<width>471</width>
@@ -429,10 +449,24 @@
 					<fadetime>2000</fadetime>
 					<randomize>true</randomize>
 					<loop>yes</loop>
-					<visible>String.Contains(skin.string(musicfanart),extra) + [String.IsEqual(ListItem.DBType,song) + [Window.IsVisible(music) | [Window.IsVisible(musicplaylist) + !Player.HasAudio]]]</visible>
+					<visible>String.Contains(skin.string(musicfanart),extra) + [String.IsEqual(ListItem.DBType,song) + [Window.IsVisible(music) | [Window.IsVisible(musicplaylist) + !Player.HasAudio]]] + Skin.HasSetting(use_folderarts)</visible>
 				</control>
 				<control type="multiimage">
-					<description>FANART WINDOW EXTRA CROSSFADE - music/video player</description>
+					<description>FANART WINDOW EXTRA CROSSFADE - listitem song fanart[nn]</description>
+					<posx>1407</posx>
+					<posy>291</posy>
+					<width>471</width>
+					<height>264</height>
+					<aspectratio>stretch</aspectratio>
+					<imagepath background="true">$INFO[Control.GetLabel(5056)]</imagepath>
+					<timeperimage>5000</timeperimage>
+					<fadetime>2000</fadetime>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<visible>String.Contains(skin.string(musicfanart),extra) + [String.IsEqual(ListItem.DBType,song) + [Window.IsVisible(music) | [Window.IsVisible(musicplaylist) + !Player.HasAudio]]] + !Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="multiimage">
+					<description>FANART WINDOW EXTRA CROSSFADE - music/video player extrafanart</description>
 					<posx>1407</posx>
 					<posy>291</posy>
 					<width>471</width>
@@ -443,12 +477,28 @@
 					<fadetime>2000</fadetime>
 					<randomize>true</randomize>
 					<loop>yes</loop>
-					<visible>String.Contains(skin.string(musicfanart),extra)</visible>
+					<visible>String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts)</visible>
 					<visible>Window.IsVisible(musicplaylist) + [Player.HasAudio + !PVR.IsPlayingRadio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] | 
 					[Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>
 				</control>
 				<control type="multiimage">
-					<description>FANART WINDOW EXTRA CROSSFADE - custom music artist or song - listitem</description>
+					<description>FANART WINDOW EXTRA CROSSFADE - music/video player fanart[nn]</description>
+					<posx>1407</posx>
+					<posy>291</posy>
+					<width>471</width>
+					<height>264</height>
+					<aspectratio>stretch</aspectratio>
+					<imagepath background="true">$INFO[Control.GetLabel(5056)]</imagepath>
+					<timeperimage>5000</timeperimage>
+					<fadetime>2000</fadetime>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<visible>String.Contains(skin.string(musicfanart),extra) + !Skin.HasSetting(use_folderarts)</visible>
+					<visible>Window.IsVisible(musicplaylist) + [Player.HasAudio + !PVR.IsPlayingRadio | [Player.HasVideo + VideoPlayer.Content(musicvideos)]] | 
+					[Window.IsVisible(videoplaylist) + Player.HasVideo]</visible>
+				</control>
+				<control type="multiimage">
+					<description>FANART WINDOW EXTRA CROSSFADE - custom music artist or song - listitem extrafanart</description>
 					<posx>1407</posx>
 					<posy>291</posy>
 					<width>471</width>
@@ -461,10 +511,10 @@
 					<loop>yes</loop>
 					<visible>String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)</visible>
 					<visible>Window.IsVisible(music) | [Window.IsVisible(musicplaylist) + !Player.HasAudio]</visible>
-					<visible>String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
+					<visible>String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath)) + Skin.HaSetting(use_folderarts)</visible>
 				</control>
 				<control type="multiimage">
-					<description>FANART WINDOW EXTRA CROSSFADE - custom music player</description>
+					<description>FANART WINDOW EXTRA CROSSFADE - custom music player extrafanart</description>
 					<posx>1407</posx>
 					<posy>291</posy>
 					<width>471</width>
@@ -475,7 +525,7 @@
 					<fadetime>2000</fadetime>
 					<randomize>true</randomize>
 					<loop>yes</loop>
-					<visible>Window.IsVisible(musicplaylist) + Player.HasAudio + !PVR.IsPlayingRadio</visible>
+					<visible>Window.IsVisible(musicplaylist) + Player.HasAudio + !PVR.IsPlayingRadio + Skin.HasSetting(use_folderarts)</visible>
 					<visible>String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
 				</control>
 				<control type="multiimage">
@@ -491,6 +541,7 @@
 					<randomize>true</randomize>
 					<loop>yes</loop>
 					<visible>Window.IsVisible(videoplaylist) + Player.HasVideo + VideoPlayer.Content(musicvideos) + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
+					<visible>Skin.HasSetting(use_folderarts)</visible>
 				</control>
 				<control type="image">
 					<description>GRADIENT BELOW FANART DISPLAY</description>

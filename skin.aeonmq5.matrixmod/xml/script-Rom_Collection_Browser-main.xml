@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Isengard 7.1.10 -->
 <!-- Jarvis 8.1.13 -->
+<!--  Matrix 11.2.0 -->
 <window>
 	<!-- <allowoverlay>no</allowoverlay> -->
 	<defaultcontrol always="true">50</defaultcontrol>
@@ -24,7 +25,7 @@
 			<!-- Extra Fanart -->
 			<include>InvisibleButton</include>
 			<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-			<visible>String.Contains(skin.string(gamesfanart),extra) + !ListItem.IsParentFolder</visible>
+			<visible>String.Contains(skin.string(gamesfanart),extra) + Skin.HasSetting(use_folderarts) +  !ListItem.IsParentFolder</visible>
 		</control>
 		<!-- Views Group -->
 		<control type="group" id="200">

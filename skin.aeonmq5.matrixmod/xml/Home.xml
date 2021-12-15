@@ -135,14 +135,21 @@ Group 602: Widgets
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<texture background="true">$INFO[Player.Art(artist.fanart)]</texture>
-			<visible>Player.HasAudio + System.IdleTime(8) + !Integer.IsGreater(Container(7044).NumItems,0)</visible>
+			<visible>Player.HasAudio + System.IdleTime(8) + Skin.HasSetting(use_folderarts) + !Integer.IsGreater(Container(7044).NumItems,0)</visible>
 		</control>
 		<control type="multiimage">
-			<!-- Audio fanart -->
+			<!-- Audio fanart extrafanart -->
 			<include>HomeBG</include>
 			<include>Animation_Fade</include>
 			<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist]/extrafanart/</imagepath>
-			<visible>Player.HasAudio + !PVR.IsPlayingRadio + System.IdleTime(8) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
+			<visible>Player.HasAudio + !PVR.IsPlayingRadio + System.IdleTime(8) + Skin.HasSetting(use_folderarts) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
+		</control>
+		<control type="multiimage">
+			<!-- Audio fanart fanart[nn] -->
+			<include>HomeBG</include>
+			<include>Animation_Fade</include>
+			<imagepath background="true">$INFO[Control.GetLabel(7047)]</imagepath>
+			<visible>Player.HasAudio + !PVR.IsPlayingRadio + System.IdleTime(8) + !Skin.HasSetting(use_folderarts)</visible>
 		</control>
 		<control type="multiimage">
 			<!-- Widget fanart -->

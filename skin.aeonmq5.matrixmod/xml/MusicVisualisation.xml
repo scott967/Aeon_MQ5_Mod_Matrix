@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!--  Krypton 9.1.16/9.1.19/9.2.1 window IDs 2006/9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.2.8/10.3.0/10.4.0/10.5.2/10.6.0 refactor customOSDMusic is now 1106 custom Next Tracks is now 1107/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1/11.2.0 -->
 <window>
 	<onload condition="System.HasAddon(script.artistslideshow) + !PVR.IsPlayingRadio">RunScript(script.artistslideshow)</onload>
 	<onload condition="![Skin.HasSetting(nolyrics_on) | PVR.IsPlayingRadio] + String.Contains(Skin.String(LyricScript_Path),script.cu.lrclyrics) + !String.IsEqual(Window(home).Property(culrc.running),true)">RunScript(script.cu.lrclyrics)</onload>
@@ -55,6 +55,8 @@
 				<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix) | String.IsEqual(skin.string(vis_bg),slideshowmix) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)">Conditional</animation>
 				<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + !Control.IsVisible(5043) + !Control.IsVisible(5044) | [String.IsEqual(skin.string(vis_bg),slideshow) | String.IsEqual(skin.string(vis_bg),slideshowmix)] + String.IsEmpty(Control.GetLabel(5045)) | [String.IsEqual(skin.string(vis_bg),slideshowmosaic) | String.IsEqual(skin.string(vis_bg),slideshowmosaicmix)] + !Control.IsVisible(5046)</visible>
 			</control>
+			<control type="group">
+			<visible>Skin.HasSetting(use_folderarts)</visible>
 			<control type="list" id="7043"><!-- check if lib path has extrafanart -->
 				<posx>-500</posx>
 				<posy>-500</posy>
@@ -75,19 +77,25 @@
 				<focusedlayout/>
 				<content target="filemanager">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</content>
 			</control>
+			</control>
+			<control type="fadelabel" id="7045">
+				<visible>!Skin.HasSetting(use_folderarts)</visible>
+				<description>Randomizer for plugin-free multiple fanart</description>
+				<include>music_fanartfadelabel</include>
+		</control>
 			<control type="multiimage" id="5043">
 				<!-- Extra Fanart requires setting in music window Song Artist custom artist info path has priority-->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Player.FolderPath,,../extrafanart/]</imagepath>
 				<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
-				<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + String.Contains(skin.string(musicfanart),extra) + Integer.IsGreater(Container(7043).NumItems,0) + !Control.IsVisible(5044)</visible>
+				<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra) + Integer.IsGreater(Container(7043).NumItems,0) + !Control.IsVisible(5044)</visible>
 			</control>
 			<control type="multiimage" id="5044">
 				<!-- Extra Fanart requires setting in music window custom Artist info path-->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[MusicPlayer.Artist,,/extrafanart/]</imagepath>
 				<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
-				<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + String.Contains(skin.string(musicfanart),extra) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
+				<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra) + Integer.IsGreater(Container(7044).NumItems,0)</visible>
 			</control>
 			<control type="multiimage" id="5045">
 				<!-- Artist SlideShow background arts AS2 -->
@@ -193,6 +201,13 @@
 					<posx>1280</posx>
 					<posy>540</posy>
 				</control>
+			</control>
+			<control type="multiimage" id="5047">
+				<!-- fanart[nn]-->
+				<include>WindowBG</include>
+				<imagepath background="true">$INFO[Control.GetLabel(7045)]</imagepath>
+				<animation effect="fade" start="100" end="50" time="400" condition="String.IsEqual(skin.string(vis_bg),fanartmix)">Conditional</animation>
+				<visible>[String.IsEqual(skin.string(vis_bg),fanart) | String.IsEqual(skin.string(vis_bg),fanartmix)] + !Skin.HasSetting(use_folderarts) + String.Contains(skin.string(musicfanart),extra)</visible>
 			</control>
 			<control type="multiimage">
 				<!-- Custom background image  -->

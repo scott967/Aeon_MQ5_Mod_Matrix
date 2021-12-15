@@ -1479,6 +1479,12 @@
 					<selected>String.Contains(skin.string(moviesfanart),extra)</selected>
 					<visible>Container.Content(movies) + !Skin.HasSetting(trailers)  + Skin.HasSetting(user_folderarts)</visible>
 				</control>
+				<control type="button" id="94110">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(moviesfanart),extra)</visible>
+				</control>
 				<!-- TVShows Fanart  -->
 				<control type="radiobutton" id="9411">
 					<!-- Fanart - Default -->
@@ -1525,6 +1531,12 @@
 					<onclick>Skin.SetString(tvshowsfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(tvshowsfanart),extra)</selected>
 					<visible>Container.Content(tvshows) + Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="button" id="94111">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(tvshowsfanart),extra)</visible>
 				</control>
 				<!-- Seasons Fanart  -->
 				<control type="radiobutton" id="9416">
@@ -1573,6 +1585,12 @@
 					<onclick>Skin.SetString(seasonsfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(seasonsfanart),extra)</selected>
 					<visible>Container.Content(seasons) + Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="button" id="94112">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(seasonsfanart),extra)</visible>
 				</control>
 				<control type="radiobutton" id="9421">
 					<!-- Season/Episodes -->
@@ -1629,6 +1647,12 @@
 					<onclick>Skin.SetString(episodesfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(episodesfanart),extra)</selected>
 					<visible>Container.Content(episodes) + Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="button" id="94113">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(episodesfanart),extra)</visible>
 				</control>
 				<control type="radiobutton" id="9427">
 					<!-- Season/Episodes -->
@@ -1687,6 +1711,12 @@
 					<onclick>Skin.SetString(musicvideosfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(musicvideosfanart),extra)</selected>
 					<visible>Container.Content(musicvideos) + Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="button" id="94114">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(musicvideosfanart),extra)</visible>
 				</control>
 				<!-- Sets Fanart  -->
 				<control type="radiobutton" id="9433">
@@ -2280,9 +2310,9 @@
 					<onclick condition="system.hasaddon(script.artwork.beef)">RunScript(script.artwork.beef)</onclick>
 					<onclick>SetFocus(51)</onclick>
 				</control>
-				<control type="radiobutton" id="9365">
+				<!-- moved to 9400 artwork -->
+				<!-- <control type="radiobutton" id="9365">
 					<include>TopMenuRadioButton</include>
-					<!--  Use Artist info folder was SHOW ARTIST/ALBUM ART -->
 					<label>$LOCALIZE[21480] $LOCALIZE[20223]</label>
 					<onclick>Skin.ToggleSetting(musiclogo)</onclick>
 					<selected>Skin.HasSetting(musiclogo)</selected>
@@ -2294,7 +2324,7 @@
 					<onclick>Skin.SetString(CustomMusicLogoPath,)</onclick>
 					<onclick>Skin.SetPath(CustomMusicLogoPath)</onclick>
 					<visible>[Skin.HasSetting(musiclogo) | String.Contains(skin.string(musicfanart),extra)] + ![Container.Content(Genres) | Container.Content(Roles)]</visible>
-				</control>
+				</control> -->
 				<include condition="Window.IsActive(musicplaylist)">TopMenu_Playlist</include>
 				<include condition="Window.IsActive(musicplaylisteditor)">TopMenu_PlaylistEditor</include>
 			</control>
@@ -2358,13 +2388,34 @@
 					<selected>String.Contains(skin.string(musicfanart),extra)</selected>
 					<visible>![Container.Content(Genres) | Container.Content(Roles)] + !Skin.HasSetting(use_folderarts)</visible>
 				</control>
-				<control type="radiobutton" id="9410">
+				<control type="radiobutton" id="94100">
 					<!-- Extra Fanart Music -->
 					<include>TopMenuRadioButton</include>
 					<label>$LOCALIZE[31498] ($LOCALIZE[20334])</label>
 					<onclick>Skin.SetString(musicfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(musicfanart),extra)</selected>
 					<visible>![Container.Content(Genres) | Container.Content(Roles)] + Skin.HasSetting(use_folderarts)</visible>
+				</control>
+				<control type="button" id="94110">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(musicfanart),extra)</visible>
+				</control>
+				<control type="radiobutton" id="9365">
+					<include>TopMenuRadioButton</include>
+					<!--  Use Artist info folder was SHOW ARTIST/ALBUM ART -->
+					<label>$LOCALIZE[21480] $LOCALIZE[20223]</label>
+					<onclick>Skin.ToggleSetting(musiclogo)</onclick>
+					<selected>Skin.HasSetting(musiclogo)</selected>
+					<visible>![Container.Content(Genres) | Container.Content(Roles)]</visible>
+				</control>
+				<control type="button" id="9364">
+					<include>TopMenuButton</include>
+					<label>$VAR[value_musiclogopath]</label>
+					<onclick>Skin.SetString(CustomMusicLogoPath,)</onclick>
+					<onclick>Skin.SetPath(CustomMusicLogoPath)</onclick>
+					<visible>[Skin.HasSetting(musiclogo) | String.Contains(skin.string(musicfanart),extra)] + ![Container.Content(Genres) | Container.Content(Roles)]</visible>
 				</control>
 				<!-- Genero Fanart -->
 				<control type="radiobutton" id="9451">
@@ -3246,6 +3297,7 @@
 					<onclick>Skin.SetImage(CustomFallbackGamesBG)</onclick>
 					<visible>String.Contains(skin.string(gamesfanart),fallback)</visible>
 				</control>
+			
 				<control type="radiobutton" id="9410">
 					<!-- Extra Fanart Games fanart -->
 					<include>TopMenuRadioButton</include>
@@ -3253,12 +3305,18 @@
 					<onclick>Skin.SetString(gamesfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(gamesfanart),extra) + !Skin.HasSetting(use_folderarts)</selected>
 				</control>
-				<control type="radiobutton" id="9410">
+				<control type="radiobutton" id="94100">
 					<!-- Extra Fanart Games folder -->
 					<include>TopMenuRadioButton</include>
 					<label>$LOCALIZE[31498] ($LOCALIZE[20334])</label>
 					<onclick>Skin.SetString(gamesfanart,extra)</onclick>
 					<selected>String.Contains(skin.string(gamesfanart),extra) + Skin.HasSetting(use_folderarts)</selected>
+				</control>
+				<control type="button" id="94110">
+					<include>TopMenuButton</include>
+					<label>$LOCALIZE[31371]</label>
+					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
+					<visible>String.Contains(skin.string(gamesfanart),extra)</visible>
 				</control>
 			</control>
 			<include>TopMenu_Bar</include>

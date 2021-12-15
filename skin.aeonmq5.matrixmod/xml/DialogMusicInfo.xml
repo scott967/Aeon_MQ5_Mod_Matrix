@@ -3,13 +3,13 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.4.0/10.5.2/10.6.0/10.6.2 -->
-<!-- Matrix 11.0.2/11.0.4/11.0.5/11.1.1 -->
+<!-- Matrix 11.0.2/11.0.4/11.0.5/11.1.1/11.2.0 -->
 <window>
 	<defaultcontrol always="true">149</defaultcontrol>
 	<onload condition="System.HasAddon(script.artistslideshow) + Player.HasAudio + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(script.artistslideshow)</onload>
 	<controls>
 		<control type="group"> 	<!-- invisible control group to determine if extrafanart folders exist for item -->
-			<visible>![PVR.IsPlayingRadio + Window.IsVisible(visualisation)]</visible>
+			<visible>![PVR.IsPlayingRadio + Window.IsVisible(visualisation)] + Skin.HasSetting(use_folderarts)</visible>
 			<control type="list" id="5032">
 				<!-- check if artist info has extrafanart note: if artist info entry is normalized it isn't found -->
 				<posx>-500</posx>
@@ -44,39 +44,44 @@
 				<visible>!String.StartsWith(ListItem.Path,plugin)</visible>
 			</control>
 		</control>
+		<control type="fadelabel" id="5056">
+				<visible>!Skin.HasSetting(use_folderarts)</visible>
+				<description>Randomizer for plugin-free multiple fanart</description>
+				<include>music_fanartfadelabel</include>
+		</control>
 		<control type="group">	<!-- default group -->
 			<include>Animation_Window</include>
 			<animation effect="slide" start="0" end="-1920" time="400" tween="cubic" easing="inout" condition="String.IsEqual(Window(home).Property(extendedinfo_running),true)">Conditional</animation>
 			<animation effect="slide" start="0" end="-1920" time="400" tween="cubic" easing="inout" condition="Window.IsActive(visualisation) + Window.Is(musicinformation)">Conditional</animation>
 			<!-- controls used for album, artists (musicinfo), and songs (songinfo) -->
-			<control type="multiimage">
-				<!-- Multi Fanart -->
-				<include>WindowBG</include>
-				<imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
-				<visible>!PVR.IsPlayingRadio</visible>
-			</control>
 			<control type="image">
 				<!-- Single Fanart -->
 				<include>WindowBG</include>
 				<texture background="true">$VAR[value_defaultmusicfanart]</texture>
 			</control>
 			<control type="multiimage">
+				<!-- Multi Fanart -->
+				<include>WindowBG</include>
+				<imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$VAR[value_musicfanart]</imagepath>
+				<visible>!PVR.IsPlayingRadio</visible>
+			</control>
+			<control type="multiimage">
 				<!-- Use Artist info folder Extra Fanart Artist/Album -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart/]</imagepath>
-				<visible>[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album)] + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
+				<visible>[String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album)] + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))</visible>
 			</control>
 			<control type="multiimage">
 				<!-- Lib Extra Fanart Song -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]extrafanart/</imagepath>
-				<visible>![Window.IsVisible(visualisation) + Window.IsVisible(songinformation)] + [String.IsEqual(ListItem.DBType,song) | Container.Content(playlists)] + String.Contains(skin.string(musicfanart),extra) + !ListItem.IsParentFolder</visible>
+				<visible>![Window.IsVisible(visualisation) + Window.IsVisible(songinformation)] + [String.IsEqual(ListItem.DBType,song) | Container.Content(playlists)] + String.Contains(skin.string(musicfanart),extra) + Skin.HasSetting(use_folderarts) + !ListItem.IsParentFolder</visible>
 			</control>
 			<control type="multiimage">
 				<!-- Lib Extra Fanart Song for song info in visualisation -->
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[Player.FolderPath],,../extrafanart/</imagepath>
-				<visible>Window.IsVisible(visualisation) + Window.IsVisible(songinformation) + !PVR.IsPlayingRadio</visible>
+				<visible>Window.IsVisible(visualisation) + Window.IsVisible(songinformation) + !PVR.IsPlayingRadio + Skin.HasSetting(use_folderarts)</visible>
 			</control>
 			<control type="image">
 				<posx>0</posx>
