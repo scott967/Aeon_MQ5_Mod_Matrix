@@ -8,7 +8,7 @@
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.2.0 Matrixmod[COLOR=80FFFFFF] | [/COLOR]08/31/2021</value>
+		<value>11.2.0 Matrixmod[COLOR=80FFFFFF] | [/COLOR]12/31/2021</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -3238,7 +3238,7 @@
 		<value condition="String.IsEqual(ListItem.DBType,song) + String.Contains(skin.string(musicfanart),extra) + !Skin.HasSetting(use_folderarts)">$INFO[Control.GetLabel(5056)]</value>
 		<value condition="Container.Content(files) + Skin.HasSetting(fallbackaudioimage)">$INFO[Skin.String(CustomFallbackMoviesBG)]</value>
 		<value condition="Container.Content(files) + Skin.HasSetting(musiccurtains)">special://skin/backgrounds/extras/curtains.jpg</value>
-		<value condition="Container.Content(files) + Skin.HasSetting(extrafanartaudio) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart\]</value> <!-- extrafanartaudio never set -->
+		<value condition="Container.Content(files) + Skin.HasSetting(extrafanartaudio) + Skin.HasSetting(use_folderarts) + Skin.HasSetting(musiclogo) + !String.IsEmpty(Skin.String(CustomMusicLogoPath))">$INFO[Skin.String(CustomMusicLogoPath)]$INFO[ListItem.Artist,,/extrafanart\]</value> <!-- extrafanartaudio never set -->
 	</variable>
 	<variable name="value_defaultmusicfanart">
 		<!-- fanart for songinfo in music viz playing song and no fanart -->
@@ -4082,6 +4082,7 @@
 		<!-- video set / tvshow poster -->
 		<value condition="String.Contains(ListItem.DBType,set) | String.Contains(ListItem.DBType,tvshow)">$INFO[ListItem.Art(poster)]</value>
 		<!-- <value condition="[String.IsEmpty(Container.Content) + String.IsEmpty(ListItem.DBType) + String.Contains(ListItem.FolderPath,sets)]">$INFO[Container(715).ListItem(0).Art(poster)]</value> -->
+		<value condition="Control.IsVisible(715) + !Skin.HasSetting(use_folderarts) + String.Contains(skin.string(moviesfanart),extra)">$INFO[Control.GetLabel(5028)]</value>
 		<value condition="Control.IsVisible(715)">$INFO[Container(715).ListItem(0).Art(thumb)]</value>
 		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
