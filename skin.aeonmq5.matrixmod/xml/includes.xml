@@ -1634,7 +1634,7 @@
 	<include name="FlagSeparator">
 		<posx>0</posx>
 		<posy>0</posy>
-		<width>1</width>
+		<width>2</width>
 		<height>75</height>
 		<texture>flagseparator.png</texture>
 		<colordiffuse>$VAR[value_flagscolor]</colordiffuse>
