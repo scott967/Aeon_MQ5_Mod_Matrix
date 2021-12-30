@@ -4941,6 +4941,44 @@
 		show for the full amount of time -->
 			<resetonlabelchange>true</resetonlabelchange>
 	</include>
+	<include name="video_fanartfadelabel715">
+			<posx>-500</posx>
+			<posy>-500</posy>
+			<width>1</width>
+			<height>1</height>
+			<info>Container(715).ListItem(0).Art(fanart)</info>
+			<info>Container(715).ListItem(0).Art(fanart1)</info>
+			<info>Container(715).ListItem(0).Art(fanart2)</info>
+			<info>Container(715).ListItem(0).Art(fanart3)</info>
+			<info>Container(715).ListItem(0).Art(fanart4)</info>
+			<info>Container(715).ListItem(0).Art(fanart5)</info>
+			<info>Container(715).ListItem(0).Art(fanart6)</info>
+			<info>Container(715).ListItem(0).Art(fanart7)</info>
+			<info>Container(715).ListItem(0).Art(fanart8)</info>
+			<info>Container(715).ListItem(0).Art(fanart9)</info>
+			<info>Container(715).ListItem(0).Art(fanart10)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart1)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart2)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart3)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart2)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart4)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart5)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart6)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart7)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart8)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart9)</info>
+			<info>Container(715).ListItem(0).Art(tvshow.fanart10)</info>
+			<randomize>true</randomize>
+			<pauseatend>6000</pauseatend><!-- Time to show each image, in milliseconds -->
+			<!-- No scrolling so only the pauseatend above (plus a short fade-in) affects length of time each
+		image is shown -->
+			<scroll>false</scroll>
+			<scrollout>false</scrollout>
+			<!-- Resets the timer when navigating to a new item, so each item's first visible fanart will
+		show for the full amount of time -->
+			<resetonlabelchange>true</resetonlabelchange>
+	</include>
 	<include name="music_fanartfadelabel">
 			<posx>-500</posx>
 			<posy>-500</posy>

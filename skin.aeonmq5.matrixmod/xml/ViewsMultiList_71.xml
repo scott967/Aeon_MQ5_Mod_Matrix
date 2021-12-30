@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Aeon MQ 5 Leia 10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.4/11.1.1 -->
+<!-- Matrix 11.0.4/11.1.1/11/2.0 -->
 
 <includes>
 <!--##################################################################################   VIEW MULTILIST - 71   ##################################################################################-->
@@ -1275,7 +1275,7 @@
 	</include>
 
 
-
+<!--  Container FixedList 715 - video items for list 71 item-->
 <!--##################################################################################   VIEW MULTILIST VIDEO- 71   ##################################################################################-->
 	<include name="ViewMultiListVideo">
 		<control type="group">	<!-- default group -->
@@ -1288,6 +1288,11 @@
 				<itemlayout />
 				<focusedlayout />
 				<content target="music"	sortby="track" sortorder="ascending">musicdb://albums/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Album]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
+			</control>
+			<control type="fadelabel" id="5028">
+				<visible>!Skin.HasSetting(use_folderarts)</visible>
+				<description>Randomizer for plugin-free multiple fanart</description>
+				<include>video_fanartfadelabel715</include>
 			</control>
 			<control type="group">  <!--  left side 71 group -->
 				<animation effect="slide" time="500" start="-1200,0" end="0,0" tween="cubic" easing="out" condition="!$EXP[IsPVRRecordings]">WindowOpen</animation>
@@ -2169,7 +2174,7 @@
 					<orientation>vertical</orientation>
 					<pagecontrol>81</pagecontrol>
 					<scrolltime>450</scrolltime>
-					<visible>![Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !ListItem.IsParentFolder + !Control.HasFocus(562)</visible>  <!-- list 71 content with no chindren -->
+					<visible>![Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !ListItem.IsParentFolder + !Control.HasFocus(562)</visible>  <!-- list 71 content with no children -->
 					<viewtype label="$LOCALIZE[535]">list</viewtype>
 					<focusposition>3</focusposition>
 					<movement>4</movement>
