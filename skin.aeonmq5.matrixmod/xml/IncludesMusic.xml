@@ -79,6 +79,7 @@
 				<include>WindowBG</include>
 				<imagepath background="true">$INFO[ListItem.Path]../extrafanart/</imagepath>
 				<visible>String.IsEqual(ListItem.DBType,song) + String.Contains(skin.string(musicfanart),extra) + Integer.IsGreater(Container(5034).NumItems,0) + [!Skin.HasSetting(musiclogo) | [Skin.HasSetting(musiclogo) + String.IsEmpty(Skin.String(CustomMusicLogoPath))]]</visible>
+				<visible>Skin.HasSetting(use_folderarts)</visible>
 			</control>
 			<control type="image" id="9924">
 				<!-- record label control -->
@@ -538,7 +539,7 @@
 <!-- *****************************  Music Playlist  **************************************** -->
 	<include name="MusicPLWindow">
 	<control type="group">
-		<visible>Skin.HasSetting(use_fanarts)</visible>
+		<visible>Skin.HasSetting(use_folderarts)</visible>
 		<control type="list" id="5032">
 			<!-- check if artist info has extrafanart note: if artist info entry is normalized it isn't found -->
 			<posx>-500</posx>

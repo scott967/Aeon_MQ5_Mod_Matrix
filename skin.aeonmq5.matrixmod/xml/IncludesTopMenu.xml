@@ -1536,7 +1536,7 @@
 					<include>TopMenuButton</include>
 					<label>$LOCALIZE[31371]</label>
 					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
-					<visible>String.Contains(skin.string(tvshowsfanart),extra)</visible>
+					<visible>Container.Content(tvshows) + String.Contains(skin.string(tvshowsfanart),extra)</visible>
 				</control>
 				<!-- Seasons Fanart  -->
 				<control type="radiobutton" id="9416">
@@ -1590,7 +1590,7 @@
 					<include>TopMenuButton</include>
 					<label>$LOCALIZE[31371]</label>
 					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
-					<visible>String.Contains(skin.string(seasonsfanart),extra)</visible>
+					<visible>Container.Content(seasons) + String.Contains(skin.string(seasonsfanart),extra)</visible>
 				</control>
 				<control type="radiobutton" id="9421">
 					<!-- Season/Episodes -->
@@ -1652,7 +1652,7 @@
 					<include>TopMenuButton</include>
 					<label>$LOCALIZE[31371]</label>
 					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
-					<visible>String.Contains(skin.string(episodesfanart),extra)</visible>
+					<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),extra)</visible>
 				</control>
 				<control type="radiobutton" id="9427">
 					<!-- Season/Episodes -->
@@ -1716,7 +1716,7 @@
 					<include>TopMenuButton</include>
 					<label>$LOCALIZE[31371]</label>
 					<onclick>ActivateWindowAndFocus(skinsettings,1028,0)</onclick>
-					<visible>String.Contains(skin.string(musicvideosfanart),extra)</visible>
+					<visible>Container.Content(musicvideos) + String.Contains(skin.string(musicvideosfanart),extra)</visible>
 				</control>
 				<!-- Sets Fanart  -->
 				<control type="radiobutton" id="9433">
