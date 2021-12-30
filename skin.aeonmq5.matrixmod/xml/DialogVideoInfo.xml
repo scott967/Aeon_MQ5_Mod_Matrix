@@ -253,7 +253,7 @@
 					<ondown>SetFocus(149)</ondown>
 					<onleft>SetFocus(149)</onleft>
 					<onright>SetFocus(149)</onright>
-					<onclick>ActivateWindow(1112)</onclick><!-- custom certification -->
+					<onclick>ActivateWindow(1112)</onclick>  <!-- custom certification -->
 					<onclick>SetFocus(149)</onclick>
 					<visible>!String.IsEmpty(ListItem.Mpaa)</visible>
 				</control>
@@ -294,7 +294,7 @@
 					<onup>149</onup>
 					<ondown>149</ondown>
 					<itemgap>2</itemgap>
-					<pagecontrol/>
+					<pagecontrol></pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="30" condition="!Skin.HasSetting(Use_lang_flags)">
 						<control type="label">
@@ -691,7 +691,7 @@
 				</control>
 			</control>
 			<control type="image">
-				<posx>317</posx><!-- was 308 -->
+				<posx>317</posx>  <!-- was 308 -->
 				<posy>120</posy>
 				<height>345</height>
 				<width>3</width>
@@ -699,7 +699,7 @@
 			</control>
 			<control type="image">
 				<posx>0</posx>
-				<posy>209</posy><!-- was 205 -->
+				<posy>209</posy> <!-- was 205 -->
 				<height>3</height>
 				<width>1080</width>
 				<texture>separator.png</texture>
@@ -741,7 +741,7 @@
 				<height>200</height>
 				<align>justify</align>
 				<font>Font_18A</font>
-				<label>$VAR[value_plotmoviesets]</label><!-- sets view 65 -->
+				<label>$VAR[value_plotmoviesets]</label>  <!-- sets view 65 -->
 				<textcolor>FFFFFAF0</textcolor>
 				<autoscroll delay="15000" time="5000" repeat="15000">!Skin.HasSetting(noinfoplotscroll)</autoscroll>
 				<visible>Container.Content(sets) + String.IsEmpty(ListItem.Art(poster))</visible>
@@ -831,9 +831,9 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<include>Animation_DefaultGlass</include>
 			</control>
-			<control type="grouplist"><!-- flags except for sets -->
+			<control type="grouplist"> <!-- flags except for sets -->
 				<!-- Etiquetas -->
-				<posx>165</posx>
+				<posx>80</posx>
 				<posy>1016</posy>
 				<orientation>horizontal</orientation>
 				<itemgap>52</itemgap>
@@ -931,7 +931,7 @@
 					</control>
 				</control>
 			</control>
-			<control type="grouplist"><!-- flags for container(50) movie in sets -->
+			<control type="grouplist"> <!-- flags for container(50) movie in sets -->
 				<!-- Etiquetas -->
 				<posx>165</posx>
 				<posy>1016</posy>
@@ -1211,7 +1211,7 @@
 					<onup>SetFocus(160)</onup>
 					<ondown>50</ondown>
 					<orientation>horizontal</orientation>
-					<pagecontrol/>
+					<pagecontrol></pagecontrol>
 					<scrolltime>300</scrolltime>
 					<focusposition>3</focusposition>
 					<itemlayout height="38" width="274">
@@ -1353,9 +1353,9 @@
 							<visible>!String.IsEmpty(ListItem.Director) + !Container.Content(sets)</visible>
 						</item>
 						<item id="10">
-							<label>$LOCALIZE[31496]</label><!-- extra info -->
+							<label>$LOCALIZE[31496]</label> <!-- extra info -->
 							<onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>"
-<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode) | String.IsEqual(ListItem.DbType,set)]</visible>
+							<visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode) | String.IsEqual(ListItem.DbType,set)]</visible>
 						</item>
 						<item id="11">
 							<!-- Artist Video Clips -->
