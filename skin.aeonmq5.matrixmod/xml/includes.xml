@@ -4569,7 +4569,31 @@
 			<font>Font_18B</font>
 			<textcolor>$VAR[value_flagscolor]</textcolor>
 			<label>$INFO[Container.CurrentItem]/$INFO[Container.NumItems]</label>
-			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + !Integer.IsEqual(Container.CurrentItem,0)</visible>
+			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + !Integer.IsEqual(Container.CurrentItem,0) + !Control.IsVisible(71)</visible>
+		</control>
+		<control type="label">
+			<posx>848</posx>
+			<posy>968</posy>
+			<width>112</width>
+			<height>75</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_18B</font>
+			<textcolor>$VAR[value_flagscolor]</textcolor>
+			<label>$INFO[Container.CurrentItem]/$INFO[Container.NumItems]</label>
+			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + !Integer.IsEqual(Container.CurrentItem,0) + Control.IsVisible(71)</visible>
+		</control>
+		<control type="label">
+			<posx>1808</posx>
+			<posy>968</posy>
+			<width>112</width>
+			<height>75</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_18B</font>
+			<textcolor>$VAR[value_flagscolor]</textcolor>
+			<label>$INFO[Container(715).CurrentItem]/$INFO[Container(715).NumItems]</label>
+			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + !Integer.IsEqual(Container.CurrentItem,0) + Control.IsVisible(71)  + !Integer.IsEqual(Container(715).NumItems,0)</visible>
 		</control>
 		<control type="label">
 			<posx>1808</posx>
@@ -4581,7 +4605,31 @@
 			<font>Font_18B</font>
 			<textcolor>$VAR[value_flagscolor]</textcolor>
 			<label>$INFO[Container.NumItems]</label>
-			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + Integer.IsEqual(Container.CurrentItem,0)</visible>
+			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + Integer.IsEqual(Container.CurrentItem,0) + !Control.IsVisible(71)</visible>
+		</control>
+		<control type="label">
+			<posx>848</posx>
+			<posy>968</posy>
+			<width>112</width>
+			<height>75</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_18B</font>
+			<textcolor>$VAR[value_flagscolor]</textcolor>
+			<label>$INFO[Container.NumItems]</label>
+			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + Integer.IsEqual(Container.CurrentItem,0) + Control.IsVisible(71)</visible>
+		</control>
+		<control type="label">
+			<posx>1808</posx>
+			<posy>968</posy>
+			<width>112</width>
+			<height>75</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Font_18B</font>
+			<textcolor>$VAR[value_flagscolor]</textcolor>
+			<label>$INFO[Container(715).NumItems]</label>
+			<visible>![String.IsEqual(Container.Content,songs) | String.IsEqual(Container.Content,musicvideos) | String.IsEqual(Container.Content,movies) | String.IsEqual(Container.Content,episodes)] + Integer.IsEqual(Container.CurrentItem,0) + Control.IsVisible(71)  + !Integer.IsEqual(Container(715).NumItems,0)</visible>
 		</control>
 	</include>
 <!-- ######################################################################### Game OSD ######################################################################### -->
