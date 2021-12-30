@@ -158,7 +158,7 @@
 						<scrollout>false</scrollout>
 					</control>
 				</control>
-				<control type="group"><!-- Group to hide/show flags or fanart on animation condition and all views -->
+				<control type="group">	<!-- Group to hide/show flags or fanart on animation condition and all views -->
 					<posy>45</posy>
 					<include>Animation_HiddenView</include>
 					<control type="image">
@@ -180,7 +180,7 @@
 						<texture diffuse="shadow_mask.png">shadow_spot.png</texture>
 						<animation effect="fade" end="75" condition="true">Conditional</animation>
 					</control>
-					<control type="group"><!-- music flags -->
+					<control type="group">	<!-- music flags -->
 						<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 						<animation effect="slide" start="0,0" end="0,450" time="500" tween="sine" easing="out">Hidden</animation>
@@ -299,7 +299,7 @@
 							</control>
 						</control>
 					</control>
-					<control type="group"><!-- Music Video flags -->
+					<control type="group">	<!-- Music Video flags -->
 						<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 						<animation effect="slide" start="0,0" end="0,450" time="500" tween="sine" easing="out">Hidden</animation>
@@ -531,11 +531,11 @@
 				<include>BGBlack</include>
 			</control>
 		</controls>
-</include>
-	<!--**************************************************************************************** -->
-	<!--                                                                                         -->
-	<!--                                                                                         -->
-	<!-- *****************************  Music Playlist  **************************************** -->
+	</include>
+<!--**************************************************************************************** -->
+<!--                                                                                         -->
+<!--                                                                                         -->
+<!-- *****************************  Music Playlist  **************************************** -->
 	<include name="MusicPLWindow">
 	<control type="group">
 		<visible>Skin.HasSetting(use_fanarts)</visible>

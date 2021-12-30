@@ -74,7 +74,7 @@
 			<label>$VAR[value_videofanart]</label>
 			<visible>Container.Content(episodes) + String.Contains(skin.string(episodesfanart),seasons)</visible>
 		</control>
-		<control type="list" id="5026"><!-- invisible list to get album art for musicvideos -->
+		<control type="list" id="5026">	<!-- invisible list to get album art for musicvideos -->
 			<posx>-500</posx>
 			<posy>0</posy>
 			<visible>Container.Content(albums)</visible>
@@ -200,8 +200,7 @@
 					<animation effect="slide" start="0,450" end="0,0" time="500" tween="sine" easing="out">Visible</animation>
 					<animation effect="slide" start="0,0" end="0,450" time="500" tween="sine" easing="out">Hidden</animation>
 					<visible>!Control.IsVisible(57) + [String.Contains(skin.string(mediaflags),on) | String.Contains(skin.string(mediaflags),auto) + Control.IsVisible(9921)]</visible>
-					<control type="grouplist">
-						<!-- Etiquetas/tags -->
+					<control type="grouplist">		<!-- Etiquetas/tags -->
 						<posx>30</posx>
 						<posy>968</posy>
 						<orientation>horizontal</orientation>
@@ -374,7 +373,7 @@
 			</control>
 			<!-- end flags bar -->
 			<!-- title bar 0-270 -->
-			<!-- NOT for wide, lowlist, glasslist, rightlist, midlist -->
+			<!-- NOT for wide, lowlist, glasslist, rightlist, midlist, multilist -->
 			<control type="group"><!-- Title Subtitle -->
 				<posy>-45</posy>
 				<animation effect="slide" time="400" start="0,-375" end="0,0" easing="inout" tween="cubic">WindowOpen</animation>
@@ -392,7 +391,7 @@
 					<colordiffuse>F9000000</colordiffuse>
 					<animation effect="fade" end="75" condition="true">Conditional</animation>
 				</control>
-				<control type="group"><!-- position for audiolangugae flag -->
+				<control type="group">	<!-- position for audiolanguage flag -->
 					<visible>!String.IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					<control type="label">
 						<!-- Title -->
@@ -465,7 +464,7 @@
 						<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + ![String.IsEqual(ListItem.Label,..) | Skin.HasSetting(notvshowstagline)]</visible>
 					</control>
 				</control>
-				<control type="group"><!-- position when no audio language flag -->
+				<control type="group">	<!-- position when no audio language flag -->
 					<visible>String.IsEmpty(ListItem.Property(AudioLanguage.1))</visible>
 					<control type="label">
 						<!-- Title -->

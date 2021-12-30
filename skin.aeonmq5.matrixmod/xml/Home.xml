@@ -120,7 +120,7 @@ Group 602: Widgets
 		show for the full amount of time -->
 			<resetonlabelchange>true</resetonlabelchange>
 		</control>
-		<control type="multiimage"><!-- skin backgrounds -->
+		<control type="multiimage">	<!-- skin backgrounds -->
 			<include>HomeBG</include>
 			<imagepath background="true">$VAR[value_menubg]</imagepath>
 		</control>

@@ -3297,7 +3297,6 @@
 					<onclick>Skin.SetImage(CustomFallbackGamesBG)</onclick>
 					<visible>String.Contains(skin.string(gamesfanart),fallback)</visible>
 				</control>
-			
 				<control type="radiobutton" id="9410">
 					<!-- Extra Fanart Games fanart -->
 					<include>TopMenuRadioButton</include>
