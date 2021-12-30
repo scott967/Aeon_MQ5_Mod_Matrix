@@ -1,3 +1,11 @@
+[B][COLOR=FFFF8C00]BUILD 11.2.0 - RELEASE DATE 12/31/2021[/COLOR][/B]
+New:  Fanart[nn] can be used instead of extrafanart folders.  Use skin settings / general dialog to toggle.  (availaible fanart1-fanart10)
+New:  Suport for artowrk downloader addon has been removed
+Improved:  Option to show fanart[nn] in the multilist for videos
+Improved:    Better display of the number of movies in a collection (still have a limit of 20 posters)
+Improved:  Full screen video  will now show playerspeeds of 1.6-2.0 in seek bar (Kodi improvement)
+Improved:  Video "premiered" date will be shown (if available) vice year in details
+
 [B][COLOR=FFFF8C00]BUILD 11.1.1 - RELEASE DATE 06/15/2021[/COLOR][/B]
 Improved:  Extensive rework of PVR and LiveTV to incorporate features from
 Leia and Matrix including timeshift and reminders.
