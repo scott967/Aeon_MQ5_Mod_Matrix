@@ -62,7 +62,7 @@
 				<colordiffuse>$VAR[value_texturecolor]</colordiffuse>
 				<animation effect="fade" end="85" condition="true">Conditional</animation>
 			</control>
-			<control type="group">
+			<control type="group">	<!-- left set data block 5801 widget panel movies in current set -->
 				<visible>!String.IsEqual(ListItem.Label,..)</visible>
 				<control type="label">
 					<include>SetsLabel</include>
@@ -330,7 +330,7 @@
 				<texture flipy="true">shadow_h.png</texture>
 				<colordiffuse>C3FFFFFF</colordiffuse>
 			</control>
-			<!-- Movies in Set supplied by skin info service -->
+			<!-- Movies in Set supplied by skin info service max 20 -->
 			<control type="label">
 				<posx>1808</posx>
 				<posy>225</posy>
@@ -339,7 +339,7 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<font>Font_18A</font>
-				<label>$INFO[Container(5801).CurrentItem]/$INFO[Container(5801).NumItems]</label>
+				<label>$INFO[Container(5801).CurrentItem]/$INFO[Container(5027).NumItems]</label>
 				<textcolor>FFFFFAF0</textcolor>
 				<animation effect="fade" time="1000">VisibleChange</animation>
 				<visible>!Integer.IsEqual(Container.CurrentItem,0) + ![Container(5801).OnNext | Container(5801).OnPrevious]</visible>
