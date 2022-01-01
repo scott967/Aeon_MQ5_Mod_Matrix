@@ -2,18 +2,18 @@
 <addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui / scott967" version="11.2.0">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
-		<import addon="script.favourites" version="4.0.4" />
-		<import addon="script.randomandlastitems" version="2.0.3" />
-		<import addon="script.games.rom.collection.browser" version="2.1.2" />
-		<import addon="script.artistslideshow" version="1.4.6" />
-		<import addon="script.tv.show.next.aired" version="6.0.10" />
-		<import addon="service.skin.widgets" version="0.0.19" />
-		<import addon="script.cu.lrclyrics" version="1.0.1" />
-		<import addon="script.globalsearch" version="1.1.1" />
-		<import addon="script.toolbox" version="1.0.1" />
-		<import addon="script.image.resource.select" version="0.0.5" />
-		<import addon="script.playalbum" version="0.0.2" />
-		<import addon="script.skin.info.service" version="1.0.7" optional="true" />
+		<import addon="script.artistslideshow" version="3.3.0" />
+		<import addon="script.cu.lrclyrics" version="6.3.0"  optional="true"/>
+		<import addon="script.favourites" version="8.1.2" />
+		<import addon="script.games.rom.collection.browser" version="2.3.0"  optional="true"/>
+		<import addon="script.globalsearch" version="9.0.0" />
+		<import addon="script.image.resource.select" version="3.0.0" />
+		<import addon="script.playalbum" version="4.0.0" />
+		<import addon="script.randomandlastitems" version="2.2.2+Matrix.4" />
+		<import addon="script.skin.info.service" version="1.1.2" optional="true" />
+		<import addon="script.toolbox" version="2.0.0" />
+		<import addon="script.tv.show.next.aired" version="6.0.15+matrix.3" />
+		<import addon="service.skin.widgets" version="0.0.33+matrix.3" />
 	</requires>
 	<extension debugging="false" effectslowdown="0.75" point="xbmc.gui.skin">
 		<res aspect="4:3" default="false" folder="xml" height="1440" width="1920" />
