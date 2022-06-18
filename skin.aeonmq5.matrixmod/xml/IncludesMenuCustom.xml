@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.2.3/10.2.8/10.3.0/10.5.0/10.5.1/10.6.0 -->
-<!-- Matrix 11.0.2/11.0.4 -->
+<!-- Matrix 11.0.2/11.0.4/11.3.0 -->
 <includes>
 	<!-- ######################################################################### Presets para aplicar ######################################################################### -->
 	<include name="Preset1_Apply">
@@ -1748,7 +1748,8 @@
 					<label2>$LOCALIZE[31003]-CINEMAVISION</label2>
 					<property name="id">movies</property>
 					<onclick>Skin.SetString($INFO[skin.string(custom_master)],moviecinemaviz)</onclick>
-					<onclick>Skin.SetString($INFO[skin.string(custom_action)],RunScript(script.cinemavision,experience))</onclick>
+					<!-- <onclick>Skin.SetString($INFO[skin.string(custom_action)],RunScript(script.cinemavision,experience))</onclick> -->
+					<onclick>Skin.SetString($INFO[skin.string(custom_action)],noop)</onclick>
 					<include>DefaultReset</include>
 				</item>
 				<item>

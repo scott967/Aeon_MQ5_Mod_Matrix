@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.2.4 -->
 <!-- Leia 10.3.0/10.5.2 -->
-<!-- Matrix 11.1.1 was window 639 -->
+<!-- Matrix 11.1.1 was window 639 11.3.0 -->
 <window id="1117" type="dialog">
 	<!-- safe id -->
 	<defaultcontrol>9006</defaultcontrol>
@@ -88,7 +88,8 @@
 					<onclick>Dialog.Close(1117)</onclick>
 					<onclick>RunScript(script.cinemavision,movieid=$INFO[skin.string(custom_id)])</onclick>
 					<label>Watch with CinemaVision</label>
-					<visible>System.HasAddon(script.cinemavision)</visible>
+					<!-- <visible>System.HasAddon(script.cinemavision)</visible> -->
+					<visible>false</visible>
 				</control>
 			</control>
 		</control>

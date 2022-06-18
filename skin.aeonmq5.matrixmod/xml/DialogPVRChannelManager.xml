@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Aeon MQ 5 Helix 6.1.1/6.1.3/6.1.5 -->
-<!-- Matrix 11.1.1 -->
+<!-- Matrix 11.1.1/11.3.0 -->
 <window>
 	<defaultcontrol always="true">20</defaultcontrol>
 	<coordinates>
@@ -338,7 +338,7 @@
 						<height>60</height>
 						<colordiffuse>50FFFAF0</colordiffuse>
 						<aspectratio>keep</aspectratio>
-						<texture fallback="DefaultVRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
+						<texture fallback="DefaultRadio.png" background="true">$INFO[ListItem.Property(Icon)]</texture>
 						<visible>!ListItem.Property(ActiveChannel)</visible>
 					</control>
 					<control type="label">

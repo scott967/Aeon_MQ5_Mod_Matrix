@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.15 -->
 <!-- Krypton 9.1.16 9.2.1 window IDs 140 -->
 <!-- Leia 10.2.5 addon settings changes #12125/10.6.2 -->
+<!-- Matrix 11.3.0 -->
 <window>
 	<defaultcontrol always="true">5</defaultcontrol>
 	<controls>
@@ -69,6 +70,7 @@
 				<subtype>text</subtype>
 			</control>
 			<control type="edit" id="12">
+				<font>Font_20A</font>
 				<texturefocus>settings_button_focus.png</texturefocus>
 			</control>
 			<control type="image" id="11">

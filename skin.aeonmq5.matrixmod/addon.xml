@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui / scott967" version="11.2.0">
+<addon id="skin.aeonmq5.matrixmod" name="Aeon MQ 5 Matrixmod" provider-name="MarcosQui / scott967" version="11.3.0">
 	<requires>
 		<import addon="xbmc.gui" version="5.15.0" />
 		<import addon="script.artistslideshow" version="3.3.0" />
@@ -9,7 +9,7 @@
 		<import addon="script.globalsearch" version="9.0.0" />
 		<import addon="script.image.resource.select" version="3.0.0" />
 		<import addon="script.playalbum" version="4.0.0" />
-		<import addon="script.randomandlastitems" version="2.2.2+matrix.5" />
+		<import addon="script.randomandlastitems" version="2.2.2+matrix.6" />
 		<import addon="script.skin.info.service" version="1.1.2" optional="true" />
 		<import addon="script.toolbox" version="2.0.0" />
 		<import addon="script.tv.show.next.aired" version="6.0.15+matrix.3" />
@@ -66,7 +66,7 @@
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
-		<news>[B][COLOR=FFFF8C00]BUILD 11.2.0- RELEASE DATE 12/31/2021 for Kodi MATRIX 19.0 Release[/COLOR][/B]
+		<news>[B][COLOR=FFFF8C00]BUILD 11.3.0- RELEASE DATE 05/30/2021 for Kodi MATRIX 19.0 Release[/COLOR][/B]
 This is a MOD of Aeon MQ5 by user scott967.  Compatible with Kodi Matrix official release 19.0 + 
 Now provides ability to use fanart[[nn] instead of extrafanart folders
 

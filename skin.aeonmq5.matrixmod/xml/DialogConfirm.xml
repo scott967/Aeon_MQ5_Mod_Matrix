@@ -3,6 +3,7 @@
 <!-- Isengard 7.1.10 -->
 <!-- Krypton 9.1.15/9.2.3 -->
 <!-- Leia 10.3.0/10.6.0 -->
+<!-- Matrix 11.3.0 -->
 <window>
 	<controls>
 		<control type="group">
@@ -23,7 +24,7 @@
 				<posy>45</posy>
 				<width>1920</width>
 				<control type="button" id="10">
-					<!-- no -->
+					<!-- no/canx -->
 					<height>44</height>
 					<width>225</width>
 					<align>center</align>
@@ -63,20 +64,20 @@
 			</control>
 			<control type="progress" id="20">
 				<!-- was 404? -->
-				<posy>42</posy>
+				<posy>90</posy>
 				<include>Dialogs_Progress</include>
 				<info>System.Progressbar</info>
 			</control>
 			<control type="label">
-				<posx>960</posx>
-				<posy>3</posy>
-				<width>75</width>
+				<posx>910</posx>
+				<posy>1</posy>
+				<width>100</width>
 				<height>52</height>
-				<align>left</align>
+				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>$VAR[value_headercolor]</textcolor>
 				<font>Font_18A</font>
-				<scroll>true</scroll>
+				<!-- <scroll>true</scroll> -->
 				<label>$INFO[System.Progressbar,,%]</label>
 			</control>
 		</control>

@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.17/9.1.19/9.2.1 window IDs/9.2.3 -->
 <!-- Leia 10.3.0/10.4.0/10.6.1 -->
-<!-- Matrix 11.1.1 -->
+<!-- Matrix 11.1.1/11.3.0 -->
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
 	<menucontrol>9000</menucontrol>
@@ -605,10 +605,10 @@
 							<visible>!ListItem.IsFolder</visible>
 						</control>
 						<control type="textbox">
-							<posx>335</posx>
-							<posy>615</posy>
-							<width>595</width>
-							<height>352</height>
+							<posx>30</posx>
+							<posy>708</posy>
+							<width>895</width>
+							<height>300</height>
 							<label>$INFO[ListItem.Plot]</label>
 							<textcolor>FFFFFAF0</textcolor>
 							<font>Font_18A</font>
@@ -643,60 +643,60 @@
 				<!--  71 -->
 			</control>
 			<control type="group">	<!-- Furniture -->	<!-- recording disk space right -->
-				<visible>Control.IsVisible(51) | Control.IsVisible(54) | Control.Isvisible(55) | Control.IsVisible(59)</visible>
+				<visible>Control.IsVisible(56) | Control.IsVisible(51) | Control.IsVisible(54) | Control.Isvisible(55) | Control.IsVisible(59) | Control.IsVisible(62) | Control.IsVisible(71)</visible>
 				<control type="label">
 					<description>Disk usage text</description>
 					<posx>1425</posx>
-					<posy>930</posy>
+					<posy>1020</posy>
 					<width>435</width>
 					<height>30</height>
 					<label>[UPPERCASE]$INFO[PVR.backenddiskspace][/UPPERCASE]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>FFFFFAF0</textcolor>
-					<font>Font_18A</font>
+					<font>Font_17A</font>
 					<visible>!Integer.IsGreater(PVR.backenddiskspaceprogr,100)</visible>
 				</control>
 				<control type="progress">
 					<description>Disk usage bar</description>
 					<posx>1425</posx>
-					<posy>968</posy>
+					<posy>1058</posy>
 					<width>435</width>
 					<height>18</height>&gt;
 					<info>PVR.backenddiskspaceprogr</info><visible>!Integer.IsGreater(PVR.backenddiskspaceprogr,100)</visible></control>
 			</control>
 			<control type="group">	<!-- recording disk space left -->
-				<visible>Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(62)</visible>
+				<visible>Control.IsVisible(57)</visible>
 				<control type="label">
 					<description>Disk usage text</description>
 					<posx>8</posx>
-					<posy>930</posy>
+					<posy>1020</posy>
 					<width>435</width>
 					<height>30</height>
 					<label>[UPPERCASE]$INFO[PVR.backenddiskspace][/UPPERCASE]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>FFFFFAF0</textcolor>
-					<font>Font_18A</font>
+					<font>Font_17A</font>
 					<visible>!Control.IsVisible(57) + !Integer.IsGreater(PVR.backenddiskspaceprogr,100)</visible>
 				</control>
 				<control type="label">
 					<description>Disk usage text</description>
 					<posx>8</posx>
-					<posy>930</posy>
+					<posy>1020</posy>
 					<width>435</width>
 					<height>30</height>
 					<label>[UPPERCASE]$INFO[PVR.backenddiskspace][/UPPERCASE]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>FF101010</textcolor>
-					<font>Font_18A</font>
+					<font>Font_17A</font>
 					<visible>Control.IsVisible(57) + !Integer.IsGreater(PVR.backenddiskspaceprogr,100)</visible>
 				</control>
 				<control type="progress">
 					<description>Disk usage bar</description>
 					<posx>8</posx>
-					<posy>968</posy>
+					<posy>1058</posy>
 					<width>435</width>
 					<height>18</height>&gt;
 					<info>PVR.backenddiskspaceprogr</info>

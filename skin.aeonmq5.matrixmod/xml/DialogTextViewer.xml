@@ -2,15 +2,25 @@
 <!-- Aeon MQ 5 -->
 <!-- Krypton 9.2.1 window IDs 147 -->
 <!-- Leia 10.5.2 -->
-<!-- Matrix 11.2.0 -->
+<!-- Matrix 11.2.0/11.3.0 -->
 <window>
-	<defaultcontrol>61</defaultcontrol>
+	<defaultcontrol>9147</defaultcontrol>
 	<coordinates>
 		<system>1</system>
 		<posx>0</posx>
 		<posy>0</posy>
 	</coordinates>
 	<controls>
+		<control type="button" id="9147">
+			<include>InvisibleButton</include>
+			<height>1110</height>
+			<width>1950</width>
+			<onclick>Dialog.Close(147)</onclick>
+			<onleft>61</onleft>
+			<onright>61</onright>
+			<onup>61</onup>
+			<ondown>61</ondown>
+		</control>
 		<control type="group">
 			<!-- default group -->
 			<include>Animation_Fade</include>
@@ -46,8 +56,8 @@
 				<posx>75</posx>
 				<posy>180</posy>
 				<height>795</height>
-				<onleft>61</onleft>
-				<onright>61</onright>
+				<onleft>9147</onleft>
+				<onright>9147</onright>
 				<ondown>61</ondown>
 				<onup>61</onup>
 			</control>

@@ -4,7 +4,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.15/9.1.16/9.1.17/9.1.18/9.1.19/9.2.1 window IDs/9.2.2/9.2.3 -->
 <!-- Leia 10.2.7/10.2.8/10.3.0/10.4.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2/10.6.3 -->
-<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1/11.2.0 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1/11.2.0/11.3.0 -->
 <includes>
 	<include file="Defaults.xml" />
 	<include file="IncludesVariables.xml" />
@@ -277,7 +277,7 @@
 		<!-- 151 was 614 extendedprogress -->
 	</include>
 	<include name="Animation_TopDialogPopup">
-		<animation effect="slide" start="0,-150" end="0" time="500" easing="inout" tween="cubic">WindowOpen</animation>
+		<animation effect="slide" start="0,-150" end="0,0" time="500" easing="inout" tween="cubic">WindowOpen</animation>
 		<animation effect="slide" start="0,-150" end="0,0" time="500" easing="inout" tween="cubic">Visible</animation>
 		<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 		<animation effect="slide" start="0,0" end="0,-150" time="300" easing="inout" tween="cubic">Hidden</animation>
@@ -749,6 +749,7 @@
 				<onfocus>Skin.SetString(gameswidget,true)</onfocus>
 				<onfocus>Skin.SetString(menu7.action,ActivateWindow(games))</onfocus>
 				<onfocus>Skin.SetString(menu8.master,programs)</onfocus>
+				<onfocus>Skin.SetString(programswidget,true)</onfocus>
 				<onfocus condition="!System.Platform.Android">Skin.SetString(menu8.action,ActivateWindow(Programs,Addons,return))</onfocus>
 				<onfocus condition="System.Platform.Android">Skin.SetString(menu8.action,ActivateWindow(Programs))</onfocus>
 				<onfocus>Skin.SetString(menu9.master,pictures)</onfocus>
@@ -970,7 +971,7 @@
 				<onfocus>Skin.SetString(menu1004.action,Skin.SetString(weather_mode,alerts))</onfocus>
 				<onfocus>Skin.SetString(menu1005.master,weathersettings)</onfocus>
 				<!-- Clima ajustes -->
-				<onfocus>Skin.SetString(menu1005.action,ActivateWindow(weathersettings))</onfocus>
+				<onfocus>Skin.SetString(menu1005.action,ActivateWindow(servicesettings,weather))</onfocus>
 				<onfocus>Skin.SetString(menu1006.master,weathersettings)</onfocus>
 				<!-- Clima estacoes -->
 				<onfocus>Skin.SetString(menu1006.action,ActivateWindow(633))</onfocus>
@@ -1390,6 +1391,7 @@
 		<width>1485</width>
 		<height>74</height>
 		<align>left</align>
+		<aligny>center</aligny>
 		<font>Font_32</font>
 		<textcolor>E4101010</textcolor>
 	</include>
@@ -1399,6 +1401,7 @@
 		<width>1350</width>
 		<height>74</height>
 		<align>left</align>
+		<aligny>center</aligny>
 		<font>Font_32</font>
 		<textcolor>FFFFFAF0</textcolor>
 		<scroll>true</scroll>
@@ -1504,6 +1507,7 @@
 		<height>62</height>
 		<font>Font_18</font>
 		<align>left</align>
+		<aligny>center</aligny>
 		<textcolor>E4101010</textcolor>
 		<focusedcolor>FFFFFAF0</focusedcolor>
 		<selectedcolor>E4101010</selectedcolor>
@@ -2193,15 +2197,15 @@
 	</include>
 	<include name="Dialogs_Progress">
 		<posx>15</posx>
-		<posy>39</posy>
+		<posy>41</posy>
 		<width>1890</width>
 		<height>4</height>
 	</include>
 	<include name="Dialogs_Label1">
 		<posx>15</posx>
-		<posy>3</posy>
+		<posy>2</posy>
 		<width>750</width>
-		<height>40</height>
+		<height>39</height>
 		<align>left</align>
 		<aligny>center</aligny>
 		<textcolor>$VAR[value_headercolor]</textcolor>
@@ -2210,9 +2214,9 @@
 	</include>
 	<include name="Dialogs_Label2">
 		<right>15</right>
-		<posy>3</posy>
+		<posy>2</posy>
 		<width>750</width>
-		<height>40</height>
+		<height>39</height>
 		<align>right</align>
 		<aligny>center</aligny>
 		<textcolor>FFFFFAF0</textcolor>
@@ -2263,7 +2267,7 @@
 		<posx>1155</posx>
 		<posy>-10</posy>
 		<width>750</width>
-		<height>90</height>
+		<height>95</height>
 		<align>right</align>
 		<font>Font_17A</font>
 		<textcolor>FFFFFAF0</textcolor>

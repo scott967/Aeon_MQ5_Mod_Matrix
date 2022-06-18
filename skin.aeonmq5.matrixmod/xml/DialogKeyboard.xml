@@ -3,6 +3,7 @@
 <!-- Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.2.1 window IDs 103/9.2.3 -->
 <!-- Leia 10.2.4/10.3.0/10.5.2/10.6.1 -->
+<!-- Matrix 11.3.0 -->
 <window>
 	<defaultcontrol always="true">300</defaultcontrol>
 	<coordinates>
@@ -507,7 +508,7 @@
 						<width>255</width>
 						<height>75</height>
 						<label>20177</label>
-						<font>font13</font>
+						<font>Font13</font>
 						<align>center</align>
 						<aligny>center</aligny>
 						<onup>304</onup>

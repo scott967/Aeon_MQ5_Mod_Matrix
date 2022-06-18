@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 Helix 6.1.0 massive fonts-->
 <!-- Krypton 9.2.3 -->
 <!-- Leia 10.2.4/10.2.5/10.4.0/10.5.0 -->
+<!-- Nexus 12.3.0 -->
 <fonts>
 	<fontset id="Default">
 		<font>
@@ -45,6 +46,13 @@
 			<filename>aeon_common.ttf</filename>
 			<size>27</size>
 			<linespacing>0.94</linespacing>
+		</font>
+		<font>
+			<name>Font_18Atbox</name>
+			<!-- nao usar uppercase -->
+			<filename>aeon_common.ttf</filename>
+			<size>27</size>
+			<linespacing>1.2</linespacing>
 		</font>
 		<font>
 			<name>Font_18B</name>
@@ -285,6 +293,13 @@
 			<linespacing>0.94</linespacing>
 		</font>
 		<font>
+			<name>Font_18Atbox</name>
+			<!-- nao usar uppercase -->
+			<filename>aeon_common.ttf</filename>
+			<size>34</size>
+			<linespacing>1.2</linespacing>
+		</font>
+		<font>
 			<name>Font_20</name>
 			<filename>aeon_mainmenu.ttf</filename>
 			<size>38</size>
@@ -515,6 +530,13 @@
 			<filename>aeon_common.ttf</filename>
 			<size>42</size>
 			<linespacing>0.94</linespacing>
+		</font>
+		<font>
+			<name>Font_18Atbox</name>
+			<!-- nao usar uppercase -->
+			<filename>aeon_common.ttf</filename>
+			<size>42</size>
+			<linespacing>1.2</linespacing>
 		</font>
 		<font>
 			<name>Font_20</name>

@@ -3,7 +3,7 @@
 <!-- Jarvis 8.1.15 -->
 <!-- Krypton 9.1.16/9.1.19/9.2.1 window IDs 2901/9.2.2/9.2.3 -->
 <!-- Leia 10.2.8/10.3.0/10.4.0 -->
-<!-- Matrix 11.0.1/11.0.2/11.1.1 -->
+<!-- Matrix 11.0.1/11.0.2/11.1.1/11.3.0 -->
 
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
@@ -268,7 +268,7 @@
 					<height>32</height>
 					<onup>Dialog.Close(VideoOSD)</onup>
 					<ondown>100</ondown>
-					<action>PVR.seek</action>
+					<action>PVR.SeekPercentage</action>
 					<texturesliderbar>sliderback_large.png</texturesliderbar>
 					<textureslidernib/>
 					<textureslidernibfocus>progress_mid.png</textureslidernibfocus>

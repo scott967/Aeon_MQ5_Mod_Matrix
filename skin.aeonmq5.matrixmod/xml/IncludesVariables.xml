@@ -4,11 +4,11 @@
 <!-- Aeon MQ5 Jarvis 8.1.13/8.1.14 -->
 <!-- Krypton 9.1.14/9.1.16/9.1.17/9.1.18/9.1.19 /9.2.0/9.2.1 window IDs/9.2.2 /9.2.3-->
 <!-- Leia 10.2.3 /10.2.4/10.2.5/10.2.6/10.2.8/10.3.0/10.5.0/10.5.1/10.5.2/10.6.0/10.6.1/10.6.2 -->
-<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1/11.2.0 -->
+<!-- Matrix 11.0.1/11.0.2/11.0.4/11.0.5/11.1.1/11.2.0/11.3.0 -->
 <includes>
 	<!-- ################################################ Value/General ################################################ -->
 	<variable name="SkinVersion">
-		<value>11.2.0 Matrixmod[COLOR=80FFFFFF] | [/COLOR]12/31/2021</value>
+		<value>11.3.0 Matrixmod[COLOR=80FFFFFF] | [/COLOR]05/30/2022</value>
 	</variable>
 	<variable name="Sub_GoTo">
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(subid),movies)">6001</value>
@@ -3281,7 +3281,7 @@
 	<variable name="value_gamesfanart">
 		<value condition="String.Contains(skin.string(gamesfanart),fallback)">$INFO[Skin.String(CustomFallbackGamesBG)]</value>
 		<value condition="String.Contains(skin.string(gamesfanart),curtains)">special://skin/backgrounds/extras/curtains.jpg</value>
-		<value condition="String.Contains(skin.string(gamesfanart),extra)">$INFO[ListItem.Path]extrafanart/</value>
+		<value condition="String.Contains(skin.string(gamesfanart),extra) + Skin.HasSetting(use_folderarts)">$INFO[ListItem.Path]extrafanart/</value>
 	</variable>
 	<variable name="value_nextairedfanart">
 		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Property(Art(fanart))]</value>
@@ -3350,16 +3350,16 @@
 		<value condition="ControlGroup(260).HasFocus">$LOCALIZE[31118]</value>
 		<value condition="Window.IsVisible(videoosd)">$LOCALIZE[31698]</value>
 		<value condition="Window.IsVisible(movieinformation)">$LOCALIZE[31699]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(1)">$LOCALIZE[31276] $LOCALIZE[31277]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(2)">$LOCALIZE[31276] $LOCALIZE[31266]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(3)">$LOCALIZE[31276] $LOCALIZE[31267]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(4)">$LOCALIZE[31276] $LOCALIZE[31271]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(5)">$LOCALIZE[31276] $LOCALIZE[31269]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(6)">$LOCALIZE[31276] $LOCALIZE[31272]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(7)">$LOCALIZE[31276] $LOCALIZE[31274]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(8)">$LOCALIZE[31276] $LOCALIZE[31275]</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(9)">$LOCALIZE[31276] HDR</value>
-		<value condition="Control.HasFocus(403) + Container(403).HasFocus(10)">$LOCALIZE[31276] UHD</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(1)">$LOCALIZE[31276] $LOCALIZE[31277]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(2)">$LOCALIZE[31276] $LOCALIZE[31266]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(3)">$LOCALIZE[31276] $LOCALIZE[31267]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(4)">$LOCALIZE[31276] $LOCALIZE[31271]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(5)">$LOCALIZE[31276] $LOCALIZE[31269]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(6)">$LOCALIZE[31276] $LOCALIZE[31272]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(7)">$LOCALIZE[31276] $LOCALIZE[31274]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(8)">$LOCALIZE[31276] $LOCALIZE[31275]</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(9)">$LOCALIZE[31276] HDR</value>
+		<value condition="[Control.HasFocus(403) | control.HasFocus(150) | ControlGroup(165).HasFocus] + Container(403).HasFocus(10)">$LOCALIZE[31276] UHD</value>
 		<value condition="Control.HasFocus(404) + Container(404).HasFocus(1) | Container(404).HasFocus(1) + Control.Hasfocus(270)">$LOCALIZE[31978]</value>
 		<value condition="Control.HasFocus(404) + Container(404).HasFocus(2) | Container(404).HasFocus(2) + Control.Hasfocus(270)">$LOCALIZE[31979]</value>
 		<value condition="Control.HasFocus(9100) + Container(9100).HasFocus(16) | ControlGroup(9001).HasFocus">$LOCALIZE[31443]</value>
@@ -3705,7 +3705,7 @@
 	</variable>
 	<variable name="value_listinfofocus">
 		<!-- PVR recordings -->
-		<value condition="$EXP[IsPVRRecordings]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31763]: [/COLOR] $INFO[ListItem.ChannelName] [COLOR=$VAR[value_headercolor]][UPPERCASE]$LOCALIZE[21820]: [/UPPERCASE][/COLOR] $INFO[ListItem.Label2] [COLOR=$VAR[value_headercolor]]$LOCALIZE[31522]: [/COLOR] $INFO[ListItem.Duration]</value>
+		<value condition="$EXP[IsPVRRecordings] + ![String.IsEqual(ListItem.Label, ..) | ListItem.IsFolder]">[COLOR=$VAR[value_headercolor]]$LOCALIZE[31763]: [/COLOR] $INFO[ListItem.ChannelName] [COLOR=$VAR[value_headercolor]][UPPERCASE]$LOCALIZE[21820]: [/UPPERCASE][/COLOR] $INFO[ListItem.Label2] [COLOR=$VAR[value_headercolor]]$LOCALIZE[31522]: [/COLOR] $INFO[ListItem.Duration]</value>
 		<!-- music -->
 		<value condition="String.Contains(ListItem.DBType,musicvideo)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[557]: [/COLOR] $INFO[ListItem.Artist]</value>
 		<value condition="String.Contains(ListItem.DBType,album)">[COLOR=$VAR[value_headercolorfocus]]$LOCALIZE[21899]: [/COLOR]$INFO[ListItem.Property(Album_Label)]</value>

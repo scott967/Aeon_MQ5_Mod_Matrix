@@ -2217,7 +2217,7 @@
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 						</control>
-						<control type="image">
+						<!-- <control type="image">
 							<posx>897</posx>
 							<posy>-2</posy>
 							<width>45</width>
@@ -2233,7 +2233,7 @@
 							<height>45</height>
 							<texture>inprogress/p$INFO[ListItem.PercentPlayed].png</texture>
 							<visible>!Skin.HasSetting(nooverlays) + ListItem.IsResumable</visible>
-						</control>
+						</control> -->
 					</itemlayout>
 					<focusedlayout height="60">
 						<control type="image">
@@ -2276,7 +2276,7 @@
 							<colordiffuse>$VAR[value_watchedcolor]</colordiffuse>
 							<visible>!Skin.HasSetting(nooverlays) + String.IsEqual(ListItem.Overlay,OverlayWatched.png) + !ListItem.IsResumable</visible>
 						</control>
-						<control type="image">
+						<!-- <control type="image">
 							<posx>897</posx>
 							<posy>-2</posy>
 							<width>45</width>
@@ -2292,7 +2292,7 @@
 							<height>45</height>
 							<texture>inprogress/p$INFO[ListItem.PercentPlayed].png</texture>
 							<visible>!Skin.HasSetting(nooverlays) + ListItem.IsResumable</visible>
-						</control>
+						</control> -->
 					</focusedlayout>
 					<content target="videos" sortby="title" sortorder="ascending">$INFO[Container(71).ListItem.FolderPath]</content>
 				</control>

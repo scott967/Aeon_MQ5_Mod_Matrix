@@ -2,6 +2,7 @@
 <!-- Aeon MQ 5 -->
 <!-- Jarvis 8.1.13 -->
 <!-- Krypton 9.1.19/9.2.1 window IDs -->
+<!-- Matrix 11.3.0 -->
 <includes>
 	<!--##################################################################################   VISTA SHELF - ID 63   ##################################################################################-->
 	<include name="ViewShelf">
@@ -213,7 +214,7 @@
 								<texture>shelf_case.png</texture>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 							</control>
-							<control type="image">
+							<!-- <control type="image">
 								<posx>-3</posx>
 								<posy>426</posy>
 								<width>60</width>
@@ -221,7 +222,7 @@
 								<texture>shelf_case_botton.png</texture>
 								<colordiffuse>89FFFFFF</colordiffuse>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
-							</control>
+							</control> -->
 							<control type="image">
 								<posx>-224</posx>
 								<posy>196</posy>
@@ -238,7 +239,7 @@
 								<fadetime>200</fadetime>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 							</control>
-							<control type="image">
+							<!-- <control type="image">
 								<posx>-225</posx>
 								<posy>435</posy>
 								<width>243</width>
@@ -248,7 +249,7 @@
 								<colordiffuse>89FFFFFF</colordiffuse>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<animation effect="fade" start="0" end="30" time="0" condition="true">Conditional</animation>
-							</control>
+							</control> -->
 							<control type="image">
 								<posx>-225</posx>
 								<posy>435</posy>
@@ -278,7 +279,7 @@
 									<effect type="fade" start="0" end="100" time="600" />
 								</animation>
 							</control>
-							<control type="image">
+							<!-- <control type="image">
 								<posx>72</posx>
 								<posy>434</posy>
 								<width>72</width>
@@ -289,7 +290,7 @@
 									<effect type="zoom" center="90,357" start="80" end="100" time="600" tween="cubic" easing="out" />
 									<effect type="fade" start="0" end="800" time="800" />
 								</animation>
-							</control>
+							</control> -->
 							<control type="image">
 								<posx>-222</posx>
 								<posy>135</posy>

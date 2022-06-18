@@ -1,3 +1,6 @@
+[B][COLOR=FFFF8C00]BUILD 11.3.0 - RELEASE DATE 05/30/2021[/COLOR][/B]
+Fix:  Default home menu weather settings submenu had obsolete window
+Improved:  Extendedinfo script dialog windows
 [B][COLOR=FFFF8C00]BUILD 11.2.0 - RELEASE DATE 12/31/2021[/COLOR][/B]
 New:  Fanart[nn] can be used instead of extrafanart folders.  Use skin settings / general dialog to toggle.  (availaible fanart1-fanart10)
 New:  Suport for artowrk downloader addon has been removed
